@@ -16,8 +16,8 @@ export default function ContactPage() {
           Contact PublishPixel
         </h1>
         <p className="mt-5 text-sm leading-7 text-slate-600 dark:text-slate-400">
-          Share feedback, report a bug or ask a privacy question. This form creates an email in your
-          mail app and does not submit data to a backend.
+          Share feedback, report a bug or ask a privacy question. Messages are handled by Netlify
+          Forms and can be forwarded to the site inbox.
         </p>
         <p className="mt-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
           Email:{" "}
@@ -26,6 +26,12 @@ export default function ContactPage() {
           </a>
         </p>
       </div>
+      <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="contact" />
+        <input name="name" />
+        <input name="email" type="email" />
+        <textarea name="message" />
+      </form>
       <ContactForm />
     </section>
   );

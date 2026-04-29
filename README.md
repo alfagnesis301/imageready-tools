@@ -114,6 +114,10 @@ Analytics are not installed by default. If analytics are added later:
 - Do not send filenames or image contents as analytics events.
 - Document the provider in `app/privacy-policy/page.tsx` and `app/cookie-policy/page.tsx`.
 
+## Contact Form
+
+The contact page uses Netlify Forms with the form name `contact`. After deploying on Netlify, go to **Forms** and add an email notification so submissions are forwarded to `hello@publishpixel.net` or your preferred inbox.
+
 ## Deploying to Vercel
 
 1. Push the project to a Git repository.
