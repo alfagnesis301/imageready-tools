@@ -1,9 +1,9 @@
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "About ImageReady Tools",
+  title: "About PublishPixel",
   description:
-    "Learn about ImageReady Tools, a privacy-first browser utility for preparing images for publishing."
+    "Learn about PublishPixel, a privacy-first browser utility for preparing images for publishing."
 });
 
 export default function AboutPage() {
@@ -11,9 +11,9 @@ export default function AboutPage() {
     <section className="shell py-12">
       <article className="legal-doc">
         <p className="label">About</p>
-        <h1>About ImageReady Tools</h1>
+        <h1>About PublishPixel</h1>
         <p>
-          ImageReady Tools is a free browser-based utility for people who publish images on websites,
+          PublishPixel is a free browser-based utility for people who publish images on websites,
           blogs, social media, YouTube, e-commerce pages, emails and search-focused content.
         </p>
         <p>
@@ -24,7 +24,7 @@ export default function AboutPage() {
         </p>
         <h2>Privacy-first workflow</h2>
         <p>
-          The core image analysis happens in your browser. ImageReady Tools does not upload your image
+          The core image analysis happens in your browser. PublishPixel does not upload your image
           to a server for analysis, does not save user images and only uses localStorage for preferences
           such as theme, consent and the last selected preset.
         </p>

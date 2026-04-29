@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Privacy Policy",
   description:
-    "Privacy Policy for ImageReady Tools, including local image analysis, localStorage preferences, analytics and AdSense preparation."
+    "Privacy Policy for PublishPixel, including local image analysis, localStorage preferences, analytics and AdSense preparation."
 });
 
 export default function PrivacyPolicyPage() {
@@ -14,9 +14,9 @@ export default function PrivacyPolicyPage() {
         <p className="label">Legal</p>
         <h1>Privacy Policy</h1>
         <p>Last updated: April 28, 2026</p>
-        <h2>What ImageReady Tools processes</h2>
+        <h2>What PublishPixel processes</h2>
         <p>
-          ImageReady Tools processes image files you choose locally in your browser to calculate
+          PublishPixel processes image files you choose locally in your browser to calculate
           dimensions, aspect ratio, file size, format, estimated compression and publishing
           recommendations.
         </p>

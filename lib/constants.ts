@@ -1,8 +1,8 @@
-export const SITE_NAME = "ImageReady Tools";
+export const SITE_NAME = "PublishPixel";
 export const SITE_TAGLINE = "Make every image ready to publish.";
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://imagereadytools.example";
-export const CONTACT_EMAIL = "hello@imagereadytools.example";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://publishpixel.net";
+export const CONTACT_EMAIL = "hello@publishpixel.net";
 export const ADSENSE_PLACEHOLDER_ID = "pub-XXXXXXXXXXXXXXXX";
 
 export const MAX_RECOMMENDED_FILE_SIZE = 15 * 1024 * 1024;

@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Disclaimer",
   description:
-    "Disclaimer for ImageReady Tools recommendations, platform requirements, SEO results and technical estimates."
+    "Disclaimer for PublishPixel recommendations, platform requirements, SEO results and technical estimates."
 });
 
 export default function DisclaimerPage() {
@@ -16,7 +16,7 @@ export default function DisclaimerPage() {
         <p>Last updated: April 28, 2026</p>
         <h2>Estimated recommendations</h2>
         <p>
-          ImageReady Tools provides estimated recommendations based on browser-readable image
+          PublishPixel provides estimated recommendations based on browser-readable image
           information and commonly used publishing guidelines. It does not perform a full creative,
           legal or platform-specific review.
         </p>

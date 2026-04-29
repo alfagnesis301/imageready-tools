@@ -58,7 +58,7 @@ export default function CookieConsent() {
               Cookie preferences
             </h2>
             <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-              ImageReady Tools uses essential local storage for preferences. Optional analytics or
+              PublishPixel uses essential local storage for preferences. Optional analytics or
               advertising scripts should only load after consent if you add them later.
             </p>
           </div>

@@ -1,6 +1,6 @@
-# ImageReady Tools
+# PublishPixel
 
-ImageReady Tools is a Next.js 14 App Router web application for preparing images before publishing. The main feature is **Smart Image Publish Check**, a privacy-first browser tool that checks dimensions, aspect ratio, file size, format, estimated compression opportunity and publishing readiness for websites, SEO, social media, YouTube thumbnails, e-commerce, email headers and more.
+PublishPixel is a Next.js 14 App Router web application for preparing images before publishing. The main feature is **Smart Image Publish Check**, a privacy-first browser tool that checks dimensions, aspect ratio, file size, format, estimated compression opportunity and publishing readiness for websites, SEO, social media, YouTube thumbnails, e-commerce, email headers and more.
 
 The app is designed to run mostly in the browser. User images are not uploaded to a server, not saved by the app and not sent to external image analysis APIs.
 

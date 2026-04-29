@@ -3,7 +3,7 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Terms",
-  description: "Terms of use for ImageReady Tools."
+  description: "Terms of use for PublishPixel."
 });
 
 export default function TermsPage() {
@@ -15,7 +15,7 @@ export default function TermsPage() {
         <p>Last updated: April 28, 2026</p>
         <h2>Free informational tool</h2>
         <p>
-          ImageReady Tools is provided as a free informational utility. The recommendations are
+          PublishPixel is provided as a free informational utility. The recommendations are
           estimates and may not be perfectly accurate for every browser, image format, platform or
           publishing workflow.
         </p>
@@ -26,7 +26,7 @@ export default function TermsPage() {
         </p>
         <h2>Image ownership</h2>
         <p>
-          You retain any rights you already have in your images. ImageReady Tools does not claim
+          You retain any rights you already have in your images. PublishPixel does not claim
           ownership of images you analyze or export locally.
         </p>
         <h2>No guarantee</h2>

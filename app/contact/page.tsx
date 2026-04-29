@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Contact",
-  description: "Contact ImageReady Tools for feedback, privacy questions and product suggestions."
+  description: "Contact PublishPixel for feedback, privacy questions and product suggestions."
 });
 
 export default function ContactPage() {
@@ -13,7 +13,7 @@ export default function ContactPage() {
       <div>
         <p className="label">Contact</p>
         <h1 className="mt-3 text-4xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-          Contact ImageReady Tools
+          Contact PublishPixel
         </h1>
         <p className="mt-5 text-sm leading-7 text-slate-600 dark:text-slate-400">
           Share feedback, report a bug or ask a privacy question. This form creates an email in your

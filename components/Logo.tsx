@@ -20,7 +20,7 @@ export default function Logo({ variant = "horizontal", className = "", href = "/
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           role={variant === "icon" ? "img" : undefined}
-          aria-label={variant === "icon" ? "ImageReady Tools" : undefined}
+          aria-label={variant === "icon" ? "PublishPixel" : undefined}
         >
           <rect x="10" y="13" width="38" height="34" rx="8" stroke="white" strokeWidth="5" />
           <path d="M17 40l8-9 6 6 5-6 7 9H17z" fill="white" opacity="0.9" />
@@ -37,7 +37,7 @@ export default function Logo({ variant = "horizontal", className = "", href = "/
       {variant === "horizontal" ? (
         <span className="flex flex-col leading-none">
           <span className="text-base font-extrabold text-slate-950 dark:text-white">
-            ImageReady
+            PublishPixel
           </span>
           <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">Tools</span>
         </span>
@@ -46,7 +46,7 @@ export default function Logo({ variant = "horizontal", className = "", href = "/
   );
 
   return href ? (
-    <Link href={href} className="focus-ring rounded-lg" aria-label="ImageReady Tools home">
+    <Link href={href} className="focus-ring rounded-lg" aria-label="PublishPixel home">
       {content}
     </Link>
   ) : (

@@ -11,7 +11,7 @@ export default function ContactForm() {
 
   function createEmail(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const subject = encodeURIComponent(`ImageReady Tools message from ${name || "website visitor"}`);
+    const subject = encodeURIComponent(`PublishPixel message from ${name || "website visitor"}`);
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     );

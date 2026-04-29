@@ -3,7 +3,7 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Cookie Policy",
-  description: "Cookie and localStorage policy for ImageReady Tools."
+  description: "Cookie and localStorage policy for PublishPixel."
 });
 
 export default function CookiePolicyPage() {
@@ -15,7 +15,7 @@ export default function CookiePolicyPage() {
         <p>Last updated: April 28, 2026</p>
         <h2>Essential storage</h2>
         <p>
-          ImageReady Tools may use localStorage for essential preferences such as theme, consent state
+          PublishPixel may use localStorage for essential preferences such as theme, consent state
           and the last selected preset. This keeps the tool convenient without saving images.
         </p>
         <h2>Advertising cookies</h2>

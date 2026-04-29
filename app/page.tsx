@@ -13,7 +13,7 @@ export const metadata = createPageMetadata({
 
 const homeFaq = [
   {
-    question: "Does ImageReady Tools upload my image?",
+    question: "Does PublishPixel upload my image?",
     answer:
       "No. The main analysis runs locally in your browser with File API, Canvas API and native image decoding where available."
   },
@@ -98,7 +98,7 @@ export default function HomePage() {
 
       <section className="shell grid gap-8 py-10 lg:grid-cols-[0.82fr_1.18fr] lg:py-14">
         <div className="flex flex-col justify-center">
-          <p className="label">ImageReady Tools</p>
+          <p className="label">PublishPixel</p>
           <h1 className="mt-3 max-w-2xl text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
             Free Smart Image Publish Check Tool
           </h1>
@@ -131,7 +131,7 @@ export default function HomePage() {
           <div className="max-w-3xl">
             <p className="label">What the tool checks</p>
             <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-              What does ImageReady Tools check?
+              What does PublishPixel check?
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
               Image readiness is more than a file size number. The Smart Check combines dimensions,
@@ -222,7 +222,7 @@ export default function HomePage() {
               Your image stays in your browser
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              ImageReady Tools does not upload your image to a server for analysis. Browser APIs read
+              PublishPixel does not upload your image to a server for analysis. Browser APIs read
               the file, calculate dimensions and create optional exported versions locally. Preferences
               such as theme, preset and consent may use localStorage; images are not stored.
             </p>
