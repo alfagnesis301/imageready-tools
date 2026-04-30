@@ -18,6 +18,16 @@ export default function ImageMetrics({ analysis }: { analysis: ImageAnalysisResu
       icon: Layers
     },
     {
+      label: "EXIF metadata",
+      value:
+        analysis.hasExifMetadata === null
+          ? "Not checked"
+          : analysis.hasExifMetadata
+            ? "Detected"
+            : "None found",
+      icon: Layers
+    },
+    {
       label: "Compression opportunity",
       value: `${analysis.compressionOpportunity}% estimated`,
       icon: Gauge

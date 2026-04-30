@@ -19,6 +19,16 @@ export default function MetadataPanel({ analysis }: { analysis: ImageAnalysisRes
             {analysis.altTextStructure}
           </dd>
         </div>
+        <div>
+          <dt className="label">EXIF metadata signal</dt>
+          <dd className="mt-1 leading-6 text-slate-600 dark:text-slate-400">
+            {analysis.hasExifMetadata === null
+              ? "This format was not checked for EXIF metadata."
+              : analysis.hasExifMetadata
+                ? "Basic EXIF metadata markers were detected. Consider exporting a clean publishing copy."
+                : "No obvious EXIF metadata marker was found in the first part of this JPEG file."}
+          </dd>
+        </div>
         <div className="flex items-start gap-2 rounded-lg bg-slate-50 p-3 text-slate-600 dark:bg-slate-950 dark:text-slate-400">
           <Info size={16} className="mt-0.5 shrink-0" aria-hidden="true" />
           <p>

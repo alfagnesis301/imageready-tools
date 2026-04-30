@@ -53,7 +53,7 @@ export function createPageMetadata({
 export function softwareApplicationJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "WebApplication",
     name: SITE_NAME,
     applicationCategory: "MultimediaApplication",
     operatingSystem: "Web browser",

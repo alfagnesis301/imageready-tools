@@ -96,14 +96,9 @@ The project is AdSense-ready but does not show fake ads.
 After Google AdSense approval:
 
 1. Replace `pub-XXXXXXXXXXXXXXXX` in `public/ads.txt` with your real Google AdSense publisher ID.
-2. Add approved AdSense script code only after verifying consent requirements for your target regions.
-3. Insert ad unit code inside `components/AdSlot.tsx` where the comment says:
-
-```tsx
-{/* Insert Google AdSense code here only after account approval. */}
-```
-
-4. If serving UK, EU or EEA users, wire ad script loading to the preferences stored by `components/CookieConsent.tsx`.
+2. Add `NEXT_PUBLIC_ADSENSE_CLIENT` in Netlify after account approval.
+3. Pass approved ad unit slot IDs to `components/AdSlot.tsx` only in content-safe locations.
+4. If serving UK, EU or EEA users, use a Google-certified CMP before loading personalized advertising.
 
 ## Optional Analytics
 

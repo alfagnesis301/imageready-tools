@@ -28,6 +28,12 @@ export default function AboutPage() {
           to a server for analysis, does not save user images and only uses localStorage for preferences
           such as theme, consent and the last selected preset.
         </p>
+        <h2>Original publishing guidance</h2>
+        <p>
+          Alongside the tool, PublishPixel publishes practical guides about image size, alt text,
+          metadata, compression, formats and photo privacy. The content is written for real creators
+          and site owners who need understandable checks before publishing.
+        </p>
         <h2>Who it is for</h2>
         <p>
           The tool is designed for bloggers, SEO professionals, creators, designers, students, product

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
+import { GUIDES } from "@/lib/guides";
 
 const routes = [
   "/",
@@ -16,14 +17,17 @@ const routes = [
   "/privacy-policy",
   "/terms",
   "/cookie-policy",
+  "/editorial-policy",
   "/disclaimer"
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
+  const guideRoutes = ["/guides", ...GUIDES.map((guide) => `/guides/${guide.slug}`)];
+
+  return [...routes, ...guideRoutes].map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: route === "/" ? "weekly" : "monthly",
-    priority: route === "/" ? 1 : route.includes("policy") || route.includes("terms") ? 0.4 : 0.8
+    priority: route === "/" ? 1 : route.includes("policy") || route.includes("terms") ? 0.4 : 0.75
   }));
 }

@@ -12,7 +12,7 @@ export default function TermsPage() {
       <article className="legal-doc">
         <p className="label">Legal</p>
         <h1>Terms of Use</h1>
-        <p>Last updated: April 28, 2026</p>
+        <p>Last updated: April 30, 2026</p>
         <h2>Free informational tool</h2>
         <p>
           PublishPixel is provided as a free informational utility. The recommendations are

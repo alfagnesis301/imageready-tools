@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
       <article className="legal-doc">
         <p className="label">Legal</p>
         <h1>Privacy Policy</h1>
-        <p>Last updated: April 28, 2026</p>
+        <p>Last updated: April 30, 2026</p>
         <h2>What PublishPixel processes</h2>
         <p>
           PublishPixel processes image files you choose locally in your browser to calculate
@@ -42,6 +42,13 @@ export default function PrivacyPolicyPage() {
           Google and its partners may use cookies, web beacons, IP address information and related
           technologies to provide, measure and personalize ads according to their policies and user
           consent requirements.
+        </p>
+        <p>
+          Third-party vendors, including Google, may use cookies to serve ads based on a user&apos;s
+          previous visits to this website or other websites. Google&apos;s use of advertising cookies
+          enables Google and its partners to serve ads based on visits to this site and/or other
+          sites on the Internet. Users may opt out of personalized advertising through Google Ads
+          Settings or other applicable industry opt-out tools.
         </p>
         <h2>Your choices and rights</h2>
         <p>

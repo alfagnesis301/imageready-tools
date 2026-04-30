@@ -12,7 +12,7 @@ export default function CookiePolicyPage() {
       <article className="legal-doc">
         <p className="label">Legal</p>
         <h1>Cookie Policy</h1>
-        <p>Last updated: April 28, 2026</p>
+        <p>Last updated: April 30, 2026</p>
         <h2>Essential storage</h2>
         <p>
           PublishPixel may use localStorage for essential preferences such as theme, consent state
@@ -23,6 +23,12 @@ export default function CookiePolicyPage() {
           Advertising cookies are not required for the tool to work. If Google AdSense is activated in
           the future, advertising cookies or similar technologies may be used according to Google
           policies and applicable consent requirements.
+        </p>
+        <p>
+          Third-party vendors, including Google, may use cookies to serve ads based on prior visits
+          to this website or other websites. Where required, PublishPixel should use a Google-certified
+          consent management platform before loading personalized advertising for UK, EEA or Swiss
+          users.
         </p>
         <h2>Analytics cookies</h2>
         <p>

@@ -65,7 +65,7 @@ export default function Footer() {
       </div>
       <div className="shell mt-10 border-t border-slate-200 pt-6 text-xs text-slate-500 dark:border-slate-800 dark:text-slate-500">
         <p>
-          © {new Date().getFullYear()} PublishPixel. Recommendations are estimates based on
+          Copyright {new Date().getFullYear()} PublishPixel. Recommendations are estimates based on
           common publishing patterns.
         </p>
         <p className="mt-2">Contact: {CONTACT_EMAIL}</p>

@@ -13,7 +13,7 @@ export default function DisclaimerPage() {
       <article className="legal-doc">
         <p className="label">Legal</p>
         <h1>Disclaimer</h1>
-        <p>Last updated: April 28, 2026</p>
+        <p>Last updated: April 30, 2026</p>
         <h2>Estimated recommendations</h2>
         <p>
           PublishPixel provides estimated recommendations based on browser-readable image

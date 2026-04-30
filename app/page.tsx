@@ -1,7 +1,9 @@
+import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
 import FAQ from "@/components/FAQ";
 import SmartPublishCheck from "@/components/SmartPublishCheck";
 import TrustBadges from "@/components/TrustBadges";
+import { GUIDES } from "@/lib/guides";
 import { faqJsonLd, softwareApplicationJsonLd, createPageMetadata } from "@/lib/seo";
 import { PRESET_ORDER, PUBLISH_RULES } from "@/lib/publishRules";
 
@@ -55,7 +57,7 @@ const homeFaq = [
   {
     question: "Is this tool free?",
     answer:
-      "Yes. The app is designed as a free browser-based utility. AdSense placeholders are prepared but no fake ads are shown."
+      "Yes. The app is designed as a free browser-based utility. AdSense support is prepared, but ads are not shown unless an approved publisher client is configured."
   },
   {
     question: "Should I verify official requirements?",
@@ -104,7 +106,7 @@ export default function HomePage() {
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300">
             Check if your image is ready for websites, SEO, social media, YouTube thumbnails,
-            e-commerce, email headers, and more — privately in your browser.
+            e-commerce, email headers, and more - privately in your browser.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href="#tool" className="button-primary">
@@ -169,6 +171,44 @@ export default function HomePage() {
         <AdSlot variant="sidebar" className="hidden lg:block" />
       </section>
 
+      <section className="shell py-14">
+        <div className="grid gap-10 lg:grid-cols-2">
+          <div>
+            <p className="label">Accessibility checklist</p>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+              Prepare images that more people can understand
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              Publishing readiness includes more than pixels. A useful image should have a purpose,
+              a readable crop and an alt text plan that describes the visible content honestly. If an
+              image is decorative, the final page should treat it that way instead of forcing noisy
+              alt text.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              PublishPixel gives filename and alt text structure guidance without inventing a visual
+              description. You stay in control of the final wording because you know the image and
+              page context best.
+            </p>
+          </div>
+          <div>
+            <p className="label">Performance checklist</p>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+              Catch heavy files before they slow a page
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              Large images can make a good page feel slow. Before publishing, check whether the file
+              is larger than the destination needs, whether the dimensions match the layout and
+              whether WebP or JPG would be a better export format.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              The browser-based export tools help create lighter previews for common workflows. They
+              are useful for preparation, while production sites should still use responsive image
+              markup and caching.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="border-y border-slate-200 bg-white/58 py-14 dark:border-slate-800 dark:bg-slate-950/35">
         <div className="shell grid gap-10 lg:grid-cols-2">
           <div>
@@ -189,6 +229,33 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="shell py-14">
+        <div className="max-w-3xl">
+          <p className="label">Related guides</p>
+          <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+            Learn the image publishing checklist
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+            These original guides explain the decisions behind the checker: image dimensions,
+            metadata, alt text, compression, privacy and format choice.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {GUIDES.slice(0, 8).map((guide) => (
+            <Link
+              key={guide.slug}
+              href={`/guides/${guide.slug}`}
+              className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-soft focus-ring dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
+            >
+              <h3 className="text-sm font-bold text-slate-950 dark:text-white">{guide.title}</h3>
+              <p className="mt-2 text-xs leading-5 text-slate-600 dark:text-slate-400">
+                {guide.description}
+              </p>
+            </Link>
+          ))}
         </div>
       </section>
 

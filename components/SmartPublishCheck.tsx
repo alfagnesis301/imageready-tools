@@ -34,6 +34,7 @@ export default function SmartPublishCheck({
   const [isLoading, setIsLoading] = useState(false);
   const [warning, setWarning] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [altText, setAltText] = useState("");
 
   useEffect(() => {
     if (initialPreset !== "website-blog") return;
@@ -52,6 +53,7 @@ export default function SmartPublishCheck({
   }, [objectUrl]);
 
   const result = useMemo(() => (analysis ? analyzeImageForPreset(analysis, preset) : null), [analysis, preset]);
+  const altTextScore = getAltTextScore(altText);
 
   async function handleFileAccepted(file: File, fileWarning?: string) {
     setIsLoading(true);
@@ -82,6 +84,7 @@ export default function SmartPublishCheck({
     setAnalysis(null);
     setWarning(null);
     setError(null);
+    setAltText("");
   }
 
   return (
@@ -99,6 +102,22 @@ export default function SmartPublishCheck({
         </div>
 
         <div className="grid gap-4">
+          <div className="grid gap-2">
+            <label htmlFor="alt-text-draft" className="label">
+              Draft alt text
+            </label>
+            <textarea
+              id="alt-text-draft"
+              className="input min-h-20"
+              value={altText}
+              onChange={(event) => setAltText(event.target.value)}
+              placeholder="Describe the visible subject and page context."
+            />
+            <p className="text-xs leading-5 text-slate-500 dark:text-slate-400">
+              Optional accessibility check. PublishPixel does not invent visual descriptions.
+            </p>
+          </div>
+
           <PlatformPresetSelector value={preset} onChange={setPreset} />
 
           {warning ? (
@@ -144,6 +163,7 @@ export default function SmartPublishCheck({
             <PublishScoreCard result={result} />
             <RecommendationPanel result={result} />
             <FormatRecommendation result={result} />
+            <AltTextCheck score={altTextScore} />
             <MetadataPanel analysis={analysis} />
           </div>
           <div className="grid gap-4 lg:col-span-2 lg:grid-cols-2">
@@ -153,5 +173,51 @@ export default function SmartPublishCheck({
         </div>
       ) : null}
     </section>
+  );
+}
+
+function getAltTextScore(altText: string): {
+  status: "Missing" | "Needs detail" | "Looks useful";
+  message: string;
+} {
+  const trimmed = altText.trim();
+  if (!trimmed) {
+    return {
+      status: "Missing",
+      message:
+        "Add alt text when the image communicates useful information. Decorative images can use empty alt text in final HTML."
+    };
+  }
+  if (trimmed.length < 20) {
+    return {
+      status: "Needs detail",
+      message:
+        "This alt text may be too short. Include the visible subject and the reason it matters on the page."
+    };
+  }
+  return {
+    status: "Looks useful",
+    message:
+      "The draft has enough length for a useful description. Check that it is accurate and avoids keyword stuffing."
+  };
+}
+
+function AltTextCheck({
+  score
+}: {
+  score: ReturnType<typeof getAltTextScore>;
+}) {
+  const colorClass =
+    score.status === "Looks useful"
+      ? "border-emerald-200 bg-emerald-50 text-emerald-900 dark:border-emerald-900/70 dark:bg-emerald-950/35 dark:text-emerald-100"
+      : score.status === "Needs detail"
+        ? "border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900/70 dark:bg-amber-950/35 dark:text-amber-100"
+        : "border-slate-200 bg-white/82 text-slate-700 dark:border-slate-800 dark:bg-slate-900/82 dark:text-slate-300";
+
+  return (
+    <div className={`rounded-lg border p-4 ${colorClass}`}>
+      <h3 className="text-sm font-bold">Alt text check: {score.status}</h3>
+      <p className="mt-2 text-sm leading-6">{score.message}</p>
+    </div>
   );
 }

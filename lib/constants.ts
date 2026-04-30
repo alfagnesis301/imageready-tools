@@ -20,13 +20,15 @@ export const NAV_LINKS = [
   { href: "/compress-image", label: "Compress" },
   { href: "/resize-image", label: "Resize" },
   { href: "/convert-image", label: "Convert" },
-  { href: "/social-media-image-sizes", label: "Sizes" }
+  { href: "/social-media-image-sizes", label: "Sizes" },
+  { href: "/guides", label: "Guides" }
 ];
 
 export const LEGAL_LINKS = [
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms" },
   { href: "/cookie-policy", label: "Cookie Policy" },
+  { href: "/editorial-policy", label: "Editorial Policy" },
   { href: "/disclaimer", label: "Disclaimer" }
 ];
 
