@@ -116,7 +116,7 @@ Analytics are not installed by default. If analytics are added later:
 
 ## Contact Form
 
-The contact page uses Netlify Forms with the form name `contact`. After deploying on Netlify, go to **Forms** and add an email notification so submissions are forwarded to `hello@publishpixel.net` or your preferred inbox.
+The contact page uses Netlify Forms with the form name `contact`. The required static detection form lives in `public/__forms.html`, and the React form posts to `/__forms.html` as recommended for modern Next.js on Netlify. After deploying on Netlify, go to **Forms** and add an email notification so submissions are forwarded to `hello@publishpixel.net` or your preferred inbox.
 
 ## Deploying to Vercel
 

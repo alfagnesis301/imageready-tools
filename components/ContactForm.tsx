@@ -18,11 +18,12 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({
           "form-name": "contact",
+          "bot-field": "",
           name,
           email,
           message
@@ -48,13 +49,11 @@ export default function ContactForm() {
     <form
       name="contact"
       method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
       onSubmit={submitMessage}
       className="panel grid gap-4 p-5"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <p className="hidden">
+      <p className="hidden" aria-hidden="true">
         <label>
           Do not fill this out: <input name="bot-field" tabIndex={-1} />
         </label>

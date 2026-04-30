@@ -26,12 +26,6 @@ export default function ContactPage() {
           </a>
         </p>
       </div>
-      <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-        <input type="hidden" name="form-name" value="contact" />
-        <input name="name" />
-        <input name="email" type="email" />
-        <textarea name="message" />
-      </form>
       <ContactForm />
     </section>
   );
