@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Free Image Compressor",
   description:
-    "Compress JPG, PNG and WebP images in your browser and estimate savings before downloading an optimized preview."
+    "Compress JPG, PNG and WebP images in your browser and estimate savings before downloading an optimized preview.",
+  path: "/compress-image"
 });
 
 const faqs = [
@@ -42,19 +43,22 @@ export default function CompressImagePage() {
         {
           heading: "What it does",
           paragraphs: [
-            "The compressor estimates output size, lets you adjust quality and exports a new image locally when the browser supports the chosen format."
+            "The compressor estimates output size, lets you adjust quality and exports a new image locally when the browser supports the chosen format.",
+            "Use it before uploading article images, product photos, thumbnails or campaign graphics so the file is lighter before it reaches a CMS or page builder."
           ]
         },
         {
           heading: "Format choices",
           paragraphs: [
-            "Use JPG for many photos, PNG when transparency or crisp graphics matter, and WebP when you want a modern balance of quality and size."
+            "Use JPG for many photos, PNG when transparency or crisp graphics matter, and WebP when you want a modern balance of quality and size.",
+            "If transparency is detected, keep a format that supports it unless you intentionally want a flattened background."
           ]
         },
         {
           heading: "When to compress",
           paragraphs: [
-            "Compression is useful before uploading blog images, hero images, product visuals, email graphics and social previews that may slow down loading."
+            "Compression is useful before uploading blog images, hero images, product visuals, email graphics and social previews that may slow down loading.",
+            "Compression does not replace responsive image markup, caching or a good hosting setup, but it can reduce unnecessary weight at the source."
           ]
         }
       ]}

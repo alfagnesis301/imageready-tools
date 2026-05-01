@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Instagram Image Size Checker",
   description:
-    "Check Instagram post and story image dimensions, aspect ratio and publishing readiness locally in your browser."
+    "Check Instagram post and story image dimensions, aspect ratio and publishing readiness locally in your browser.",
+  path: "/instagram-image-checker"
 });
 
 const faqs = [
@@ -42,19 +43,22 @@ export default function InstagramImageCheckerPage() {
         {
           heading: "Post guidance",
           paragraphs: [
-            "Common feed ratios include square 1:1, portrait 4:5 and landscape around 1.91:1."
+            "Common feed ratios include square 1:1, portrait 4:5 and landscape around 1.91:1.",
+            "A dedicated export helps protect the subject from unexpected cropping and keeps the feed image intentional."
           ]
         },
         {
           heading: "Story guidance",
           paragraphs: [
-            "Stories commonly use a 9:16 vertical frame such as 1080 x 1920 pixels. Keep important details away from interface areas."
+            "Stories commonly use a 9:16 vertical frame such as 1080 x 1920 pixels. Keep important details away from interface areas.",
+            "Vertical images should leave enough breathing room for captions, controls and profile UI."
           ]
         },
         {
           heading: "Ratio reminders",
           paragraphs: [
-            "A matching ratio helps reduce unexpected cropping and makes the final image feel more intentional."
+            "A matching ratio helps reduce unexpected cropping and makes the final image feel more intentional.",
+            "The checker gives ratio guidance, but final crop choices should still be reviewed in the publishing app."
           ]
         }
       ]}

@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Privacy Policy",
   description:
-    "Privacy Policy for PublishPixel, including local image analysis, localStorage preferences, analytics and AdSense preparation."
+    "Privacy Policy for PublishPixel, including local image analysis, localStorage preferences, analytics and AdSense preparation.",
+  path: "/privacy-policy"
 });
 
 export default function PrivacyPolicyPage() {

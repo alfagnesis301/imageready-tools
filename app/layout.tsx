@@ -9,7 +9,7 @@ import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | ${SITE_TAGLINE}`,
+    default: `${SITE_NAME} - Free Image Publishing Tools`,
     template: `%s | ${SITE_NAME}`
   },
   description:

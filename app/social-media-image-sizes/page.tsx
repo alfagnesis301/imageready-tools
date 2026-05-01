@@ -7,7 +7,8 @@ import { createPageMetadata, faqJsonLd } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Social Media Image Sizes Guide",
   description:
-    "A practical guide to common social media image sizes for Open Graph, YouTube, Instagram, LinkedIn, Pinterest, e-commerce and email."
+    "A practical guide to common social media image sizes for Open Graph, YouTube, Instagram, LinkedIn, Pinterest, e-commerce and email.",
+  path: "/social-media-image-sizes"
 });
 
 const faqs = [

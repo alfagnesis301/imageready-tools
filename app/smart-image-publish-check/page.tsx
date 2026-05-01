@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Smart Image Publish Check",
   description:
-    "Analyze image dimensions, file size, format, ratio and publishing readiness for websites, SEO, social media and more."
+    "Analyze image dimensions, file size, format, ratio and publishing readiness for websites, SEO, social media and more.",
+  path: "/smart-image-publish-check"
 });
 
 const faqs = [
@@ -42,19 +43,22 @@ export default function SmartImagePublishCheckPage() {
         {
           heading: "Purpose-built presets",
           paragraphs: [
-            "The checker includes presets for websites, SEO featured images, Open Graph, YouTube thumbnails, Instagram, LinkedIn, Pinterest, product photos, favicons, email headers and hero banners."
+            "The checker includes presets for websites, SEO featured images, Open Graph, YouTube thumbnails, Instagram, LinkedIn, Pinterest, product photos, favicons, email headers and hero banners.",
+            "Each preset uses practical dimensions, ratio expectations, recommended formats and file size targets so the report is tied to the intended destination."
           ]
         },
         {
           heading: "Actionable results",
           paragraphs: [
-            "The output focuses on practical next steps: resize, compress, convert format, keep transparency when needed or use a larger source file."
+            "The output focuses on practical next steps: resize, compress, convert format, keep transparency when needed or use a larger source file.",
+            "Recommendations use cautious language because third-party platforms can change their requirements and browser-readable image signals have limits."
           ]
         },
         {
           heading: "Private workflow",
           paragraphs: [
-            "The analysis uses browser APIs and does not upload your image. Optional exports are generated locally through Canvas when supported."
+            "The analysis uses browser APIs and does not upload your image. Optional exports are generated locally through Canvas when supported.",
+            "Images are not saved to localStorage. Only preferences such as theme, consent state and the last selected preset may be stored locally."
           ]
         }
       ]}

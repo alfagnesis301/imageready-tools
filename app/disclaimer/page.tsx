@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Disclaimer",
   description:
-    "Disclaimer for PublishPixel recommendations, platform requirements, SEO results and technical estimates."
+    "Disclaimer for PublishPixel recommendations, platform requirements, SEO results and technical estimates.",
+  path: "/disclaimer"
 });
 
 export default function DisclaimerPage() {

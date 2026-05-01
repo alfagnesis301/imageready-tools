@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Free Image Resizer",
   description:
-    "Resize images by width and height, lock aspect ratio and export common publishing sizes locally in your browser."
+    "Resize images by width and height, lock aspect ratio and export common publishing sizes locally in your browser.",
+  path: "/resize-image"
 });
 
 const faqs = [
@@ -42,19 +43,22 @@ export default function ResizeImagePage() {
         {
           heading: "Resize by dimensions",
           paragraphs: [
-            "Set a custom width and height or use common publishing presets for fast exports."
+            "Set a custom width and height or use common publishing presets for fast exports.",
+            "This is useful when a platform asks for a specific size, when a hero image is too large or when a product grid needs consistent image dimensions."
           ]
         },
         {
           heading: "Keep proportions",
           paragraphs: [
-            "Aspect ratio lock helps keep the image from looking stretched when only one dimension changes."
+            "Aspect ratio lock helps keep the image from looking stretched when only one dimension changes.",
+            "If the destination needs a different ratio, crop intentionally instead of stretching the file to fit a shape."
           ]
         },
         {
           heading: "Common use cases",
           paragraphs: [
-            "Use resizing for share previews, thumbnails, ecommerce grids, email headers and responsive website imagery."
+            "Use resizing for share previews, thumbnails, ecommerce grids, email headers and responsive website imagery.",
+            "For very small source images, resizing upward may meet a numeric target but it cannot restore missing detail, so the checker flags likely blurry results."
           ]
         }
       ]}

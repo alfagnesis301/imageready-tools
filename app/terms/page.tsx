@@ -3,7 +3,8 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Terms",
-  description: "Terms of use for PublishPixel."
+  description: "Terms of use for PublishPixel.",
+  path: "/terms"
 });
 
 export default function TermsPage() {

@@ -1,9 +1,10 @@
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "About PublishPixel",
+  title: "About",
   description:
-    "Learn about PublishPixel, a privacy-first browser utility for preparing images for publishing."
+    "Learn about PublishPixel, a privacy-first browser utility for preparing images for publishing.",
+  path: "/about"
 });
 
 export default function AboutPage() {

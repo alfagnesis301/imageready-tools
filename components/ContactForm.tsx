@@ -53,11 +53,12 @@ export default function ContactForm() {
       className="panel grid gap-4 p-5"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <p className="hidden" aria-hidden="true">
-        <label>
-          Do not fill this out: <input name="bot-field" tabIndex={-1} />
+      <div hidden aria-hidden="true">
+        <label htmlFor="contact-bot-field">
+          Do not fill this out:
+          <input id="contact-bot-field" name="bot-field" tabIndex={-1} autoComplete="off" />
         </label>
-      </p>
+      </div>
       <div className="grid gap-2">
         <label htmlFor="name" className="label">
           Name

@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "YouTube Thumbnail Size Checker",
   description:
-    "Check YouTube thumbnail dimensions, 16:9 ratio, file size and format recommendations privately in your browser."
+    "Check YouTube thumbnail dimensions, 16:9 ratio, file size and format recommendations privately in your browser.",
+  path: "/youtube-thumbnail-checker"
 });
 
 const faqs = [
@@ -42,19 +43,22 @@ export default function YouTubeThumbnailCheckerPage() {
         {
           heading: "Check dimensions",
           paragraphs: [
-            "The YouTube preset checks for a 1280 x 720 target and warns when the image is too small for a crisp thumbnail."
+            "The YouTube preset checks for a 1280 x 720 target and warns when the image is too small for a crisp thumbnail.",
+            "A larger source can be resized down cleanly, while a small source may look soft after export."
           ]
         },
         {
           heading: "Check ratio",
           paragraphs: [
-            "The 16:9 ratio is important because mismatched images may be cropped or boxed in ways that reduce impact."
+            "The 16:9 ratio is important because mismatched images may be cropped or boxed in ways that reduce impact.",
+            "Keep important faces, product details and text away from the edges because interfaces and preview surfaces can vary."
           ]
         },
         {
           heading: "Check file size",
           paragraphs: [
-            "The tool flags oversized files and offers browser-based export options to create a lighter version."
+            "The tool flags oversized files and offers browser-based export options to create a lighter version.",
+            "It does not read text inside the image or judge creative quality, so review contrast and readability yourself before uploading."
           ]
         }
       ]}

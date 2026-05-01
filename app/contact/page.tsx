@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Contact",
-  description: "Contact PublishPixel for feedback, privacy questions and product suggestions."
+  description: "Contact PublishPixel for feedback, privacy questions and product suggestions.",
+  path: "/contact"
 });
 
 export default function ContactPage() {

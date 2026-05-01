@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Free Image Converter",
   description:
-    "Convert compatible JPG, PNG and WebP images in your browser and choose practical output formats for publishing."
+    "Convert compatible JPG, PNG and WebP images in your browser and choose practical output formats for publishing.",
+  path: "/convert-image"
 });
 
 const faqs = [
@@ -42,19 +43,22 @@ export default function ConvertImagePage() {
         {
           heading: "Convert JPG, PNG and WebP",
           paragraphs: [
-            "Canvas export can create practical JPG, PNG and WebP versions for many browser-supported raster images."
+            "Canvas export can create practical JPG, PNG and WebP versions for many browser-supported raster images.",
+            "The conversion is designed for publishing copies, not for archival master files or professional prepress workflows."
           ]
         },
         {
           heading: "Format recommendations",
           paragraphs: [
-            "WebP is often useful for modern web publishing, JPG is common for photos, and PNG is useful when transparency or crisp graphics are important."
+            "WebP is often useful for modern web publishing, JPG is common for photos, and PNG is useful when transparency or crisp graphics are important.",
+            "PublishPixel recommends the output format based on the current file, transparency signal and selected publishing preset."
           ]
         },
         {
           heading: "Clear limitations",
           paragraphs: [
-            "Browser support differs. If a format cannot be exported, the app shows a clear message instead of pretending the conversion succeeded."
+            "Browser support differs. If a format cannot be exported, the app shows a clear message instead of pretending the conversion succeeded.",
+            "SVG files receive basic safety-conscious analysis, but the app does not execute user SVG markup or promise SVG-to-raster conversion."
           ]
         }
       ]}

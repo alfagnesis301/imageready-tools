@@ -171,6 +171,44 @@ export default function HomePage() {
         <AdSlot variant="sidebar" className="hidden lg:block" />
       </section>
 
+      <section className="border-y border-slate-200 bg-white/58 py-14 dark:border-slate-800 dark:bg-slate-950/35">
+        <div className="shell">
+          <div className="max-w-3xl">
+            <p className="label">Pre-publish workflow</p>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+              A practical pre-publish workflow for images
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              Many image tools focus only on compression or conversion. PublishPixel combines
+              multiple publishing checks in one workflow so you can review the image before it
+              reaches your CMS, store, campaign page or social post.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <h3 className="font-semibold text-slate-950 dark:text-white">Before uploading</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                Check dimensions, ratio, weight and format before the file enters your publishing
+                system.
+              </p>
+            </article>
+            <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <h3 className="font-semibold text-slate-950 dark:text-white">Before sharing</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                Prepare Open Graph, thumbnail and social crops so previews look intentional.
+              </p>
+            </article>
+            <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <h3 className="font-semibold text-slate-950 dark:text-white">Before archiving</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                Export a publishing copy instead of using the original file when privacy, metadata
+                or size matters.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="shell py-14">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>

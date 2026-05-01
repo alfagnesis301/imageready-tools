@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Website Image Optimizer",
   description:
-    "Analyze website images for size, speed, SEO filename guidance, WebP recommendations and browser-based optimization."
+    "Analyze website images for size, speed, SEO filename guidance, WebP recommendations and browser-based optimization.",
+  path: "/website-image-optimizer"
 });
 
 const faqs = [
@@ -42,19 +43,22 @@ export default function WebsiteImageOptimizerPage() {
         {
           heading: "SEO and speed",
           paragraphs: [
-            "The optimizer highlights large files, small source images and basic SEO filename structure so you can prepare assets before publishing."
+            "The optimizer highlights large files, small source images and basic SEO filename structure so you can prepare assets before publishing.",
+            "It is useful before images enter a CMS because naming, dimensions, format and compression are easier to fix while the file is still local."
           ]
         },
         {
           heading: "Compression",
           paragraphs: [
-            "Use the export panel to test a lighter version and compare estimated savings before adding the file to a website."
+            "Use the export panel to test a lighter version and compare estimated savings before adding the file to a website.",
+            "The goal is not the smallest possible file at any cost; it is a practical balance between visual quality and page weight."
           ]
         },
         {
           heading: "WebP recommendations",
           paragraphs: [
-            "For many website images, WebP may reduce weight while maintaining useful quality. Keep a compatibility plan for older or specialized environments."
+            "For many website images, WebP may reduce weight while maintaining useful quality. Keep a compatibility plan for older or specialized environments.",
+            "If the image needs transparency, the format recommendation changes so you do not accidentally flatten important transparent areas."
           ]
         }
       ]}
