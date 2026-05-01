@@ -41,6 +41,29 @@ export default function AboutPage() {
           teams, e-commerce sellers and small businesses that need a quick publishing check before an
           image goes live.
         </p>
+        <h2>How we keep recommendations responsible</h2>
+        <p>
+          PublishPixel avoids pretending that an automated browser check can fully judge visual
+          quality, copyright status, SEO ranking potential or final platform approval. The tool
+          focuses on signals that can be checked from the file and selected publishing context:
+          dimensions, ratio, file size, format, filename structure, alt text planning and export
+          options.
+        </p>
+        <p>
+          Our guides are written for practical publishing decisions, not exaggerated promises. When
+          a platform, client campaign, accessibility requirement or legal context matters, users
+          should verify the official requirements before publishing.
+        </p>
+        <h2>What PublishPixel does not do</h2>
+        <ul className="mt-4 grid gap-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
+          <li>It does not guarantee SEO rankings.</li>
+          <li>It does not verify copyright ownership or image permissions.</li>
+          <li>It does not promise approval from any social, search or advertising platform.</li>
+          <li>
+            It does not replace human review of image content, text readability, brand quality or
+            legal risk.
+          </li>
+        </ul>
       </article>
     </section>
   );

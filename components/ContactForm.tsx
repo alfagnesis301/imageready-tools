@@ -53,11 +53,18 @@ export default function ContactForm() {
       className="panel grid gap-4 p-5"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <div className="hidden" hidden aria-hidden="true">
-        <label htmlFor="contact-bot-field">
-          Do not fill this out:
-          <input id="contact-bot-field" name="bot-field" tabIndex={-1} autoComplete="off" />
-        </label>
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-10000px",
+          top: "auto",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden"
+        }}
+      >
+        <input id="contact-bot-field" name="bot-field" tabIndex={-1} autoComplete="off" />
       </div>
       <div className="grid gap-2">
         <label htmlFor="name" className="label">

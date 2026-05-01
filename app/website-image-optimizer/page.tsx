@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ToolSeoPage from "@/components/ToolSeoPage";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -63,6 +64,69 @@ export default function WebsiteImageOptimizerPage() {
         }
       ]}
       faqs={faqs}
-    />
+    >
+      <div className="mx-auto max-w-4xl">
+        <p className="label">Website image workflow</p>
+        <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+          Optimize the asset before it enters your CMS
+        </h2>
+        <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+          Many website image problems start before the file is uploaded. A file may have a vague
+          name, oversized dimensions, the wrong format or a file weight that is too heavy for the
+          role it plays on the page. PublishPixel helps you catch those issues while the file is
+          still local and easy to change.
+        </p>
+        <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+          This workflow is useful for blog images, landing page visuals, product photos, hero
+          sections, author portraits, documentation screenshots and support article graphics. The
+          goal is not to chase a perfect number, but to create a practical publishing copy that fits
+          the layout and remains clear for the reader.
+        </p>
+        <div className="mt-8 overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-white">
+              <tr>
+                <th className="p-4 font-extrabold">Signal</th>
+                <th className="p-4 font-extrabold">What to check</th>
+                <th className="p-4 font-extrabold">Why it matters</th>
+              </tr>
+            </thead>
+            <tbody className="text-slate-700 dark:text-slate-300">
+              <tr className="border-t border-slate-200 dark:border-slate-800">
+                <td className="p-4 font-semibold">Dimensions</td>
+                <td className="p-4">Match the largest real display size</td>
+                <td className="p-4">Avoid sending pixels users never see</td>
+              </tr>
+              <tr className="border-t border-slate-200 dark:border-slate-800">
+                <td className="p-4 font-semibold">File size</td>
+                <td className="p-4">Reduce unnecessary weight</td>
+                <td className="p-4">Helps page speed and upload workflow</td>
+              </tr>
+              <tr className="border-t border-slate-200 dark:border-slate-800">
+                <td className="p-4 font-semibold">Format</td>
+                <td className="p-4">Choose JPG, PNG or WebP intentionally</td>
+                <td className="p-4">Wrong formats can create heavy files</td>
+              </tr>
+              <tr className="border-t border-slate-200 dark:border-slate-800">
+                <td className="p-4 font-semibold">Filename</td>
+                <td className="p-4">Use readable hyphen-separated words</td>
+                <td className="p-4">Improves organization and image context</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <Link href="/smart-image-publish-check" className="rounded-lg border border-slate-200 bg-white p-5 text-sm font-semibold text-slate-950 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:text-white">
+            Run a full publish check
+          </Link>
+          <Link href="/compress-image" className="rounded-lg border border-slate-200 bg-white p-5 text-sm font-semibold text-slate-950 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:text-white">
+            Compress a website image
+          </Link>
+          <Link href="/guides/website-image-performance-checklist" className="rounded-lg border border-slate-200 bg-white p-5 text-sm font-semibold text-slate-950 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:text-white">
+            Read the performance checklist
+          </Link>
+        </div>
+      </div>
+    </ToolSeoPage>
   );
 }

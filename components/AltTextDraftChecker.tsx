@@ -7,6 +7,14 @@ function scoreAltText(value: string) {
   const issues: string[] = [];
   let score = 100;
 
+  if (!text) {
+    return {
+      score: null,
+      issues,
+      status: "empty" as const
+    };
+  }
+
   if (text.length < 20) {
     score -= 30;
     issues.push("Alt text may be too short to describe the useful image context.");
@@ -34,7 +42,8 @@ function scoreAltText(value: string) {
 
   return {
     score: Math.max(0, score),
-    issues
+    issues,
+    status: "scored" as const
   };
 }
 
@@ -55,21 +64,35 @@ export default function AltTextDraftChecker() {
         />
       </label>
       <div className="mt-5 rounded-lg bg-slate-50 p-5 dark:bg-slate-950">
-        <p className="text-sm text-slate-500 dark:text-slate-400">Structure score</p>
-        <p className="mt-1 text-4xl font-black text-slate-950 dark:text-white">
-          {result.score}/100
-        </p>
-        {result.issues.length ? (
-          <ul className="mt-4 grid gap-2 text-sm leading-6 text-slate-700 dark:text-slate-300">
-            {result.issues.map((issue) => (
-              <li key={issue}>- {issue}</li>
-            ))}
-          </ul>
+        {result.status === "empty" ? (
+          <>
+            <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+              Start by writing an alt text draft.
+            </p>
+            <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+              The checker will review length, generic wording and common structure issues after
+              you type.
+            </p>
+          </>
         ) : (
-          <p className="mt-4 text-sm leading-6 text-slate-700 dark:text-slate-300">
-            The draft has a practical length and avoids common generic wording. Check that it
-            accurately describes the visible content and page context.
-          </p>
+          <>
+            <p className="text-sm text-slate-500 dark:text-slate-400">Structure score</p>
+            <p className="mt-1 text-4xl font-black text-slate-950 dark:text-white">
+              {result.score}/100
+            </p>
+            {result.issues.length ? (
+              <ul className="mt-4 grid gap-2 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                {result.issues.map((issue) => (
+                  <li key={issue}>- {issue}</li>
+                ))}
+              </ul>
+            ) : (
+              <p className="mt-4 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                The draft has a practical length and avoids common generic wording. Check that it
+                accurately describes the visible content and page context.
+              </p>
+            )}
+          </>
         )}
       </div>
     </section>

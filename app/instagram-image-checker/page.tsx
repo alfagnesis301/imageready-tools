@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ToolSeoPage from "@/components/ToolSeoPage";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -63,6 +64,69 @@ export default function InstagramImageCheckerPage() {
         }
       ]}
       faqs={faqs}
-    />
+    >
+      <div className="mx-auto max-w-4xl">
+        <p className="label">Instagram export workflow</p>
+        <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+          Prepare separate exports for feed, portrait and story formats
+        </h2>
+        <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+          Instagram images are often reused across different placements, but a square post, a
+          portrait feed image and a vertical story do not share the same visual space. A dedicated
+          export helps protect the focal point, reduce awkward crops and keep text readable on
+          mobile screens.
+        </p>
+        <div className="mt-8 overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-white">
+              <tr>
+                <th className="p-4 font-extrabold">Placement</th>
+                <th className="p-4 font-extrabold">Common size</th>
+                <th className="p-4 font-extrabold">Practical note</th>
+              </tr>
+            </thead>
+            <tbody className="text-slate-700 dark:text-slate-300">
+              <tr className="border-t border-slate-200 dark:border-slate-800">
+                <td className="p-4 font-semibold">Square feed post</td>
+                <td className="p-4">1080 x 1080 px</td>
+                <td className="p-4">Good for product grids and balanced compositions.</td>
+              </tr>
+              <tr className="border-t border-slate-200 dark:border-slate-800">
+                <td className="p-4 font-semibold">Portrait feed post</td>
+                <td className="p-4">1080 x 1350 px</td>
+                <td className="p-4">Often gives more vertical space in the feed.</td>
+              </tr>
+              <tr className="border-t border-slate-200 dark:border-slate-800">
+                <td className="p-4 font-semibold">Landscape post</td>
+                <td className="p-4">1080 x 566 px</td>
+                <td className="p-4">Useful for wide scenes, but text can become small.</td>
+              </tr>
+              <tr className="border-t border-slate-200 dark:border-slate-800">
+                <td className="p-4 font-semibold">Story or Reel cover</td>
+                <td className="p-4">1080 x 1920 px</td>
+                <td className="p-4">Keep important details away from UI areas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950">
+          <h3 className="text-xl font-extrabold text-slate-950 dark:text-white">
+            Instagram export checklist
+          </h3>
+          <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
+            <li>Create a separate export for feed and story placements.</li>
+            <li>Keep faces, products and key text away from the extreme edges.</li>
+            <li>Review the image on a phone-sized screen before publishing.</li>
+            <li>Compress the final export without blurring text or product details.</li>
+            <li>Verify the final upload in Instagram because the app can still recompress media.</li>
+          </ul>
+        </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="/social-media-image-sizes" className="button-secondary">Size guide</Link>
+          <Link href="/resize-image" className="button-secondary">Resize image</Link>
+          <Link href="/guides/social-media-image-sizes" className="button-primary">Read social guide</Link>
+        </div>
+      </div>
+    </ToolSeoPage>
   );
 }

@@ -68,6 +68,44 @@ export default function ImageMetadataCheckerPage() {
             metadata, but it should not be treated as a perfect privacy guarantee across every
             browser, file type or workflow.
           </p>
+          <div className="mt-10">
+            <h2 className="text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+              Metadata and visible privacy risks are different
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              Removing metadata is only one part of safe publishing. A photo can have no readable
+              EXIF data and still reveal private information through visible details such as
+              addresses, documents, screens, badges, reflections or location clues in the background.
+            </p>
+            <div className="mt-8 overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-white">
+                  <tr>
+                    <th className="p-4 font-extrabold">Risk type</th>
+                    <th className="p-4 font-extrabold">Example</th>
+                    <th className="p-4 font-extrabold">Action before publishing</th>
+                  </tr>
+                </thead>
+                <tbody className="text-slate-700 dark:text-slate-300">
+                  <tr className="border-t border-slate-200 dark:border-slate-800">
+                    <td className="p-4 font-semibold">Embedded metadata</td>
+                    <td className="p-4">Camera data, timestamps, GPS-related fields</td>
+                    <td className="p-4">Export a clean copy and verify with a dedicated tool.</td>
+                  </tr>
+                  <tr className="border-t border-slate-200 dark:border-slate-800">
+                    <td className="p-4 font-semibold">Visible personal details</td>
+                    <td className="p-4">Names, documents, screens, IDs or addresses</td>
+                    <td className="p-4">Crop, blur or choose a safer image.</td>
+                  </tr>
+                  <tr className="border-t border-slate-200 dark:border-slate-800">
+                    <td className="p-4 font-semibold">Location clues</td>
+                    <td className="p-4">Street signs, reflections, landmarks or house numbers</td>
+                    <td className="p-4">Review the full image, including background details.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
           <div className="mt-8 rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
             <h3 className="text-xl font-extrabold text-slate-950 dark:text-white">
               Photo privacy checklist
