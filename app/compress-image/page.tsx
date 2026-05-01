@@ -135,6 +135,37 @@ export default function CompressImagePage() {
           </article>
         </div>
 
+        <section className="mt-10">
+          <h3 className="text-2xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+            Common compression mistakes
+          </h3>
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            {[
+              [
+                "Compressing the original instead of a copy",
+                "Keep the original file untouched. Export a publishing copy so you can always return to the high-quality source later."
+              ],
+              [
+                "Choosing JPG for transparent graphics",
+                "JPG does not support transparency. Use PNG or WebP if the image needs a transparent background."
+              ],
+              [
+                "Over-compressing product images",
+                "Product details, fabric textures, labels and edges can suffer when compression is too aggressive."
+              ],
+              [
+                "Ignoring dimensions",
+                "A compressed 5000px image can still be too large. Resize and compress together for better publishing results."
+              ]
+            ].map(([title, body]) => (
+              <article key={title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <h4 className="font-bold text-slate-950 dark:text-white">{title}</h4>
+                <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">{body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <div className="mt-8 rounded-lg border border-blue-200 bg-blue-50 p-5 dark:border-blue-900/70 dark:bg-blue-950/35">
           <h3 className="text-lg font-extrabold text-slate-950 dark:text-white">
             Continue the publishing check

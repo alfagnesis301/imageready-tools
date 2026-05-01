@@ -764,5 +764,337 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
     relatedLinks: standardRelatedLinks,
     disclaimer:
       "This guide is informational and does not replace legal, security or privacy advice for high-risk publishing situations."
+  },
+  "image-publishing-checklist": {
+    updatedAt: "May 1, 2026",
+    author: "PublishPixel Editorial Team",
+    overview: [
+      "A practical image publishing checklist prevents the most common problems before an image reaches a public page. The goal is to catch issues while the file is still easy to change: oversized dimensions, heavy file weight, weak filenames, missing alt text, privacy concerns and social preview crops.",
+      "This workflow is useful for solo creators and teams because it creates a repeatable review step. Instead of asking whether an image looks good in isolation, ask whether it is ready for the exact place it will appear."
+    ],
+    tableTitle: "Pre-publish image checklist table",
+    tableIntro:
+      "Use this table as a quick editorial and technical review before uploading an image.",
+    table: {
+      columns: ["Check", "What to review", "Why it matters"],
+      rows: [
+        ["Destination", "Blog, product, preview, email or social post", "Sets the correct size and ratio"],
+        ["Dimensions", "Width, height and aspect ratio", "Prevents blurry or oversized exports"],
+        ["File weight", "Compressed size for the placement", "Supports faster loading"],
+        ["Filename", "Readable hyphen-separated words", "Improves asset organization"],
+        ["Privacy", "Visible details and metadata signals", "Reduces accidental exposure"]
+      ]
+    },
+    checklistTitle: "Complete image publishing checklist",
+    checklist: [
+      {
+        title: "Choose the destination",
+        body: "Start with the final placement. A hero banner, Open Graph image and product grid image should not be exported with the same assumptions."
+      },
+      {
+        title: "Create a publishing copy",
+        body: "Keep the original file untouched and export a separate version for the website, CMS, store or campaign."
+      },
+      {
+        title: "Check filename and alt text",
+        body: "Use a readable filename and draft alt text when the image communicates useful information."
+      },
+      {
+        title: "Review metadata and visible details",
+        body: "Look for private information in both the file and the image itself before publishing."
+      }
+    ],
+    mistakesTitle: "Common publishing checklist mistakes",
+    mistakes: [
+      {
+        title: "Checking only compression",
+        body: "A light file can still be the wrong crop, wrong format or too small for the intended placement."
+      },
+      {
+        title: "Using generic filenames",
+        body: "Camera and screenshot names make assets harder to manage and less clear inside publishing workflows."
+      },
+      {
+        title: "Leaving preview crops to chance",
+        body: "Important pages deserve dedicated social and Open Graph images so previews look intentional."
+      },
+      {
+        title: "Publishing original photos",
+        body: "Original files may contain unnecessary dimensions or metadata. A reviewed export is usually safer."
+      }
+    ],
+    howPublishPixelHelps: [
+      "PublishPixel combines size, ratio, format, filename, alt text and metadata awareness in one browser-based workflow.",
+      "The PublishReady Report gives a copyable summary that can be used as a lightweight handoff for editorial or content teams.",
+      "The tool does not upload the image, so it is practical for checking files before they enter a public publishing system."
+    ],
+    faqs: [
+      {
+        question: "Is this checklist only for SEO?",
+        answer: "No. It covers SEO, accessibility, privacy, performance and social preview readiness."
+      },
+      {
+        question: "Should every image be compressed?",
+        answer: "Most images should be reviewed, but very small or already optimized assets may not need another export."
+      },
+      {
+        question: "Can one image be ready for every platform?",
+        answer: "Sometimes, but important campaigns usually need dedicated crops for different destinations."
+      },
+      {
+        question: "Does PublishPixel replace platform requirements?",
+        answer: "No. It gives practical estimates and reminders. Verify official requirements for critical uploads."
+      }
+    ],
+    relatedLinks: standardRelatedLinks
+  },
+  "open-graph-image-best-practices": {
+    updatedAt: "May 1, 2026",
+    author: "PublishPixel Editorial Team",
+    overview: [
+      "Open Graph images act like visual invitations for your pages. They can appear in link previews across social platforms, chat apps and publishing tools, so a weak crop can make a strong page look unfinished.",
+      "The best Open Graph workflow uses a dedicated wide image, centered focal content, readable text and a file size that does not slow down the page. It should support the page title rather than compete with it."
+    ],
+    tableTitle: "Open Graph planning table",
+    tableIntro:
+      "These practical targets help reduce preview problems before a page is shared.",
+    table: {
+      columns: ["Signal", "Practical target", "Risk if ignored"],
+      rows: [
+        ["Dimensions", "1200 x 630 px", "Low-quality or inconsistent previews"],
+        ["Aspect ratio", "About 1.91:1", "Unexpected cropping"],
+        ["Safe area", "Centered subject and text", "Important content cut off"],
+        ["Format", "JPG or PNG for broad sharing", "Compatibility issues"],
+        ["Weight", "Compressed but clear", "Slower page delivery"]
+      ]
+    },
+    checklistTitle: "Open Graph pre-publish checklist",
+    checklist: [
+      {
+        title: "Use a dedicated preview image",
+        body: "Do not rely on the first image in an article when the page matters for sharing."
+      },
+      {
+        title: "Keep the focal point centered",
+        body: "Preview surfaces can crop differently, so important details should not sit on the edge."
+      },
+      {
+        title: "Make text readable",
+        body: "Use fewer words and larger type. Mobile previews make small text hard to read."
+      },
+      {
+        title: "Test the final URL",
+        body: "After publishing, inspect the preview using the platforms or tools that matter for your audience."
+      }
+    ],
+    mistakesTitle: "Common Open Graph mistakes",
+    mistakes: [
+      {
+        title: "Using the hero crop unchanged",
+        body: "A page hero may be too wide, too tall or too text-heavy for preview cards."
+      },
+      {
+        title: "Putting logos and text at the edges",
+        body: "Edges are the first place crops and overlays create problems."
+      },
+      {
+        title: "Exporting huge preview files",
+        body: "A preview image should be clear, but it does not need to be a large original."
+      },
+      {
+        title: "Forgetting page metadata",
+        body: "The preview image works best with a matching title and description."
+      }
+    ],
+    howPublishPixelHelps: [
+      "The Open Graph preset checks the common 1200 x 630 target, ratio, file weight and format guidance.",
+      "The preview simulator shows a wide crop so you can see whether the image has a useful focal area.",
+      "The report gives a copyable summary for editors or developers before the page goes live."
+    ],
+    faqs: [
+      {
+        question: "Is 1200 x 630 required everywhere?",
+        answer: "No, but it is a common practical target for wide preview cards."
+      },
+      {
+        question: "Can Open Graph previews crop differently?",
+        answer: "Yes. Apps and platforms can render previews differently, so use safe margins."
+      },
+      {
+        question: "Should preview images include text?",
+        answer: "They can, but keep text short, large and centered."
+      },
+      {
+        question: "Should I use WebP for Open Graph?",
+        answer: "WebP can be useful on websites, but JPG and PNG remain common for broad sharing compatibility."
+      }
+    ],
+    relatedLinks: standardRelatedLinks
+  },
+  "youtube-thumbnail-image-guide": {
+    updatedAt: "May 1, 2026",
+    author: "PublishPixel Editorial Team",
+    overview: [
+      "A YouTube thumbnail has to work at small sizes, in busy feeds and on mobile screens. Technical dimensions matter, but visual clarity matters just as much.",
+      "A good thumbnail export uses a 16:9 frame, a clear focal point, readable contrast and a dedicated file rather than an accidental screenshot."
+    ],
+    tableTitle: "Thumbnail readiness table",
+    tableIntro:
+      "Use these checks to prepare a thumbnail image before upload.",
+    table: {
+      columns: ["Check", "Practical target", "Why it matters"],
+      rows: [
+        ["Dimensions", "1280 x 720 px", "Common 16:9 thumbnail size"],
+        ["Focal point", "Large and obvious", "Works in small feeds"],
+        ["Text", "Short and high contrast", "Improves mobile readability"],
+        ["Edges", "Safe margins", "Reduces overlay and crop problems"],
+        ["File", "Compressed JPG or PNG", "Supports smoother upload"]
+      ]
+    },
+    checklistTitle: "YouTube thumbnail checklist",
+    checklist: [
+      {
+        title: "Use a 16:9 canvas",
+        body: "Start with a wide 16:9 frame so the thumbnail fits common video surfaces."
+      },
+      {
+        title: "Prioritize one clear idea",
+        body: "A thumbnail with one obvious subject usually reads better than a busy collage."
+      },
+      {
+        title: "Check text at small sizes",
+        body: "Zoom out and make sure any text remains readable on mobile."
+      },
+      {
+        title: "Export a dedicated thumbnail",
+        body: "A designed thumbnail usually communicates better than a random video frame."
+      }
+    ],
+    mistakesTitle: "Common thumbnail mistakes",
+    mistakes: [
+      {
+        title: "Using tiny text",
+        body: "Small text often disappears in mobile feeds and search results."
+      },
+      {
+        title: "Crowding the edges",
+        body: "Interface overlays and crops can cover edge content."
+      },
+      {
+        title: "Over-compressing faces",
+        body: "Faces and product details can look poor when compression is too aggressive."
+      },
+      {
+        title: "Ignoring the source quality",
+        body: "A small or blurry source image cannot become sharp just by resizing."
+      }
+    ],
+    howPublishPixelHelps: [
+      "The YouTube preset checks 1280 x 720 dimensions, 16:9 ratio, file weight and format guidance.",
+      "PublishPixel flags small source files and gives a clear resize recommendation before upload.",
+      "The report helps creators document the recommended next step for a thumbnail asset."
+    ],
+    faqs: [
+      {
+        question: "What size is practical for a YouTube thumbnail?",
+        answer: "A common practical target is 1280 x 720 pixels with a 16:9 ratio."
+      },
+      {
+        question: "Does PublishPixel judge thumbnail design quality?",
+        answer: "No. It checks technical readiness and gives general composition reminders."
+      },
+      {
+        question: "Can I resize a small image into a thumbnail?",
+        answer: "You can resize it, but upscaling does not restore missing detail."
+      },
+      {
+        question: "Should I compress thumbnails?",
+        answer: "Yes, but keep faces, text and focal details clear enough for small previews."
+      }
+    ],
+    relatedLinks: standardRelatedLinks
+  },
+  "website-image-performance-checklist": {
+    updatedAt: "May 1, 2026",
+    author: "PublishPixel Editorial Team",
+    overview: [
+      "Website image performance begins before upload. Oversized originals, inefficient formats and uncompressed exports can make pages slower before code-level optimizations even start.",
+      "A useful performance checklist connects the asset workflow with the production page: dimensions, compression, format, responsive delivery, caching and loading behavior."
+    ],
+    tableTitle: "Website image performance table",
+    tableIntro:
+      "Use these checks to reduce avoidable image weight before publishing.",
+    table: {
+      columns: ["Area", "Practical action", "Performance benefit"],
+      rows: [
+        ["Dimensions", "Resize to the layout maximum", "Avoids unused pixels"],
+        ["Format", "Use WebP/JPG/PNG based on content", "Improves compression fit"],
+        ["Quality", "Compress carefully", "Reduces file weight"],
+        ["Responsive delivery", "Serve appropriate sizes", "Improves mobile loading"],
+        ["Metadata", "Remove unnecessary data", "Can reduce file size and privacy risk"]
+      ]
+    },
+    checklistTitle: "Website image performance checklist",
+    checklist: [
+      {
+        title: "Resize before upload",
+        body: "Prepare an image close to the largest size it will actually need."
+      },
+      {
+        title: "Use a suitable format",
+        body: "Choose WebP, JPEG, PNG or SVG based on image content and transparency needs."
+      },
+      {
+        title: "Compress and inspect",
+        body: "Reduce file size while checking visual details that reveal quality loss."
+      },
+      {
+        title: "Plan production delivery",
+        body: "Use responsive image markup, caching and appropriate lazy loading where possible."
+      }
+    ],
+    mistakesTitle: "Common performance mistakes",
+    mistakes: [
+      {
+        title: "Uploading originals",
+        body: "Camera originals are usually too large for direct website use."
+      },
+      {
+        title: "Compressing without resizing",
+        body: "An oversized image can remain heavy even after compression."
+      },
+      {
+        title: "Using PNG for large photos",
+        body: "PNG is often inefficient for photos without transparency."
+      },
+      {
+        title: "Ignoring mobile users",
+        body: "Large desktop assets can punish mobile performance if responsive delivery is not planned."
+      }
+    ],
+    howPublishPixelHelps: [
+      "PublishPixel checks image weight, dimensions, format and estimated compression opportunity before upload.",
+      "The Website / Blog and Hero Banner presets help identify oversized or undersized assets for common page placements.",
+      "The export tools create a publishing copy that can then be used inside a production responsive image workflow."
+    ],
+    faqs: [
+      {
+        question: "Can image optimization alone guarantee fast pages?",
+        answer: "No. It helps, but hosting, caching, JavaScript, CSS and responsive markup also matter."
+      },
+      {
+        question: "Is WebP always the best format?",
+        answer: "No. It is often useful, but PNG, JPEG or SVG can be better depending on the image."
+      },
+      {
+        question: "Should every image be lazy loaded?",
+        answer: "Not always. Above-the-fold hero images may need different loading treatment than below-the-fold content."
+      },
+      {
+        question: "What is the first image performance step?",
+        answer: "Resize the asset to a practical maximum for its final layout, then compress it."
+      }
+    ],
+    relatedLinks: standardRelatedLinks
   }
 };

@@ -24,6 +24,15 @@ export const NAV_LINKS = [
   { href: "/guides", label: "Guides" }
 ];
 
+export const SPECIALIZED_TOOL_LINKS = [
+  { href: "/open-graph-image-checker", label: "Open Graph Checker" },
+  { href: "/youtube-thumbnail-checker", label: "YouTube Thumbnail Checker" },
+  { href: "/image-alt-text-checker", label: "Alt Text Checker" },
+  { href: "/image-metadata-checker", label: "Metadata Checker" },
+  { href: "/website-image-optimizer", label: "Website Image Optimizer" },
+  { href: "/instagram-image-checker", label: "Instagram Checker" }
+];
+
 export const LEGAL_LINKS = [
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms" },

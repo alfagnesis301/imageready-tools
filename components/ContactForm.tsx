@@ -102,7 +102,8 @@ export default function ContactForm() {
         />
       </div>
       <p className="text-xs leading-5 text-slate-500 dark:text-slate-400">
-        Please do not send sensitive images or private files through this form.
+        Please do not send sensitive images, private files or confidential visual material through
+        this form.
       </p>
       <button type="submit" className="button-primary" disabled={isSubmitting}>
         {isSubmitting ? (

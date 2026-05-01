@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Logo from "./Logo";
-import { CONTACT_EMAIL, LEGAL_LINKS, NAV_LINKS, SITE_TAGLINE } from "@/lib/constants";
+import {
+  CONTACT_EMAIL,
+  LEGAL_LINKS,
+  NAV_LINKS,
+  SITE_TAGLINE,
+  SPECIALIZED_TOOL_LINKS
+} from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -18,7 +24,7 @@ export default function Footer() {
         <div>
           <h2 className="text-sm font-bold text-slate-950 dark:text-white">Tools</h2>
           <ul className="mt-3 grid gap-2 text-sm">
-            {NAV_LINKS.map((link) => (
+            {[...NAV_LINKS, ...SPECIALIZED_TOOL_LINKS].map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}

@@ -31,6 +31,14 @@ export default function CookiePolicyPage() {
           consent management platform before loading personalized advertising for UK, EEA or Swiss
           users.
         </p>
+        <h2>Advertising consent</h2>
+        <p>
+          If PublishPixel displays Google ads, users in regions where consent is required may see a
+          consent message before advertising cookies or personalized advertising features are used.
+          For users in the EEA, the UK and Switzerland, we aim to use a Google-certified Consent
+          Management Platform integrated with the IAB Transparency and Consent Framework when
+          required.
+        </p>
         <h2>Analytics cookies</h2>
         <p>
           Analytics are optional. If analytics are added, the site should respect consent choices before

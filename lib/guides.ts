@@ -330,6 +330,166 @@ export const GUIDES: Guide[] = [
     ],
     takeaway:
       "Before publishing a photo, review visible details, hidden metadata and whether you have the right to share it."
+  },
+  {
+    slug: "image-publishing-checklist",
+    title: "Image Publishing Checklist Before Uploading Online",
+    description:
+      "A practical pre-publish checklist for image size, format, alt text, filename, metadata and preview readiness.",
+    intro:
+      "Publishing an image is not just an upload step. A strong workflow checks whether the image is clear, lightweight, private, accessible and prepared for the place where it will appear.",
+    sections: [
+      {
+        heading: "Review the destination first",
+        body: [
+          "A blog image, social preview, product image and email header all need different dimensions and formats. Start with the destination instead of exporting one universal file.",
+          "When the destination is clear, it becomes easier to choose a crop, maximum width, target file size and format."
+        ]
+      },
+      {
+        heading: "Prepare a publishing copy",
+        body: [
+          "Keep the original source file private and export a dedicated copy for the website, CMS, social campaign or store.",
+          "A publishing copy can be resized, compressed, renamed and checked without damaging the master image."
+        ]
+      },
+      {
+        heading: "Check accessibility and context",
+        body: [
+          "Useful images should have an alt text plan when they communicate information. Decorative images should be handled differently in final HTML.",
+          "A clear filename and relevant surrounding page content also make the asset easier to manage."
+        ]
+      },
+      {
+        heading: "Verify privacy and metadata",
+        body: [
+          "Review visible details and browser-readable metadata before publishing personal or sensitive photos.",
+          "For high-risk situations, use dedicated privacy tools and verify the final exported file."
+        ]
+      }
+    ],
+    takeaway:
+      "A complete image publishing workflow checks destination, dimensions, weight, format, filename, alt text and privacy before upload."
+  },
+  {
+    slug: "open-graph-image-best-practices",
+    title: "Open Graph Image Best Practices for Better Link Previews",
+    description:
+      "Prepare Open Graph images with practical dimensions, safe crop areas, readable text and lightweight exports.",
+    intro:
+      "Open Graph images shape how a page looks when it is shared. A poor crop, heavy file or unreadable text can make a useful page look unfinished in previews.",
+    sections: [
+      {
+        heading: "Use a dedicated preview image",
+        body: [
+          "Important pages usually deserve a dedicated Open Graph image instead of relying on a random inline image.",
+          "A dedicated preview gives you more control over crop, focal point, text size and brand consistency."
+        ]
+      },
+      {
+        heading: "Keep the crop safe",
+        body: [
+          "A common target is 1200 x 630 pixels, but preview surfaces can still vary across apps.",
+          "Keep faces, products, logos and text away from the extreme edges so important content is not hidden."
+        ]
+      },
+      {
+        heading: "Balance size and quality",
+        body: [
+          "A preview image should be clear, but it does not need to be an oversized camera original.",
+          "Compress the file and inspect small text, gradients and edges before publishing."
+        ]
+      },
+      {
+        heading: "Match page metadata",
+        body: [
+          "The image works best when the page title, description and visual message all point in the same direction.",
+          "After publishing, test the final URL in the platforms or tools that matter for the campaign."
+        ]
+      }
+    ],
+    takeaway:
+      "A strong Open Graph image is a dedicated, lightweight, wide preview with centered important content and matching page metadata."
+  },
+  {
+    slug: "youtube-thumbnail-image-guide",
+    title: "YouTube Thumbnail Image Guide for Clearer Video Previews",
+    description:
+      "Prepare YouTube thumbnail images with practical dimensions, readable text, safe areas and focused visual composition.",
+    intro:
+      "A thumbnail has to communicate quickly at small sizes. The best technical export will still underperform visually if the focal point, contrast or text is unclear.",
+    sections: [
+      {
+        heading: "Start with the 16:9 frame",
+        body: [
+          "A common practical thumbnail target is 1280 x 720 pixels. This gives a wide frame that works across many video surfaces.",
+          "Use a source image with enough detail so the export remains sharp after resizing and compression."
+        ]
+      },
+      {
+        heading: "Make the focal point obvious",
+        body: [
+          "Faces, products, outcomes or key visual subjects should be recognizable even when the thumbnail is small.",
+          "Avoid cluttered backgrounds and tiny details that disappear in mobile feeds."
+        ]
+      },
+      {
+        heading: "Use text carefully",
+        body: [
+          "If you include text, keep it short, large and high contrast. More words usually make the design weaker at thumbnail size.",
+          "Leave breathing room around text and avoid putting key words at the extreme edges."
+        ]
+      },
+      {
+        heading: "Export a dedicated file",
+        body: [
+          "A random video frame can work, but important videos usually benefit from a designed thumbnail image.",
+          "Check dimensions, file size and format before uploading the final asset."
+        ]
+      }
+    ],
+    takeaway:
+      "A useful YouTube thumbnail combines a 16:9 export, clear focal point, readable text and a file that is light enough to upload smoothly."
+  },
+  {
+    slug: "website-image-performance-checklist",
+    title: "Website Image Performance Checklist",
+    description:
+      "Improve page speed by reviewing image dimensions, file size, format, responsive delivery and publishing workflow.",
+    intro:
+      "Images often carry the biggest avoidable weight on a page. A practical performance workflow starts before upload and continues through responsive delivery.",
+    sections: [
+      {
+        heading: "Resize to the layout",
+        body: [
+          "Do not upload a huge original when the final layout needs a much smaller image. Resize the publishing copy to a realistic maximum.",
+          "Hero images may need more width than article thumbnails, but every placement should have a reason for its dimensions."
+        ]
+      },
+      {
+        heading: "Choose the right format",
+        body: [
+          "WebP is often useful for modern sites, JPEG remains practical for photos and PNG is useful for transparency or crisp graphics.",
+          "The right format depends on content, transparency needs and compatibility requirements."
+        ]
+      },
+      {
+        heading: "Compress carefully",
+        body: [
+          "Compression should reduce weight without destroying important visual information.",
+          "Inspect text, product details, faces and gradients after export because those areas reveal quality loss quickly."
+        ]
+      },
+      {
+        heading: "Plan responsive delivery",
+        body: [
+          "The file you prepare is only part of the performance story. Production sites should still use responsive image markup, caching and appropriate loading behavior.",
+          "A clean source asset makes those downstream optimizations easier."
+        ]
+      }
+    ],
+    takeaway:
+      "Website image performance improves when dimensions, format, compression and responsive delivery are planned together."
   }
 ];
 

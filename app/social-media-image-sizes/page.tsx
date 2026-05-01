@@ -116,6 +116,39 @@ export default function SocialMediaImageSizesPage() {
       </section>
 
       <section className="shell py-14">
+        <div className="mx-auto max-w-4xl">
+          <p className="label">Multi-platform workflow</p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+            How to prepare one image for multiple social platforms
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+            A single image rarely fits every platform perfectly. A wide Open Graph card, a square
+            Instagram post, a vertical Story and a tall Pinterest pin all use different visual
+            spaces. For important campaigns, start with a large master file and create dedicated
+            exports for each destination.
+          </p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+            Keep important faces, products, text and logos away from the extreme edges. Platform
+            interfaces, captions, overlays and preview crops can hide or cut off details near the
+            border.
+          </p>
+          <div className="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900/70">
+            <h3 className="text-xl font-extrabold text-slate-950 dark:text-white">
+              Social image export checklist
+            </h3>
+            <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
+              <li>Choose the destination before resizing.</li>
+              <li>Keep the focal point near the center-safe area.</li>
+              <li>Create a separate Open Graph image for important pages.</li>
+              <li>Check text readability on mobile previews.</li>
+              <li>Compress the final export without blurring key details.</li>
+              <li>Verify official platform requirements for critical campaigns.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="shell py-14">
         <div className="max-w-3xl">
           <p className="label">FAQ</p>
           <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
