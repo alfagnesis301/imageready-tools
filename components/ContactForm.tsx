@@ -53,7 +53,7 @@ export default function ContactForm() {
       className="panel grid gap-4 p-5"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <div hidden aria-hidden="true">
+      <div className="hidden" hidden aria-hidden="true">
         <label htmlFor="contact-bot-field">
           Do not fill this out:
           <input id="contact-bot-field" name="bot-field" tabIndex={-1} autoComplete="off" />
@@ -101,6 +101,9 @@ export default function ContactForm() {
           required
         />
       </div>
+      <p className="text-xs leading-5 text-slate-500 dark:text-slate-400">
+        Please do not send sensitive images or private files through this form.
+      </p>
       <button type="submit" className="button-primary" disabled={isSubmitting}>
         {isSubmitting ? (
           <Loader2 size={17} className="animate-spin" aria-hidden="true" />

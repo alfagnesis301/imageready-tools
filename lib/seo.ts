@@ -91,3 +91,40 @@ export function faqJsonLd(items: { question: string; answer: string }[]) {
     }))
   };
 }
+
+export function articleJsonLd({
+  title,
+  description,
+  path,
+  dateModified,
+  author
+}: {
+  title: string;
+  description: string;
+  path: string;
+  dateModified: string;
+  author: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    url: new URL(path, SITE_URL).toString(),
+    datePublished: "2026-04-30",
+    dateModified,
+    author: {
+      "@type": "Organization",
+      name: author
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": new URL(path, SITE_URL).toString()
+    }
+  };
+}

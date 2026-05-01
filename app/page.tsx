@@ -151,6 +151,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="shell py-14">
+        <div className="max-w-3xl">
+          <p className="label">Why PublishPixel is different</p>
+          <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+            More than compression: a complete image publishing check
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+            Most image tools focus on one action: compress, resize or convert. PublishPixel combines
+            those steps with publishing context so you can decide whether an image is actually ready
+            for the place it will appear.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <h3 className="font-bold text-slate-950 dark:text-white">Context-aware checks</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+              Compare your image against practical presets for blogs, Open Graph previews, YouTube
+              thumbnails, product images, email headers and social posts.
+            </p>
+          </article>
+          <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <h3 className="font-bold text-slate-950 dark:text-white">Publishing copy workflow</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+              Keep your original file safe and export a dedicated version for the channel where the
+              image will be published.
+            </p>
+          </article>
+          <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <h3 className="font-bold text-slate-950 dark:text-white">Practical readiness score</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+              Get a simple score with clear warnings for size, dimensions, ratio, format, alt text,
+              filename quality and metadata awareness.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section className="shell grid gap-10 py-14 lg:grid-cols-[1fr_0.85fr]">
         <div>
           <p className="label">Publishing speed</p>

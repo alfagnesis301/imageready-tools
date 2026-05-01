@@ -2,7 +2,7 @@ import Link from "next/link";
 import FAQ from "./FAQ";
 import { GUIDE_ENHANCEMENTS } from "@/lib/guideEnhancements";
 import type { Guide } from "@/lib/guides";
-import { faqJsonLd } from "@/lib/seo";
+import { articleJsonLd, faqJsonLd } from "@/lib/seo";
 
 export default function GuideArticle({ guide }: { guide: Guide }) {
   const detail = GUIDE_ENHANCEMENTS[guide.slug];
@@ -13,6 +13,22 @@ export default function GuideArticle({ guide }: { guide: Guide }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(detail.faqs)) }}
+        />
+      ) : null}
+      {detail ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              articleJsonLd({
+                title: guide.title,
+                description: guide.description,
+                path: `/guides/${guide.slug}`,
+                dateModified: "2026-04-30",
+                author: detail.author
+              })
+            )
+          }}
         />
       ) : null}
       <div className="mx-auto max-w-3xl">

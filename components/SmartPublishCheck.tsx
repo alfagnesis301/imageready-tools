@@ -4,11 +4,14 @@ import { AlertCircle, CheckCircle2, Loader2 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import CompressionEstimator from "./CompressionEstimator";
 import FormatRecommendation from "./FormatRecommendation";
+import FilenameSeoCheck from "./FilenameSeoCheck";
 import ImageMetrics from "./ImageMetrics";
 import ImagePreview from "./ImagePreview";
 import ImageUploader from "./ImageUploader";
 import MetadataPanel from "./MetadataPanel";
+import OpenGraphPreview from "./OpenGraphPreview";
 import PlatformPresetSelector from "./PlatformPresetSelector";
+import PublishReadyReport from "./PublishReadyReport";
 import PublishScoreCard from "./PublishScoreCard";
 import RecommendationPanel from "./RecommendationPanel";
 import ResizeSuggestions from "./ResizeSuggestions";
@@ -162,11 +165,26 @@ export default function SmartPublishCheck({
           <div className="grid gap-4">
             <PublishScoreCard result={result} />
             <RecommendationPanel result={result} />
+            <PublishReadyReport
+              score={result.score}
+              preset={result.preset.label}
+              format={analysis.format.toUpperCase()}
+              width={analysis.width}
+              height={analysis.height}
+              size={analysis.size}
+              recommendations={result.recommendations}
+            />
             <FormatRecommendation result={result} />
+            <FilenameSeoCheck filename={analysis.name} />
             <AltTextCheck score={altTextScore} />
             <MetadataPanel analysis={analysis} />
           </div>
           <div className="grid gap-4 lg:col-span-2 lg:grid-cols-2">
+            <OpenGraphPreview
+              imageUrl={objectUrl}
+              title="Example article or product page title"
+              description="This preview simulates the wide crop commonly used by link cards."
+            />
             <CompressionEstimator analysis={analysis} />
             <ResizeSuggestions analysis={analysis} />
           </div>
