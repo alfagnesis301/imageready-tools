@@ -18,7 +18,7 @@ export default function SpanishCookiePolicyPage() {
         <h2>Almacenamiento esencial</h2>
         <p>
           PublishPixel puede usar localStorage para preferencias esenciales como tema, estado de
-          consentimiento y último preset seleccionado. Esto hace que la herramienta sea más cómoda
+          consentimiento y último ajuste predefinido seleccionado. Esto hace que la herramienta sea más cómoda
           sin guardar imágenes.
         </p>
         <h2>Cookies publicitarias</h2>

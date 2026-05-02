@@ -18,10 +18,10 @@ const faqs = [
     }
   },
   {
-    question: { en: "Why do aspect ratios matter?", es: "¿Por qué importan los ratios?" },
+    question: { en: "Why do aspect ratios matter?", es: "¿Por qué importan las proporciones?" },
     answer: {
       en: "Aspect ratios help platforms display your image without unexpected cropping, borders or awkward previews.",
-      es: "Los ratios ayudan a que las plataformas muestren tu imagen sin recortes inesperados, bordes o previews torpes."
+      es: "Las proporciones ayudan a que las plataformas muestren tu imagen sin recortes inesperados, bordes o vistas previas torpes."
     }
   },
   {
@@ -35,7 +35,7 @@ const faqs = [
     question: { en: "Should every image be WebP?", es: "¿Todas las imágenes deberían ser WebP?" },
     answer: {
       en: "WebP is useful for websites, while some upload workflows still prefer JPG or PNG. Choose based on the destination.",
-      es: "WebP es útil para websites, mientras algunos flujos de subida aún prefieren JPG o PNG. Elige según el destino."
+      es: "WebP es útil para sitios web, mientras algunos flujos de subida aún prefieren JPG o PNG. Elige según el destino."
     }
   }
 ];
@@ -43,7 +43,7 @@ const faqs = [
 const rows = [
   {
     platform: "Open Graph",
-    use: { en: "Article or website preview", es: "Preview de artículo o website" },
+    use: { en: "Article or website preview", es: "Vista previa de artículo o sitio web" },
     size: { en: "1200 x 630 px", es: "1200 x 630 px" },
     ratio: { en: "1.91:1", es: "1.91:1" },
     note: {
@@ -68,22 +68,22 @@ const rows = [
     ratio: { en: "16:9", es: "16:9" },
     note: {
       en: "Leave safe space around text and faces because overlays may cover edges.",
-      es: "Deja espacio seguro alrededor de texto y rostros porque los overlays pueden cubrir bordes."
+      es: "Deja espacio seguro alrededor de texto y rostros porque las superposiciones pueden cubrir bordes."
     }
   },
   {
     platform: "Instagram",
-    use: { en: "Square post", es: "Post cuadrado" },
+    use: { en: "Square post", es: "Publicación cuadrada" },
     size: { en: "1080 x 1080 px", es: "1080 x 1080 px" },
     ratio: { en: "1:1", es: "1:1" },
     note: {
       en: "Works well for grid consistency and product-focused images.",
-      es: "Funciona bien para consistencia de grid e imágenes centradas en producto."
+      es: "Funciona bien para consistencia de cuadrícula e imágenes centradas en producto."
     }
   },
   {
     platform: "Instagram",
-    use: { en: "Portrait post", es: "Post vertical" },
+    use: { en: "Portrait post", es: "Publicación vertical" },
     size: { en: "1080 x 1350 px", es: "1080 x 1350 px" },
     ratio: { en: "4:5", es: "4:5" },
     note: {
@@ -93,7 +93,7 @@ const rows = [
   },
   {
     platform: "Instagram",
-    use: { en: "Story or vertical creative", es: "Story o creatividad vertical" },
+    use: { en: "Story or vertical creative", es: "Historia o pieza vertical" },
     size: { en: "1080 x 1920 px", es: "1080 x 1920 px" },
     ratio: { en: "9:16", es: "9:16" },
     note: {
@@ -133,7 +133,7 @@ const rows = [
   },
   {
     platform: "Email",
-    use: { en: "Header image", es: "Imagen de header" },
+    use: { en: "Header image", es: "Imagen de encabezado" },
     size: { en: "600-1200 px wide", es: "600-1200 px de ancho" },
     ratio: { en: "Flexible", es: "Flexible" },
     note: {
@@ -148,14 +148,14 @@ const cards = [
     title: { en: "Start with the destination", es: "Empieza por el destino" },
     body: {
       en: "A social image should be prepared for where it appears: feed, story, preview card, thumbnail, pin or product grid.",
-      es: "Una imagen social debe prepararse para donde aparecerá: feed, story, tarjeta de preview, miniatura, pin o grilla de producto."
+      es: "Una imagen social debe prepararse para donde aparecerá: feed, historia, tarjeta de vista previa, miniatura, pin o cuadrícula de producto."
     }
   },
   {
     title: { en: "Keep a safe focal area", es: "Mantén un área focal segura" },
     body: {
       en: "Interfaces, captions and previews may crop edges. Important content usually works best near the visual center.",
-      es: "Interfaces, captions y previews pueden recortar bordes. El contenido importante suele funcionar mejor cerca del centro visual."
+      es: "Interfaces, pies de foto y vistas previas pueden recortar bordes. El contenido importante suele funcionar mejor cerca del centro visual."
     }
   },
   {
@@ -182,7 +182,7 @@ const checklist = [
   },
   {
     en: "Check text readability on mobile previews.",
-    es: "Revisa la legibilidad del texto en previews móviles."
+    es: "Revisa la legibilidad del texto en vistas previas móviles."
   },
   {
     en: "Compress the final export without blurring key details.",
@@ -209,7 +209,7 @@ export default function SocialMediaImageSizesContent() {
           </h1>
           <p className="mt-5 text-base leading-8 text-slate-600 dark:text-slate-300">
             {language === "es"
-              ? "Usa esta guía original como punto de partida práctico para tamaños comunes de imágenes sociales, previews, miniaturas, visuales de producto y gráficos de email."
+              ? "Usa esta guía original como punto de partida práctico para tamaños comunes de imágenes sociales, vistas previas, miniaturas, visuales de producto y gráficos de email."
               : "Use this original guide as a practical starting point for common social image sizes, previews, thumbnails, product visuals and email graphics."}
           </p>
         </div>
@@ -219,7 +219,7 @@ export default function SocialMediaImageSizesContent() {
             heading={language === "es" ? "Revisar una imagen social" : "Check a social media image"}
             description={
               language === "es"
-                ? "Sube una imagen y elige un preset social para comparar dimensiones, ratio, peso y formato."
+                ? "Sube una imagen y elige un ajuste predefinido social para comparar dimensiones, proporción, peso y formato."
                 : "Upload an image and choose a social preset to compare dimensions, ratio, file size and format guidance."
             }
           />
@@ -238,7 +238,7 @@ export default function SocialMediaImageSizesContent() {
                 <th scope="col" className="px-4 py-3">{language === "es" ? "Plataforma" : "Platform"}</th>
                 <th scope="col" className="px-4 py-3">{language === "es" ? "Uso" : "Use"}</th>
                 <th scope="col" className="px-4 py-3">{language === "es" ? "Tamaño recomendado" : "Recommended size"}</th>
-                <th scope="col" className="px-4 py-3">Ratio</th>
+                <th scope="col" className="px-4 py-3">{language === "es" ? "Proporción" : "Ratio"}</th>
                 <th scope="col" className="px-4 py-3">{language === "es" ? "Nota práctica" : "Practical note"}</th>
               </tr>
             </thead>
@@ -278,12 +278,12 @@ export default function SocialMediaImageSizesContent() {
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
             {language === "es"
-              ? "Una sola imagen rara vez encaja perfectamente en cada plataforma. Una tarjeta Open Graph ancha, un post cuadrado de Instagram, una Story vertical y un pin alto de Pinterest usan espacios visuales distintos. Para campañas importantes, empieza con un archivo maestro grande y crea exportaciones dedicadas para cada destino."
+              ? "Una sola imagen rara vez encaja perfectamente en cada plataforma. Una tarjeta Open Graph ancha, una publicación cuadrada de Instagram, una historia vertical y un pin alto de Pinterest usan espacios visuales distintos. Para campañas importantes, empieza con un archivo maestro grande y crea exportaciones dedicadas para cada destino."
               : "A single image rarely fits every platform perfectly. A wide Open Graph card, a square Instagram post, a vertical Story and a tall Pinterest pin all use different visual spaces. For important campaigns, start with a large master file and create dedicated exports for each destination."}
           </p>
           <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
             {language === "es"
-              ? "Mantén rostros, productos, texto y logos importantes lejos de los bordes extremos. Interfaces, captions, overlays y recortes de preview pueden ocultar detalles cerca del borde."
+              ? "Mantén rostros, productos, texto y logos importantes lejos de los bordes extremos. Interfaces, pies de foto, superposiciones y recortes de vista previa pueden ocultar detalles cerca del borde."
               : "Keep important faces, products, text and logos away from the extreme edges. Platform interfaces, captions, overlays and preview crops can hide or cut off details near the border."}
           </p>
           <div className="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900/70">

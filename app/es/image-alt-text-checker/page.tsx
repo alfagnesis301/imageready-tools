@@ -66,7 +66,7 @@ export default function SpanishImageAltTextCheckerPage() {
               frases vagas y detalles inventados.
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              Un buen flujo consiste en redactar el alt text mientras preparas la imagen. Así puedes
+              Un buen flujo consiste en redactar el texto alternativo mientras preparas la imagen. Así puedes
               revisar nombre de archivo, dimensiones, formato y plan de accesibilidad antes de que la
               imagen llegue al CMS.
             </p>
@@ -89,7 +89,7 @@ export default function SpanishImageAltTextCheckerPage() {
           <FAQ items={faqs} />
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/es/guides/image-alt-text" className="button-primary">
-              Leer la guía de alt text
+              Leer la guía de texto alternativo
             </Link>
             <Link href="/es/smart-image-publish-check" className="button-secondary">
               Ejecutar revisión completa

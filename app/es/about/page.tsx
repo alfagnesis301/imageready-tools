@@ -30,7 +30,7 @@ export default function SpanishAboutPage() {
         <p>
           El análisis principal de la imagen ocurre en tu navegador. PublishPixel no sube tu imagen a
           un servidor para analizarla, no guarda imágenes de usuarios y solo usa localStorage para
-          preferencias como tema, consentimiento y último preset seleccionado.
+          preferencias como tema, consentimiento y último ajuste predefinido seleccionado.
         </p>
         <h2>Guías originales de publicación</h2>
         <p>
@@ -60,7 +60,7 @@ export default function SpanishAboutPage() {
         </p>
         <h2>Qué no hace PublishPixel</h2>
         <ul className="mt-4 grid gap-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
-          <li>No garantiza rankings SEO.</li>
+          <li>No garantiza posicionamiento SEO.</li>
           <li>No verifica propiedad de derechos de autor ni permisos de uso de imagen.</li>
           <li>No promete aprobación en plataformas sociales, buscadores o sistemas publicitarios.</li>
           <li>

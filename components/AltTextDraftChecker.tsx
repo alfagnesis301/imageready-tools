@@ -60,7 +60,7 @@ export default function AltTextDraftChecker() {
     "Avoid starting with generic phrases when the image context is already obvious.":
       "Evita empezar con frases genéricas cuando el contexto de imagen ya es obvio.",
     "Avoid keyword-stuffed alt text. Write for the user first.":
-      "Evita rellenar el alt text con palabras clave. Escribe primero para el usuario.",
+      "Evita rellenar el texto alternativo con palabras clave. Escribe primero para el usuario.",
     "Alt text should contain a meaningful written description.":
       "El texto alternativo debería contener una descripción escrita significativa."
   };
@@ -89,7 +89,7 @@ export default function AltTextDraftChecker() {
             </p>
             <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
               {language === "es"
-                ? "El checker revisará longitud, frases genéricas y problemas comunes de estructura después de que escribas."
+                ? "El revisor comprobará longitud, frases genéricas y problemas comunes de estructura después de que escribas."
                 : "The checker will review length, generic wording and common structure issues after you type."}
             </p>
           </>

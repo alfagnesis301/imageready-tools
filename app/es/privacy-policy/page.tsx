@@ -31,7 +31,7 @@ export default function SpanishPrivacyPolicyPage() {
         <h2>LocalStorage</h2>
         <p>
           La aplicación puede usar localStorage para preferencias como tema, opciones de
-          consentimiento y último preset de publicación seleccionado. localStorage no se usa para
+          consentimiento y último ajuste predefinido de publicación seleccionado. localStorage no se usa para
           guardar imágenes.
         </p>
         <h2>Analítica</h2>

@@ -1,6 +1,7 @@
 import AdSlot from "@/components/AdSlot";
 import HomeFAQ from "@/components/HomeFAQ";
 import LocalizedLink from "@/components/LocalizedLink";
+import LocalizedPresetNote from "@/components/LocalizedPresetNote";
 import { T } from "@/components/LanguageProvider";
 import SmartPublishCheck from "@/components/SmartPublishCheck";
 import TrustBadges from "@/components/TrustBadges";
@@ -327,10 +328,7 @@ export default function HomePage() {
                   <T k={`preset.${preset.id}`} />
                 </h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-                  <T
-                    k="home.presetNote"
-                    vars={{ dimensions: preset.recommendedDimensions, ratio: preset.aspectLabel }}
-                  />
+                  <LocalizedPresetNote preset={preset} />
                 </p>
               </div>
             );

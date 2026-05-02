@@ -10,7 +10,7 @@ const page = {
   title: { en: "Free Image Resizer", es: "Redimensionador de imágenes gratis" },
   description: {
     en: "Resize images for website layouts, Open Graph previews, YouTube thumbnails, Instagram posts, stories, Pinterest pins and email headers.",
-    es: "Redimensiona imágenes para layouts web, previews Open Graph, miniaturas de YouTube, posts de Instagram, historias, pins de Pinterest y headers de email."
+    es: "Redimensiona imágenes para diseños web, vistas previas Open Graph, miniaturas de YouTube, publicaciones de Instagram, historias, pines de Pinterest y encabezados de email."
   },
   toolDescription: {
     en: "Upload an image, check its readiness and use the Resize image panel to export exact dimensions with optional aspect ratio lock.",
@@ -24,11 +24,11 @@ const sections: LocalizedToolSection[] = [
     paragraphs: [
       {
         en: "Set a custom width and height or use common publishing presets for fast exports.",
-        es: "Define ancho y alto personalizados o usa presets comunes de publicación para exportar rápido."
+        es: "Define ancho y alto personalizados o usa ajustes predefinidos comunes de publicación para exportar rápido."
       },
       {
         en: "This is useful when a platform asks for a specific size, when a hero image is too large or when a product grid needs consistent image dimensions.",
-        es: "Es útil cuando una plataforma pide un tamaño específico, cuando una hero image es demasiado grande o cuando una grilla de producto necesita dimensiones consistentes."
+        es: "Es útil cuando una plataforma pide un tamaño específico, cuando una imagen principal es demasiado grande o cuando una cuadrícula de producto necesita dimensiones consistentes."
       }
     ]
   },
@@ -41,7 +41,7 @@ const sections: LocalizedToolSection[] = [
       },
       {
         en: "If the destination needs a different ratio, crop intentionally instead of stretching the file to fit a shape.",
-        es: "Si el destino necesita otro ratio, recorta de forma intencional en vez de estirar el archivo para encajarlo."
+        es: "Si el destino necesita otra proporción, recorta de forma intencional en vez de estirar el archivo para encajarlo."
       }
     ]
   },
@@ -50,11 +50,11 @@ const sections: LocalizedToolSection[] = [
     paragraphs: [
       {
         en: "Use resizing for share previews, thumbnails, ecommerce grids, email headers and responsive website imagery.",
-        es: "Usa redimensionado para previews compartidos, miniaturas, grillas e-commerce, headers de email e imágenes responsive para websites."
+        es: "Usa redimensionado para vistas previas compartidas, miniaturas, cuadrículas e-commerce, encabezados de email e imágenes adaptables para sitios web."
       },
       {
         en: "For very small source images, resizing upward may meet a numeric target but it cannot restore missing detail, so the checker flags likely blurry results.",
-        es: "En imágenes fuente muy pequeñas, ampliar puede cumplir un número de píxeles, pero no recupera detalle perdido; por eso el checker avisa si puede verse borroso."
+        es: "En imágenes fuente muy pequeñas, ampliar puede cumplir un número de píxeles, pero no recupera detalle perdido; por eso la herramienta avisa si puede verse borroso."
       }
     ]
   }
@@ -69,7 +69,7 @@ const faqs: LocalizedFaq[] = [
     }
   },
   {
-    question: { en: "What does lock aspect ratio do?", es: "¿Qué hace bloquear la relación de aspecto?" },
+    question: { en: "What does lock aspect ratio do?", es: "¿Qué hace bloquear la proporción?" },
     answer: {
       en: "It keeps the image proportions consistent when you change width or height, which helps avoid stretched results.",
       es: "Mantiene las proporciones de la imagen cuando cambias ancho o alto, ayudando a evitar resultados estirados."
@@ -83,10 +83,10 @@ const faqs: LocalizedFaq[] = [
     }
   },
   {
-    question: { en: "Which presets are included?", es: "¿Qué presets incluye?" },
+    question: { en: "Which presets are included?", es: "¿Qué ajustes predefinidos incluye?" },
     answer: {
       en: "Common quick sizes include Open Graph, YouTube thumbnail, Instagram square, Story, Pinterest and email header dimensions.",
-      es: "Incluye tamaños rápidos comunes como Open Graph, miniatura de YouTube, Instagram cuadrado, Story, Pinterest y header de email."
+      es: "Incluye tamaños rápidos comunes como Open Graph, miniatura de YouTube, Instagram cuadrado, historia, Pinterest y encabezado de email."
     }
   }
 ];
@@ -96,7 +96,7 @@ const cards = [
     title: { en: "Avoid oversized uploads", es: "Evita subidas sobredimensionadas" },
     body: {
       en: "A 5000px photo rarely needs to be uploaded at full size for a blog preview, product listing or email header.",
-      es: "Una foto de 5000px rara vez necesita subirse completa para un preview de blog, ficha de producto o header de email."
+      es: "Una foto de 5000px rara vez necesita subirse completa para una vista previa de blog, ficha de producto o encabezado de email."
     }
   },
   {
@@ -124,7 +124,7 @@ const table = [
   {
     destination: { en: "YouTube thumbnail", es: "Miniatura de YouTube" },
     target: { en: "1280 x 720 px", es: "1280 x 720 px" },
-    note: { en: "Keep key text away from edges and overlays", es: "Mantén texto clave lejos de bordes y overlays" }
+    note: { en: "Keep key text away from edges and overlays", es: "Mantén texto clave lejos de bordes y superposiciones" }
   },
   {
     destination: { en: "Instagram story", es: "Historia de Instagram" },
@@ -160,7 +160,7 @@ export default function ResizeImageContent() {
         </h2>
         <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
           {language === "es"
-            ? "Redimensionar no es solo hacer una imagen más pequeña. Un buen resize de publicación coincide con el uso final: cuerpo de artículo, preview Open Graph, miniatura de YouTube, grilla de producto, header de email o recorte social. Si una imagen es mucho más grande que el layout, la página envía píxeles que el lector nunca verá."
+            ? "Redimensionar no es solo hacer una imagen más pequeña. Un buen redimensionado de publicación coincide con el uso final: cuerpo de artículo, vista previa Open Graph, miniatura de YouTube, cuadrícula de producto, encabezado de email o recorte social. Si una imagen es mucho más grande que el diseño, la página envía píxeles que el lector nunca verá."
             : "Resizing is not only about making an image smaller. A good publishing resize matches the final use: article body, Open Graph preview, YouTube thumbnail, product grid, email header or social crop. When an image is far larger than the layout, the page sends pixels that readers never see."}
         </p>
         <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
@@ -184,7 +184,7 @@ export default function ResizeImageContent() {
               <tr>
                 <th scope="col" className="px-4 py-3">{language === "es" ? "Destino" : "Destination"}</th>
                 <th scope="col" className="px-4 py-3">{language === "es" ? "Objetivo práctico" : "Practical target"}</th>
-                <th scope="col" className="px-4 py-3">{language === "es" ? "Nota de resize" : "Resize note"}</th>
+                <th scope="col" className="px-4 py-3">{language === "es" ? "Nota de redimensionado" : "Resize note"}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
@@ -205,7 +205,7 @@ export default function ResizeImageContent() {
           </h3>
           <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">
             {language === "es"
-              ? "Redimensionar no puede crear detalle que falta en la imagen fuente. Si el original está borroso o es demasiado pequeño, ampliarlo puede cumplir un objetivo de píxeles pero seguir viéndose débil. Para miniaturas, fotos de producto y hero sections importantes, empieza con una fuente que ya tenga suficiente detalle y reduce desde ahí."
+              ? "Redimensionar no puede crear detalle que falta en la imagen fuente. Si el original está borroso o es demasiado pequeño, ampliarlo puede cumplir un objetivo de píxeles pero seguir viéndose débil. Para miniaturas, fotos de producto y secciones principales importantes, empieza con una fuente que ya tenga suficiente detalle y reduce desde ahí."
               : "Resizing cannot create detail that is missing from the source image. If the original is blurry or too small, upscaling may satisfy a pixel target but still look weak. For important thumbnails, product photos and hero sections, start with a source image that already has enough detail and resize down from there."}
           </p>
           <div className="mt-4 flex flex-wrap gap-3">

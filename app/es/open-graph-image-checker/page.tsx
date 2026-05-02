@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Revisor de imágenes Open Graph",
   description:
-    "Comprueba si una imagen Open Graph tiene dimensiones, proporción, peso y formato adecuados para previews y tarjetas sociales.",
+    "Comprueba si una imagen Open Graph tiene dimensiones, proporción, peso y formato adecuados para vistas previas y tarjetas sociales.",
   path: "/es/open-graph-image-checker",
   locale: "es"
 });
@@ -14,7 +14,7 @@ export default function SpanishOpenGraphCheckerPage() {
     <SpanishToolPage
       eyebrow="Herramienta Open Graph"
       title="Revisor de imágenes Open Graph"
-      description="Revisa si tu imagen encaja con previews de enlaces, tarjetas sociales y páginas de contenido compartido."
+      description="Revisa si tu imagen encaja con vistas previas de enlaces, tarjetas sociales y páginas de contenido compartido."
       preset="open-graph"
       toolDescription="Sube una imagen y compárala con un objetivo práctico Open Graph antes de publicar."
       sections={[

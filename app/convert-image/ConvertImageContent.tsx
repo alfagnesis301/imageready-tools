@@ -7,7 +7,7 @@ import { withLocalePath } from "@/lib/i18n";
 
 const page = {
   eyebrow: { en: "Image utility", es: "Utilidad de imagen" },
-  title: { en: "Free Image Converter", es: "Conversor de imágenes gratis" },
+  title: { en: "Free Image Converter", es: "Convertidor de imágenes gratis" },
   description: {
     en: "Convert images to publishing-friendly formats such as WebP, JPG or PNG without uploading the file to a server.",
     es: "Convierte imágenes a formatos prácticos para publicar, como WebP, JPG o PNG, sin subir el archivo a un servidor."
@@ -41,7 +41,7 @@ const sections: LocalizedToolSection[] = [
       },
       {
         en: "PublishPixel recommends the output format based on the current file, transparency signal and selected publishing preset.",
-        es: "PublishPixel recomienda el formato de salida según el archivo actual, la señal de transparencia y el preset de publicación seleccionado."
+        es: "PublishPixel recomienda el formato de salida según el archivo actual, la señal de transparencia y el ajuste predefinido de publicación seleccionado."
       }
     ]
   },
@@ -50,11 +50,11 @@ const sections: LocalizedToolSection[] = [
     paragraphs: [
       {
         en: "Browser support differs. If a format cannot be exported, the app shows a clear message instead of pretending the conversion succeeded.",
-        es: "El soporte del navegador varía. Si un formato no puede exportarse, la app muestra un mensaje claro en vez de fingir que la conversión funcionó."
+        es: "El soporte del navegador varía. Si un formato no puede exportarse, la aplicación muestra un mensaje claro en vez de fingir que la conversión funcionó."
       },
       {
         en: "SVG files receive basic safety-conscious analysis, but the app does not execute user SVG markup or promise SVG-to-raster conversion.",
-        es: "Los archivos SVG reciben un análisis básico con enfoque de seguridad, pero la app no ejecuta marcado SVG del usuario ni promete conversión SVG a raster."
+        es: "Los archivos SVG reciben un análisis básico con enfoque de seguridad, pero la aplicación no ejecuta marcado SVG del usuario ni promete conversión SVG a raster."
       }
     ]
   }
@@ -79,14 +79,14 @@ const faqs: LocalizedFaq[] = [
     question: { en: "Can I convert SVG?", es: "¿Puedo convertir SVG?" },
     answer: {
       en: "This app performs basic SVG checks but does not export SVG as raster because SVG handling can vary by browser and workflow.",
-      es: "Esta app hace chequeos básicos de SVG, pero no exporta SVG como raster porque su manejo varía según navegador y flujo de trabajo."
+      es: "Esta aplicación hace revisiones básicas de SVG, pero no exporta SVG como raster porque su manejo varía según navegador y flujo de trabajo."
     }
   },
   {
     question: { en: "Is conversion private?", es: "¿La conversión es privada?" },
     answer: {
       en: "Yes. The conversion happens locally in the browser and the image is not uploaded by this app.",
-      es: "Sí. La conversión ocurre localmente en el navegador y esta app no sube la imagen."
+      es: "Sí. La conversión ocurre localmente en el navegador y esta aplicación no sube la imagen."
     }
   }
 ];
@@ -126,7 +126,7 @@ const cards = [
     title: { en: "What conversion cannot solve", es: "Qué no puede resolver la conversión" },
     body: {
       en: "Format conversion does not fix a poor crop, blurry source, inaccurate alt text or oversized dimensions by itself. Use it together with resizing, compression and the Smart Image Publish Check.",
-      es: "Convertir formato no arregla por sí solo un mal recorte, una fuente borrosa, alt text impreciso o dimensiones sobredimensionadas. Úsalo junto con redimensionado, compresión y el Smart Image Publish Check."
+      es: "Convertir formato no arregla por sí solo un mal recorte, una fuente borrosa, texto alternativo impreciso o dimensiones sobredimensionadas. Úsalo junto con redimensionado, compresión y la revisión inteligente de PublishPixel."
     }
   }
 ];
@@ -198,12 +198,12 @@ export default function ConvertImageContent() {
           </h3>
           <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
             {language === "es"
-              ? "Una imagen web, header de email, preview social y ficha de producto pueden no necesitar el mismo formato. Empieza con el preset de destino, revisa si importa la transparencia y exporta el archivo más pequeño que siga viéndose claro en contexto."
+              ? "Una imagen web, encabezado de email, vista previa social y ficha de producto pueden no necesitar el mismo formato. Empieza con el ajuste predefinido de destino, revisa si importa la transparencia y exporta el archivo más pequeño que siga viéndose claro en contexto."
               : "A website image, email header, social preview and product listing may not need the same format. Start with the destination preset, check whether transparency matters, then export the smallest file that still looks clear in context."}
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link href={withLocalePath("/smart-image-publish-check", language)} className="button-primary">
-              {language === "es" ? "Comparar con presets" : "Compare with presets"}
+              {language === "es" ? "Comparar con ajustes predefinidos" : "Compare with presets"}
             </Link>
             <Link href={withLocalePath("/guides/webp-vs-jpeg-vs-png", language)} className="button-secondary">
               {language === "es" ? "Leer guía de formatos" : "Read format guide"}

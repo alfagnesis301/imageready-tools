@@ -1,37 +1,37 @@
 import type { Language } from "@/components/LanguageProvider";
 
 const PRESET_LABEL_ES: Record<string, string> = {
-  "Website / Blog Image": "imagen para website o blog",
+  "Website / Blog Image": "imagen para sitio web o blog",
   "SEO Featured Image": "imagen destacada SEO",
   "Open Graph Image": "imagen Open Graph",
   "Google Discover Image": "imagen Google Discover",
   "YouTube Thumbnail": "miniatura de YouTube",
-  "Instagram Post": "post de Instagram",
+  "Instagram Post": "publicación de Instagram",
   "Instagram Story": "historia de Instagram",
-  "Facebook Post": "post de Facebook",
-  "LinkedIn Post": "post de LinkedIn",
+  "Facebook Post": "publicación de Facebook",
+  "LinkedIn Post": "publicación de LinkedIn",
   "Pinterest Pin": "pin de Pinterest",
   "E-commerce Product Image": "imagen de producto e-commerce",
   Favicon: "favicon",
-  "Email Header": "header de email",
-  "Hero Banner": "hero banner"
+  "Email Header": "encabezado de email",
+  "Hero Banner": "banner principal"
 };
 
 const SHORT_LABEL_ES: Record<string, string> = {
-  Website: "website",
+  Website: "sitio web",
   SEO: "SEO",
   "Open Graph": "Open Graph",
   Discover: "Discover",
   YouTube: "YouTube",
   "Instagram Post": "Instagram",
-  Story: "Story",
+  Story: "historia",
   Facebook: "Facebook",
   LinkedIn: "LinkedIn",
   Pinterest: "Pinterest",
   Product: "producto",
   Favicon: "favicon",
   Email: "email",
-  Hero: "hero"
+  Hero: "banner principal"
 };
 
 export function translatePublishText(message: string, language: Language) {
@@ -46,7 +46,7 @@ export function translatePublishText(message: string, language: Language) {
   }
 
   if (message === "Keep important text and faces away from the edges because interface overlays may cover them.") {
-    return "Mantén texto importante y rostros lejos de los bordes porque los overlays de interfaz pueden cubrirlos.";
+    return "Mantén texto importante y rostros lejos de los bordes porque las superposiciones de interfaz pueden cubrirlos.";
   }
 
   if (message === "A clean, uncluttered background is usually helpful for product images; this tool does not detect background quality.") {
@@ -65,7 +65,7 @@ export function translatePublishText(message: string, language: Language) {
     [
       /^This image is too small for (.+)\. Recommended: (.+)\.$/,
       (_, preset, dimensions) =>
-        `Esta imagen es demasiado pequeña para ${translatePresetLabel(preset)}. Recomendado: ${dimensions}.`
+        `Esta imagen es demasiado pequeña para ${translatePresetLabel(preset)}. Recomendación: ${translateDimensionText(dimensions)}.`
     ],
     [
       /^Resize or export a larger source image for (.+); upscaling may not recover lost detail\.$/,
@@ -78,20 +78,20 @@ export function translatePublishText(message: string, language: Language) {
     ],
     [
       /^The aspect ratio does not closely match (.+)\.$/,
-      (_, ratio) => `La relación de aspecto no se acerca a ${ratio}.`
+      (_, ratio) => `La proporción no se acerca a ${translateAspectText(ratio)}.`
     ],
     [
       /^Resize or crop toward (.+) for better (.+) compatibility\.$/,
       (_, dimensions, preset) =>
-        `Redimensiona o recorta hacia ${dimensions} para mejorar la compatibilidad con ${translateShortLabel(preset)}.`
+        `Redimensiona o recorta hacia ${translateDimensionText(dimensions)} para mejorar la compatibilidad con ${translateShortLabel(preset)}.`
     ],
     [
       /^Aspect ratio is close to the recommended (.+) shape\.$/,
-      (_, ratio) => `La relación de aspecto se acerca a la forma recomendada ${ratio}.`
+      (_, ratio) => `La proporción se acerca a la forma recomendada ${translateAspectText(ratio)}.`
     ],
     [
       /^The file is heavier than the recommended (.+) KB target for this preset\.$/,
-      (_, size) => `El archivo pesa más que el objetivo recomendado de ${size} KB para este preset.`
+      (_, size) => `El archivo pesa más que el objetivo recomendado de ${size} KB para este ajuste predefinido.`
     ],
     [
       /^Compress the image; keeping it below (.+) KB may improve loading speed\.$/,
@@ -99,7 +99,7 @@ export function translatePublishText(message: string, language: Language) {
     ],
     [
       /^File size is within the recommended target for this preset\.$/,
-      () => "El peso del archivo está dentro del objetivo recomendado para este preset."
+      () => "El peso del archivo está dentro del objetivo recomendado para este ajuste predefinido."
     ],
     [
       /^(.+) is not the preferred format for (.+)\.$/,
@@ -107,7 +107,7 @@ export function translatePublishText(message: string, language: Language) {
     ],
     [
       /^(.+) is a suitable format for this preset\.$/,
-      (_, format) => `${format} es un formato adecuado para este preset.`
+      (_, format) => `${format} es un formato adecuado para este ajuste predefinido.`
     ],
     [
       /^PNG may be heavier for photos\. Convert to (.+) to reduce file size while keeping good quality\.$/,
@@ -124,7 +124,7 @@ export function translatePublishText(message: string, language: Language) {
     [
       /^Your image matches the main (.+) checks\. You may still create responsive sizes for production use\.$/,
       (_, preset) =>
-        `Tu imagen coincide con los chequeos principales de ${translateShortLabel(preset)}. Aun así, puedes crear tamaños responsive para producción.`
+        `Tu imagen coincide con las revisiones principales de ${translateShortLabel(preset)}. Aun así, puedes crear tamaños adaptables para producción.`
     ]
   ];
 
@@ -142,4 +142,26 @@ function translatePresetLabel(label: string) {
 
 function translateShortLabel(label: string) {
   return SHORT_LABEL_ES[label] || label;
+}
+
+function translateDimensionText(value: string) {
+  return value
+    .replace("1200-1600 px wide", "1200-1600 px de ancho")
+    .replace("1200 px wide or larger", "1200 px de ancho o más")
+    .replace("1080 x 1080, 1080 x 1350 or 1080 x 566 px", "1080 x 1080, 1080 x 1350 o 1080 x 566 px")
+    .replace("1000 x 1000 px or larger", "1000 x 1000 px o más")
+    .replace("Square; export 16, 32, 48, 180 and 512 px variants", "Cuadrado; exporta variantes de 16, 32, 48, 180 y 512 px")
+    .replace("600-1200 px wide", "600-1200 px de ancho")
+    .replace("1600-2400 px wide", "1600-2400 px de ancho");
+}
+
+function translateAspectText(value: string) {
+  return value
+    .replace("Flexible, commonly 16:9, 4:3 or square", "flexible, comúnmente 16:9, 4:3 o cuadrada")
+    .replace("16:9 or 4:3", "16:9 o 4:3")
+    .replace("1:1, 4:5 or 1.91:1", "1:1, 4:5 o 1.91:1")
+    .replace("About 1.91:1", "aproximadamente 1.91:1")
+    .replace("1:1 square", "1:1 cuadrada")
+    .replace("Wide or banner-like", "ancha o tipo banner")
+    .replace("Wide, commonly 16:9 to 3:1", "ancha, comúnmente 16:9 a 3:1");
 }

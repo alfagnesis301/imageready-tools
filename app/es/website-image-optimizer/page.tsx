@@ -16,11 +16,11 @@ export default function SpanishWebsiteImageOptimizerPage() {
       title="Optimizador de imágenes para sitios web"
       description="Revisa peso, dimensiones, formato, nombre de archivo y preparación antes de subir imágenes a tu sitio."
       preset="website-blog"
-      toolDescription="Sube una imagen y obtén una revisión práctica para websites, blogs, landing pages y contenido SEO."
+      toolDescription="Sube una imagen y obtén una revisión práctica para sitios web, blogs, páginas de aterrizaje y contenido SEO."
       sections={[
         {
           title: "Antes del CMS",
-          body: "Detecta archivos demasiado pesados, nombres genéricos y dimensiones que no coinciden con el layout antes de subirlos."
+          body: "Detecta archivos demasiado pesados, nombres genéricos y dimensiones que no coinciden con el diseño antes de subirlos."
         },
         {
           title: "Velocidad y claridad",

@@ -28,7 +28,7 @@ export default function SpanishYouTubeThumbnailCheckerPage() {
         },
         {
           title: "Zona segura",
-          body: "Evita colocar rostros, texto o productos clave en los bordes, donde overlays pueden cubrirlos."
+          body: "Evita colocar rostros, texto o productos clave en los bordes, donde las superposiciones pueden cubrirlos."
         }
       ]}
     />

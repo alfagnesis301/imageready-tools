@@ -12,7 +12,7 @@ export const GUIDES_ES: Guide[] = [
       {
         heading: "Empieza por la ubicación final",
         body: [
-          "Una imagen hero, una miniatura de producto, una imagen de artículo y un retrato de autor no necesitan las mismas dimensiones. Antes de exportar, decide dónde aparecerá la imagen y cuánto espacio ocupará en escritorio y móvil.",
+          "Una imagen principal, una miniatura de producto, una imagen de artículo y un retrato de autor no necesitan las mismas dimensiones. Antes de exportar, decide dónde aparecerá la imagen y cuánto espacio ocupará en escritorio y móvil.",
           "Para muchos artículos y páginas de aterrizaje, un ancho entre 1200 y 1600 píxeles es un punto de partida práctico. Los banners grandes pueden necesitar más anchura, mientras que cards y miniaturas suelen funcionar con menos."
         ]
       },
@@ -20,7 +20,7 @@ export const GUIDES_ES: Guide[] = [
         heading: "Evita originales sobredimensionados",
         body: [
           "Subir una foto de 5000 píxeles de ancho para una columna de contenido de 700 píxeles desperdicia ancho de banda y puede perjudicar la velocidad.",
-          "Los archivos grandes también hacen más lento el flujo del CMS. Un asset más ligero es más fácil de previsualizar, subir, cachear y entregar."
+          "Los archivos grandes también hacen más lento el flujo del CMS. Un recurso más ligero es más fácil de previsualizar, subir, cachear y entregar."
         ]
       },
       {
@@ -92,7 +92,7 @@ export const GUIDES_ES: Guide[] = [
       {
         heading: "Describe la información útil",
         body: [
-          "Un buen alt text se centra en lo que el lector necesita saber. Una imagen de producto, un gráfico, un retrato y un fondo decorativo requieren tratamientos diferentes.",
+          "Un buen texto alternativo se centra en lo que el lector necesita saber. Una imagen de producto, un gráfico, un retrato y un fondo decorativo requieren tratamientos diferentes.",
           "Si la imagen es puramente decorativa y no aporta información, un atributo alt vacío puede ser más apropiado en el HTML final."
         ]
       },
@@ -104,7 +104,7 @@ export const GUIDES_ES: Guide[] = [
         ]
       },
       {
-        heading: "Ejemplos de mejor alt text",
+        heading: "Ejemplos de mejor texto alternativo",
         body: [
           "En vez de “imagen de mochila”, escribe “Mochila negra de viaje con bolsillo frontal sobre fondo blanco” cuando ese detalle importe.",
           "Para una cabecera de artículo, describe la escena y su relación con el tema sin inventar detalles no visibles."
@@ -113,13 +113,13 @@ export const GUIDES_ES: Guide[] = [
       {
         heading: "Cuándo no sobre-describir",
         body: [
-          "Si el texto alrededor ya explica la imagen, el alt text puede ser breve. Si la imagen contiene información esencial, ofrece suficiente detalle o una alternativa textual cercana.",
+          "Si el texto alrededor ya explica la imagen, el texto alternativo puede ser breve. Si la imagen contiene información esencial, ofrece suficiente detalle o una alternativa textual cercana.",
           "PublishPixel da una guía de estructura en vez de inventar descripciones visuales por ti."
         ]
       }
     ],
     takeaway:
-      "Escribe alt text primero para el usuario: claro, relevante y honesto sobre lo que realmente muestra la imagen."
+      "Escribe texto alternativo primero para el usuario: claro, relevante y honesto sobre lo que realmente muestra la imagen."
   },
   {
     slug: "webp-vs-jpeg-vs-png",
@@ -165,7 +165,7 @@ export const GUIDES_ES: Guide[] = [
     slug: "image-seo-checklist",
     title: "Checklist SEO de imágenes antes de publicar",
     description:
-      "Un checklist práctico para nombres de archivo, alt text, dimensiones, peso y vistas sociales.",
+      "Un checklist práctico para nombres de archivo, texto alternativo, dimensiones, peso y vistas sociales.",
     intro:
       "El SEO de imágenes no es un truco único. Es un conjunto de hábitos de publicación que hacen que las imágenes sean más fáciles de cargar, entender y reutilizar en buscadores y superficies de compartición.",
     sections: [
@@ -177,10 +177,10 @@ export const GUIDES_ES: Guide[] = [
         ]
       },
       {
-        heading: "Añade alt text relevante",
+        heading: "Añade texto alternativo relevante",
         body: [
           "El texto alternativo debe explicar la imagen en contexto. Apoya accesibilidad y puede aclarar el propósito de la imagen.",
-          "No inventes detalles visuales ni uses el alt text como lista de términos de búsqueda."
+          "No inventes detalles visuales ni uses el texto alternativo como lista de términos de búsqueda."
         ]
       },
       {
@@ -220,13 +220,13 @@ export const GUIDES_ES: Guide[] = [
         heading: "Miniaturas de YouTube",
         body: [
           "Un tamaño práctico común es 1280 x 720 píxeles con proporción 16:9.",
-          "Usa un punto focal claro y deja espacio para overlays de interfaz."
+          "Usa un punto focal claro y deja espacio para superposiciones de interfaz."
         ]
       },
       {
         heading: "Instagram y formatos verticales",
         body: [
-          "Instagram usa proporciones cuadradas, verticales y horizontales. Stories usa un marco vertical 9:16.",
+          "Instagram usa proporciones cuadradas, verticales y horizontales. Las historias usan un marco vertical 9:16.",
           "No dependas del recorte automático para texto o rostros importantes."
         ]
       },
@@ -234,7 +234,7 @@ export const GUIDES_ES: Guide[] = [
         heading: "Pins y productos",
         body: [
           "Pinterest suele funcionar bien con una proporción alta 2:3, mientras que productos encajan a menudo en cuadrados.",
-          "PublishPixel te permite comparar la imagen con presets orientados a plataformas."
+          "PublishPixel te permite comparar la imagen con ajustes predefinidos orientados a plataformas."
         ]
       }
     ],
@@ -273,7 +273,7 @@ export const GUIDES_ES: Guide[] = [
       {
         heading: "Crea un objetivo repetible",
         body: [
-          "Para imágenes de blog, unos cientos de KB suelen ser un objetivo práctico. En heroes puede ser más alto, pero debe ser intencional.",
+          "Para imágenes de blog, unos cientos de KB suelen ser un objetivo práctico. En banners principales puede ser más alto, pero debe ser intencional.",
           "PublishPixel estima oportunidad de compresión y ofrece exportaciones locales en formatos comunes."
         ]
       }
@@ -325,7 +325,7 @@ export const GUIDES_ES: Guide[] = [
     slug: "image-publishing-checklist",
     title: "Checklist de imágenes antes de subirlas online",
     description:
-      "Un checklist previo para tamaño, formato, alt text, nombre de archivo, metadatos y vistas previas.",
+      "Un checklist previo para tamaño, formato, texto alternativo, nombre de archivo, metadatos y vistas previas.",
     intro:
       "Publicar una imagen no es solo subir un archivo. Un buen flujo revisa si la imagen es clara, ligera, privada, accesible y adecuada para el lugar donde aparecerá.",
     sections: [
@@ -346,8 +346,8 @@ export const GUIDES_ES: Guide[] = [
       {
         heading: "Comprueba accesibilidad y contexto",
         body: [
-          "Las imágenes útiles deberían tener un plan de alt text cuando comunican información.",
-          "Un nombre de archivo claro y contenido cercano relevante también facilitan gestionar el asset."
+          "Las imágenes útiles deberían tener un plan de texto alternativo cuando comunican información.",
+          "Un nombre de archivo claro y contenido cercano relevante también facilitan gestionar el recurso."
         ]
       },
       {
@@ -359,7 +359,7 @@ export const GUIDES_ES: Guide[] = [
       }
     ],
     takeaway:
-      "Un flujo completo revisa destino, dimensiones, peso, formato, nombre, alt text y privacidad antes de subir."
+      "Un flujo completo revisa destino, dimensiones, peso, formato, nombre, texto alternativo y privacidad antes de subir."
   },
   {
     slug: "open-graph-image-best-practices",
@@ -434,7 +434,7 @@ export const GUIDES_ES: Guide[] = [
         heading: "Exporta un archivo dedicado",
         body: [
           "Un fotograma aleatorio puede servir, pero los vídeos importantes suelen beneficiarse de una miniatura diseñada.",
-          "Comprueba dimensiones, peso y formato antes de subir el asset final."
+          "Comprueba dimensiones, peso y formato antes de subir el archivo final."
         ]
       }
     ],
@@ -445,12 +445,12 @@ export const GUIDES_ES: Guide[] = [
     slug: "website-image-performance-checklist",
     title: "Checklist de rendimiento de imágenes para sitios web",
     description:
-      "Mejora velocidad revisando dimensiones, peso, formato, entrega responsive y flujo de publicación.",
+      "Mejora velocidad revisando dimensiones, peso, formato, entrega adaptable y flujo de publicación.",
     intro:
-      "Las imágenes suelen llevar el mayor peso evitable de una página. Un flujo práctico empieza antes de subir el archivo y continúa con entrega responsive.",
+      "Las imágenes suelen llevar el mayor peso evitable de una página. Un flujo práctico empieza antes de subir el archivo y continúa con entrega adaptable.",
     sections: [
       {
-        heading: "Redimensiona al layout",
+        heading: "Redimensiona al diseño",
         body: [
           "No subas un original enorme cuando el diseño final necesita una imagen mucho menor.",
           "Cada ubicación debería tener una razón para sus dimensiones."
@@ -471,15 +471,15 @@ export const GUIDES_ES: Guide[] = [
         ]
       },
       {
-        heading: "Planifica entrega responsive",
+        heading: "Planifica entrega adaptable",
         body: [
-          "El archivo preparado es solo una parte del rendimiento. En producción conviene usar markup responsive, caché y carga adecuada.",
-          "Un asset limpio facilita esas optimizaciones posteriores."
+          "El archivo preparado es solo una parte del rendimiento. En producción conviene usar marcado adaptable, caché y carga adecuada.",
+          "Un recurso limpio facilita esas optimizaciones posteriores."
         ]
       }
     ],
     takeaway:
-      "El rendimiento mejora cuando dimensiones, formato, compresión y entrega responsive se planifican juntos."
+      "El rendimiento mejora cuando dimensiones, formato, compresión y entrega adaptable se planifican juntos."
   }
 ];
 

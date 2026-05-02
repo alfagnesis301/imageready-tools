@@ -10,11 +10,11 @@ const page = {
   title: { en: "Free Image Compressor", es: "Compresor de imágenes gratis" },
   description: {
     en: "Reduce image weight for websites, blogs, previews and campaigns with a browser-based compressor that keeps your file local.",
-    es: "Reduce el peso de imágenes para websites, blogs, previews y campañas con un compresor en el navegador que mantiene tu archivo local."
+    es: "Reduce el peso de imágenes para sitios web, blogs, vistas previas y campañas con un compresor en el navegador que mantiene tu archivo local."
   },
   toolDescription: {
     en: "Upload an image, review its file size and use the Compress and convert panel to export an optimized JPG, WebP or PNG preview.",
-    es: "Sube una imagen, revisa su peso y usa el panel Comprimir y convertir para exportar una preview optimizada en JPG, WebP o PNG."
+    es: "Sube una imagen, revisa su peso y usa el panel Comprimir y convertir para exportar una vista previa optimizada en JPG, WebP o PNG."
   }
 } satisfies Record<string, LocalizedText>;
 
@@ -50,11 +50,11 @@ const sections: LocalizedToolSection[] = [
     paragraphs: [
       {
         en: "Compression is useful before uploading blog images, hero images, product visuals, email graphics and social previews that may slow down loading.",
-        es: "La compresión es útil antes de subir imágenes de blog, hero images, visuales de producto, gráficos de email y previews sociales que podrían ralentizar la carga."
+        es: "La compresión es útil antes de subir imágenes de blog, imágenes principales, visuales de producto, gráficos de email y vistas previas sociales que podrían ralentizar la carga."
       },
       {
         en: "Compression does not replace responsive image markup, caching or a good hosting setup, but it can reduce unnecessary weight at the source.",
-        es: "La compresión no reemplaza responsive images, caché ni buen hosting, pero puede reducir peso innecesario desde el archivo de origen."
+        es: "La compresión no reemplaza imágenes adaptables, caché ni buen hosting, pero puede reducir peso innecesario desde el archivo de origen."
       }
     ]
   }
@@ -72,7 +72,7 @@ const faqs: LocalizedFaq[] = [
     question: { en: "When should I use WebP?", es: "¿Cuándo debería usar WebP?" },
     answer: {
       en: "WebP is often useful for reducing file size while preserving good visual quality, especially for website and blog images.",
-      es: "WebP suele ser útil para reducir peso conservando buena calidad visual, especialmente en imágenes para websites y blogs."
+      es: "WebP suele ser útil para reducir peso conservando buena calidad visual, especialmente en imágenes para sitios web y blogs."
     }
   },
   {
@@ -108,7 +108,7 @@ const table = [
     risk: { en: "Losing transparent background in JPG", es: "Perder el fondo transparente al exportar JPG" }
   },
   {
-    type: { en: "Email header", es: "Header de email" },
+    type: { en: "Email header", es: "Encabezado de email" },
     approach: { en: "Keep width practical and file lightweight", es: "Mantener ancho práctico y archivo ligero" },
     risk: { en: "Slow loading in email clients", es: "Carga lenta en clientes de email" }
   }
@@ -119,11 +119,11 @@ const cards = [
     title: { en: "Use cases", es: "Casos de uso" },
     body: {
       en: "Compress blog images, feature images, lightweight product visuals, email banners and preview graphics before they are added to a live publishing system.",
-      es: "Comprime imágenes de blog, imágenes destacadas, visuales de producto ligeros, banners de email y gráficos de preview antes de agregarlos a un sistema de publicación real."
+      es: "Comprime imágenes de blog, imágenes destacadas, visuales de producto ligeros, banners de email y gráficos de vista previa antes de agregarlos a un sistema de publicación real."
     }
   },
   {
-    title: { en: "Quality checks", es: "Chequeos de calidad" },
+    title: { en: "Quality checks", es: "Revisiones de calidad" },
     body: {
       en: "Review faces, product edges, text, gradients and logos after export. File size is only useful when the visual still supports the page.",
       es: "Revisa rostros, bordes de producto, texto, degradados y logos después de exportar. El peso solo importa si la imagen sigue funcionando para la página."
@@ -191,12 +191,12 @@ export default function CompressImageContent() {
         </h2>
         <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
           {language === "es"
-            ? "Los archivos de imagen pesados son uno de los problemas más fáciles de pasar por alto antes de publicar. Una foto puede verse perfecta en una herramienta de diseño y aun así ser innecesariamente pesada para un blog, landing page, página de producto o header de email. PublishPixel te ayuda a crear una copia más ligera directamente en tu navegador, mientras el archivo original queda guardado con seguridad."
+            ? "Los archivos de imagen pesados son uno de los problemas más fáciles de pasar por alto antes de publicar. Una foto puede verse perfecta en una herramienta de diseño y aun así ser innecesariamente pesada para un blog, página de aterrizaje, página de producto o encabezado de email. PublishPixel te ayuda a crear una copia más ligera directamente en tu navegador, mientras el archivo original queda guardado con seguridad."
             : "Large image files are one of the easiest problems to miss before publishing. A photo may look perfect in a design tool but still be unnecessarily heavy for a blog post, landing page, product page or email header. PublishPixel helps you create a lighter publishing copy directly in your browser, so the original file can stay safely stored while the web version is prepared for real use."}
         </p>
         <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
           {language === "es"
-            ? "El compresor está diseñado para publicación web práctica. No reemplaza tu imagen maestra, un flujo profesional de impresión ni un pipeline responsive completo. Es un paso rápido antes de subir: revisa el peso actual, elige formato de salida, prueba calidad y descarga una copia más fácil de usar en un CMS, tienda, herramienta de email o campaña."
+            ? "El compresor está diseñado para publicación web práctica. No reemplaza tu imagen maestra, un flujo profesional de impresión ni un sistema completo de imágenes adaptables. Es un paso rápido antes de subir: revisa el peso actual, elige formato de salida, prueba calidad y descarga una copia más fácil de usar en un CMS, tienda, herramienta de email o campaña."
             : "The compressor is designed for practical web publishing. It is not a replacement for your master image, a professional print workflow or a full responsive image pipeline. Instead, it gives creators, marketers and site owners a fast pre-upload step: check the current weight, choose an output format, test a quality level and download a publishing copy that is easier to move through a CMS, store builder, email tool or campaign page."}
         </p>
 
@@ -250,12 +250,12 @@ export default function CompressImageContent() {
           </h3>
           <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
             {language === "es"
-              ? "La compresión es solo una señal de preparación. Después de exportar una copia más ligera, compara la imagen con un preset de destino, revisa el nombre del archivo, confirma el recorte y evalúa los metadatos antes de publicar."
+              ? "La compresión es solo una señal de preparación. Después de exportar una copia más ligera, compara la imagen con un ajuste predefinido de destino, revisa el nombre del archivo, confirma el recorte y evalúa los metadatos antes de publicar."
               : "Compression is only one readiness signal. After exporting a lighter copy, compare the image against a destination preset, check the filename, confirm the crop and review metadata awareness before publishing."}
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link href={withLocalePath("/smart-image-publish-check", language)} className="button-primary">
-              {language === "es" ? "Ejecutar Smart Check" : "Run Smart Check"}
+              {language === "es" ? "Ejecutar revisión inteligente" : "Run Smart Check"}
             </Link>
             <Link href={withLocalePath("/guides/compress-images-without-losing-quality", language)} className="button-secondary">
               {language === "es" ? "Guía de compresión" : "Compression guide"}
