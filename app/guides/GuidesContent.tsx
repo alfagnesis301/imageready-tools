@@ -79,7 +79,7 @@ export default function GuidesContent() {
           return (
             <Link
               key={guide.slug}
-              href={`/guides/${guide.slug}`}
+              href={language === "es" ? `/es/guides/${guide.slug}` : `/guides/${guide.slug}`}
               className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-soft focus-ring dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
             >
               <h2 className="text-base font-extrabold tracking-normal text-slate-950 dark:text-white">

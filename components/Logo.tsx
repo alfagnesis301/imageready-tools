@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { withLocalePath } from "@/lib/i18n";
+import { useLanguage } from "./LanguageProvider";
 
 type LogoProps = {
   variant?: "horizontal" | "icon";
@@ -7,6 +11,9 @@ type LogoProps = {
 };
 
 export default function Logo({ variant = "horizontal", className = "", href = "/" }: LogoProps) {
+  const { language } = useLanguage();
+  const localizedHref = href ? withLocalePath(href, language) : href;
+
   const content = (
     <span className={`inline-flex items-center gap-3 ${className}`}>
       <span
@@ -71,15 +78,19 @@ export default function Logo({ variant = "horizontal", className = "", href = "/
             Publish<span className="bg-gradient-to-r from-blue-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">Pixel</span>
           </span>
           <span className="mt-1 hidden text-[10px] font-bold uppercase text-slate-500 sm:block dark:text-slate-400">
-            Make every image ready to publish
+            {language === "es" ? "Prepara cada imagen para publicar" : "Make every image ready to publish"}
           </span>
         </span>
       ) : null}
     </span>
   );
 
-  return href ? (
-    <Link href={href} className="focus-ring rounded-lg" aria-label="PublishPixel home">
+  return localizedHref ? (
+    <Link
+      href={localizedHref}
+      className="focus-ring rounded-lg"
+      aria-label={language === "es" ? "Inicio de PublishPixel" : "PublishPixel home"}
+    >
       {content}
     </Link>
   ) : (

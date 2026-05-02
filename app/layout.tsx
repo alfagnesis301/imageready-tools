@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { headers } from "next/headers";
 import Script from "next/script";
 import "./globals.css";
 import CookieConsent from "@/components/CookieConsent";
@@ -6,6 +7,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/constants";
+import { getLocaleFromPathname } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -30,11 +32,14 @@ export const viewport: Viewport = {
   ]
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+  const headersList = await headers();
+  const pathname = headersList.get("x-publishpixel-pathname") || "/";
+  const locale = getLocaleFromPathname(pathname);
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className="min-h-screen font-sans antialiased">
         {adsenseClient ? (
           <Script
@@ -48,10 +53,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "try{var t=localStorage.getItem('irt-theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}var l=localStorage.getItem('publishpixel-language');if(l==='en'||l==='es'){document.documentElement.lang=l}}catch(e){}"
+              "try{var t=localStorage.getItem('irt-theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}"
           }}
         />
-        <LanguageProvider>
+        <LanguageProvider initialLanguage={locale}>
           <Header />
           <main>{children}</main>
           <Footer />

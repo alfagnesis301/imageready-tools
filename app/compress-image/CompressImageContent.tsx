@@ -3,6 +3,7 @@
 import Link from "next/link";
 import LocalizedToolSeoPage, { type LocalizedFaq, type LocalizedText, type LocalizedToolSection } from "@/components/LocalizedToolSeoPage";
 import { useLanguage } from "@/components/LanguageProvider";
+import { withLocalePath } from "@/lib/i18n";
 
 const page = {
   eyebrow: { en: "Image utility", es: "Utilidad de imagen" },
@@ -253,13 +254,13 @@ export default function CompressImageContent() {
               : "Compression is only one readiness signal. After exporting a lighter copy, compare the image against a destination preset, check the filename, confirm the crop and review metadata awareness before publishing."}
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/smart-image-publish-check" className="button-primary">
+            <Link href={withLocalePath("/smart-image-publish-check", language)} className="button-primary">
               {language === "es" ? "Ejecutar Smart Check" : "Run Smart Check"}
             </Link>
-            <Link href="/guides/compress-images-without-losing-quality" className="button-secondary">
+            <Link href={withLocalePath("/guides/compress-images-without-losing-quality", language)} className="button-secondary">
               {language === "es" ? "Guía de compresión" : "Compression guide"}
             </Link>
-            <Link href="/guides/webp-vs-jpeg-vs-png" className="button-secondary">
+            <Link href={withLocalePath("/guides/webp-vs-jpeg-vs-png", language)} className="button-secondary">
               {language === "es" ? "Guía de formatos" : "Format guide"}
             </Link>
           </div>

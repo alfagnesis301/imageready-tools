@@ -3,6 +3,7 @@
 import Link from "next/link";
 import LocalizedToolSeoPage, { type LocalizedFaq, type LocalizedText, type LocalizedToolSection } from "@/components/LocalizedToolSeoPage";
 import { useLanguage } from "@/components/LanguageProvider";
+import { withLocalePath } from "@/lib/i18n";
 
 const page = {
   eyebrow: { en: "Image utility", es: "Utilidad de imagen" },
@@ -208,13 +209,13 @@ export default function ResizeImageContent() {
               : "Resizing cannot create detail that is missing from the source image. If the original is blurry or too small, upscaling may satisfy a pixel target but still look weak. For important thumbnails, product photos and hero sections, start with a source image that already has enough detail and resize down from there."}
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/smart-image-publish-check" className="button-primary">
+            <Link href={withLocalePath("/smart-image-publish-check", language)} className="button-primary">
               {language === "es" ? "Revisar dimensiones" : "Check dimensions"}
             </Link>
-            <Link href="/guides/image-size-for-web" className="button-secondary">
+            <Link href={withLocalePath("/guides/image-size-for-web", language)} className="button-secondary">
               {language === "es" ? "Guía de tamaño web" : "Web size guide"}
             </Link>
-            <Link href="/social-media-image-sizes" className="button-secondary">
+            <Link href={withLocalePath("/social-media-image-sizes", language)} className="button-secondary">
               {language === "es" ? "Guía de tamaños sociales" : "Social size guide"}
             </Link>
           </div>

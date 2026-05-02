@@ -1,6 +1,6 @@
-import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
 import HomeFAQ from "@/components/HomeFAQ";
+import LocalizedLink from "@/components/LocalizedLink";
 import { T } from "@/components/LanguageProvider";
 import SmartPublishCheck from "@/components/SmartPublishCheck";
 import TrustBadges from "@/components/TrustBadges";
@@ -114,9 +114,9 @@ export default function HomePage() {
             <a href="#tool" className="button-primary">
               <T k="action.uploadImage" />
             </a>
-            <a href="/social-media-image-sizes" className="button-secondary">
+            <LocalizedLink href="/social-media-image-sizes" className="button-secondary">
               <T k="home.viewSizeGuide" />
-            </a>
+            </LocalizedLink>
           </div>
           <div className="mt-7">
             <TrustBadges />
@@ -295,7 +295,7 @@ export default function HomePage() {
         </div>
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {GUIDES.slice(0, 8).map((guide) => (
-            <Link
+            <LocalizedLink
               key={guide.slug}
               href={`/guides/${guide.slug}`}
               className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-soft focus-ring dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
@@ -306,7 +306,7 @@ export default function HomePage() {
               <p className="mt-2 text-xs leading-5 text-slate-600 dark:text-slate-400">
                 <T k={`guide.${guide.slug}.description`} />
               </p>
-            </Link>
+            </LocalizedLink>
           ))}
         </div>
       </section>

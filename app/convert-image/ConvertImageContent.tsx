@@ -3,6 +3,7 @@
 import Link from "next/link";
 import LocalizedToolSeoPage, { type LocalizedFaq, type LocalizedText, type LocalizedToolSection } from "@/components/LocalizedToolSeoPage";
 import { useLanguage } from "@/components/LanguageProvider";
+import { withLocalePath } from "@/lib/i18n";
 
 const page = {
   eyebrow: { en: "Image utility", es: "Utilidad de imagen" },
@@ -201,13 +202,13 @@ export default function ConvertImageContent() {
               : "A website image, email header, social preview and product listing may not need the same format. Start with the destination preset, check whether transparency matters, then export the smallest file that still looks clear in context."}
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/smart-image-publish-check" className="button-primary">
+            <Link href={withLocalePath("/smart-image-publish-check", language)} className="button-primary">
               {language === "es" ? "Comparar con presets" : "Compare with presets"}
             </Link>
-            <Link href="/guides/webp-vs-jpeg-vs-png" className="button-secondary">
+            <Link href={withLocalePath("/guides/webp-vs-jpeg-vs-png", language)} className="button-secondary">
               {language === "es" ? "Leer guía de formatos" : "Read format guide"}
             </Link>
-            <Link href="/compress-image" className="button-secondary">
+            <Link href={withLocalePath("/compress-image", language)} className="button-secondary">
               {language === "es" ? "Comprimir después de convertir" : "Compress after converting"}
             </Link>
           </div>

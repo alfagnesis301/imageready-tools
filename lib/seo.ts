@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "./constants";
+import { getAlternatePaths, type Locale } from "./i18n";
 
 type PageMetadataInput = {
   title: string;
@@ -7,6 +8,7 @@ type PageMetadataInput = {
   path?: string;
   image?: string;
   noIndex?: boolean;
+  locale?: Locale;
 };
 
 export function createPageMetadata({
@@ -14,16 +16,23 @@ export function createPageMetadata({
   description,
   path = "/",
   image = "/favicon.svg",
-  noIndex
+  noIndex,
+  locale = path === "/es" || path.startsWith("/es/") ? "es" : "en"
 }: PageMetadataInput): Metadata {
   const canonical = new URL(path, SITE_URL).toString();
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+  const alternatePaths = getAlternatePaths(path);
 
   return {
     title,
     description,
     alternates: {
-      canonical
+      canonical,
+      languages: {
+        en: new URL(alternatePaths.en, SITE_URL).toString(),
+        es: new URL(alternatePaths.es, SITE_URL).toString(),
+        "x-default": new URL(alternatePaths["x-default"], SITE_URL).toString()
+      }
     },
     robots: noIndex ? { index: false, follow: false } : { index: true, follow: true },
     openGraph: {
@@ -32,6 +41,8 @@ export function createPageMetadata({
       title: fullTitle,
       description,
       url: canonical,
+      locale: locale === "es" ? "es_ES" : "en_US",
+      alternateLocale: locale === "es" ? ["en_US"] : ["es_ES"],
       images: [
         {
           url: image,

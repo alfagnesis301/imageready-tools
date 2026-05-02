@@ -1,6 +1,8 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname } from "@/lib/i18n";
 
 export type Language = "en" | "es";
 
@@ -43,6 +45,8 @@ const translations: Record<Language, Record<string, string>> = {
     "action.uploadImage": "Upload an image",
     "header.mainNav": "Main navigation",
     "header.mobileNav": "Mobile navigation",
+    "header.openMenu": "Open menu",
+    "header.closeMenu": "Close menu",
     "footer.tools": "Tools",
     "footer.company": "Company",
     "footer.description":
@@ -409,9 +413,11 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.Cookie Policy": "Política de cookies",
     "nav.Editorial Policy": "Política editorial",
     "nav.Disclaimer": "Aviso legal",
-    "action.uploadImage": "Subir imagen",
+    "action.uploadImage": "Subir una imagen",
     "header.mainNav": "Navegación principal",
     "header.mobileNav": "Navegación móvil",
+    "header.openMenu": "Abrir menú",
+    "header.closeMenu": "Cerrar menú",
     "footer.tools": "Herramientas",
     "footer.company": "Empresa",
     "footer.description":
@@ -766,16 +772,22 @@ function interpolate(value: string, vars?: TranslationVars) {
   );
 }
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("en");
+export function LanguageProvider({
+  children,
+  initialLanguage = "en"
+}: {
+  children: React.ReactNode;
+  initialLanguage?: Language;
+}) {
+  const pathname = usePathname();
+  const routeLanguage = getLocaleFromPathname(pathname || "/");
+  const [language, setLanguageState] = useState<Language>(initialLanguage);
 
   useEffect(() => {
-    const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-    if (stored === "en" || stored === "es") {
-      setLanguageState(stored);
-      document.documentElement.lang = stored;
-    }
-  }, []);
+    setLanguageState(routeLanguage);
+    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, routeLanguage);
+    document.documentElement.lang = routeLanguage;
+  }, [routeLanguage]);
 
   function setLanguage(nextLanguage: Language) {
     setLanguageState(nextLanguage);

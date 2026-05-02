@@ -1,195 +1,579 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://publishpixel.net/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/smart-image-publish-check</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/smart-image-publish-check" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/smart-image-publish-check" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/smart-image-publish-check" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/smart-image-publish-check</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/smart-image-publish-check" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/smart-image-publish-check" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/smart-image-publish-check" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/compress-image</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/compress-image" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/compress-image" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/compress-image" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/compress-image</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/compress-image" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/compress-image" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/compress-image" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/resize-image</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/resize-image" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/resize-image" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/resize-image" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/resize-image</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/resize-image" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/resize-image" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/resize-image" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/convert-image</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/convert-image" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/convert-image" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/convert-image" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/convert-image</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/convert-image" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/convert-image" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/convert-image" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/social-media-image-sizes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/social-media-image-sizes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/social-media-image-sizes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/social-media-image-sizes" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://publishpixel.net/guides</loc>
+    <loc>https://publishpixel.net/es/social-media-image-sizes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/social-media-image-sizes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/social-media-image-sizes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/social-media-image-sizes" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/open-graph-image-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/open-graph-image-checker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/open-graph-image-checker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/open-graph-image-checker" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/open-graph-image-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/open-graph-image-checker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/open-graph-image-checker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/open-graph-image-checker" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/youtube-thumbnail-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/youtube-thumbnail-checker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/youtube-thumbnail-checker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/youtube-thumbnail-checker" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/youtube-thumbnail-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/youtube-thumbnail-checker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/youtube-thumbnail-checker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/youtube-thumbnail-checker" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/image-alt-text-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/image-alt-text-checker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/image-alt-text-checker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/image-alt-text-checker" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/image-alt-text-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/image-alt-text-checker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/image-alt-text-checker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/image-alt-text-checker" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/image-metadata-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/image-metadata-checker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/image-metadata-checker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/image-metadata-checker" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/image-metadata-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/image-metadata-checker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/image-metadata-checker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/image-metadata-checker" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/website-image-optimizer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/website-image-optimizer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/website-image-optimizer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/website-image-optimizer" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/website-image-optimizer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/website-image-optimizer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/website-image-optimizer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/website-image-optimizer" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/instagram-image-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/instagram-image-checker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/instagram-image-checker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/instagram-image-checker" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://publishpixel.net/guides/image-size-for-web</loc>
+    <loc>https://publishpixel.net/es/instagram-image-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/instagram-image-checker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/instagram-image-checker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/instagram-image-checker" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://publishpixel.net/guides/remove-image-metadata</loc>
+    <loc>https://publishpixel.net/guides</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://publishpixel.net/guides/image-alt-text</loc>
+    <loc>https://publishpixel.net/es/guides</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://publishpixel.net/guides/webp-vs-jpeg-vs-png</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://publishpixel.net/guides/image-seo-checklist</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://publishpixel.net/guides/social-media-image-sizes</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://publishpixel.net/guides/compress-images-without-losing-quality</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://publishpixel.net/guides/photo-privacy-before-publishing</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://publishpixel.net/guides/image-publishing-checklist</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://publishpixel.net/guides/open-graph-image-best-practices</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://publishpixel.net/guides/youtube-thumbnail-image-guide</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://publishpixel.net/guides/website-image-performance-checklist</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/about" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/about" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/contact" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/contact" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/privacy-policy" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/privacy-policy" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/terms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/terms" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/terms" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/terms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/terms" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/terms" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/cookie-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/cookie-policy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/cookie-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/cookie-policy" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/cookie-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/cookie-policy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/cookie-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/cookie-policy" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/editorial-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/editorial-policy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/editorial-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/editorial-policy" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/editorial-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/editorial-policy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/editorial-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/editorial-policy" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://publishpixel.net/disclaimer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/disclaimer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/disclaimer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/disclaimer" />
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/disclaimer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/disclaimer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/disclaimer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/disclaimer" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/guides/image-size-for-web</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/image-size-for-web" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/image-size-for-web" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/image-size-for-web" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/guides/image-size-for-web</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/image-size-for-web" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/image-size-for-web" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/image-size-for-web" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/guides/remove-image-metadata</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/remove-image-metadata" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/remove-image-metadata" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/remove-image-metadata" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/guides/remove-image-metadata</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/remove-image-metadata" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/remove-image-metadata" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/remove-image-metadata" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/guides/image-alt-text</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/image-alt-text" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/image-alt-text" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/image-alt-text" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/guides/image-alt-text</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/image-alt-text" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/image-alt-text" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/image-alt-text" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/guides/webp-vs-jpeg-vs-png</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/webp-vs-jpeg-vs-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/webp-vs-jpeg-vs-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/webp-vs-jpeg-vs-png" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/guides/webp-vs-jpeg-vs-png</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/webp-vs-jpeg-vs-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/webp-vs-jpeg-vs-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/webp-vs-jpeg-vs-png" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/guides/image-seo-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/image-seo-checklist" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/image-seo-checklist" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/image-seo-checklist" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/guides/image-seo-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/image-seo-checklist" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/image-seo-checklist" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/image-seo-checklist" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/guides/social-media-image-sizes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/social-media-image-sizes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/social-media-image-sizes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/social-media-image-sizes" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/guides/social-media-image-sizes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/social-media-image-sizes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/social-media-image-sizes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/social-media-image-sizes" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/guides/compress-images-without-losing-quality</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/compress-images-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/compress-images-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/compress-images-without-losing-quality" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/guides/compress-images-without-losing-quality</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/compress-images-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/compress-images-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/compress-images-without-losing-quality" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/guides/photo-privacy-before-publishing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/photo-privacy-before-publishing" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/photo-privacy-before-publishing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/photo-privacy-before-publishing" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/guides/photo-privacy-before-publishing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/photo-privacy-before-publishing" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/photo-privacy-before-publishing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/photo-privacy-before-publishing" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/guides/image-publishing-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/image-publishing-checklist" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/image-publishing-checklist" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/image-publishing-checklist" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/guides/image-publishing-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/image-publishing-checklist" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/image-publishing-checklist" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/image-publishing-checklist" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/guides/open-graph-image-best-practices</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/open-graph-image-best-practices" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/open-graph-image-best-practices" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/open-graph-image-best-practices" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/guides/open-graph-image-best-practices</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/open-graph-image-best-practices" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/open-graph-image-best-practices" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/open-graph-image-best-practices" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/guides/youtube-thumbnail-image-guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/youtube-thumbnail-image-guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/youtube-thumbnail-image-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/youtube-thumbnail-image-guide" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/guides/youtube-thumbnail-image-guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/youtube-thumbnail-image-guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/youtube-thumbnail-image-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/youtube-thumbnail-image-guide" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/guides/website-image-performance-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/website-image-performance-checklist" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/website-image-performance-checklist" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/website-image-performance-checklist" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://publishpixel.net/es/guides/website-image-performance-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://publishpixel.net/guides/website-image-performance-checklist" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://publishpixel.net/es/guides/website-image-performance-checklist" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://publishpixel.net/guides/website-image-performance-checklist" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
