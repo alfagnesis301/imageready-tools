@@ -6,6 +6,7 @@ import { FileImage, Trash2 } from "lucide-react";
 import type { ImageAnalysisResult } from "@/lib/imageAnalysis";
 import { formatBytes } from "@/lib/imageUtils";
 import { formatLabel } from "@/lib/publishRules";
+import { useLanguage } from "./LanguageProvider";
 
 type ImagePreviewProps = {
   analysis: ImageAnalysisResult;
@@ -14,6 +15,7 @@ type ImagePreviewProps = {
 };
 
 export default function ImagePreview({ analysis, objectUrl, onClear }: ImagePreviewProps) {
+  const { t } = useLanguage();
   const canPreview = analysis.format !== "svg";
 
   return (
@@ -22,15 +24,14 @@ export default function ImagePreview({ analysis, objectUrl, onClear }: ImagePrev
         {canPreview ? (
           <img
             src={objectUrl}
-            alt="Uploaded preview"
+            alt={t("preview.uploadedAlt")}
             className="max-h-[360px] w-full object-contain"
           />
         ) : (
           <div className="flex min-h-[260px] flex-col items-center justify-center gap-3 p-6 text-center">
             <FileImage size={42} className="text-blue-600" aria-hidden="true" />
             <p className="max-w-sm text-sm text-slate-600 dark:text-slate-400">
-              SVG preview is intentionally limited. The file is parsed for basic dimensions without
-              inserting SVG markup into the page.
+              {t("preview.svgNotice")}
             </p>
           </div>
         )}
@@ -38,25 +39,25 @@ export default function ImagePreview({ analysis, objectUrl, onClear }: ImagePrev
 
       <div className="grid gap-3 sm:grid-cols-2">
         <div>
-          <p className="label">File</p>
+          <p className="label">{t("preview.file")}</p>
           <p className="mt-1 break-words text-sm font-semibold text-slate-950 dark:text-white">
             {analysis.name}
           </p>
         </div>
         <div>
-          <p className="label">Original size</p>
+          <p className="label">{t("preview.originalSize")}</p>
           <p className="mt-1 text-sm font-semibold text-slate-950 dark:text-white">
             {formatBytes(analysis.size)}
           </p>
         </div>
         <div>
-          <p className="label">Format</p>
+          <p className="label">{t("preview.format")}</p>
           <p className="mt-1 text-sm font-semibold text-slate-950 dark:text-white">
             {formatLabel(analysis.format)}
           </p>
         </div>
         <div>
-          <p className="label">Dimensions</p>
+          <p className="label">{t("preview.dimensions")}</p>
           <p className="mt-1 text-sm font-semibold text-slate-950 dark:text-white">
             {analysis.width} x {analysis.height}px
           </p>
@@ -65,7 +66,7 @@ export default function ImagePreview({ analysis, objectUrl, onClear }: ImagePrev
 
       <button type="button" className="button-secondary w-full" onClick={onClear}>
         <Trash2 size={17} aria-hidden="true" />
-        Clear image
+        {t("preview.clear")}
       </button>
     </div>
   );

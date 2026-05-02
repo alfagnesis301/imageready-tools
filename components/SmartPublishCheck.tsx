@@ -17,6 +17,7 @@ import RecommendationPanel from "./RecommendationPanel";
 import ResizeSuggestions from "./ResizeSuggestions";
 import { analyzeImage, analyzeImageForPreset, type ImageAnalysisResult } from "@/lib/imageAnalysis";
 import type { PresetId } from "@/lib/publishRules";
+import { translatePublishText } from "@/lib/publishTranslations";
 import { useLanguage } from "./LanguageProvider";
 
 type SmartPublishCheckProps = {
@@ -39,7 +40,7 @@ export default function SmartPublishCheck({
   const [warning, setWarning] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [altText, setAltText] = useState("");
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   useEffect(() => {
     if (initialPreset !== "website-blog") return;
@@ -174,12 +175,12 @@ export default function SmartPublishCheck({
             <RecommendationPanel result={result} />
             <PublishReadyReport
               score={result.score}
-              preset={result.preset.label}
+              preset={t(`preset.${result.preset.id}`)}
               format={analysis.format.toUpperCase()}
               width={analysis.width}
               height={analysis.height}
               size={analysis.size}
-              recommendations={result.recommendations}
+              recommendations={result.recommendations.map((item) => translatePublishText(item, language))}
             />
             <FormatRecommendation result={result} />
             <FilenameSeoCheck filename={analysis.name} />

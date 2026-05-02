@@ -1,39 +1,43 @@
+"use client";
+
 import { Gauge, ImageIcon, Layers, ScanSearch } from "lucide-react";
 import type { ImageAnalysisResult } from "@/lib/imageAnalysis";
 import { formatBytes } from "@/lib/imageUtils";
 import { formatLabel } from "@/lib/publishRules";
+import { useLanguage } from "./LanguageProvider";
 
 export default function ImageMetrics({ analysis }: { analysis: ImageAnalysisResult }) {
+  const { t } = useLanguage();
   const metrics = [
-    { label: "File size", value: formatBytes(analysis.size), icon: Gauge },
-    { label: "Dimensions", value: `${analysis.width} x ${analysis.height}px`, icon: ImageIcon },
-    { label: "Aspect ratio", value: analysis.ratioLabel, icon: ScanSearch },
-    { label: "Megapixels", value: `${analysis.megapixels} MP`, icon: Layers },
-    { label: "Format", value: formatLabel(analysis.format), icon: ImageIcon },
-    { label: "Orientation", value: analysis.orientation, icon: ScanSearch },
+    { label: t("metrics.fileSize"), value: formatBytes(analysis.size), icon: Gauge },
+    { label: t("metrics.dimensions"), value: `${analysis.width} x ${analysis.height}px`, icon: ImageIcon },
+    { label: t("metrics.aspectRatio"), value: analysis.ratioLabel, icon: ScanSearch },
+    { label: t("metrics.megapixels"), value: `${analysis.megapixels} MP`, icon: Layers },
+    { label: t("metrics.format"), value: formatLabel(analysis.format), icon: ImageIcon },
+    { label: t("metrics.orientation"), value: t(`orientation.${analysis.orientation}`), icon: ScanSearch },
     {
-      label: "Transparency",
+      label: t("metrics.transparency"),
       value:
-        analysis.hasTransparency === null ? "Not checked" : analysis.hasTransparency ? "Detected" : "None found",
+        analysis.hasTransparency === null ? t("metrics.notChecked") : analysis.hasTransparency ? t("metrics.detected") : t("metrics.noneFound"),
       icon: Layers
     },
     {
-      label: "EXIF metadata",
+      label: t("metrics.exif"),
       value:
         analysis.hasExifMetadata === null
-          ? "Not checked"
+          ? t("metrics.notChecked")
           : analysis.hasExifMetadata
-            ? "Detected"
-            : "None found",
+            ? t("metrics.detected")
+            : t("metrics.noneFound"),
       icon: Layers
     },
     {
-      label: "Compression opportunity",
-      value: `${analysis.compressionOpportunity}% estimated`,
+      label: t("metrics.compressionOpportunity"),
+      value: t("metrics.estimatedPercent", { value: analysis.compressionOpportunity }),
       icon: Gauge
     },
-    { label: "Blurry risk", value: analysis.blurryRisk, icon: ScanSearch },
-    { label: "Optimized estimate", value: formatBytes(analysis.estimatedOptimizedSize), icon: Gauge }
+    { label: t("metrics.blurryRisk"), value: t(`risk.${analysis.blurryRisk}`), icon: ScanSearch },
+    { label: t("metrics.optimizedEstimate"), value: formatBytes(analysis.estimatedOptimizedSize), icon: Gauge }
   ];
 
   return (

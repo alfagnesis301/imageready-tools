@@ -13,6 +13,7 @@ import {
 } from "@/lib/imageUtils";
 import type { ImageFormat } from "@/lib/publishRules";
 import { formatLabel } from "@/lib/publishRules";
+import { useLanguage } from "./LanguageProvider";
 
 type CompressionEstimatorProps = {
   analysis: ImageAnalysisResult | null;
@@ -21,6 +22,7 @@ type CompressionEstimatorProps = {
 const EXPORT_FORMATS: ImageFormat[] = ["webp", "jpg", "png"];
 
 export default function CompressionEstimator({ analysis }: CompressionEstimatorProps) {
+  const { t } = useLanguage();
   const [quality, setQuality] = useState(0.78);
   const [targetFormat, setTargetFormat] = useState<ImageFormat>("webp");
   const [status, setStatus] = useState<string | null>(null);
@@ -58,9 +60,9 @@ export default function CompressionEstimator({ analysis }: CompressionEstimatorP
         blob,
         `${safeFileName(analysis.name)}-optimized.${extensionForFormat(targetFormat)}`
       );
-      setStatus(`Optimized ${formatLabel(targetFormat)} generated locally in your browser.`);
+      setStatus(t("compression.success", { format: formatLabel(targetFormat) }));
     } catch (error) {
-      setStatus(error instanceof Error ? error.message : "The optimized image could not be created.");
+      setStatus(error instanceof Error ? error.message : t("compression.error"));
     } finally {
       setIsExporting(false);
     }
@@ -70,13 +72,13 @@ export default function CompressionEstimator({ analysis }: CompressionEstimatorP
     <section className="rounded-lg border border-slate-200 bg-white/82 p-4 dark:border-slate-800 dark:bg-slate-900/82">
       <div className="flex items-center gap-2">
         <SlidersHorizontal size={18} className="text-blue-600 dark:text-blue-300" aria-hidden="true" />
-        <h3 className="text-sm font-bold text-slate-950 dark:text-white">Compress and convert</h3>
+        <h3 className="text-sm font-bold text-slate-950 dark:text-white">{t("compression.title")}</h3>
       </div>
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <div className="grid gap-2">
           <label htmlFor="quality" className="label">
-            Quality: {Math.round(quality * 100)}%
+            {t("compression.quality", { value: Math.round(quality * 100) })}
           </label>
           <input
             id="quality"
@@ -90,12 +92,12 @@ export default function CompressionEstimator({ analysis }: CompressionEstimatorP
             className="accent-blue-600 disabled:opacity-40"
           />
           <p className="text-xs leading-5 text-slate-500 dark:text-slate-400">
-            PNG export may ignore quality settings in some browsers.
+            {t("compression.pngHelp")}
           </p>
         </div>
         <div className="grid gap-2">
           <label htmlFor="target-format" className="label">
-            Export format
+            {t("compression.exportFormat")}
           </label>
           <select
             id="target-format"
@@ -115,26 +117,26 @@ export default function CompressionEstimator({ analysis }: CompressionEstimatorP
 
       <div className="mt-4 grid gap-3 rounded-lg bg-slate-50 p-3 text-sm dark:bg-slate-950">
         <p className="text-slate-600 dark:text-slate-400">
-          Estimated output:{" "}
+          {t("compression.estimatedOutput")}{" "}
           <span className="font-bold text-slate-950 dark:text-white">
-            {analysis ? formatBytes(estimatedSize) : "Upload an image"}
+            {analysis ? formatBytes(estimatedSize) : t("action.uploadImage")}
           </span>
         </p>
         <p className="text-slate-600 dark:text-slate-400">
-          Estimated saving:{" "}
-          <span className="font-bold text-slate-950 dark:text-white">{analysis ? `${saving}%` : "n/a"}</span>
+          {t("compression.estimatedSaving")}{" "}
+          <span className="font-bold text-slate-950 dark:text-white">{analysis ? `${saving}%` : t("compression.notAvailable")}</span>
         </p>
       </div>
 
       {analysis?.format === "svg" ? (
         <p className="mt-3 text-sm leading-6 text-amber-700 dark:text-amber-200">
-          SVG raster export is not enabled here. Use the Smart Check results for basic SVG readiness.
+          {t("compression.svgExport")}
         </p>
       ) : null}
 
       <button type="button" className="button-primary mt-4 w-full" onClick={exportImage} disabled={disabled || isExporting}>
         {isExporting ? <Loader2 size={17} className="animate-spin" aria-hidden="true" /> : <Download size={17} aria-hidden="true" />}
-        Download optimized preview
+        {t("compression.download")}
       </button>
 
       {status ? (

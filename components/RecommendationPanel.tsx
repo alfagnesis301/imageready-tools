@@ -1,9 +1,10 @@
 import { AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
 import type { PublishResult } from "@/lib/publishRules";
+import { translatePublishText } from "@/lib/publishTranslations";
 import { useLanguage } from "./LanguageProvider";
 
 export default function RecommendationPanel({ result }: { result: PublishResult }) {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
     <div className="grid gap-4">
@@ -15,7 +16,7 @@ export default function RecommendationPanel({ result }: { result: PublishResult 
           </div>
           <ul className="mt-3 grid gap-2 text-sm leading-6 text-amber-900 dark:text-amber-100">
             {result.warnings.map((warning) => (
-              <li key={warning}>{warning}</li>
+              <li key={warning}>{translatePublishText(warning, language)}</li>
             ))}
           </ul>
         </section>
@@ -28,7 +29,7 @@ export default function RecommendationPanel({ result }: { result: PublishResult 
         </div>
         <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-700 dark:text-slate-300">
           {result.recommendations.map((recommendation) => (
-            <li key={recommendation}>{recommendation}</li>
+            <li key={recommendation}>{translatePublishText(recommendation, language)}</li>
           ))}
         </ul>
       </section>
@@ -41,7 +42,7 @@ export default function RecommendationPanel({ result }: { result: PublishResult 
           </div>
           <ul className="mt-3 grid gap-2 text-sm leading-6 text-emerald-900 dark:text-emerald-100">
             {result.goodPoints.map((point) => (
-              <li key={point}>{point}</li>
+              <li key={point}>{translatePublishText(point, language)}</li>
             ))}
           </ul>
         </section>

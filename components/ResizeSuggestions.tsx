@@ -12,6 +12,7 @@ import {
 } from "@/lib/imageUtils";
 import type { ImageFormat } from "@/lib/publishRules";
 import { formatLabel } from "@/lib/publishRules";
+import { useLanguage } from "./LanguageProvider";
 
 type ResizeSuggestionsProps = {
   analysis: ImageAnalysisResult | null;
@@ -27,6 +28,7 @@ const SIZE_PRESETS = [
 ];
 
 export default function ResizeSuggestions({ analysis }: ResizeSuggestionsProps) {
+  const { t } = useLanguage();
   const [width, setWidth] = useState(1200);
   const [height, setHeight] = useState(630);
   const [lockRatio, setLockRatio] = useState(true);
@@ -68,9 +70,9 @@ export default function ResizeSuggestions({ analysis }: ResizeSuggestionsProps) 
         quality: 0.82
       });
       downloadBlob(blob, `${safeFileName(analysis.name)}-${width}x${height}.${extensionForFormat(targetFormat)}`);
-      setStatus(`Resized image created locally. Estimated size: ${formatBytes(blob.size)}.`);
+      setStatus(t("resize.success", { size: formatBytes(blob.size) }));
     } catch (error) {
-      setStatus(error instanceof Error ? error.message : "The resized image could not be created.");
+      setStatus(error instanceof Error ? error.message : t("resize.error"));
     } finally {
       setIsExporting(false);
     }
@@ -82,13 +84,13 @@ export default function ResizeSuggestions({ analysis }: ResizeSuggestionsProps) 
     <section className="rounded-lg border border-slate-200 bg-white/82 p-4 dark:border-slate-800 dark:bg-slate-900/82">
       <div className="flex items-center gap-2">
         <Maximize2 size={18} className="text-violet-600 dark:text-violet-300" aria-hidden="true" />
-        <h3 className="text-sm font-bold text-slate-950 dark:text-white">Resize image</h3>
+        <h3 className="text-sm font-bold text-slate-950 dark:text-white">{t("resize.title")}</h3>
       </div>
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         <div className="grid gap-2">
           <label htmlFor="resize-width" className="label">
-            Width
+            {t("resize.width")}
           </label>
           <input
             id="resize-width"
@@ -102,7 +104,7 @@ export default function ResizeSuggestions({ analysis }: ResizeSuggestionsProps) 
         </div>
         <div className="grid gap-2">
           <label htmlFor="resize-height" className="label">
-            Height
+            {t("resize.height")}
           </label>
           <input
             id="resize-height"
@@ -124,10 +126,10 @@ export default function ResizeSuggestions({ analysis }: ResizeSuggestionsProps) 
             onChange={(event) => setLockRatio(event.target.checked)}
             className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-600"
           />
-          Lock aspect ratio
+          {t("resize.lockAspect")}
         </label>
         <label className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300">
-          Format
+          {t("resize.format")}
           <select
             className="rounded-lg border border-slate-300 bg-white px-2 py-1 text-sm dark:border-slate-700 dark:bg-slate-950"
             value={targetFormat}
@@ -163,13 +165,13 @@ export default function ResizeSuggestions({ analysis }: ResizeSuggestionsProps) 
 
       {analysis?.format === "svg" ? (
         <p className="mt-3 text-sm leading-6 text-amber-700 dark:text-amber-200">
-          SVG resizing is not exported by this browser tool. Use your SVG editor to create raster variants.
+          {t("resize.svgExport")}
         </p>
       ) : null}
 
       <button type="button" className="button-primary mt-4 w-full" onClick={exportResized} disabled={disabled || isExporting}>
         {isExporting ? <Loader2 size={17} className="animate-spin" aria-hidden="true" /> : <Download size={17} aria-hidden="true" />}
-        Download resized image
+        {t("resize.download")}
       </button>
 
       {status ? (

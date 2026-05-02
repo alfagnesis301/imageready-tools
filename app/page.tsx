@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
-import FAQ from "@/components/FAQ";
+import HomeFAQ from "@/components/HomeFAQ";
+import { T } from "@/components/LanguageProvider";
 import SmartPublishCheck from "@/components/SmartPublishCheck";
 import TrustBadges from "@/components/TrustBadges";
 import { GUIDES } from "@/lib/guides";
@@ -67,24 +68,26 @@ const homeFaq = [
 ];
 
 const checks = [
-  "Dimensions, aspect ratio and orientation",
-  "Estimated file size and compression opportunity",
-  "Format suitability for the selected publishing context",
-  "SEO filename and alt text structure guidance",
-  "Open Graph and social compatibility signals",
-  "Warnings for heavy, small or mismatched images"
+  "home.check.0",
+  "home.check.1",
+  "home.check.2",
+  "home.check.3",
+  "home.check.4",
+  "home.check.5"
 ];
 
 const audiences = [
-  "Bloggers",
-  "SEO professionals",
-  "YouTubers",
-  "E-commerce sellers",
-  "Social media creators",
-  "Designers",
-  "Students",
-  "Small businesses"
+  "home.audience.0",
+  "home.audience.1",
+  "home.audience.2",
+  "home.audience.3",
+  "home.audience.4",
+  "home.audience.5",
+  "home.audience.6",
+  "home.audience.7"
 ];
+
+const scoreParts = ["home.scorePart.0", "home.scorePart.1", "home.scorePart.2", "home.scorePart.3"];
 
 export default function HomePage() {
   return (
@@ -102,18 +105,17 @@ export default function HomePage() {
         <div className="flex flex-col justify-center">
           <p className="label">PublishPixel</p>
           <h1 className="mt-3 max-w-2xl text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
-            Free Smart Image Publish Check Tool
+            <T k="home.heroTitle" />
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300">
-            Check if your image is ready for websites, SEO, social media, YouTube thumbnails,
-            e-commerce, email headers, and more - privately in your browser.
+            <T k="home.heroDescription" />
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href="#tool" className="button-primary">
-              Upload an image
+              <T k="action.uploadImage" />
             </a>
             <a href="/social-media-image-sizes" className="button-secondary">
-              View size guide
+              <T k="home.viewSizeGuide" />
             </a>
           </div>
           <div className="mt-7">
@@ -131,20 +133,18 @@ export default function HomePage() {
       <section className="border-y border-slate-200 bg-white/58 py-14 dark:border-slate-800 dark:bg-slate-950/35">
         <div className="shell">
           <div className="max-w-3xl">
-            <p className="label">What the tool checks</p>
+            <p className="label"><T k="home.checksEyebrow" /></p>
             <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-              What does PublishPixel check?
+              <T k="home.checksTitle" />
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              Image readiness is more than a file size number. The Smart Check combines dimensions,
-              ratio, format, estimated compression and context so you can make a better publishing
-              decision before an image goes live.
+              <T k="home.checksDescription" />
             </p>
           </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {checks.map((check) => (
               <div key={check} className="rounded-lg border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-700 shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
-                {check}
+                <T k={check} />
               </div>
             ))}
           </div>
@@ -153,36 +153,31 @@ export default function HomePage() {
 
       <section className="shell py-14">
         <div className="max-w-3xl">
-          <p className="label">Why PublishPixel is different</p>
+          <p className="label"><T k="home.differentEyebrow" /></p>
           <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-            More than compression: a complete image publishing check
+            <T k="home.differentTitle" />
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-            Most image tools focus on one action: compress, resize or convert. PublishPixel combines
-            those steps with publishing context so you can decide whether an image is actually ready
-            for the place it will appear.
+            <T k="home.differentDescription" />
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-            <h3 className="font-bold text-slate-950 dark:text-white">Context-aware checks</h3>
+            <h3 className="font-bold text-slate-950 dark:text-white"><T k="home.contextTitle" /></h3>
             <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-              Compare your image against practical presets for blogs, Open Graph previews, YouTube
-              thumbnails, product images, email headers and social posts.
+              <T k="home.contextDescription" />
             </p>
           </article>
           <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-            <h3 className="font-bold text-slate-950 dark:text-white">Publishing copy workflow</h3>
+            <h3 className="font-bold text-slate-950 dark:text-white"><T k="home.workflowTitle" /></h3>
             <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-              Keep your original file safe and export a dedicated version for the channel where the
-              image will be published.
+              <T k="home.workflowDescription" />
             </p>
           </article>
           <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-            <h3 className="font-bold text-slate-950 dark:text-white">Practical readiness score</h3>
+            <h3 className="font-bold text-slate-950 dark:text-white"><T k="home.scoreTitle" /></h3>
             <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-              Get a simple score with clear warnings for size, dimensions, ratio, format, alt text,
-              filename quality and metadata awareness.
+              <T k="home.scoreDescription" />
             </p>
           </article>
         </div>
@@ -190,19 +185,15 @@ export default function HomePage() {
 
       <section className="shell grid gap-10 py-14 lg:grid-cols-[1fr_0.85fr]">
         <div>
-          <p className="label">Publishing speed</p>
+          <p className="label"><T k="home.speedEyebrow" /></p>
           <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-            Why image readiness matters
+            <T k="home.readinessTitle" />
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-            Images influence page speed, visual polish, social previews and the first impression of a
-            post or product. A very large image can slow a page down, while a small or wrongly cropped
-            image can look weak in previews. This tool helps you catch common issues early.
+            <T k="home.readinessP1" />
           </p>
           <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-            Recommendations are intentionally practical: resize for the channel, convert when it may
-            reduce weight, compress carefully and avoid making claims about visual content the tool
-            cannot inspect.
+            <T k="home.readinessP2" />
           </p>
         </div>
         <AdSlot variant="sidebar" className="hidden lg:block" />
@@ -211,35 +202,31 @@ export default function HomePage() {
       <section className="border-y border-slate-200 bg-white/58 py-14 dark:border-slate-800 dark:bg-slate-950/35">
         <div className="shell">
           <div className="max-w-3xl">
-            <p className="label">Pre-publish workflow</p>
+            <p className="label"><T k="home.workflowEyebrow" /></p>
             <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-              A practical pre-publish workflow for images
+              <T k="home.workflowSectionTitle" />
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              Many image tools focus only on compression or conversion. PublishPixel combines
-              multiple publishing checks in one workflow so you can review the image before it
-              reaches your CMS, store, campaign page or social post.
+              <T k="home.workflowSectionDescription" />
             </p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-              <h3 className="font-semibold text-slate-950 dark:text-white">Before uploading</h3>
+              <h3 className="font-semibold text-slate-950 dark:text-white"><T k="home.beforeUploadTitle" /></h3>
               <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-                Check dimensions, ratio, weight and format before the file enters your publishing
-                system.
+                <T k="home.beforeUploadDescription" />
               </p>
             </article>
             <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-              <h3 className="font-semibold text-slate-950 dark:text-white">Before sharing</h3>
+              <h3 className="font-semibold text-slate-950 dark:text-white"><T k="home.beforeShareTitle" /></h3>
               <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-                Prepare Open Graph, thumbnail and social crops so previews look intentional.
+                <T k="home.beforeShareDescription" />
               </p>
             </article>
             <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-              <h3 className="font-semibold text-slate-950 dark:text-white">Before archiving</h3>
+              <h3 className="font-semibold text-slate-950 dark:text-white"><T k="home.beforeArchiveTitle" /></h3>
               <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-                Export a publishing copy instead of using the original file when privacy, metadata
-                or size matters.
+                <T k="home.beforeArchiveDescription" />
               </p>
             </article>
           </div>
@@ -249,36 +236,27 @@ export default function HomePage() {
       <section className="shell py-14">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <p className="label">Accessibility checklist</p>
+            <p className="label"><T k="home.accessibilityEyebrow" /></p>
             <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-              Prepare images that more people can understand
+              <T k="home.accessibilityTitle" />
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              Publishing readiness includes more than pixels. A useful image should have a purpose,
-              a readable crop and an alt text plan that describes the visible content honestly. If an
-              image is decorative, the final page should treat it that way instead of forcing noisy
-              alt text.
+              <T k="home.accessibilityP1" />
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              PublishPixel gives filename and alt text structure guidance without inventing a visual
-              description. You stay in control of the final wording because you know the image and
-              page context best.
+              <T k="home.accessibilityP2" />
             </p>
           </div>
           <div>
-            <p className="label">Performance checklist</p>
+            <p className="label"><T k="home.performanceEyebrow" /></p>
             <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-              Catch heavy files before they slow a page
+              <T k="home.performanceTitle" />
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              Large images can make a good page feel slow. Before publishing, check whether the file
-              is larger than the destination needs, whether the dimensions match the layout and
-              whether WebP or JPG would be a better export format.
+              <T k="home.performanceP1" />
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              The browser-based export tools help create lighter previews for common workflows. They
-              are useful for preparation, while production sites should still use responsive image
-              markup and caching.
+              <T k="home.performanceP2" />
             </p>
           </div>
         </div>
@@ -287,20 +265,18 @@ export default function HomePage() {
       <section className="border-y border-slate-200 bg-white/58 py-14 dark:border-slate-800 dark:bg-slate-950/35">
         <div className="shell grid gap-10 lg:grid-cols-2">
           <div>
-            <p className="label">How scoring works</p>
+            <p className="label"><T k="home.scoringEyebrow" /></p>
             <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-              Smart Image Publish Check explained
+              <T k="home.scoringTitle" />
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              The PublishReady Score weighs dimensions and aspect ratio, file size, recommended
-              format and context-specific quality signals. It is designed to guide fast decisions,
-              not to replace official platform requirements.
+              <T k="home.scoringDescription" />
             </p>
           </div>
           <div className="grid gap-3">
-            {["40% dimensions and aspect ratio", "25% file size", "20% recommended format", "15% context and quality heuristics"].map((item) => (
+            {scoreParts.map((item) => (
               <div key={item} className="rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold text-slate-800 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100">
-                {item}
+                <T k={item} />
               </div>
             ))}
           </div>
@@ -309,13 +285,12 @@ export default function HomePage() {
 
       <section className="shell py-14">
         <div className="max-w-3xl">
-          <p className="label">Related guides</p>
+          <p className="label"><T k="home.guidesEyebrow" /></p>
           <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-            Learn the image publishing checklist
+            <T k="home.guidesTitle" />
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-            These original guides explain the decisions behind the checker: image dimensions,
-            metadata, alt text, compression, privacy and format choice.
+            <T k="home.guidesDescription" />
           </p>
         </div>
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -325,9 +300,11 @@ export default function HomePage() {
               href={`/guides/${guide.slug}`}
               className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-soft focus-ring dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
             >
-              <h3 className="text-sm font-bold text-slate-950 dark:text-white">{guide.title}</h3>
+              <h3 className="text-sm font-bold text-slate-950 dark:text-white">
+                <T k={`guide.${guide.slug}.title`} />
+              </h3>
               <p className="mt-2 text-xs leading-5 text-slate-600 dark:text-slate-400">
-                {guide.description}
+                <T k={`guide.${guide.slug}.description`} />
               </p>
             </Link>
           ))}
@@ -336,9 +313,9 @@ export default function HomePage() {
 
       <section className="shell py-14">
         <div className="max-w-3xl">
-          <p className="label">Popular presets</p>
+          <p className="label"><T k="home.popularEyebrow" /></p>
           <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-            Popular image presets
+            <T k="home.popularTitle" />
           </h2>
         </div>
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -346,9 +323,14 @@ export default function HomePage() {
             const preset = PUBLISH_RULES[presetId];
             return (
               <div key={preset.id} className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-                <h3 className="text-sm font-bold text-slate-950 dark:text-white">{preset.label}</h3>
+                <h3 className="text-sm font-bold text-slate-950 dark:text-white">
+                  <T k={`preset.${preset.id}`} />
+                </h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-                  {preset.recommendedDimensions}; recommended ratio {preset.aspectLabel}.
+                  <T
+                    k="home.presetNote"
+                    vars={{ dimensions: preset.recommendedDimensions, ratio: preset.aspectLabel }}
+                  />
                 </p>
               </div>
             );
@@ -359,22 +341,20 @@ export default function HomePage() {
       <section className="border-y border-slate-200 bg-white/58 py-14 dark:border-slate-800 dark:bg-slate-950/35">
         <div className="shell grid gap-10 lg:grid-cols-2">
           <div>
-            <p className="label">Privacy-first image analysis</p>
+            <p className="label"><T k="home.privacyEyebrow" /></p>
             <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-              Your image stays in your browser
+              <T k="home.privacyTitle" />
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              PublishPixel does not upload your image to a server for analysis. Browser APIs read
-              the file, calculate dimensions and create optional exported versions locally. Preferences
-              such as theme, preset and consent may use localStorage; images are not stored.
+              <T k="home.privacyDescription" />
             </p>
           </div>
           <div>
-            <p className="label">Who is this for?</p>
+            <p className="label"><T k="home.audienceEyebrow" /></p>
             <div className="mt-4 grid grid-cols-2 gap-3">
               {audiences.map((audience) => (
                 <div key={audience} className="rounded-lg border border-slate-200 bg-white p-3 text-sm font-semibold text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
-                  {audience}
+                  <T k={audience} />
                 </div>
               ))}
             </div>
@@ -384,19 +364,17 @@ export default function HomePage() {
 
       <section className="shell py-14">
         <div className="max-w-3xl">
-          <p className="label">FAQ</p>
+          <p className="label"><T k="home.faqEyebrow" /></p>
           <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-            Common questions
+            <T k="home.faqTitle" />
           </h2>
         </div>
         <div className="mt-8">
-          <FAQ items={homeFaq} />
+          <HomeFAQ />
         </div>
         <div className="mt-10 rounded-lg border border-slate-200 bg-white/82 p-5 text-sm leading-7 text-slate-600 dark:border-slate-800 dark:bg-slate-900/82 dark:text-slate-400">
-          <strong className="text-slate-950 dark:text-white">Accuracy disclaimer:</strong> Results are
-          estimates based on common platform patterns and technical checks available in the browser.
-          Platform requirements can change, and this tool does not guarantee SEO ranking, approval or
-          final rendering on any third-party service.
+          <strong className="text-slate-950 dark:text-white"><T k="home.disclaimerLabel" /></strong>{" "}
+          <T k="home.disclaimerText" />
         </div>
         <AdSlot variant="inline" className="mt-10" />
       </section>

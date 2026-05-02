@@ -37,9 +37,11 @@ export default function PublishScoreCard({ result }: { result: PublishResult }) 
           aria-hidden="true"
         />
       </div>
-      <p className="mt-3 text-sm font-bold text-slate-950 dark:text-white">{result.status}</p>
+      <p className="mt-3 text-sm font-bold text-slate-950 dark:text-white">
+        {t(`status.${result.status}`)}
+      </p>
       <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">
-        {result.preset.qualityNote}
+        {t(`quality.${result.preset.id}`)}
       </p>
       <div className="mt-4 grid gap-2 text-xs text-slate-600 sm:grid-cols-4 dark:text-slate-400">
         <span>{t("score.dimensions")} {result.scoreParts.dimensions}/40</span>
