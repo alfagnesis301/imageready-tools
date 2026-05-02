@@ -2,6 +2,7 @@
 
 import { SlidersHorizontal, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useLanguage } from "./LanguageProvider";
 
 type ConsentPrefs = {
   necessary: true;
@@ -17,6 +18,7 @@ export default function CookieConsent() {
   const [manage, setManage] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [ads, setAds] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
@@ -55,18 +57,17 @@ export default function CookieConsent() {
         <div className="flex items-start justify-between gap-4">
           <div>
             <h2 id="cookie-title" className="text-sm font-bold text-slate-950 dark:text-white">
-              Cookie preferences
+              {t("cookie.title")}
             </h2>
             <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-              PublishPixel uses essential local storage for preferences. Optional analytics or
-              advertising scripts should only load after consent if you add them later.
+              {t("cookie.description")}
             </p>
           </div>
           <button
             type="button"
             className="focus-ring rounded-lg p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800"
             onClick={() => saveConsent({ analytics: false, ads: false })}
-            aria-label="Reject non-essential cookies and close"
+            aria-label={t("cookie.close")}
           >
             <X size={18} />
           </button>
@@ -75,11 +76,11 @@ export default function CookieConsent() {
         {manage ? (
           <div className="mt-4 grid gap-3 rounded-lg bg-slate-50 p-3 dark:bg-slate-900">
             <label className="flex items-center justify-between gap-3 text-sm font-semibold text-slate-700 dark:text-slate-200">
-              Essential storage
+              {t("cookie.essential")}
               <input type="checkbox" checked disabled className="h-4 w-4" />
             </label>
             <label className="flex items-center justify-between gap-3 text-sm font-semibold text-slate-700 dark:text-slate-200">
-              Analytics
+              {t("cookie.analytics")}
               <input
                 type="checkbox"
                 checked={analytics}
@@ -88,7 +89,7 @@ export default function CookieConsent() {
               />
             </label>
             <label className="flex items-center justify-between gap-3 text-sm font-semibold text-slate-700 dark:text-slate-200">
-              Advertising
+              {t("cookie.ads")}
               <input
                 type="checkbox"
                 checked={ads}
@@ -101,14 +102,14 @@ export default function CookieConsent() {
 
         <div className="mt-4 flex flex-wrap gap-2">
           <button type="button" className="button-primary" onClick={() => saveConsent({ analytics: true, ads: true })}>
-            Accept all
+            {t("cookie.accept")}
           </button>
           <button type="button" className="button-secondary" onClick={() => saveConsent({ analytics: false, ads: false })}>
-            Reject non-essential
+            {t("cookie.reject")}
           </button>
           <button type="button" className="button-secondary" onClick={() => (manage ? saveConsent({ analytics, ads }) : setManage(true))}>
             <SlidersHorizontal size={16} aria-hidden="true" />
-            {manage ? "Save preferences" : "Manage preferences"}
+            {manage ? t("cookie.save") : t("cookie.manage")}
           </button>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { AlertTriangle, FileImage, ShieldCheck, UploadCloud } from "lucide-react
 import { ChangeEvent, DragEvent, useRef, useState } from "react";
 import { MAX_RECOMMENDED_FILE_SIZE, SUPPORTED_IMAGE_TYPES } from "@/lib/constants";
 import { formatBytes } from "@/lib/imageUtils";
+import { useLanguage } from "./LanguageProvider";
 
 type ImageUploaderProps = {
   onFileAccepted: (file: File, warning?: string) => void;
@@ -14,6 +15,7 @@ export default function ImageUploader({ onFileAccepted, isLoading }: ImageUpload
   const inputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [message, setMessage] = useState<{ type: "error" | "warning"; text: string } | null>(null);
+  const { t } = useLanguage();
 
   function handleFiles(files: FileList | null) {
     const file = files?.[0];
@@ -25,14 +27,14 @@ export default function ImageUploader({ onFileAccepted, isLoading }: ImageUpload
     if (!formatSupported) {
       setMessage({
         type: "error",
-        text: "This format is not supported yet. Try JPG, PNG, WebP, static GIF or basic SVG."
+        text: t("uploader.unsupported")
       });
       return;
     }
 
     const warning =
       file.size > MAX_RECOMMENDED_FILE_SIZE
-        ? `This file is ${formatBytes(file.size)}. Analysis may be slower; 15 MB or less is recommended.`
+        ? t("uploader.large", { size: formatBytes(file.size) })
         : undefined;
 
     setMessage(warning ? { type: "warning", text: warning } : null);
@@ -71,7 +73,7 @@ export default function ImageUploader({ onFileAccepted, isLoading }: ImageUpload
           className="sr-only"
           accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml,.jpg,.jpeg,.png,.webp,.gif,.svg"
           onChange={onInputChange}
-          aria-label="Upload image file"
+          aria-label={t("uploader.aria")}
         />
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-violet-600 text-white shadow-sm">
           {isLoading ? (
@@ -82,10 +84,10 @@ export default function ImageUploader({ onFileAccepted, isLoading }: ImageUpload
         </div>
         <div className="mt-4 space-y-2">
           <p className="text-base font-bold text-slate-950 dark:text-white">
-            Drop your image here or choose a file
+            {t("uploader.drop")}
           </p>
           <p className="mx-auto max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-400">
-            Supports JPG, PNG, WebP, static GIF and basic SVG. Recommended visual limit: up to 15 MB.
+            {t("uploader.support")}
           </p>
           <button
             type="button"
@@ -94,14 +96,14 @@ export default function ImageUploader({ onFileAccepted, isLoading }: ImageUpload
             disabled={isLoading}
           >
             <UploadCloud size={17} aria-hidden="true" />
-            Upload an image
+            {t("action.uploadImage")}
           </button>
         </div>
       </div>
 
       <div className="flex items-start gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-900 dark:border-emerald-900/70 dark:bg-emerald-950/40 dark:text-emerald-200">
         <ShieldCheck size={17} className="mt-0.5 shrink-0" aria-hidden="true" />
-        <p>Privacy-first: your image is analyzed locally in your browser.</p>
+        <p>{t("uploader.privacy")}</p>
       </div>
 
       {message ? (

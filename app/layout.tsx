@@ -4,6 +4,7 @@ import "./globals.css";
 import CookieConsent from "@/components/CookieConsent";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { LanguageProvider } from "@/components/LanguageProvider";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -47,13 +48,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "try{var t=localStorage.getItem('irt-theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}"
+              "try{var t=localStorage.getItem('irt-theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}var l=localStorage.getItem('publishpixel-language');if(l==='en'||l==='es'){document.documentElement.lang=l}}catch(e){}"
           }}
         />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <CookieConsent />
+        <LanguageProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <CookieConsent />
+        </LanguageProvider>
       </body>
     </html>
   );

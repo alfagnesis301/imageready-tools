@@ -1,7 +1,9 @@
 import { AlertCircle, CheckCircle2, Gauge } from "lucide-react";
 import type { PublishResult } from "@/lib/publishRules";
+import { useLanguage } from "./LanguageProvider";
 
 export default function PublishScoreCard({ result }: { result: PublishResult }) {
+  const { t } = useLanguage();
   const scoreColor =
     result.score >= 85
       ? "from-emerald-500 to-emerald-400"
@@ -14,7 +16,7 @@ export default function PublishScoreCard({ result }: { result: PublishResult }) 
     <div className="rounded-lg border border-slate-200 bg-white/86 p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900/86">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="label">PublishReady Score</p>
+          <p className="label">{t("score.title")}</p>
           <div className="mt-2 flex items-end gap-2">
             <span className="text-5xl font-extrabold tracking-normal text-slate-950 dark:text-white">
               {result.score}
@@ -40,10 +42,10 @@ export default function PublishScoreCard({ result }: { result: PublishResult }) 
         {result.preset.qualityNote}
       </p>
       <div className="mt-4 grid gap-2 text-xs text-slate-600 sm:grid-cols-4 dark:text-slate-400">
-        <span>Dimensions {result.scoreParts.dimensions}/40</span>
-        <span>Size {result.scoreParts.fileSize}/25</span>
-        <span>Format {result.scoreParts.format}/20</span>
-        <span>Context {result.scoreParts.context}/15</span>
+        <span>{t("score.dimensions")} {result.scoreParts.dimensions}/40</span>
+        <span>{t("score.size")} {result.scoreParts.fileSize}/25</span>
+        <span>{t("score.format")} {result.scoreParts.format}/20</span>
+        <span>{t("score.context")} {result.scoreParts.context}/15</span>
       </div>
     </div>
   );

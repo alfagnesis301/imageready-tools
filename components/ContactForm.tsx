@@ -2,6 +2,7 @@
 
 import { Loader2, Mail } from "lucide-react";
 import { FormEvent, useState } from "react";
+import { useLanguage } from "./LanguageProvider";
 
 type FormStatus = "idle" | "success" | "error";
 
@@ -11,6 +12,7 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<FormStatus>("idle");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useLanguage();
 
   async function submitMessage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -56,7 +58,7 @@ export default function ContactForm() {
       <input type="hidden" name="bot-field" value="" />
       <div className="grid gap-2">
         <label htmlFor="name" className="label">
-          Name
+          {t("contact.name")}
         </label>
         <input
           id="name"
@@ -70,7 +72,7 @@ export default function ContactForm() {
       </div>
       <div className="grid gap-2">
         <label htmlFor="email" className="label">
-          Email
+          {t("contact.email")}
         </label>
         <input
           id="email"
@@ -85,7 +87,7 @@ export default function ContactForm() {
       </div>
       <div className="grid gap-2">
         <label htmlFor="message" className="label">
-          Message
+          {t("contact.message")}
         </label>
         <textarea
           id="message"
@@ -97,8 +99,7 @@ export default function ContactForm() {
         />
       </div>
       <p className="text-xs leading-5 text-slate-500 dark:text-slate-400">
-        Please do not send sensitive images, private files or confidential visual material through
-        this form.
+        {t("contact.note")}
       </p>
       <button type="submit" className="button-primary" disabled={isSubmitting}>
         {isSubmitting ? (
@@ -106,16 +107,16 @@ export default function ContactForm() {
         ) : (
           <Mail size={17} aria-hidden="true" />
         )}
-        {isSubmitting ? "Sending..." : "Send message"}
+        {isSubmitting ? t("contact.sending") : t("contact.send")}
       </button>
       {status === "success" ? (
         <p className="rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-900 dark:border-emerald-900/70 dark:bg-emerald-950/40 dark:text-emerald-200" role="status">
-          Thanks. Your message was sent.
+          {t("contact.success")}
         </p>
       ) : null}
       {status === "error" ? (
         <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800 dark:border-red-900/70 dark:bg-red-950/40 dark:text-red-200" role="alert">
-          The message could not be sent. Please email hello@publishpixel.net directly.
+          {t("contact.error")}
         </p>
       ) : null}
     </form>

@@ -17,6 +17,7 @@ import RecommendationPanel from "./RecommendationPanel";
 import ResizeSuggestions from "./ResizeSuggestions";
 import { analyzeImage, analyzeImageForPreset, type ImageAnalysisResult } from "@/lib/imageAnalysis";
 import type { PresetId } from "@/lib/publishRules";
+import { useLanguage } from "./LanguageProvider";
 
 type SmartPublishCheckProps = {
   initialPreset?: PresetId;
@@ -38,6 +39,7 @@ export default function SmartPublishCheck({
   const [warning, setWarning] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [altText, setAltText] = useState("");
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (initialPreset !== "website-blog") return;
@@ -57,6 +59,12 @@ export default function SmartPublishCheck({
 
   const result = useMemo(() => (analysis ? analyzeImageForPreset(analysis, preset) : null), [analysis, preset]);
   const altTextScore = getAltTextScore(altText);
+  const localizedHeading = heading === "Smart Image Publish Check" ? t("tool.defaultHeading") : heading;
+  const localizedDescription =
+    description ===
+    "Upload an image and get a practical readiness score for websites, SEO, social platforms, thumbnails, product images and more."
+      ? t("tool.defaultDescription")
+      : description;
 
   async function handleFileAccepted(file: File, fileWarning?: string) {
     setIsLoading(true);
@@ -73,7 +81,7 @@ export default function SmartPublishCheck({
       setError(
         nextError instanceof Error
           ? nextError.message
-          : "This image could not be analyzed in your browser."
+          : t("tool.errorFallback")
       );
       setAnalysis(null);
     } finally {
@@ -94,11 +102,11 @@ export default function SmartPublishCheck({
     <section id="tool" className="panel scroll-mt-24 p-4 sm:p-6">
       <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div>
-          <p className="label">Free browser tool</p>
+          <p className="label">{t("tool.eyebrow")}</p>
           <h2 className="mt-2 text-2xl font-extrabold tracking-normal text-slate-950 sm:text-3xl dark:text-white">
-            {heading}
+            {localizedHeading}
           </h2>
-          <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">{description}</p>
+          <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">{localizedDescription}</p>
           <div className="mt-5">
             <ImageUploader onFileAccepted={handleFileAccepted} isLoading={isLoading} />
           </div>
@@ -107,17 +115,17 @@ export default function SmartPublishCheck({
         <div className="grid gap-4">
           <div className="grid gap-2">
             <label htmlFor="alt-text-draft" className="label">
-              Draft alt text
+              {t("tool.altLabel")}
             </label>
             <textarea
               id="alt-text-draft"
               className="input min-h-20"
               value={altText}
               onChange={(event) => setAltText(event.target.value)}
-              placeholder="Describe the visible subject and page context."
+              placeholder={t("tool.altPlaceholder")}
             />
             <p className="text-xs leading-5 text-slate-500 dark:text-slate-400">
-              Optional accessibility check. PublishPixel does not invent visual descriptions.
+              {t("tool.altHelp")}
             </p>
           </div>
 
@@ -134,7 +142,7 @@ export default function SmartPublishCheck({
             <div className="rounded-lg border border-slate-200 bg-white/82 p-6 text-center dark:border-slate-800 dark:bg-slate-900/82" role="status">
               <Loader2 size={26} className="mx-auto animate-spin text-blue-600" aria-hidden="true" />
               <p className="mt-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                Analyzing image locally...
+                {t("tool.analyzing")}
               </p>
             </div>
           ) : null}
@@ -149,8 +157,7 @@ export default function SmartPublishCheck({
           {!analysis && !isLoading && !error ? (
             <div className="rounded-lg border border-slate-200 bg-white/72 p-5 text-sm leading-6 text-slate-600 dark:border-slate-800 dark:bg-slate-900/72 dark:text-slate-400">
               <CheckCircle2 size={20} className="mb-3 text-emerald-500" aria-hidden="true" />
-              Choose a preset, upload an image and the results will appear here with score,
-              warnings, practical recommendations and export tools.
+              {t("tool.empty")}
             </div>
           ) : null}
         </div>
@@ -182,8 +189,8 @@ export default function SmartPublishCheck({
           <div className="grid gap-4 lg:col-span-2 lg:grid-cols-2">
             <OpenGraphPreview
               imageUrl={objectUrl}
-              title="Example article or product page title"
-              description="This preview simulates the wide crop commonly used by link cards."
+              title={t("tool.ogTitle")}
+              description={t("tool.ogDescription")}
             />
             <CompressionEstimator analysis={analysis} />
             <ResizeSuggestions analysis={analysis} />
@@ -195,28 +202,25 @@ export default function SmartPublishCheck({
 }
 
 function getAltTextScore(altText: string): {
-  status: "Missing" | "Needs detail" | "Looks useful";
-  message: string;
+  status: "missing" | "needsDetail" | "looksUseful";
+  messageKey: string;
 } {
   const trimmed = altText.trim();
   if (!trimmed) {
     return {
-      status: "Missing",
-      message:
-        "Add alt text when the image communicates useful information. Decorative images can use empty alt text in final HTML."
+      status: "missing",
+      messageKey: "tool.altMessage.missing"
     };
   }
   if (trimmed.length < 20) {
     return {
-      status: "Needs detail",
-      message:
-        "This alt text may be too short. Include the visible subject and the reason it matters on the page."
+      status: "needsDetail",
+      messageKey: "tool.altMessage.needsDetail"
     };
   }
   return {
-    status: "Looks useful",
-    message:
-      "The draft has enough length for a useful description. Check that it is accurate and avoids keyword stuffing."
+    status: "looksUseful",
+    messageKey: "tool.altMessage.looksUseful"
   };
 }
 
@@ -225,17 +229,19 @@ function AltTextCheck({
 }: {
   score: ReturnType<typeof getAltTextScore>;
 }) {
+  const { t } = useLanguage();
+  const statusLabel = t(`tool.altStatus.${score.status}`);
   const colorClass =
-    score.status === "Looks useful"
+    score.status === "looksUseful"
       ? "border-emerald-200 bg-emerald-50 text-emerald-900 dark:border-emerald-900/70 dark:bg-emerald-950/35 dark:text-emerald-100"
-      : score.status === "Needs detail"
+      : score.status === "needsDetail"
         ? "border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900/70 dark:bg-amber-950/35 dark:text-amber-100"
         : "border-slate-200 bg-white/82 text-slate-700 dark:border-slate-800 dark:bg-slate-900/82 dark:text-slate-300";
 
   return (
     <div className={`rounded-lg border p-4 ${colorClass}`}>
-      <h3 className="text-sm font-bold">Alt text check: {score.status}</h3>
-      <p className="mt-2 text-sm leading-6">{score.message}</p>
+      <h3 className="text-sm font-bold">{t("tool.altCheck", { status: statusLabel })}</h3>
+      <p className="mt-2 text-sm leading-6">{t(score.messageKey)}</p>
     </div>
   );
 }
