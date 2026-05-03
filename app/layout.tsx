@@ -56,6 +56,33 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               "try{var t=localStorage.getItem('irt-theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}"
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "PublishPixel",
+              url: "https://publishpixel.net",
+              logo: "https://publishpixel.net/favicon.svg",
+              email: "hello@publishpixel.net",
+              foundingDate: "2026"
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "PublishPixel",
+              url: "https://publishpixel.net",
+              inLanguage: ["en", "es"],
+              publisher: { "@type": "Organization", name: "PublishPixel" }
+            })
+          }}
+        />
         <LanguageProvider initialLanguage={locale}>
           <Header />
           <main>{children}</main>
