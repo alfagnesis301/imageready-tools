@@ -205,10 +205,72 @@
     return { mimeType, fileSizeBytes, notices };
   }
 
-  function loadImage(source) {
+  async function loadImage(source) {
+    if (isBlobLike(source)) {
+      return loadLocalImage(source);
+    }
+
+    return loadImageElement(String(source || ""));
+  }
+
+  function isBlobLike(value) {
+    return (
+      !!value &&
+      typeof value === "object" &&
+      typeof value.arrayBuffer === "function" &&
+      typeof value.size === "number"
+    );
+  }
+
+  async function loadLocalImage(file) {
+    const previewUrl = await readBlobAsDataUrl(file);
+
+    if (typeof createImageBitmap === "function") {
+      try {
+        const bitmap = await createImageBitmap(file);
+        const result = {
+          width: bitmap.width,
+          height: bitmap.height,
+          previewUrl
+        };
+
+        if (typeof bitmap.close === "function") {
+          bitmap.close();
+        }
+
+        return result;
+      } catch (error) {
+        // Fall back to HTML image decoding below if bitmap creation fails.
+      }
+    }
+
+    return loadImageElement(previewUrl);
+  }
+
+  function readBlobAsDataUrl(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.onload = function (event) {
+        const result = typeof event.target?.result === "string" ? event.target.result : "";
+        if (!result) {
+          reject(new Error("Image could not be read"));
+          return;
+        }
+        resolve(result);
+      };
+
+      reader.onerror = function () {
+        reject(new Error("Image could not be read"));
+      };
+
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function loadImageElement(previewUrl) {
     return new Promise((resolve, reject) => {
       const image = new Image();
-      let previewUrl = "";
 
       image.onload = function () {
         resolve({
@@ -222,27 +284,6 @@
         reject(new Error("Image failed to load"));
       };
 
-      if (typeof File !== "undefined" && source instanceof File) {
-        const reader = new FileReader();
-
-        reader.onload = function (event) {
-          previewUrl = typeof event.target?.result === "string" ? event.target.result : "";
-          if (!previewUrl) {
-            reject(new Error("Image could not be read"));
-            return;
-          }
-          image.src = previewUrl;
-        };
-
-        reader.onerror = function () {
-          reject(new Error("Image could not be read"));
-        };
-
-        reader.readAsDataURL(source);
-        return;
-      }
-
-      previewUrl = String(source || "");
       image.src = previewUrl;
     });
   }
