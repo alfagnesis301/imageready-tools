@@ -219,19 +219,30 @@
       };
 
       image.onerror = function () {
-        if (previewUrl.startsWith("blob:")) {
-          URL.revokeObjectURL(previewUrl);
-        }
         reject(new Error("Image failed to load"));
       };
 
-      if (source instanceof File) {
-        previewUrl = URL.createObjectURL(source);
-      } else {
-        previewUrl = source;
-        image.crossOrigin = "anonymous";
+      if (typeof File !== "undefined" && source instanceof File) {
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+          previewUrl = typeof event.target?.result === "string" ? event.target.result : "";
+          if (!previewUrl) {
+            reject(new Error("Image could not be read"));
+            return;
+          }
+          image.src = previewUrl;
+        };
+
+        reader.onerror = function () {
+          reject(new Error("Image could not be read"));
+        };
+
+        reader.readAsDataURL(source);
+        return;
       }
 
+      previewUrl = String(source || "");
       image.src = previewUrl;
     });
   }
@@ -534,7 +545,7 @@
       ["File name", analysis.fileName],
       ["File type", analysis.fileType || "Unavailable"],
       ["File size", formatBytes(analysis.fileSizeBytes)],
-      ["Dimensions", `${analysis.width} × ${analysis.height}`],
+      ["Dimensions", `${analysis.width} x ${analysis.height}`],
       ["Aspect ratio", analysis.aspectRatio],
       ["SEO-friendly name", analysis.seoFileName.descriptive ? "Mostly yes" : "Needs improvement"],
       ["Suggested file name", analysis.suggestedName],
@@ -739,7 +750,7 @@
   }
 
   function trimToLength(text, maxLength) {
-    return text.length <= maxLength ? text : `${text.slice(0, maxLength - 1).trim()}…`;
+    return text.length <= maxLength ? text : `${text.slice(0, maxLength - 1).trim()}...`;
   }
 
   function sentenceCase(text) {
@@ -782,3 +793,4 @@
 
   init();
 })();
+
