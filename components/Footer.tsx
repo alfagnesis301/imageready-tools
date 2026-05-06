@@ -37,7 +37,7 @@ export default function Footer() {
                   href={withLocalePath(link.href, language)}
                   className="text-slate-600 hover:text-blue-700 dark:text-slate-400 dark:hover:text-blue-300"
                 >
-                  {t(`nav.${link.label}`)}
+                  {t(`nav.${link.label}`) === `nav.${link.label}` ? link.label : t(`nav.${link.label}`)}
                 </Link>
               </li>
             ))}
@@ -69,7 +69,7 @@ export default function Footer() {
                   href={withLocalePath(link.href, language)}
                   className="text-slate-600 hover:text-blue-700 dark:text-slate-400 dark:hover:text-blue-300"
                 >
-                  {t(`nav.${link.label}`)}
+                  {t(`nav.${link.label}`) === `nav.${link.label}` ? link.label : t(`nav.${link.label}`)}
                 </Link>
               </li>
             ))}

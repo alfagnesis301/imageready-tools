@@ -21,6 +21,7 @@ export const NAV_LINKS = [
   { href: "/resize-image", label: "Resize" },
   { href: "/convert-image", label: "Convert" },
   { href: "/social-media-image-sizes", label: "Sizes" },
+  { href: "/image-seo-meta-checker", label: "SEO Meta" },
   { href: "/guides", label: "Guides" }
 ];
 
