@@ -1,5 +1,6 @@
 import AdSlot from "@/components/AdSlot";
 import HomeFAQ from "@/components/HomeFAQ";
+import HomeSeoMetaPromo from "@/components/HomeSeoMetaPromo";
 import LocalizedLink from "@/components/LocalizedLink";
 import LocalizedPresetNote from "@/components/LocalizedPresetNote";
 import { T } from "@/components/LanguageProvider";
