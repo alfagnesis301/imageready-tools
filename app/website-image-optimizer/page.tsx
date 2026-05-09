@@ -412,8 +412,8 @@ export default function WebsiteImageOptimizerPage() {
 
         <section id="how-to" className="max-w-4xl">
           <h2 className="text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">How to optimize images for your website</h2>
-          <ol className="mt-5 grid gap-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
-            {steps.map((step, index) => <li key={step}>{index + 1}. {step}</li>)}
+          <ol className="mt-5 grid list-decimal gap-3 pl-5 text-sm leading-7 text-slate-700 dark:text-slate-300">
+            {steps.map((step) => <li key={step}>{step}</li>)}
           </ol>
         </section>
 
