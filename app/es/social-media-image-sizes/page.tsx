@@ -1,12 +1,15 @@
-import SocialMediaImageSizesContent from "@/app/social-media-image-sizes/SocialMediaImageSizesContent";
+﻿import SocialMediaImageSizesContent from "@/app/social-media-image-sizes/SocialMediaImageSizesContent";
 import { createPageMetadata } from "@/lib/seo";
+import { SOCIAL_MEDIA_IMAGE_OG } from "@/lib/socialImageSizes";
 
 export const metadata = createPageMetadata({
-  title: "Guía de tamaños de imagen para redes sociales",
+  title: "Guia de tamanos de imagen para redes sociales 2026",
   description:
-    "Usa esta guía práctica para preparar imágenes de redes sociales, vistas previas, miniaturas, productos y gráficos para email.",
+    "Consulta tamanos recomendados para Instagram, Facebook, X, LinkedIn, YouTube, TikTok y Pinterest, con una guia practica para publicaciones, stories, miniaturas y banners.",
   path: "/es/social-media-image-sizes",
-  locale: "es"
+  image: SOCIAL_MEDIA_IMAGE_OG,
+  locale: "es",
+  openGraphType: "article"
 });
 
 export default function SpanishSocialMediaImageSizesPage() {

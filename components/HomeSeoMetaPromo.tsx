@@ -33,6 +33,19 @@ export default function HomeSeoMetaPromo() {
               {isEs ? "Ver optimizador web" : "View website optimizer"}
             </LocalizedLink>
           </div>
+          <div className="mt-6 rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <LocalizedLink
+              href="/social-media-image-sizes"
+              className="text-sm font-bold text-slate-950 hover:text-blue-700 dark:text-white dark:hover:text-blue-300"
+            >
+              {isEs ? "Guia de tamanos de imagen para redes sociales" : "Social Media Image Sizes Guide"}
+            </LocalizedLink>
+            <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              {isEs
+                ? "Consulta dimensiones recomendadas para las principales plataformas sociales y usa valores seguros para posts, stories, reels, banners y miniaturas."
+                : "Find the recommended image dimensions for every major social platform."}
+            </p>
+          </div>
         </div>
 
         <aside className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">

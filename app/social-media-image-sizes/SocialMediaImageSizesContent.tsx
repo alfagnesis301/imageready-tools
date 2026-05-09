@@ -1,255 +1,398 @@
-"use client";
+﻿"use client";
 
 import AdSlot from "@/components/AdSlot";
 import FAQ from "@/components/FAQ";
+import LocalizedLink from "@/components/LocalizedLink";
 import SmartPublishCheck from "@/components/SmartPublishCheck";
-import { useLanguage, type Language } from "@/components/LanguageProvider";
-import { faqJsonLd } from "@/lib/seo";
+import { useLanguage } from "@/components/LanguageProvider";
+import {
+  SOCIAL_MEDIA_IMAGE_OG_ABSOLUTE,
+  SOCIAL_MEDIA_IMAGE_SIZES,
+  UNIVERSAL_SOCIAL_IMAGE_SIZES,
+  getCheatSheetRows,
+  getSocialMediaFaqs,
+  type LanguageCode
+} from "@/lib/socialImageSizes";
 
-const faqs = [
+const TOOL_LINKS = [
   {
-    question: {
-      en: "Are these official social media requirements?",
-      es: "¿Estos son requisitos oficiales de redes sociales?"
-    },
-    answer: {
-      en: "No. This guide lists commonly used dimensions and practical publishing recommendations. Always verify official requirements for critical campaigns.",
-      es: "No. Esta guía recoge dimensiones comunes y recomendaciones prácticas de publicación. Verifica siempre requisitos oficiales para campañas críticas."
+    href: "/website-image-optimizer",
+    anchor: { en: "Website Image Optimizer", es: "Website Image Optimizer" },
+    description: {
+      en: "Compress and optimize your images before uploading them to your website or social channels.",
+      es: "Comprime y optimiza tus imagenes antes de subirlas a tu sitio o a canales sociales."
     }
   },
   {
-    question: { en: "Why do aspect ratios matter?", es: "¿Por qué importan las proporciones?" },
-    answer: {
-      en: "Aspect ratios help platforms display your image without unexpected cropping, borders or awkward previews.",
-      es: "Las proporciones ayudan a que las plataformas muestren tu imagen sin recortes inesperados, bordes o vistas previas torpes."
+    href: "/resize-image",
+    anchor: { en: "Resize Image Online", es: "Resize Image Online" },
+    description: {
+      en: "Resize images to the recommended social media dimensions.",
+      es: "Redimensiona imagenes a los tamanos recomendados para redes sociales."
     }
   },
   {
-    question: { en: "Can one image work everywhere?", es: "¿Una sola imagen puede funcionar en todas partes?" },
-    answer: {
-      en: "Sometimes a flexible source image can be adapted, but important channels often deserve dedicated crops or exports.",
-      es: "A veces una fuente flexible puede adaptarse, pero los canales importantes suelen merecer recortes o exportaciones dedicadas."
+    href: "/compress-image",
+    anchor: { en: "Compress Image Online", es: "Compress Image Online" },
+    description: {
+      en: "Reduce file size while keeping your social media images sharp.",
+      es: "Reduce el peso del archivo manteniendo nitidas tus imagenes para redes sociales."
     }
   },
   {
-    question: { en: "Should every image be WebP?", es: "¿Todas las imágenes deberían ser WebP?" },
-    answer: {
-      en: "WebP is useful for websites, while some upload workflows still prefer JPG or PNG. Choose based on the destination.",
-      es: "WebP es útil para sitios web, mientras algunos flujos de subida aún prefieren JPG o PNG. Elige según el destino."
+    href: "/smart-image-publish-check",
+    anchor: { en: "Smart Image Publish Check", es: "Smart Image Publish Check" },
+    description: {
+      en: "Check whether your image is ready to publish before uploading.",
+      es: "Comprueba si tu imagen esta lista para publicarse antes de subirla."
     }
   }
 ];
 
-const rows = [
-  {
-    platform: "Open Graph",
-    use: { en: "Article or website preview", es: "Vista previa de artículo o sitio web" },
-    size: { en: "1200 x 630 px", es: "1200 x 630 px" },
-    ratio: { en: "1.91:1", es: "1.91:1" },
-    note: {
-      en: "Keep important content centered and use JPG or PNG when sharing compatibility matters.",
-      es: "Mantén el contenido importante centrado y usa JPG o PNG cuando importe la compatibilidad al compartir."
-    }
-  },
-  {
-    platform: "Google Discover",
-    use: { en: "Large article image", es: "Imagen grande de artículo" },
-    size: { en: "1200 px wide or larger", es: "1200 px de ancho o más" },
-    ratio: { en: "16:9 commonly used", es: "16:9 usado con frecuencia" },
-    note: {
-      en: "Use high-quality imagery and compress carefully to balance quality and speed.",
-      es: "Usa imágenes de alta calidad y comprime con cuidado para equilibrar calidad y velocidad."
-    }
-  },
-  {
-    platform: "YouTube",
-    use: { en: "Video thumbnail", es: "Miniatura de video" },
-    size: { en: "1280 x 720 px", es: "1280 x 720 px" },
-    ratio: { en: "16:9", es: "16:9" },
-    note: {
-      en: "Leave safe space around text and faces because overlays may cover edges.",
-      es: "Deja espacio seguro alrededor de texto y rostros porque las superposiciones pueden cubrir bordes."
-    }
-  },
-  {
-    platform: "Instagram",
-    use: { en: "Square post", es: "Publicación cuadrada" },
-    size: { en: "1080 x 1080 px", es: "1080 x 1080 px" },
-    ratio: { en: "1:1", es: "1:1" },
-    note: {
-      en: "Works well for grid consistency and product-focused images.",
-      es: "Funciona bien para consistencia de cuadrícula e imágenes centradas en producto."
-    }
-  },
-  {
-    platform: "Instagram",
-    use: { en: "Portrait post", es: "Publicación vertical" },
-    size: { en: "1080 x 1350 px", es: "1080 x 1350 px" },
-    ratio: { en: "4:5", es: "4:5" },
-    note: {
-      en: "Often gives more vertical space in the feed.",
-      es: "Suele dar más espacio vertical en el feed."
-    }
-  },
-  {
-    platform: "Instagram",
-    use: { en: "Story or vertical creative", es: "Historia o pieza vertical" },
-    size: { en: "1080 x 1920 px", es: "1080 x 1920 px" },
-    ratio: { en: "9:16", es: "9:16" },
-    note: {
-      en: "Keep key content away from top and bottom UI areas.",
-      es: "Mantén el contenido clave lejos de las zonas de interfaz superior e inferior."
-    }
-  },
-  {
-    platform: "LinkedIn",
-    use: { en: "Feed image", es: "Imagen de feed" },
-    size: { en: "1200 x 627 px", es: "1200 x 627 px" },
-    ratio: { en: "1.91:1", es: "1.91:1" },
-    note: {
-      en: "Use a clear focal area and avoid tiny text.",
-      es: "Usa un área focal clara y evita texto demasiado pequeño."
-    }
-  },
-  {
-    platform: "Pinterest",
-    use: { en: "Standard pin", es: "Pin estándar" },
-    size: { en: "1000 x 1500 px", es: "1000 x 1500 px" },
-    ratio: { en: "2:3", es: "2:3" },
-    note: {
-      en: "Tall images usually provide more room for detail.",
-      es: "Las imágenes altas suelen dar más espacio para detalle."
-    }
-  },
-  {
-    platform: "E-commerce",
-    use: { en: "Product image", es: "Imagen de producto" },
-    size: { en: "1000 x 1000 px or larger", es: "1000 x 1000 px o más" },
-    ratio: { en: "1:1", es: "1:1" },
-    note: {
-      en: "A clean background is usually helpful, but this tool does not detect background quality.",
-      es: "Un fondo limpio suele ayudar, pero esta herramienta no detecta la calidad del fondo."
-    }
-  },
-  {
-    platform: "Email",
-    use: { en: "Header image", es: "Imagen de encabezado" },
-    size: { en: "600-1200 px wide", es: "600-1200 px de ancho" },
-    ratio: { en: "Flexible", es: "Flexible" },
-    note: {
-      en: "Keep files lightweight for faster email loading.",
-      es: "Mantén archivos ligeros para una carga más rápida en email."
-    }
-  }
-];
+const CROPPING_TIPS = {
+  en: [
+    "Keep important text away from edges.",
+    "Center faces, logos, and product details.",
+    "Export separate versions for square, portrait, and vertical.",
+    "Use 9:16 for stories, reels, shorts, and TikTok.",
+    "Use 4:5 for mobile feed posts where supported.",
+    "Preview images before publishing.",
+    "Compress images without making text blurry.",
+    "Use JPG for photos and PNG or WebP for graphics where appropriate."
+  ],
+  es: [
+    "Mantén el texto importante lejos de los bordes.",
+    "Centra rostros, logos y detalles de producto.",
+    "Exporta versiones separadas para cuadrado, vertical y story.",
+    "Usa 9:16 para stories, reels, shorts y TikTok.",
+    "Usa 4:5 para publicaciones mobile-first cuando la plataforma lo soporte.",
+    "Previsualiza las imagenes antes de publicar.",
+    "Comprime las imagenes sin volver borroso el texto.",
+    "Usa JPG para fotos y PNG o WebP para graficos cuando tenga sentido."
+  ]
+};
 
-const cards = [
-  {
-    title: { en: "Start with the destination", es: "Empieza por el destino" },
-    body: {
-      en: "A social image should be prepared for where it appears: feed, story, preview card, thumbnail, pin or product grid.",
-      es: "Una imagen social debe prepararse para donde aparecerá: feed, historia, tarjeta de vista previa, miniatura, pin o cuadrícula de producto."
-    }
-  },
-  {
-    title: { en: "Keep a safe focal area", es: "Mantén un área focal segura" },
-    body: {
-      en: "Interfaces, captions and previews may crop edges. Important content usually works best near the visual center.",
-      es: "Interfaces, pies de foto y vistas previas pueden recortar bordes. El contenido importante suele funcionar mejor cerca del centro visual."
-    }
-  },
-  {
-    title: { en: "Export intentionally", es: "Exporta con intención" },
-    body: {
-      en: "Use a dedicated export for important channels instead of relying on one oversized master image everywhere.",
-      es: "Usa una exportación dedicada para canales importantes en vez de depender de una imagen maestra sobredimensionada en todas partes."
-    }
-  }
-];
+const TOC_ITEMS = {
+  en: [
+    ["cheat-sheet", "Social media image sizes cheat sheet"],
+    ["instagram-image-sizes", "Instagram image sizes"],
+    ["facebook-image-sizes", "Facebook image sizes"],
+    ["x-twitter-image-sizes", "X / Twitter image sizes"],
+    ["linkedin-image-sizes", "LinkedIn image sizes"],
+    ["youtube-image-sizes", "YouTube image sizes"],
+    ["tiktok-image-sizes", "TikTok image sizes"],
+    ["pinterest-image-sizes", "Pinterest image sizes"],
+    ["best-universal-image-sizes", "Best universal image sizes"],
+    ["avoid-cropping", "How to avoid cropping"],
+    ["optimize-images", "How to optimize images before publishing"],
+    ["faq", "FAQ"]
+  ],
+  es: [
+    ["cheat-sheet", "Cheat sheet de tamanos para redes sociales"],
+    ["instagram-image-sizes", "Tamanos de imagen para Instagram"],
+    ["facebook-image-sizes", "Tamanos de imagen para Facebook"],
+    ["x-twitter-image-sizes", "Tamanos de imagen para X / Twitter"],
+    ["linkedin-image-sizes", "Tamanos de imagen para LinkedIn"],
+    ["youtube-image-sizes", "Tamanos de imagen para YouTube"],
+    ["tiktok-image-sizes", "Tamanos de imagen para TikTok"],
+    ["pinterest-image-sizes", "Tamanos de imagen para Pinterest"],
+    ["best-universal-image-sizes", "Mejores tamanos universales"],
+    ["avoid-cropping", "Como evitar recortes"],
+    ["optimize-images", "Como optimizar imagenes antes de publicar"],
+    ["faq", "FAQ"]
+  ]
+};
 
-const checklist = [
-  {
-    en: "Choose the destination before resizing.",
-    es: "Elige el destino antes de redimensionar."
+const PLATFORM_HEADINGS = {
+  instagram: { en: "Instagram Image Sizes", es: "Tamanos de imagen para Instagram" },
+  facebook: { en: "Facebook Image Sizes", es: "Tamanos de imagen para Facebook" },
+  "x-twitter": { en: "X / Twitter Image Sizes", es: "Tamanos de imagen para X / Twitter" },
+  linkedin: { en: "LinkedIn Image Sizes", es: "Tamanos de imagen para LinkedIn" },
+  youtube: { en: "YouTube Image Sizes", es: "Tamanos de imagen para YouTube" },
+  tiktok: { en: "TikTok Image Sizes", es: "Tamanos de imagen para TikTok" },
+  pinterest: { en: "Pinterest Image Sizes", es: "Tamanos de imagen para Pinterest" }
+} as const;
+
+const QUICK_ANSWER = {
+  en: "Most social platforms work well with 1080 px wide images for feed posts, 1080 x 1920 px for vertical stories or short-form video covers, and platform-specific banner sizes for profiles and channels. The safest 2026 workflow is to design one square version, one 4:5 portrait version, and one 9:16 vertical version, then export platform-specific crops.",
+  es: "La mayoria de plataformas funcionan bien con imagenes de 1080 px de ancho para el feed, 1080 x 1920 px para stories verticales o portadas de video corto, y banners especificos para perfiles y canales. El flujo mas seguro en 2026 es diseñar una version cuadrada, una version vertical 4:5 y una version 9:16, y despues exportar recortes especificos por plataforma."
+};
+
+const PAGE_COPY = {
+  en: {
+    title: "Social Media Image Sizes 2026: Complete Guide for Every Platform",
+    intro:
+      "Find the recommended image dimensions for Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest, and more — with safe defaults for feed posts, stories, reels, banners, thumbnails, and profile images.",
+    microcopy: "Free image size guide for creators, marketers, and publishers.",
+    quickAnswerTitle: "Quick answer",
+    tocTitle: "Table of contents",
+    toolEyebrow: "Check image sizes with your own file",
+    toolTitle: "Check Image Sizes",
+    toolDescription:
+      "Upload an image and compare it against common social media placements, dimensions, aspect ratios, and file-size expectations before publishing.",
+    cheatSheetEyebrow: "Fast reference",
+    cheatSheetTitle: "Social Media Image Sizes Cheat Sheet",
+    cheatSheetIntro:
+      "Use this table as a practical starting point for the most common placements across major social platforms in 2026.",
+    universalTitle: "Best Universal Image Sizes to Create First",
+    universalIntro:
+      "These five exports cover most publishing needs for creators, marketers, and publishers. Build these first, then create platform-specific crops when a channel needs something more precise.",
+    croppingTitle: "How to Avoid Cropping on Social Media",
+    croppingIntro:
+      "A technically correct size can still crop badly if important content sits too close to the edges. Safe layouts and preview checks matter as much as the raw dimensions.",
+    optimizeTitle: "How to Optimize Images Before Publishing",
+    optimizeP1:
+      "Social media image dimensions are only part of the job. A file can match the recommended canvas and still be heavier than needed, soft after compression, or difficult to read on mobile.",
+    optimizeP2:
+      "A practical workflow is to resize first, export in the most suitable format for the image, and compress the final publishing copy without making text or product edges blurry.",
+    optimizeP3:
+      "PublishPixel can help you review dimensions, optimize file size, and sanity-check whether an image is ready before it goes live.",
+    faqTitle: "Social Media Image Sizes FAQ",
+    relatedTitle: "Related tools",
+    relatedIntro:
+      "Use these PublishPixel tools to resize, compress, optimize, or review an image before you upload it to a social platform.",
+    finalNote:
+      "These sizes are recommended starting points, not permanent rules. Social platforms change interfaces, crops, and display behavior over time, so always preview important uploads before publishing."
   },
-  {
-    en: "Keep the focal point near the center-safe area.",
-    es: "Mantén el punto focal cerca del área central segura."
-  },
-  {
-    en: "Create a separate Open Graph image for important pages.",
-    es: "Crea una imagen Open Graph separada para páginas importantes."
-  },
-  {
-    en: "Check text readability on mobile previews.",
-    es: "Revisa la legibilidad del texto en vistas previas móviles."
-  },
-  {
-    en: "Compress the final export without blurring key details.",
-    es: "Comprime la exportación final sin borrar detalles clave."
-  },
-  {
-    en: "Verify official platform requirements for critical campaigns.",
-    es: "Verifica requisitos oficiales de plataforma en campañas críticas."
+  es: {
+    title: "Tamanos de imagen para redes sociales 2026: guia completa para cada plataforma",
+    intro:
+      "Consulta dimensiones recomendadas para Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest y mas, con valores seguros para publicaciones de feed, stories, reels, banners, miniaturas e imagenes de perfil.",
+    microcopy: "Guia gratuita de tamanos para creadores, marketers y publishers.",
+    quickAnswerTitle: "Respuesta rapida",
+    tocTitle: "Tabla de contenidos",
+    toolEyebrow: "Comprueba el tamaño de tu propia imagen",
+    toolTitle: "Comprobar tamanos de imagen",
+    toolDescription:
+      "Sube una imagen y comparala con ubicaciones sociales comunes, dimensiones, proporciones y expectativas de peso antes de publicar.",
+    cheatSheetEyebrow: "Referencia rapida",
+    cheatSheetTitle: "Cheat sheet de tamanos para redes sociales",
+    cheatSheetIntro:
+      "Usa esta tabla como punto de partida practico para las ubicaciones mas comunes de las principales plataformas sociales en 2026.",
+    universalTitle: "Mejores tamanos universales para crear primero",
+    universalIntro:
+      "Estas cinco versiones cubren la mayoria de necesidades de publicacion para creadores, marketers y publishers. Crea estas primero y luego exporta recortes especificos cuando una plataforma lo necesite.",
+    croppingTitle: "Como evitar recortes en redes sociales",
+    croppingIntro:
+      "Un tamaño tecnicamente correcto aun puede recortarse mal si el contenido importante queda demasiado cerca de los bordes. El diseño seguro y la previsualizacion importan tanto como las dimensiones.",
+    optimizeTitle: "Como optimizar imagenes antes de publicar",
+    optimizeP1:
+      "Las dimensiones son solo una parte del trabajo. Un archivo puede coincidir con el lienzo recomendado y aun asi pesar demasiado, perder nitidez tras comprimir o verse mal en movil.",
+    optimizeP2:
+      "Un flujo practico es redimensionar primero, exportar en el formato mas adecuado para la imagen y comprimir la copia final sin volver borroso el texto ni los detalles del producto.",
+    optimizeP3:
+      "PublishPixel puede ayudarte a revisar dimensiones, optimizar el peso y comprobar si una imagen parece lista antes de publicarla.",
+    faqTitle: "FAQ sobre tamanos de imagen para redes sociales",
+    relatedTitle: "Herramientas relacionadas",
+    relatedIntro:
+      "Usa estas herramientas de PublishPixel para redimensionar, comprimir, optimizar o revisar una imagen antes de subirla a una plataforma social.",
+    finalNote:
+      "Estos tamanos son puntos de partida recomendados, no reglas permanentes. Las plataformas cambian interfaces, recortes y comportamiento de visualizacion con el tiempo, asi que conviene previsualizar siempre las subidas importantes."
   }
-];
+} as const;
 
 export default function SocialMediaImageSizesContent() {
   const { language } = useLanguage();
-  const localizedFaqs = localizeFaqs(language);
+  const copy = PAGE_COPY[language as LanguageCode];
+  const faqItems = getSocialMediaFaqs(language as LanguageCode);
+  const cheatSheetRows = getCheatSheetRows();
+  const tocItems = TOC_ITEMS[language as LanguageCode];
+  const pagePath = language === "es" ? "/es/social-media-image-sizes" : "/social-media-image-sizes";
+  const pageUrl = `https://publishpixel.net${pagePath}`;
+
+  const graphJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://publishpixel.net/#organization",
+        name: "PublishPixel",
+        url: "https://publishpixel.net",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://publishpixel.net/favicon.svg"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: language === "es" ? "Inicio" : "Home",
+            item: language === "es" ? "https://publishpixel.net/es" : "https://publishpixel.net/"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: copy.title,
+            item: pageUrl
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": `${pageUrl}#article`,
+        headline: copy.title,
+        description:
+          language === "es"
+            ? "Consulta dimensiones recomendadas para Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest y mas."
+            : "Find the recommended image dimensions for Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest, and more.",
+        image: SOCIAL_MEDIA_IMAGE_OG_ABSOLUTE,
+        datePublished: "2026-05-09",
+        dateModified: "2026-05-09",
+        author: {
+          "@type": "Organization",
+          name: "PublishPixel",
+          url: "https://publishpixel.net"
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "PublishPixel",
+          url: "https://publishpixel.net",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://publishpixel.net/favicon.svg"
+          }
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": pageUrl
+        },
+        breadcrumb: {
+          "@id": `${pageUrl}#breadcrumb`
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: faqItems.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer
+          }
+        }))
+      }
+    ]
+  };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(localizedFaqs)) }} />
-      <section className="shell py-10">
-        <div className="max-w-3xl">
-          <p className="label">{language === "es" ? "Guía de publicación" : "Publishing guide"}</p>
-          <h1 className="mt-3 text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
-            {language === "es" ? "Guía de tamaños de imagen para redes sociales" : "Social Media Image Sizes Guide"}
-          </h1>
-          <p className="mt-5 text-base leading-8 text-slate-600 dark:text-slate-300">
-            {language === "es"
-              ? "Usa esta guía original como punto de partida práctico para tamaños comunes de imágenes sociales, vistas previas, miniaturas, visuales de producto y gráficos de email."
-              : "Use this original guide as a practical starting point for common social image sizes, previews, thumbnails, product visuals and email graphics."}
-          </p>
-        </div>
-        <div className="mt-8">
-          <SmartPublishCheck
-            initialPreset="open-graph"
-            heading={language === "es" ? "Revisar una imagen social" : "Check a social media image"}
-            description={
-              language === "es"
-                ? "Sube una imagen y elige un ajuste predefinido social para comparar dimensiones, proporción, peso y formato."
-                : "Upload an image and choose a social preset to compare dimensions, ratio, file size and format guidance."
-            }
-          />
-        </div>
-      </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(graphJsonLd) }}
+      />
+
+      <article className="shell py-10 lg:py-14">
+        <section className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+          <div>
+            <p className="label">{copy.microcopy}</p>
+            <h1 className="mt-3 max-w-4xl text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
+              {copy.title}
+            </h1>
+            <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">
+              {copy.intro}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="#tool" className="button-primary">
+                {language === "es" ? "Comprobar tamanos de imagen" : "Check Image Sizes"}
+              </a>
+              <LocalizedLink href="/website-image-optimizer" className="button-secondary">
+                {language === "es" ? "Optimizar una imagen" : "Optimize an Image"}
+              </LocalizedLink>
+            </div>
+          </div>
+
+          <aside className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+              2026
+            </p>
+            <h2 className="mt-3 text-xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+              {copy.quickAnswerTitle}
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              {QUICK_ANSWER[language as LanguageCode]}
+            </p>
+          </aside>
+        </section>
+
+        <section className="mt-10 rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <h2 className="text-xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+            {copy.tocTitle}
+          </h2>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {tocItems.map(([href, label]) => (
+              <a
+                key={href}
+                href={`#${href}`}
+                className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-blue-300 hover:text-blue-700 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:border-blue-700 dark:hover:text-blue-300"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section id="tool" className="mt-10">
+          <div className="max-w-3xl">
+            <p className="label">{copy.toolEyebrow}</p>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+              {copy.toolTitle}
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              {copy.toolDescription}
+            </p>
+          </div>
+          <div className="mt-8">
+            <SmartPublishCheck
+              initialPreset="open-graph"
+              heading={language === "es" ? "Comprobar una imagen para redes sociales" : "Check a social media image"}
+              description={
+                language === "es"
+                  ? "Sube una imagen y comparala con dimensiones sociales comunes, proporcion, peso y recomendaciones de publicacion."
+                  : "Upload an image and compare it against common social dimensions, aspect ratios, file size expectations, and publishing recommendations."
+              }
+            />
+          </div>
+        </section>
+      </article>
 
       <div className="shell">
         <AdSlot className="mb-12" />
       </div>
 
-      <section className="shell py-10">
-        <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+      <section id="cheat-sheet" className="shell py-12">
+        <div className="max-w-3xl">
+          <p className="label">{copy.cheatSheetEyebrow}</p>
+          <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+            {copy.cheatSheetTitle}
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+            {copy.cheatSheetIntro}
+          </p>
+        </div>
+        <div className="mt-8 overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
           <table className="min-w-full divide-y divide-slate-200 text-left text-sm dark:divide-slate-800">
             <thead className="bg-slate-50 text-xs uppercase text-slate-500 dark:bg-slate-950 dark:text-slate-400">
               <tr>
-                <th scope="col" className="px-4 py-3">{language === "es" ? "Plataforma" : "Platform"}</th>
-                <th scope="col" className="px-4 py-3">{language === "es" ? "Uso" : "Use"}</th>
-                <th scope="col" className="px-4 py-3">{language === "es" ? "Tamaño recomendado" : "Recommended size"}</th>
-                <th scope="col" className="px-4 py-3">{language === "es" ? "Proporción" : "Ratio"}</th>
-                <th scope="col" className="px-4 py-3">{language === "es" ? "Nota práctica" : "Practical note"}</th>
+                <th className="px-4 py-3">{language === "es" ? "Plataforma" : "Platform"}</th>
+                <th className="px-4 py-3">{language === "es" ? "Tipo de imagen" : "Image type"}</th>
+                <th className="px-4 py-3">{language === "es" ? "Tamano recomendado" : "Recommended size"}</th>
+                <th className="px-4 py-3">{language === "es" ? "Proporcion" : "Aspect ratio"}</th>
+                <th className="px-4 py-3">{language === "es" ? "Notas" : "Notes"}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
-              {rows.map((row) => (
-                <tr key={`${row.platform}-${row.use.en}`}>
-                  <td className="px-4 py-4 font-bold text-slate-950 dark:text-white">{row.platform}</td>
-                  <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{row.use[language]}</td>
-                  <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{row.size[language]}</td>
-                  <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{row.ratio[language]}</td>
-                  <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{row.note[language]}</td>
+              {cheatSheetRows.map(({ platform, item }) => (
+                <tr key={`${platform}-${item.id}`}>
+                  <td className="px-4 py-4 font-semibold text-slate-950 dark:text-white">{platform}</td>
+                  <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.type[language as LanguageCode]}</td>
+                  <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.dimensions}</td>
+                  <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.aspectRatio}</td>
+                  <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.notes[language as LanguageCode]}</td>
                 </tr>
               ))}
             </tbody>
@@ -258,66 +401,149 @@ export default function SocialMediaImageSizesContent() {
       </section>
 
       <section className="border-y border-slate-200 bg-white/58 py-14 dark:border-slate-800 dark:bg-slate-950/35">
-        <div className="shell grid gap-8 lg:grid-cols-3">
-          {cards.map((card) => (
-            <article key={card.title.en} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-              <h2 className="text-lg font-extrabold text-slate-950 dark:text-white">{card.title[language]}</h2>
-              <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">{card.body[language]}</p>
+        <div className="shell space-y-8">
+          {SOCIAL_MEDIA_IMAGE_SIZES.map((platform) => (
+            <section
+              key={platform.id}
+              id={`${platform.id}-image-sizes`}
+              className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+            >
+              <h2 className="text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+                {PLATFORM_HEADINGS[platform.id as keyof typeof PLATFORM_HEADINGS][language as LanguageCode]}
+              </h2>
+              <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-600 dark:text-slate-400">
+                {platform.intro[language as LanguageCode]}
+              </p>
+              <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-800">
+                <table className="min-w-full divide-y divide-slate-200 text-left text-sm dark:divide-slate-800">
+                  <thead className="bg-slate-50 text-xs uppercase text-slate-500 dark:bg-slate-950 dark:text-slate-400">
+                    <tr>
+                      <th className="px-4 py-3">{language === "es" ? "Tipo" : "Image type"}</th>
+                      <th className="px-4 py-3">{language === "es" ? "Tamano" : "Recommended size"}</th>
+                      <th className="px-4 py-3">{language === "es" ? "Proporcion" : "Aspect ratio"}</th>
+                      <th className="px-4 py-3">{language === "es" ? "Notas" : "Notes"}</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
+                    {platform.items.map((item) => (
+                      <tr key={item.id}>
+                        <td className="px-4 py-4 font-semibold text-slate-950 dark:text-white">
+                          {item.type[language as LanguageCode]}
+                        </td>
+                        <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.dimensions}</td>
+                        <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.aspectRatio}</td>
+                        <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.notes[language as LanguageCode]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          ))}
+        </div>
+      </section>
+
+      <section id="best-universal-image-sizes" className="shell py-14">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+            {copy.universalTitle}
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+            {copy.universalIntro}
+          </p>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+          {UNIVERSAL_SOCIAL_IMAGE_SIZES.map((size, index) => (
+            <article
+              key={size.id}
+              className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                {index + 1}
+              </p>
+              <h3 className="mt-3 text-lg font-extrabold tracking-normal text-slate-950 dark:text-white">
+                {size.label[language as LanguageCode]}
+              </h3>
+              <p className="mt-2 text-sm font-semibold text-blue-700 dark:text-blue-300">{size.dimensions}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">
+                {size.description[language as LanguageCode]}
+              </p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="shell py-14">
-        <div className="mx-auto max-w-4xl">
-          <p className="label">{language === "es" ? "Flujo multi-plataforma" : "Multi-platform workflow"}</p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-            {language === "es"
-              ? "Cómo preparar una imagen para múltiples plataformas sociales"
-              : "How to prepare one image for multiple social platforms"}
-          </h2>
-          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-            {language === "es"
-              ? "Una sola imagen rara vez encaja perfectamente en cada plataforma. Una tarjeta Open Graph ancha, una publicación cuadrada de Instagram, una historia vertical y un pin alto de Pinterest usan espacios visuales distintos. Para campañas importantes, empieza con un archivo maestro grande y crea exportaciones dedicadas para cada destino."
-              : "A single image rarely fits every platform perfectly. A wide Open Graph card, a square Instagram post, a vertical Story and a tall Pinterest pin all use different visual spaces. For important campaigns, start with a large master file and create dedicated exports for each destination."}
-          </p>
-          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-            {language === "es"
-              ? "Mantén rostros, productos, texto y logos importantes lejos de los bordes extremos. Interfaces, pies de foto, superposiciones y recortes de vista previa pueden ocultar detalles cerca del borde."
-              : "Keep important faces, products, text and logos away from the extreme edges. Platform interfaces, captions, overlays and preview crops can hide or cut off details near the border."}
-          </p>
-          <div className="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900/70">
-            <h3 className="text-xl font-extrabold text-slate-950 dark:text-white">
-              {language === "es" ? "Checklist de exportación social" : "Social image export checklist"}
-            </h3>
-            <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
-              {checklist.map((item) => (
-                <li key={item.en}>{item[language]}</li>
+      <section id="avoid-cropping" className="border-y border-slate-200 bg-white/58 py-14 dark:border-slate-800 dark:bg-slate-950/35">
+        <div className="shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <h2 className="text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+              {copy.croppingTitle}
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              {copy.croppingIntro}
+            </p>
+          </div>
+          <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <ul className="grid gap-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
+              {CROPPING_TIPS[language as LanguageCode].map((tip) => (
+                <li key={tip}>{tip}</li>
               ))}
             </ul>
           </div>
         </div>
       </section>
 
-      <section className="shell py-14">
+      <section id="optimize-images" className="shell py-14">
         <div className="max-w-3xl">
-          <p className="label">FAQ</p>
-          <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-            {language === "es" ? "Preguntas sobre tamaños sociales" : "Social image size questions"}
+          <h2 className="text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+            {copy.optimizeTitle}
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">{copy.optimizeP1}</p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">{copy.optimizeP2}</p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">{copy.optimizeP3}</p>
+        </div>
+      </section>
+
+      <section id="faq" className="shell py-14">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+            {copy.faqTitle}
           </h2>
         </div>
         <div className="mt-8">
-          <FAQ items={localizedFaqs} />
+          <FAQ items={faqItems} />
+        </div>
+      </section>
+
+      <section id="related-tools" className="shell pb-14">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+            {copy.relatedTitle}
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+            {copy.relatedIntro}
+          </p>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {TOOL_LINKS.map((tool) => (
+            <article
+              key={tool.href}
+              className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+            >
+              <LocalizedLink href={tool.href} className="text-sm font-bold text-slate-950 hover:text-blue-700 dark:text-white dark:hover:text-blue-300">
+                {tool.anchor[language as LanguageCode]}
+              </LocalizedLink>
+              <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">
+                {tool.description[language as LanguageCode]}
+              </p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-10 rounded-lg border border-blue-200 bg-blue-50 p-5 text-sm leading-7 text-blue-950 dark:border-blue-900/70 dark:bg-blue-950/35 dark:text-blue-100">
+          {copy.finalNote}
         </div>
         <AdSlot variant="inline" className="mt-10" />
       </section>
     </>
   );
-}
-
-function localizeFaqs(language: Language) {
-  return faqs.map((faq) => ({
-    question: faq.question[language],
-    answer: faq.answer[language]
-  }));
 }
