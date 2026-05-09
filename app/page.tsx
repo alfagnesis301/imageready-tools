@@ -120,16 +120,29 @@ export default function HomePage() {
               <T k="home.viewSizeGuide" />
             </LocalizedLink>
           </div>
-          <div className="mt-6 rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-            <a
-              href="/social-media-image-sizes"
-              className="text-sm font-bold text-slate-950 hover:text-blue-700 dark:text-white dark:hover:text-blue-300"
-            >
-              Social Media Image Sizes Guide
-            </a>
-            <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              Find the recommended image dimensions for every major social platform.
-            </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <a
+                href="/social-media-image-sizes"
+                className="text-sm font-bold text-slate-950 hover:text-blue-700 dark:text-white dark:hover:text-blue-300"
+              >
+                Social Media Image Sizes Guide
+              </a>
+              <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">
+                Find the recommended image dimensions for every major social platform.
+              </p>
+            </div>
+            <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <a
+                href="/website-image-optimizer"
+                className="text-sm font-bold text-slate-950 hover:text-blue-700 dark:text-white dark:hover:text-blue-300"
+              >
+                Website Image Optimizer
+              </a>
+              <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">
+                Compress, resize, and prepare website images before publishing.
+              </p>
+            </div>
           </div>
           <div className="mt-7">
             <TrustBadges />
@@ -391,4 +404,5 @@ export default function HomePage() {
     </>
   );
 }
+
 
