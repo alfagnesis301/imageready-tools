@@ -6,7 +6,7 @@ import SmartPublishCheck from "@/components/SmartPublishCheck";
 
 const pageUrl = "https://publishpixel.net/website-image-optimizer";
 const ogImage = "https://publishpixel.net/website-image-optimizer-og.svg";
-const title = "Website Image Optimizer - Compress & Optimize Images Online Free";
+const title = "Website Image Optimizer – Compress & Optimize Images Online Free";
 const description =
   "Optimize images for your website with free online tools. Compress, resize, convert, and prepare JPG, PNG, WebP, and AVIF images for faster pages.";
 
@@ -321,7 +321,7 @@ export default function WebsiteImageOptimizerPage() {
         <div className="flex flex-col justify-center">
           <p className="label">Free image optimization tools for creators, publishers, and website owners.</p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
-            Website Image Optimizer - Compress and Optimize Images Online
+            Website Image Optimizer – Compress and Optimize Images Online
           </h1>
           <p className="mt-5 text-base leading-8 text-slate-600 dark:text-slate-300">
             Optimize images before publishing them on your website. Compress file size, check dimensions, prepare responsive formats, and make images easier to use across pages, blogs, stores, and landing pages.
@@ -509,3 +509,4 @@ function RelatedTools() {
     </div>
   );
 }
+
