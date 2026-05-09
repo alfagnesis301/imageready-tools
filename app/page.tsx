@@ -1,4 +1,4 @@
-﻿import AdSlot from "@/components/AdSlot";
+import AdSlot from "@/components/AdSlot";
 import HomeFAQ from "@/components/HomeFAQ";
 import HomeSeoMetaPromo from "@/components/HomeSeoMetaPromo";
 import LocalizedLink from "@/components/LocalizedLink";
@@ -120,7 +120,7 @@ export default function HomePage() {
               <T k="home.viewSizeGuide" />
             </LocalizedLink>
           </div>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
               <a
                 href="/social-media-image-sizes"
@@ -141,6 +141,17 @@ export default function HomePage() {
               </a>
               <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">
                 Compress, resize, and prepare website images before publishing.
+              </p>
+            </div>
+            <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <a
+                href="/smart-image-publish-check"
+                className="text-sm font-bold text-slate-950 hover:text-blue-700 dark:text-white dark:hover:text-blue-300"
+              >
+                Smart Image Publish Check
+              </a>
+              <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">
+                Check whether your image is ready before publishing.
               </p>
             </div>
           </div>

@@ -1,0 +1,25 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">PublishPixel Image SEO Checker</title>
+  <desc id="desc">A clean PublishPixel preview card for checking images before publishing.</desc>
+  <rect width="1200" height="630" fill="#f8fafc"/>
+  <rect x="56" y="56" width="1088" height="518" rx="32" fill="#ffffff" stroke="#dbeafe" stroke-width="2"/>
+  <circle cx="146" cy="146" r="52" fill="#2563eb"/>
+  <path d="M124 151h44M146 129v44" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+  <text x="226" y="140" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="800" fill="#0f172a">PublishPixel</text>
+  <text x="226" y="184" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#64748b">IMAGE SEO CHECKER</text>
+  <text x="96" y="296" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="900" fill="#020617">Check Images Before Publishing</text>
+  <text x="96" y="354" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500" fill="#475569">Review size, format, dimensions, filename, alt text,</text>
+  <text x="96" y="392" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500" fill="#475569">compression, accessibility, and publishing readiness.</text>
+  <g transform="translate(96 456)">
+    <rect width="222" height="48" rx="24" fill="#dbeafe"/>
+    <text x="24" y="31" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#1d4ed8">Image SEO</text>
+  </g>
+  <g transform="translate(340 456)">
+    <rect width="254" height="48" rx="24" fill="#ede9fe"/>
+    <text x="24" y="31" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#6d28d9">Pre-publish check</text>
+  </g>
+  <g transform="translate(616 456)">
+    <rect width="210" height="48" rx="24" fill="#dcfce7"/>
+    <text x="24" y="31" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#047857">Browser based</text>
+  </g>
+</svg>
