@@ -4,10 +4,10 @@ import { Download, Loader2, Maximize2 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import type { ImageAnalysisResult } from "@/lib/imageAnalysis";
 import {
-  downloadBlob,
+  downloadValidatedImageBlob,
   extensionForFormat,
   formatBytes,
-  renderImageToBlob,
+  renderValidatedImageToBlob,
   safeFileName
 } from "@/lib/imageUtils";
 import type { ImageFormat } from "@/lib/publishRules";
@@ -62,15 +62,18 @@ export default function ResizeSuggestions({ analysis }: ResizeSuggestionsProps) 
     setIsExporting(true);
     setStatus(null);
     try {
-      const blob = await renderImageToBlob({
+      const exportResult = await renderValidatedImageToBlob({
         file: analysis.file,
         width,
         height,
         format: targetFormat,
         quality: 0.82
       });
-      downloadBlob(blob, `${safeFileName(analysis.name)}-${width}x${height}.${extensionForFormat(targetFormat)}`);
-      setStatus(t("resize.success", { size: formatBytes(blob.size) }));
+      await downloadValidatedImageBlob(
+        exportResult.blob,
+        `${safeFileName(analysis.name)}-${width}x${height}.${extensionForFormat(exportResult.format)}`
+      );
+      setStatus(exportResult.message ?? t("resize.success", { size: formatBytes(exportResult.blob.size) }));
     } catch (error) {
       setStatus(error instanceof Error ? error.message : t("resize.error"));
     } finally {
@@ -168,6 +171,10 @@ export default function ResizeSuggestions({ analysis }: ResizeSuggestionsProps) 
           {t("resize.svgExport")}
         </p>
       ) : null}
+
+      <p className="mt-3 text-xs leading-5 text-slate-500 dark:text-slate-400">
+        Some privacy-focused browsers may block browser-based image export. If download fails, try a standard browser or a different export format.
+      </p>
 
       <button type="button" className="button-primary mt-4 w-full" onClick={exportResized} disabled={disabled || isExporting}>
         {isExporting ? <Loader2 size={17} className="animate-spin" aria-hidden="true" /> : <Download size={17} aria-hidden="true" />}
