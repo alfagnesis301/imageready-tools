@@ -243,6 +243,23 @@ const translations: Record<Language, Record<string, string>> = {
     "home.heroDescription":
       "Check if your image is ready for websites, SEO, social media, YouTube thumbnails, e-commerce, email headers, and more - privately in your browser.",
     "home.viewSizeGuide": "View size guide",
+    "home.card.socialSizes.title": "Social Media Image Sizes Guide",
+    "home.card.socialSizes.description":
+      "Find the recommended image dimensions for every major social platform.",
+    "home.card.websiteOptimizer.title": "Website Image Optimizer",
+    "home.card.websiteOptimizer.description":
+      "Compress, resize, and prepare website images before publishing.",
+    "home.card.smartCheck.title": "Smart Image Publish Check",
+    "home.card.smartCheck.description": "Check whether your image is ready before publishing.",
+    "home.card.compress.title": "Compress Image Online",
+    "home.card.compress.description":
+      "Reduce image file size before publishing to websites, blogs and social platforms.",
+    "home.card.resize.title": "Resize Image Online",
+    "home.card.resize.description":
+      "Export practical dimensions for web layouts, thumbnails and social media crops.",
+    "home.card.metadata.title": "EXIF Data Viewer",
+    "home.card.metadata.description":
+      "Check image metadata and privacy signals before sharing photos online.",
     "home.checksEyebrow": "What the tool checks",
     "home.checksTitle": "What does PublishPixel check?",
     "home.checksDescription":
@@ -615,6 +632,23 @@ const translations: Record<Language, Record<string, string>> = {
     "home.heroDescription":
       "Comprueba si tu imagen está lista para sitios web, SEO, redes sociales, miniaturas de YouTube, e-commerce, encabezados de email y más, de forma privada en tu navegador.",
     "home.viewSizeGuide": "Ver guía de tamaños",
+    "home.card.socialSizes.title": "Guía de tamaños de imagen para redes sociales",
+    "home.card.socialSizes.description":
+      "Consulta dimensiones recomendadas para las principales plataformas sociales.",
+    "home.card.websiteOptimizer.title": "Optimizador de imágenes para sitios web",
+    "home.card.websiteOptimizer.description":
+      "Comprime, redimensiona y prepara imágenes web antes de publicarlas.",
+    "home.card.smartCheck.title": "Revisión inteligente de imagen",
+    "home.card.smartCheck.description": "Comprueba si tu imagen está lista antes de publicarla.",
+    "home.card.compress.title": "Comprimir imagen online",
+    "home.card.compress.description":
+      "Reduce el peso del archivo antes de publicarlo en sitios web, blogs y redes sociales.",
+    "home.card.resize.title": "Redimensionar imagen online",
+    "home.card.resize.description":
+      "Exporta dimensiones prácticas para diseños web, miniaturas y recortes sociales.",
+    "home.card.metadata.title": "Visor de datos EXIF",
+    "home.card.metadata.description":
+      "Revisa metadatos y señales de privacidad antes de compartir fotos online.",
     "home.checksEyebrow": "Qué revisa la herramienta",
     "home.checksTitle": "¿Qué revisa PublishPixel?",
     "home.checksDescription":

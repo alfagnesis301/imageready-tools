@@ -1,4 +1,5 @@
 import AdSlot from "./AdSlot";
+import Breadcrumbs, { breadcrumbJsonLd } from "./Breadcrumbs";
 import FAQ from "./FAQ";
 import SmartPublishCheck from "./SmartPublishCheck";
 import { faqJsonLd } from "@/lib/seo";
@@ -19,6 +20,7 @@ type ToolSeoPageProps = {
   title: string;
   description: string;
   initialPreset: PresetId;
+  path: string;
   toolDescription: string;
   sections: ToolSection[];
   faqs: SeoFaq[];
@@ -30,16 +32,28 @@ export default function ToolSeoPage({
   title,
   description,
   initialPreset,
+  path,
   toolDescription,
   sections,
   faqs,
   children
 }: ToolSeoPageProps) {
+  const breadcrumbs = [
+    { name: "Home", href: "/" },
+    { name: "Tools", href: "/" },
+    { name: title, href: path }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)) }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }} />
       <section className="shell py-10">
         <div className="max-w-3xl">
+          <Breadcrumbs items={breadcrumbs} />
           <p className="label">{eyebrow}</p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
             {title}

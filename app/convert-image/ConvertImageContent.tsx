@@ -140,6 +140,7 @@ export default function ConvertImageContent() {
       title={page.title}
       description={page.description}
       initialPreset="website-blog"
+      path="/convert-image"
       toolDescription={page.toolDescription}
       sections={sections}
       faqs={faqs}

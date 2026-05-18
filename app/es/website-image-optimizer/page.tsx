@@ -15,6 +15,7 @@ export default function SpanishWebsiteImageOptimizerPage() {
       eyebrow="Optimizador web"
       title="Optimizador de imágenes para sitios web"
       description="Revisa peso, dimensiones, formato, nombre de archivo y preparación antes de subir imágenes a tu sitio."
+      path="/es/website-image-optimizer"
       preset="website-blog"
       toolDescription="Sube una imagen y obtén una revisión práctica para sitios web, blogs, páginas de aterrizaje y contenido SEO."
       sections={[
