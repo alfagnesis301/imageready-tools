@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbJsonLd } from "./Breadcrumbs";
 import SmartPublishCheck from "./SmartPublishCheck";
 
 type SpanishToolPageProps = {
   eyebrow: string;
   title: string;
   description: string;
+  path: string;
   preset?: React.ComponentProps<typeof SmartPublishCheck>["initialPreset"];
   toolDescription: string;
   sections: {
@@ -19,16 +21,28 @@ export default function SpanishToolPage({
   eyebrow,
   title,
   description,
+  path,
   preset = "website-blog",
   toolDescription,
   sections,
   ctaHref = "/es",
   ctaLabel = "Volver a la revisión principal"
 }: SpanishToolPageProps) {
+  const breadcrumbs = [
+    { name: "Inicio", href: "/es" },
+    { name: "Herramientas", href: "/es" },
+    { name: title, href: path }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)) }}
+      />
       <section className="shell py-10">
         <div className="max-w-3xl">
+          <Breadcrumbs items={breadcrumbs} />
           <p className="label">{eyebrow}</p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
             {title}

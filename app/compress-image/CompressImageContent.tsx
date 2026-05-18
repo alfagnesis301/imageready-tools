@@ -178,6 +178,7 @@ export default function CompressImageContent() {
       title={page.title}
       description={page.description}
       initialPreset="website-blog"
+      path="/compress-image"
       toolDescription={page.toolDescription}
       sections={sections}
       faqs={faqs}

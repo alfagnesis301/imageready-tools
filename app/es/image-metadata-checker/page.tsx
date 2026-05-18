@@ -15,6 +15,7 @@ export default function SpanishImageMetadataCheckerPage() {
       eyebrow="Herramienta de privacidad"
       title="Revisor de metadatos de imágenes"
       description="Revisa señales básicas de privacidad y metadatos antes de compartir una imagen online."
+      path="/es/image-metadata-checker"
       preset="website-blog"
       toolDescription="Sube una imagen para revisar peso, formato, preparación de publicación y señales básicas de metadatos legibles por el navegador."
       sections={[

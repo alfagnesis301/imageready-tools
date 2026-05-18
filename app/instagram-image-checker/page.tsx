@@ -39,6 +39,7 @@ export default function InstagramImageCheckerPage() {
       title="Instagram Image Size Checker"
       description="Check Instagram post, story and vertical creative dimensions before publishing or exporting final assets."
       initialPreset="instagram-post"
+      path="/instagram-image-checker"
       toolDescription="Upload an image and choose Instagram Post or Instagram Story to review ratio, size, format and export options."
       sections={[
         {

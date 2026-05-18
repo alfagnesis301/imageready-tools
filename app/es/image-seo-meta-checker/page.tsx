@@ -17,6 +17,7 @@ export default function SpanishImageSeoMetaCheckerPage() {
         eyebrow="SEO de imagen"
         title="Revisor SEO y metadatos de imagen"
         description="Analiza peso, dimensiones, nombre de archivo, formato y preparacion de publicacion en un flujo privado basado en navegador."
+        path="/es/image-seo-meta-checker"
         preset="website-blog"
         toolDescription="Sube una imagen y obten una revision practica para SEO de imagen, rendimiento web, nombres de archivo y compatibilidad con vistas previas sociales."
         sections={[

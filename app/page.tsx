@@ -91,6 +91,39 @@ const audiences = [
 
 const scoreParts = ["home.scorePart.0", "home.scorePart.1", "home.scorePart.2", "home.scorePart.3"];
 
+const primaryCards = [
+  {
+    href: "/social-media-image-sizes",
+    titleKey: "home.card.socialSizes.title",
+    descriptionKey: "home.card.socialSizes.description"
+  },
+  {
+    href: "/website-image-optimizer",
+    titleKey: "home.card.websiteOptimizer.title",
+    descriptionKey: "home.card.websiteOptimizer.description"
+  },
+  {
+    href: "/smart-image-publish-check",
+    titleKey: "home.card.smartCheck.title",
+    descriptionKey: "home.card.smartCheck.description"
+  },
+  {
+    href: "/compress-image",
+    titleKey: "home.card.compress.title",
+    descriptionKey: "home.card.compress.description"
+  },
+  {
+    href: "/resize-image",
+    titleKey: "home.card.resize.title",
+    descriptionKey: "home.card.resize.description"
+  },
+  {
+    href: "/image-metadata-checker",
+    titleKey: "home.card.metadata.title",
+    descriptionKey: "home.card.metadata.description"
+  }
+];
+
 export default function HomePage() {
   return (
     <>
@@ -121,39 +154,19 @@ export default function HomePage() {
             </LocalizedLink>
           </div>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-              <a
-                href="/social-media-image-sizes"
-                className="text-sm font-bold text-slate-950 hover:text-blue-700 dark:text-white dark:hover:text-blue-300"
-              >
-                Social Media Image Sizes Guide
-              </a>
-              <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">
-                Find the recommended image dimensions for every major social platform.
-              </p>
-            </div>
-            <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-              <a
-                href="/website-image-optimizer"
-                className="text-sm font-bold text-slate-950 hover:text-blue-700 dark:text-white dark:hover:text-blue-300"
-              >
-                Website Image Optimizer
-              </a>
-              <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">
-                Compress, resize, and prepare website images before publishing.
-              </p>
-            </div>
-            <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-              <a
-                href="/smart-image-publish-check"
-                className="text-sm font-bold text-slate-950 hover:text-blue-700 dark:text-white dark:hover:text-blue-300"
-              >
-                Smart Image Publish Check
-              </a>
-              <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">
-                Check whether your image is ready before publishing.
-              </p>
-            </div>
+            {primaryCards.map((card) => (
+              <div key={card.href} className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <LocalizedLink
+                  href={card.href}
+                  className="text-sm font-bold text-slate-950 hover:text-blue-700 dark:text-white dark:hover:text-blue-300"
+                >
+                  <T k={card.titleKey} />
+                </LocalizedLink>
+                <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">
+                  <T k={card.descriptionKey} />
+                </p>
+              </div>
+            ))}
           </div>
           <div className="mt-7">
             <TrustBadges />

@@ -15,6 +15,7 @@ export default function SpanishInstagramImageCheckerPage() {
       eyebrow="Herramienta para Instagram"
       title="Revisor de imágenes para Instagram"
       description="Revisa si una imagen encaja con formatos comunes de Instagram como publicación cuadrada, vertical, horizontal o historia."
+      path="/es/instagram-image-checker"
       preset="instagram-post"
       toolDescription="Sube una imagen y elige el ajuste predefinido de Instagram para revisar proporción, tamaño, peso y formato."
       sections={[

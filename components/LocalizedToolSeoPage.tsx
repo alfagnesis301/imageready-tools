@@ -1,9 +1,11 @@
 "use client";
 
 import AdSlot from "./AdSlot";
+import Breadcrumbs, { breadcrumbJsonLd } from "./Breadcrumbs";
 import FAQ from "./FAQ";
 import SmartPublishCheck from "./SmartPublishCheck";
 import { useLanguage, type Language } from "./LanguageProvider";
+import { withLocalePath } from "@/lib/i18n";
 import { faqJsonLd } from "@/lib/seo";
 import type { PresetId } from "@/lib/publishRules";
 
@@ -24,6 +26,7 @@ type LocalizedToolSeoPageProps = {
   title: LocalizedText;
   description: LocalizedText;
   initialPreset: PresetId;
+  path: string;
   toolDescription: LocalizedText;
   sections: LocalizedToolSection[];
   faqs: LocalizedFaq[];
@@ -35,6 +38,7 @@ export default function LocalizedToolSeoPage({
   title,
   description,
   initialPreset,
+  path,
   toolDescription,
   sections,
   faqs,
@@ -45,15 +49,26 @@ export default function LocalizedToolSeoPage({
     question: faq.question[language],
     answer: faq.answer[language]
   }));
+  const localizedPath = withLocalePath(path, language);
+  const breadcrumbs = [
+    { name: language === "es" ? "Inicio" : "Home", href: language === "es" ? "/es" : "/" },
+    { name: language === "es" ? "Herramientas" : "Tools", href: language === "es" ? "/es" : "/" },
+    { name: title[language], href: localizedPath }
+  ];
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(localizedFaqs)) }}
       />
       <section className="shell py-10">
         <div className="max-w-3xl">
+          <Breadcrumbs items={breadcrumbs} />
           <p className="label">{eyebrow[language]}</p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
             {title[language]}

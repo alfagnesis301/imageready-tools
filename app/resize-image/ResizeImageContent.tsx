@@ -147,6 +147,7 @@ export default function ResizeImageContent() {
       title={page.title}
       description={page.description}
       initialPreset="open-graph"
+      path="/resize-image"
       toolDescription={page.toolDescription}
       sections={sections}
       faqs={faqs}

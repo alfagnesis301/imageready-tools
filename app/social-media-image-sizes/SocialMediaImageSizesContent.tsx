@@ -17,7 +17,7 @@ import {
 const TOOL_LINKS = [
   {
     href: "/website-image-optimizer",
-    anchor: { en: "Website Image Optimizer", es: "Website Image Optimizer" },
+    anchor: { en: "Website Image Optimizer", es: "Optimizador de imágenes para sitios web" },
     description: {
       en: "Compress and optimize your images before uploading them to your website or social channels.",
       es: "Comprime y optimiza tus imagenes antes de subirlas a tu sitio o a canales sociales."
@@ -25,7 +25,7 @@ const TOOL_LINKS = [
   },
   {
     href: "/resize-image",
-    anchor: { en: "Resize Image Online", es: "Resize Image Online" },
+    anchor: { en: "Resize Image Online", es: "Redimensionar imagen online" },
     description: {
       en: "Resize images to the recommended social media dimensions.",
       es: "Redimensiona imagenes a los tamanos recomendados para redes sociales."
@@ -33,7 +33,7 @@ const TOOL_LINKS = [
   },
   {
     href: "/compress-image",
-    anchor: { en: "Compress Image Online", es: "Compress Image Online" },
+    anchor: { en: "Compress Image Online", es: "Comprimir imagen online" },
     description: {
       en: "Reduce file size while keeping your social media images sharp.",
       es: "Reduce el peso del archivo manteniendo nitidas tus imagenes para redes sociales."
@@ -41,7 +41,7 @@ const TOOL_LINKS = [
   },
   {
     href: "/smart-image-publish-check",
-    anchor: { en: "Smart Image Publish Check", es: "Smart Image Publish Check" },
+    anchor: { en: "Smart Image Publish Check", es: "Revisión inteligente de imagen" },
     description: {
       en: "Check whether your image is ready to publish before uploading.",
       es: "Comprueba si tu imagen esta lista para publicarse antes de subirla."

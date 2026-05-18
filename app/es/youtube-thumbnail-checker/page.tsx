@@ -15,6 +15,7 @@ export default function SpanishYouTubeThumbnailCheckerPage() {
       eyebrow="Herramienta para miniaturas"
       title="Revisor de miniaturas de YouTube"
       description="Comprueba una miniatura antes de subirla: tamaño, proporción, peso, formato y señales prácticas de legibilidad."
+      path="/es/youtube-thumbnail-checker"
       preset="youtube-thumbnail"
       toolDescription="Sube una miniatura y revisa si encaja con un objetivo práctico de 1280 x 720 px y proporción 16:9."
       sections={[

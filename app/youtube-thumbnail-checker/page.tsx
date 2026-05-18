@@ -39,6 +39,7 @@ export default function YouTubeThumbnailCheckerPage() {
       title="YouTube Thumbnail Size Checker"
       description="Check whether a thumbnail matches the common 1280 x 720 pixel size, 16:9 ratio and practical file size targets."
       initialPreset="youtube-thumbnail"
+      path="/youtube-thumbnail-checker"
       toolDescription="Upload a thumbnail image and get a PublishReady score, warnings and export options for YouTube-style thumbnails."
       sections={[
         {

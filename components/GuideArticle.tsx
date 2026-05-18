@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbJsonLd } from "./Breadcrumbs";
 import FAQ from "./FAQ";
 import { GUIDE_ENHANCEMENTS } from "@/lib/guideEnhancements";
 import type { Guide } from "@/lib/guides";
@@ -6,9 +7,18 @@ import { articleJsonLd, faqJsonLd } from "@/lib/seo";
 
 export default function GuideArticle({ guide }: { guide: Guide }) {
   const detail = GUIDE_ENHANCEMENTS[guide.slug];
+  const breadcrumbs = [
+    { name: "Home", href: "/" },
+    { name: "Guides", href: "/guides" },
+    { name: guide.title, href: `/guides/${guide.slug}` }
+  ];
 
   return (
     <article className="shell py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)) }}
+      />
       {detail ? (
         <script
           type="application/ld+json"
@@ -32,12 +42,7 @@ export default function GuideArticle({ guide }: { guide: Guide }) {
         />
       ) : null}
       <div className="mx-auto max-w-3xl">
-        <Link
-          href="/guides"
-          className="text-sm font-semibold text-blue-700 hover:underline dark:text-blue-300"
-        >
-          Image publishing guides
-        </Link>
+        <Breadcrumbs items={breadcrumbs} />
         <h1 className="mt-3 text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
           {guide.title}
         </h1>

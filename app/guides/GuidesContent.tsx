@@ -55,6 +55,152 @@ const guideEs: Record<string, { title: string; description: string }> = {
   }
 };
 
+const categories = [
+  {
+    key: "image-seo",
+    en: {
+      title: "Image SEO",
+      body: "Review filenames, alt text, preview context and page fit so images support the page instead of looking like isolated assets."
+    },
+    es: {
+      title: "SEO de imágenes",
+      body: "Revisa nombres de archivo, texto alternativo, contexto de vista previa y encaje en la página."
+    },
+    links: ["image-seo-checklist", "image-alt-text", "image-publishing-checklist"]
+  },
+  {
+    key: "compression",
+    en: {
+      title: "Image compression & formats",
+      body: "Choose dimensions, compression and format together. A WebP, JPG or PNG decision only works when it matches the image content and destination."
+    },
+    es: {
+      title: "Compresión y formatos",
+      body: "Elige dimensiones, compresión y formato en conjunto según contenido, transparencia y destino."
+    },
+    links: ["compress-images-without-losing-quality", "webp-vs-jpeg-vs-png", "website-image-performance-checklist"]
+  },
+  {
+    key: "social",
+    en: {
+      title: "Social media image sizes",
+      body: "Prepare square, portrait, vertical and wide crops for link cards, feeds, thumbnails and social publishing workflows."
+    },
+    es: {
+      title: "Tamaños para redes sociales",
+      body: "Prepara recortes cuadrados, verticales y anchos para tarjetas, feeds, miniaturas y publicaciones sociales."
+    },
+    links: ["social-media-image-sizes", "open-graph-image-best-practices", "youtube-thumbnail-image-guide"]
+  },
+  {
+    key: "privacy",
+    en: {
+      title: "Metadata & privacy",
+      body: "Check visible details, EXIF signals and clean publishing copies before photos or screenshots become public."
+    },
+    es: {
+      title: "Metadatos y privacidad",
+      body: "Revisa detalles visibles, señales EXIF y copias limpias antes de publicar fotos o capturas."
+    },
+    links: ["photo-privacy-before-publishing", "remove-image-metadata", "image-publishing-checklist"]
+  },
+  {
+    key: "accessibility",
+    en: {
+      title: "Accessibility & alt text",
+      body: "Plan alt text around the image purpose. Useful images need context; decorative images need a quieter treatment."
+    },
+    es: {
+      title: "Accesibilidad y texto alternativo",
+      body: "Planifica el texto alternativo según el propósito de la imagen y evita descripciones forzadas."
+    },
+    links: ["image-alt-text", "image-seo-checklist"]
+  },
+  {
+    key: "open-graph",
+    en: {
+      title: "Open Graph & thumbnails",
+      body: "Create dedicated preview images with safe areas, readable text and dimensions that match how cards are rendered."
+    },
+    es: {
+      title: "Open Graph y miniaturas",
+      body: "Crea vistas previas dedicadas con zona segura, texto legible y dimensiones adecuadas para tarjetas."
+    },
+    links: ["open-graph-image-best-practices", "youtube-thumbnail-image-guide", "social-media-image-sizes"]
+  }
+];
+
+const startingPoints = [
+  "image-publishing-checklist",
+  "image-size-for-web",
+  "image-seo-checklist",
+  "website-image-performance-checklist"
+];
+
+const toolLinks = [
+  {
+    href: "/smart-image-publish-check",
+    en: "Run the full image readiness check",
+    es: "Ejecutar la revisión completa de imagen"
+  },
+  {
+    href: "/website-image-optimizer",
+    en: "Optimize a website image",
+    es: "Optimizar una imagen web"
+  },
+  {
+    href: "/image-alt-text-checker",
+    en: "Check an alt text draft",
+    es: "Revisar un borrador de texto alternativo"
+  },
+  {
+    href: "/open-graph-image-checker",
+    en: "Check an Open Graph image",
+    es: "Revisar una imagen Open Graph"
+  }
+];
+
+const faq = {
+  en: [
+    {
+      question: "Where should I start?",
+      answer:
+        "Start with the image publishing checklist, then move to size, compression, alt text or privacy depending on the problem you need to solve."
+    },
+    {
+      question: "Are these official platform requirements?",
+      answer:
+        "No. They are practical publishing guides. Always verify official requirements for critical social, marketplace or campaign uploads."
+    },
+    {
+      question: "Should every guide be treated as a separate SEO page?",
+      answer:
+        "Each guide answers a distinct publishing problem and links to related tools and guides so Google can understand the site structure."
+    }
+  ],
+  es: [
+    {
+      question: "¿Por dónde empiezo?",
+      answer:
+        "Empieza por el checklist de publicación y después pasa a tamaño, compresión, texto alternativo o privacidad según el problema."
+    },
+    {
+      question: "¿Son requisitos oficiales de plataformas?",
+      answer:
+        "No. Son guías prácticas de publicación. Verifica requisitos oficiales para subidas críticas."
+    },
+    {
+      question: "¿Cada guía debe funcionar como página SEO separada?",
+      answer:
+        "Sí, siempre que responda a una intención distinta y enlace con herramientas y guías relacionadas."
+    }
+  ]
+};
+
+function getGuideBySlug(slug: string) {
+  return GUIDES.find((guide) => guide.slug === slug);
+}
+
 export default function GuidesContent() {
   const { language } = useLanguage();
 
@@ -71,6 +217,131 @@ export default function GuidesContent() {
             : "Practical, original guidance for preparing images before they go live. These guides support the checker with deeper context around performance, accessibility, privacy and SEO."}
         </p>
       </div>
+
+      <section className="mt-10 rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+        <div className="max-w-3xl">
+          <h2 className="text-2xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+            {language === "es" ? "Puntos de partida recomendados" : "Recommended starting points"}
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+            {language === "es"
+              ? "Usa estas guías para crear un flujo básico: revisar destino, elegir dimensiones, preparar SEO de imagen y controlar rendimiento antes de subir archivos al CMS."
+              : "Use these guides to build the basic workflow: review the destination, choose dimensions, prepare image SEO and control performance before files enter a CMS."}
+          </p>
+        </div>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {startingPoints.map((slug) => {
+            const guide = getGuideBySlug(slug)!;
+            const localizedGuide = language === "es" ? guideEs[slug] : guide;
+
+            return (
+              <Link
+                key={slug}
+                href={language === "es" ? `/es/guides/${slug}` : `/guides/${slug}`}
+                className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm font-bold text-slate-950 transition hover:border-blue-300 hover:text-blue-700 focus-ring dark:border-slate-800 dark:bg-slate-950 dark:text-white dark:hover:border-blue-700 dark:hover:text-blue-300"
+              >
+                {localizedGuide.title}
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="mt-10">
+        <div className="max-w-3xl">
+          <h2 className="text-2xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+            {language === "es" ? "Guías por categoría" : "Guides by category"}
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+            {language === "es"
+              ? "Cada categoría agrupa una intención de búsqueda distinta y enlaza a las herramientas que ayudan a completar el flujo."
+              : "Each category groups a distinct search intent and points to the tools that support the workflow."}
+          </p>
+        </div>
+        <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {categories.map((category) => {
+            const copy = category[language];
+
+            return (
+              <section key={category.key} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <h3 className="text-lg font-extrabold tracking-normal text-slate-950 dark:text-white">
+                  {copy.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">
+                  {copy.body}
+                </p>
+                <div className="mt-4 grid gap-2">
+                  {category.links.map((slug) => {
+                    const guide = getGuideBySlug(slug)!;
+                    const localizedGuide = language === "es" ? guideEs[slug] : guide;
+
+                    return (
+                      <Link
+                        key={slug}
+                        href={language === "es" ? `/es/guides/${slug}` : `/guides/${slug}`}
+                        className="text-sm font-semibold text-blue-700 hover:underline dark:text-blue-300"
+                      >
+                        {localizedGuide.title}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </section>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="mt-10 rounded-lg border border-blue-200 bg-blue-50 p-6 dark:border-blue-900/70 dark:bg-blue-950/35">
+        <h2 className="text-2xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+          {language === "es" ? "Herramientas relacionadas" : "Related tools"}
+        </h2>
+        <p className="mt-4 text-sm leading-7 text-blue-950 dark:text-blue-100">
+          {language === "es"
+            ? "Después de leer una guía, usa una herramienta específica para comprobar el archivo real antes de publicarlo."
+            : "After reading a guide, use a focused tool to check the actual file before publishing."}
+        </p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          {toolLinks.map((tool) => (
+            <Link key={tool.href} href={language === "es" ? `/es${tool.href}` : tool.href} className="button-secondary">
+              {tool[language]}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+
+      {language === "en" && (
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_0.9fr]">
+          <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <h2 className="text-2xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+              How to use these guides
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              Start with the publishing goal: reduce file size, choose a format, improve accessibility, protect privacy, prepare a social preview, or make website images faster. Each guide connects the editorial decision to a practical PublishPixel tool.
+            </p>
+            <h2 className="mt-8 text-2xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+              What to review before publishing an image
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              Before uploading an image to a website, CMS, store or social platform, review five basics: dimensions, file size, format, filename and context. A technically valid image can still be too heavy, too small, unclear, poorly cropped or mismatched for the channel where it will appear.
+            </p>
+          </section>
+
+          <section className="rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900/70">
+            <h2 className="text-2xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+              Guides by goal
+            </h2>
+            <ul className="mt-5 grid gap-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
+              <li><strong>Performance:</strong> web dimensions, compression and website image checklists.</li>
+              <li><strong>SEO:</strong> filenames, alt text, image context and link previews.</li>
+              <li><strong>Privacy:</strong> metadata, visible details and safer publishing copies.</li>
+              <li><strong>Social media:</strong> Open Graph, YouTube, Instagram, Pinterest and LinkedIn image sizes.</li>
+              <li><strong>Formats:</strong> when to use WebP, JPG, PNG or SVG for practical publishing.</li>
+            </ul>
+          </section>
+        </div>
+      )}
 
       {language === "es" && (
         <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_0.9fr]">
@@ -130,6 +401,20 @@ export default function GuidesContent() {
           );
         })}
       </div>
+
+      <section className="mt-12">
+        <h2 className="text-2xl font-extrabold tracking-normal text-slate-950 dark:text-white">
+          {language === "es" ? "Preguntas frecuentes sobre las guías" : "Guide hub FAQ"}
+        </h2>
+        <div className="mt-5 grid gap-4 md:grid-cols-3">
+          {faq[language].map((item) => (
+            <article key={item.question} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <h3 className="text-sm font-bold text-slate-950 dark:text-white">{item.question}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </section>
     </section>
   );
 }

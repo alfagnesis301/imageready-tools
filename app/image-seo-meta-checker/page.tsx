@@ -49,6 +49,7 @@ export default function ImageSeoMetaCheckerPage() {
       title="Ultimate Image SEO & Meta Checker"
       description="Review image size, dimensions, filename structure, format choice and publishing readiness in one browser-based workflow."
       initialPreset="website-blog"
+      path="/image-seo-meta-checker"
       toolDescription="Upload an image and get a practical report for website image SEO, compression opportunity, social preview fit and publishing context."
       sections={[
         {
