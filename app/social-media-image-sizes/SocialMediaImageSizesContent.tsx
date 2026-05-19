@@ -191,6 +191,12 @@ const PAGE_COPY = {
   }
 } as const;
 
+function localizeDimensionText(value: string, language: LanguageCode) {
+  if (language !== "es") return value;
+
+  return value.replace(" or larger", " o superior");
+}
+
 export default function SocialMediaImageSizesContent() {
   const { language } = useLanguage();
   const copy = PAGE_COPY[language as LanguageCode];
@@ -390,7 +396,9 @@ export default function SocialMediaImageSizesContent() {
                 <tr key={`${platform}-${item.id}`}>
                   <td className="px-4 py-4 font-semibold text-slate-950 dark:text-white">{platform}</td>
                   <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.type[language as LanguageCode]}</td>
-                  <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.dimensions}</td>
+                  <td className="px-4 py-4 text-slate-600 dark:text-slate-400">
+                    {localizeDimensionText(item.dimensions, language as LanguageCode)}
+                  </td>
                   <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.aspectRatio}</td>
                   <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.notes[language as LanguageCode]}</td>
                 </tr>
@@ -430,7 +438,9 @@ export default function SocialMediaImageSizesContent() {
                         <td className="px-4 py-4 font-semibold text-slate-950 dark:text-white">
                           {item.type[language as LanguageCode]}
                         </td>
-                        <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.dimensions}</td>
+                        <td className="px-4 py-4 text-slate-600 dark:text-slate-400">
+                          {localizeDimensionText(item.dimensions, language as LanguageCode)}
+                        </td>
                         <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.aspectRatio}</td>
                         <td className="px-4 py-4 text-slate-600 dark:text-slate-400">{item.notes[language as LanguageCode]}</td>
                       </tr>
@@ -464,7 +474,9 @@ export default function SocialMediaImageSizesContent() {
               <h3 className="mt-3 text-lg font-extrabold tracking-normal text-slate-950 dark:text-white">
                 {size.label[language as LanguageCode]}
               </h3>
-              <p className="mt-2 text-sm font-semibold text-blue-700 dark:text-blue-300">{size.dimensions}</p>
+              <p className="mt-2 text-sm font-semibold text-blue-700 dark:text-blue-300">
+                {localizeDimensionText(size.dimensions, language as LanguageCode)}
+              </p>
               <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">
                 {size.description[language as LanguageCode]}
               </p>

@@ -43,7 +43,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "feed-square",
-        type: { en: "Feed square", es: "Publicacion cuadrada" },
+        type: { en: "Feed square", es: "Publicación cuadrada" },
         dimensions: "1080 x 1080 px",
         aspectRatio: "1:1",
         notes: {
@@ -54,7 +54,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "feed-portrait",
-        type: { en: "Feed portrait", es: "Publicacion vertical" },
+        type: { en: "Feed portrait", es: "Publicación vertical" },
         dimensions: "1080 x 1350 px",
         aspectRatio: "4:5",
         notes: {
@@ -64,7 +64,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "feed-landscape",
-        type: { en: "Feed landscape", es: "Publicacion horizontal" },
+        type: { en: "Feed landscape", es: "Publicación horizontal" },
         dimensions: "1080 x 566 px",
         aspectRatio: "1.91:1",
         notes: {
@@ -74,7 +74,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "stories",
-        type: { en: "Stories", es: "Stories" },
+        type: { en: "Stories", es: "Historias" },
         dimensions: "1080 x 1920 px",
         aspectRatio: "9:16",
         notes: {
@@ -126,17 +126,17 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "feed-square",
-        type: { en: "Feed square", es: "Publicacion cuadrada" },
+        type: { en: "Feed square", es: "Publicación cuadrada" },
         dimensions: "1080 x 1080 px",
         aspectRatio: "1:1",
         notes: {
           en: "A flexible square option for general feed content.",
-          es: "Opcion cuadrada flexible para contenido general del feed."
+          es: "Opción cuadrada flexible para contenido general del feed."
         }
       },
       {
         id: "feed-landscape",
-        type: { en: "Feed landscape / link image", es: "Publicacion horizontal / enlace" },
+        type: { en: "Feed landscape / link image", es: "Publicación horizontal / enlace" },
         dimensions: "1200 x 630 px",
         aspectRatio: "1.91:1",
         notes: {
@@ -147,7 +147,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "story",
-        type: { en: "Story", es: "Story" },
+        type: { en: "Story", es: "Historia" },
         dimensions: "1080 x 1920 px",
         aspectRatio: "9:16",
         notes: {
@@ -177,7 +177,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "header-image",
-        type: { en: "Header image", es: "Header" },
+        type: { en: "Header image", es: "Encabezado" },
         dimensions: "1500 x 500 px",
         aspectRatio: "3:1",
         notes: {
@@ -188,7 +188,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "post-landscape",
-        type: { en: "Single image post landscape", es: "Publicacion horizontal" },
+        type: { en: "Single image post landscape", es: "Publicación horizontal" },
         dimensions: "1200 x 675 px",
         aspectRatio: "16:9",
         notes: {
@@ -199,7 +199,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "post-square",
-        type: { en: "Single image post square", es: "Publicacion cuadrada" },
+        type: { en: "Single image post square", es: "Publicación cuadrada" },
         dimensions: "1080 x 1080 px",
         aspectRatio: "1:1",
         notes: {
@@ -209,7 +209,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "post-portrait",
-        type: { en: "Single image post portrait", es: "Publicacion vertical" },
+        type: { en: "Single image post portrait", es: "Publicación vertical" },
         dimensions: "1080 x 1350 px",
         aspectRatio: "4:5",
         notes: {
@@ -244,7 +244,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "4:1",
         notes: {
           en: "Use a clean composition and keep important text away from profile overlays.",
-          es: "Usa una composicion limpia y mantén textos importantes lejos de las superposiciones del perfil."
+          es: "Usa una composición limpia y mantén textos importantes lejos de las superposiciones del perfil."
         }
       },
       {
@@ -264,13 +264,13 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "5.9:1",
         notes: {
           en: "Use a restrained design because LinkedIn crops aggressively across layouts.",
-          es: "Usa un diseno sobrio porque LinkedIn recorta de forma agresiva en distintas vistas."
+          es: "Usa un diseño sobrio porque LinkedIn recorta de forma agresiva en distintas vistas."
         },
         featuredInCheatSheet: true
       },
       {
         id: "shared-square",
-        type: { en: "Shared image square", es: "Publicacion cuadrada" },
+        type: { en: "Shared image square", es: "Publicación cuadrada" },
         dimensions: "1080 x 1080 px",
         aspectRatio: "1:1",
         notes: {
@@ -280,7 +280,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "shared-landscape",
-        type: { en: "Shared image landscape", es: "Publicacion horizontal" },
+        type: { en: "Shared image landscape", es: "Publicación horizontal" },
         dimensions: "1200 x 627 px",
         aspectRatio: "1.91:1",
         notes: {
@@ -291,7 +291,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "shared-portrait",
-        type: { en: "Shared image portrait", es: "Publicacion vertical" },
+        type: { en: "Shared image portrait", es: "Publicación vertical" },
         dimensions: "1080 x 1350 px",
         aspectRatio: "4:5",
         notes: {
@@ -322,7 +322,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "banner-safe-area",
-        type: { en: "Banner safe area", es: "Area segura del banner" },
+        type: { en: "Banner safe area", es: "Área segura del banner" },
         dimensions: "1546 x 423 px",
         aspectRatio: "3.65:1",
         notes: {
@@ -445,12 +445,12 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "story-idea-pin",
-        type: { en: "Story / Idea pin", es: "Story / Idea pin" },
+        type: { en: "Story / Idea pin", es: "Historia / Idea Pin" },
         dimensions: "1080 x 1920 px",
         aspectRatio: "9:16",
         notes: {
           en: "Vertical content benefits from clean spacing and easy-to-read text.",
-          es: "El contenido vertical se beneficia de espacios limpios y texto facil de leer."
+          es: "El contenido vertical se beneficia de espacios limpios y texto fácil de leer."
         }
       },
       {
@@ -460,7 +460,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1:1",
         notes: {
           en: "Use a clean centered crop that still looks clear when reduced.",
-          es: "Usa un recorte limpio y centrado que siga viendose claro al reducirse."
+          es: "Usa un recorte limpio y centrado que siga viéndose claro al reducirse."
         }
       }
     ]
@@ -492,7 +492,7 @@ export const UNIVERSAL_SOCIAL_IMAGE_SIZES = [
     dimensions: "1080 x 1920 px",
     description: {
       en: "The main vertical format for Stories, Reels, Shorts, and TikTok.",
-      es: "Formato vertical principal para Stories, Reels, Shorts y TikTok."
+      es: "Formato vertical principal para historias, reels, Shorts y TikTok."
     }
   },
   {
@@ -510,7 +510,7 @@ export const UNIVERSAL_SOCIAL_IMAGE_SIZES = [
     dimensions: "1280 x 720 px",
     description: {
       en: "A dedicated 16:9 export that keeps YouTube thumbnails clean and legible.",
-      es: "Exportacion 16:9 dedicada para mantener limpias y legibles las miniaturas de YouTube."
+      es: "Exportación 16:9 dedicada para mantener limpias y legibles las miniaturas de YouTube."
     }
   }
 ];
@@ -589,7 +589,7 @@ export const SOCIAL_MEDIA_FAQS = [
   {
     question: {
       en: "Should I use JPG, PNG, or WebP for social media?",
-      es: "Debo usar JPG, PNG o WebP para redes sociales?"
+      es: "¿Debo usar JPG, PNG o WebP para redes sociales?"
     },
     answer: {
       en: "Use JPG for photos, PNG for graphics with text or transparency, and WebP when the platform supports it. Always check quality after compression.",

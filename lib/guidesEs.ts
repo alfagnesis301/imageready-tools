@@ -64,7 +64,7 @@ export const GUIDES_ES: Guide[] = [
         ]
       },
       {
-        heading: "Exportaciones Canvas y metadatos",
+        heading: "Reexportación con Canvas y metadatos",
         body: [
           "Cuando el navegador reexporta una imagen mediante Canvas, normalmente no conserva metadatos EXIF. Esto puede ayudar, pero el comportamiento varía por navegador y formato.",
           "No dependas de una sola herramienta si la privacidad es crítica. Verifica el archivo final con una herramienta dedicada."
@@ -347,7 +347,7 @@ export const GUIDES_ES: Guide[] = [
         heading: "Comprueba accesibilidad y contexto",
         body: [
           "Las imágenes útiles deberían tener un plan de texto alternativo cuando comunican información.",
-          "Un nombre de archivo claro y contenido cercano relevante también facilitan gestionar el recurso."
+          "Un nombre de archivo claro y contenido cercano relevante también ayudan a gestionar el recurso."
         ]
       },
       {
@@ -474,7 +474,7 @@ export const GUIDES_ES: Guide[] = [
         heading: "Planifica entrega adaptable",
         body: [
           "El archivo preparado es solo una parte del rendimiento. En producción conviene usar marcado adaptable, caché y carga adecuada.",
-          "Un recurso limpio facilita esas optimizaciones posteriores."
+          "Un recurso limpio ayuda con esas optimizaciones posteriores."
         ]
       }
     ],
