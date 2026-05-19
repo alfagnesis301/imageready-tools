@@ -488,7 +488,7 @@ export const UNIVERSAL_SOCIAL_IMAGE_SIZES = [
   },
   {
     id: "vertical-story",
-    label: { en: "Vertical story / reel", es: "Historia / reel vertical" },
+    label: { en: "Vertical story / reel", es: "Historia / Reel vertical" },
     dimensions: "1080 x 1920 px",
     description: {
       en: "The main vertical format for Stories, Reels, Shorts, and TikTok.",
