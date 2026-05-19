@@ -141,7 +141,7 @@ export default function SpanishGuideArticle({ guide }: { guide: Guide }) {
               description: guide.description,
               path: `/es/guides/${guide.slug}`,
               dateModified: "2026-05-02",
-              author: "PublishPixel Editorial Team"
+              author: "Equipo editorial de PublishPixel"
             })
           )
         }}

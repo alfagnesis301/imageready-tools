@@ -10,5 +10,5 @@ export const metadata = createPageMetadata({
 });
 
 export default function SpanishHomePage() {
-  return <HomePage />;
+  return <HomePage locale="es" />;
 }

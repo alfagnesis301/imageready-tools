@@ -20,7 +20,7 @@ const TOOL_LINKS = [
     anchor: { en: "Website Image Optimizer", es: "Optimizador de imágenes para sitios web" },
     description: {
       en: "Compress and optimize your images before uploading them to your website or social channels.",
-      es: "Comprime y optimiza tus imagenes antes de subirlas a tu sitio o a canales sociales."
+      es: "Comprime y optimiza tus imágenes antes de subirlas a tu sitio o a canales sociales."
     }
   },
   {
@@ -28,7 +28,7 @@ const TOOL_LINKS = [
     anchor: { en: "Resize Image Online", es: "Redimensionar imagen online" },
     description: {
       en: "Resize images to the recommended social media dimensions.",
-      es: "Redimensiona imagenes a los tamanos recomendados para redes sociales."
+      es: "Redimensiona imágenes a los tamaños recomendados para redes sociales."
     }
   },
   {
@@ -36,15 +36,15 @@ const TOOL_LINKS = [
     anchor: { en: "Compress Image Online", es: "Comprimir imagen online" },
     description: {
       en: "Reduce file size while keeping your social media images sharp.",
-      es: "Reduce el peso del archivo manteniendo nitidas tus imagenes para redes sociales."
+      es: "Reduce el peso del archivo manteniendo nítidas tus imágenes para redes sociales."
     }
   },
   {
     href: "/smart-image-publish-check",
-    anchor: { en: "Smart Image Publish Check", es: "Revisión inteligente de imagen" },
+    anchor: { en: "Smart Image Publish Check", es: "Revisión inteligente de imágenes" },
     description: {
       en: "Check whether your image is ready to publish before uploading.",
-      es: "Comprueba si tu imagen esta lista para publicarse antes de subirla."
+      es: "Comprueba si tu imagen está lista para publicarse antes de subirla."
     }
   }
 ];
@@ -63,12 +63,12 @@ const CROPPING_TIPS = {
   es: [
     "Mantén el texto importante lejos de los bordes.",
     "Centra rostros, logos y detalles de producto.",
-    "Exporta versiones separadas para cuadrado, vertical y story.",
-    "Usa 9:16 para stories, reels, shorts y TikTok.",
-    "Usa 4:5 para publicaciones mobile-first cuando la plataforma lo soporte.",
-    "Previsualiza las imagenes antes de publicar.",
-    "Comprime las imagenes sin volver borroso el texto.",
-    "Usa JPG para fotos y PNG o WebP para graficos cuando tenga sentido."
+    "Exporta versiones separadas para formato cuadrado, vertical e historias.",
+    "Usa 9:16 para historias, reels, shorts y TikTok.",
+    "Usa 4:5 para publicaciones pensadas para móvil cuando la plataforma lo soporte.",
+    "Previsualiza las imágenes antes de publicar.",
+    "Comprime las imágenes sin volver borroso el texto.",
+    "Usa JPG para fotos y PNG o WebP para gráficos cuando tenga sentido."
   ]
 };
 
@@ -88,34 +88,34 @@ const TOC_ITEMS = {
     ["faq", "FAQ"]
   ],
   es: [
-    ["cheat-sheet", "Cheat sheet de tamanos para redes sociales"],
-    ["instagram-image-sizes", "Tamanos de imagen para Instagram"],
-    ["facebook-image-sizes", "Tamanos de imagen para Facebook"],
-    ["x-twitter-image-sizes", "Tamanos de imagen para X / Twitter"],
-    ["linkedin-image-sizes", "Tamanos de imagen para LinkedIn"],
-    ["youtube-image-sizes", "Tamanos de imagen para YouTube"],
-    ["tiktok-image-sizes", "Tamanos de imagen para TikTok"],
-    ["pinterest-image-sizes", "Tamanos de imagen para Pinterest"],
-    ["best-universal-image-sizes", "Mejores tamanos universales"],
-    ["avoid-cropping", "Como evitar recortes"],
-    ["optimize-images", "Como optimizar imagenes antes de publicar"],
-    ["faq", "FAQ"]
+    ["cheat-sheet", "Referencia rápida de tamaños para redes sociales"],
+    ["instagram-image-sizes", "Tamaños de imagen para Instagram"],
+    ["facebook-image-sizes", "Tamaños de imagen para Facebook"],
+    ["x-twitter-image-sizes", "Tamaños de imagen para X / Twitter"],
+    ["linkedin-image-sizes", "Tamaños de imagen para LinkedIn"],
+    ["youtube-image-sizes", "Tamaños de imagen para YouTube"],
+    ["tiktok-image-sizes", "Tamaños de imagen para TikTok"],
+    ["pinterest-image-sizes", "Tamaños de imagen para Pinterest"],
+    ["best-universal-image-sizes", "Mejores tamaños universales"],
+    ["avoid-cropping", "Cómo evitar recortes"],
+    ["optimize-images", "Cómo optimizar imágenes antes de publicar"],
+    ["faq", "Preguntas frecuentes"]
   ]
 };
 
 const PLATFORM_HEADINGS = {
-  instagram: { en: "Instagram Image Sizes", es: "Tamanos de imagen para Instagram" },
-  facebook: { en: "Facebook Image Sizes", es: "Tamanos de imagen para Facebook" },
-  "x-twitter": { en: "X / Twitter Image Sizes", es: "Tamanos de imagen para X / Twitter" },
-  linkedin: { en: "LinkedIn Image Sizes", es: "Tamanos de imagen para LinkedIn" },
-  youtube: { en: "YouTube Image Sizes", es: "Tamanos de imagen para YouTube" },
-  tiktok: { en: "TikTok Image Sizes", es: "Tamanos de imagen para TikTok" },
-  pinterest: { en: "Pinterest Image Sizes", es: "Tamanos de imagen para Pinterest" }
+  instagram: { en: "Instagram Image Sizes", es: "Tamaños de imagen para Instagram" },
+  facebook: { en: "Facebook Image Sizes", es: "Tamaños de imagen para Facebook" },
+  "x-twitter": { en: "X / Twitter Image Sizes", es: "Tamaños de imagen para X / Twitter" },
+  linkedin: { en: "LinkedIn Image Sizes", es: "Tamaños de imagen para LinkedIn" },
+  youtube: { en: "YouTube Image Sizes", es: "Tamaños de imagen para YouTube" },
+  tiktok: { en: "TikTok Image Sizes", es: "Tamaños de imagen para TikTok" },
+  pinterest: { en: "Pinterest Image Sizes", es: "Tamaños de imagen para Pinterest" }
 } as const;
 
 const QUICK_ANSWER = {
   en: "Most social platforms work well with 1080 px wide images for feed posts, 1080 x 1920 px for vertical stories or short-form video covers, and platform-specific banner sizes for profiles and channels. The safest 2026 workflow is to design one square version, one 4:5 portrait version, and one 9:16 vertical version, then export platform-specific crops.",
-  es: "La mayoria de plataformas funcionan bien con imagenes de 1080 px de ancho para el feed, 1080 x 1920 px para stories verticales o portadas de video corto, y banners especificos para perfiles y canales. El flujo mas seguro en 2026 es diseñar una version cuadrada, una version vertical 4:5 y una version 9:16, y despues exportar recortes especificos por plataforma."
+  es: "La mayoría de plataformas funcionan bien con imágenes de 1080 px de ancho para el feed, 1080 x 1920 px para historias verticales o portadas de vídeo corto, y banners específicos para perfiles y canales. El flujo más seguro en 2026 es diseñar una versión cuadrada, una versión vertical 4:5 y una versión 9:16, y después exportar recortes específicos por plataforma."
 };
 
 const PAGE_COPY = {
@@ -155,39 +155,39 @@ const PAGE_COPY = {
       "These sizes are recommended starting points, not permanent rules. Social platforms change interfaces, crops, and display behavior over time, so always preview important uploads before publishing."
   },
   es: {
-    title: "Tamanos de imagen para redes sociales 2026: guia completa para cada plataforma",
+    title: "Tamaños de imagen para redes sociales 2026: guía completa para cada plataforma",
     intro:
-      "Consulta dimensiones recomendadas para Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest y mas, con valores seguros para publicaciones de feed, stories, reels, banners, miniaturas e imagenes de perfil.",
-    microcopy: "Guia gratuita de tamanos para creadores, marketers y publishers.",
-    quickAnswerTitle: "Respuesta rapida",
+      "Consulta dimensiones recomendadas para Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest y más, con valores seguros para publicaciones de feed, historias, reels, banners, miniaturas e imágenes de perfil.",
+    microcopy: "Guía gratuita de tamaños para creadores, profesionales de marketing y editores.",
+    quickAnswerTitle: "Respuesta rápida",
     tocTitle: "Tabla de contenidos",
     toolEyebrow: "Comprueba el tamaño de tu propia imagen",
-    toolTitle: "Comprobar tamanos de imagen",
+    toolTitle: "Comprobar tamaños de imagen",
     toolDescription:
-      "Sube una imagen y comparala con ubicaciones sociales comunes, dimensiones, proporciones y expectativas de peso antes de publicar.",
-    cheatSheetEyebrow: "Referencia rapida",
-    cheatSheetTitle: "Cheat sheet de tamanos para redes sociales",
+      "Sube una imagen y compárala con ubicaciones sociales comunes, dimensiones, proporciones y expectativas de peso antes de publicar.",
+    cheatSheetEyebrow: "Referencia rápida",
+    cheatSheetTitle: "Referencia rápida de tamaños para redes sociales",
     cheatSheetIntro:
-      "Usa esta tabla como punto de partida practico para las ubicaciones mas comunes de las principales plataformas sociales en 2026.",
-    universalTitle: "Mejores tamanos universales para crear primero",
+      "Usa esta tabla como punto de partida práctico para las ubicaciones más comunes de las principales plataformas sociales en 2026.",
+    universalTitle: "Mejores tamaños universales para crear primero",
     universalIntro:
-      "Estas cinco versiones cubren la mayoria de necesidades de publicacion para creadores, marketers y publishers. Crea estas primero y luego exporta recortes especificos cuando una plataforma lo necesite.",
-    croppingTitle: "Como evitar recortes en redes sociales",
+      "Estas cinco versiones cubren la mayoría de necesidades de publicación para creadores, profesionales de marketing y editores. Crea estas primero y luego exporta recortes específicos cuando una plataforma lo necesite.",
+    croppingTitle: "Cómo evitar recortes en redes sociales",
     croppingIntro:
-      "Un tamaño tecnicamente correcto aun puede recortarse mal si el contenido importante queda demasiado cerca de los bordes. El diseño seguro y la previsualizacion importan tanto como las dimensiones.",
-    optimizeTitle: "Como optimizar imagenes antes de publicar",
+      "Un tamaño técnicamente correcto aún puede recortarse mal si el contenido importante queda demasiado cerca de los bordes. El diseño seguro y la vista previa importan tanto como las dimensiones.",
+    optimizeTitle: "Cómo optimizar imágenes antes de publicar",
     optimizeP1:
-      "Las dimensiones son solo una parte del trabajo. Un archivo puede coincidir con el lienzo recomendado y aun asi pesar demasiado, perder nitidez tras comprimir o verse mal en movil.",
+      "Las dimensiones son solo una parte del trabajo. Un archivo puede coincidir con el lienzo recomendado y aun así pesar demasiado, perder nitidez tras comprimir o verse mal en móvil.",
     optimizeP2:
-      "Un flujo practico es redimensionar primero, exportar en el formato mas adecuado para la imagen y comprimir la copia final sin volver borroso el texto ni los detalles del producto.",
+      "Un flujo práctico es redimensionar primero, exportar en el formato más adecuado para la imagen y comprimir la copia final sin volver borroso el texto ni los detalles del producto.",
     optimizeP3:
       "PublishPixel puede ayudarte a revisar dimensiones, optimizar el peso y comprobar si una imagen parece lista antes de publicarla.",
-    faqTitle: "FAQ sobre tamanos de imagen para redes sociales",
+    faqTitle: "Preguntas frecuentes sobre tamaños de imagen para redes sociales",
     relatedTitle: "Herramientas relacionadas",
     relatedIntro:
       "Usa estas herramientas de PublishPixel para redimensionar, comprimir, optimizar o revisar una imagen antes de subirla a una plataforma social.",
     finalNote:
-      "Estos tamanos son puntos de partida recomendados, no reglas permanentes. Las plataformas cambian interfaces, recortes y comportamiento de visualizacion con el tiempo, asi que conviene previsualizar siempre las subidas importantes."
+      "Estos tamaños son puntos de partida recomendados, no reglas permanentes. Las plataformas cambian interfaces, recortes y comportamiento de visualización con el tiempo, así que conviene previsualizar siempre las subidas importantes."
   }
 } as const;
 
@@ -237,7 +237,7 @@ export default function SocialMediaImageSizesContent() {
         headline: copy.title,
         description:
           language === "es"
-            ? "Consulta dimensiones recomendadas para Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest y mas."
+            ? "Consulta dimensiones recomendadas para Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest y más."
             : "Find the recommended image dimensions for Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest, and more.",
         image: SOCIAL_MEDIA_IMAGE_OG_ABSOLUTE,
         datePublished: "2026-05-09",
@@ -298,7 +298,7 @@ export default function SocialMediaImageSizesContent() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="#tool" className="button-primary">
-                {language === "es" ? "Comprobar tamanos de imagen" : "Check Image Sizes"}
+                {language === "es" ? "Comprobar tamaños de imagen" : "Check Image Sizes"}
               </a>
               <LocalizedLink href="/website-image-optimizer" className="button-secondary">
                 {language === "es" ? "Optimizar una imagen" : "Optimize an Image"}
@@ -352,7 +352,7 @@ export default function SocialMediaImageSizesContent() {
               heading={language === "es" ? "Comprobar una imagen para redes sociales" : "Check a social media image"}
               description={
                 language === "es"
-                  ? "Sube una imagen y comparala con dimensiones sociales comunes, proporcion, peso y recomendaciones de publicacion."
+                  ? "Sube una imagen y compárala con dimensiones sociales comunes, proporción, peso y recomendaciones de publicación."
                   : "Upload an image and compare it against common social dimensions, aspect ratios, file size expectations, and publishing recommendations."
               }
             />
@@ -380,8 +380,8 @@ export default function SocialMediaImageSizesContent() {
               <tr>
                 <th className="px-4 py-3">{language === "es" ? "Plataforma" : "Platform"}</th>
                 <th className="px-4 py-3">{language === "es" ? "Tipo de imagen" : "Image type"}</th>
-                <th className="px-4 py-3">{language === "es" ? "Tamano recomendado" : "Recommended size"}</th>
-                <th className="px-4 py-3">{language === "es" ? "Proporcion" : "Aspect ratio"}</th>
+                <th className="px-4 py-3">{language === "es" ? "Tamaño recomendado" : "Recommended size"}</th>
+                <th className="px-4 py-3">{language === "es" ? "Proporción" : "Aspect ratio"}</th>
                 <th className="px-4 py-3">{language === "es" ? "Notas" : "Notes"}</th>
               </tr>
             </thead>
@@ -419,8 +419,8 @@ export default function SocialMediaImageSizesContent() {
                   <thead className="bg-slate-50 text-xs uppercase text-slate-500 dark:bg-slate-950 dark:text-slate-400">
                     <tr>
                       <th className="px-4 py-3">{language === "es" ? "Tipo" : "Image type"}</th>
-                      <th className="px-4 py-3">{language === "es" ? "Tamano" : "Recommended size"}</th>
-                      <th className="px-4 py-3">{language === "es" ? "Proporcion" : "Aspect ratio"}</th>
+                      <th className="px-4 py-3">{language === "es" ? "Tamaño" : "Recommended size"}</th>
+                      <th className="px-4 py-3">{language === "es" ? "Proporción" : "Aspect ratio"}</th>
                       <th className="px-4 py-3">{language === "es" ? "Notas" : "Notes"}</th>
                     </tr>
                   </thead>

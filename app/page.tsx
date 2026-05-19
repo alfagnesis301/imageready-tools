@@ -7,6 +7,7 @@ import { T } from "@/components/LanguageProvider";
 import SmartPublishCheck from "@/components/SmartPublishCheck";
 import TrustBadges from "@/components/TrustBadges";
 import { GUIDES } from "@/lib/guides";
+import type { Locale } from "@/lib/i18n";
 import { faqJsonLd, softwareApplicationJsonLd, createPageMetadata } from "@/lib/seo";
 import { PRESET_ORDER, PUBLISH_RULES } from "@/lib/publishRules";
 
@@ -16,58 +17,112 @@ export const metadata = createPageMetadata({
     "Check if your image is ready for websites, SEO, social media, YouTube thumbnails, e-commerce, email headers and more privately in your browser."
 });
 
-const homeFaq = [
-  {
-    question: "Does PublishPixel upload my image?",
-    answer:
-      "No. The main analysis runs locally in your browser with File API, Canvas API and native image decoding where available."
-  },
-  {
-    question: "Is the PublishReady Score an official platform score?",
-    answer:
-      "No. It is an estimated score based on common publishing guidelines, file size targets, dimensions, aspect ratio and practical quality heuristics."
-  },
-  {
-    question: "Can I use this for Open Graph images?",
-    answer:
-      "Yes. Choose the Open Graph preset to check the common 1200 x 630 pixel format, file size and format recommendations."
-  },
-  {
-    question: "Can the tool compress images?",
-    answer:
-      "Yes. After uploading a supported raster image, you can export an optimized JPG, WebP or PNG preview from your browser."
-  },
-  {
-    question: "Does resizing improve image quality?",
-    answer:
-      "Resizing can fit a publishing target, but upscaling a small image may not recover lost detail. The tool warns when the source looks too small."
-  },
-  {
-    question: "Does the tool remove EXIF metadata?",
-    answer:
-      "Re-exporting through Canvas normally removes EXIF metadata, but behavior can vary by browser and format, so this should not be treated as a perfect metadata removal guarantee."
-  },
-  {
-    question: "Which formats are supported?",
-    answer:
-      "The initial version supports JPG, JPEG, PNG, WebP, static GIF checks and basic SVG dimension analysis."
-  },
-  {
-    question: "Can I use this for YouTube thumbnails?",
-    answer:
-      "Yes. The YouTube preset checks the common 1280 x 720 pixel size, 16:9 ratio and file size recommendations."
-  },
-  {
-    question: "Is this tool free?",
-    answer:
-      "Yes. The app is designed as a free browser-based utility. AdSense support is prepared, but ads are not shown unless an approved publisher client is configured."
-  },
-  {
-    question: "Should I verify official requirements?",
-    answer:
-      "Yes. Platform requirements can change, so verify official documentation when the image is critical for a campaign, upload or launch."
-  }
-];
+const homeFaq: Record<Locale, { question: string; answer: string }[]> = {
+  en: [
+    {
+      question: "Does PublishPixel upload my image?",
+      answer:
+        "No. The main analysis runs locally in your browser with File API, Canvas API and native image decoding where available."
+    },
+    {
+      question: "Is the PublishReady Score an official platform score?",
+      answer:
+        "No. It is an estimated score based on common publishing guidelines, file size targets, dimensions, aspect ratio and practical quality heuristics."
+    },
+    {
+      question: "Can I use this for Open Graph images?",
+      answer:
+        "Yes. Choose the Open Graph preset to check the common 1200 x 630 pixel format, file size and format recommendations."
+    },
+    {
+      question: "Can the tool compress images?",
+      answer:
+        "Yes. After uploading a supported raster image, you can export an optimized JPG, WebP or PNG preview from your browser."
+    },
+    {
+      question: "Does resizing improve image quality?",
+      answer:
+        "Resizing can fit a publishing target, but upscaling a small image may not recover lost detail. The tool warns when the source looks too small."
+    },
+    {
+      question: "Does the tool remove EXIF metadata?",
+      answer:
+        "Re-exporting through Canvas normally removes EXIF metadata, but behavior can vary by browser and format, so this should not be treated as a perfect metadata removal guarantee."
+    },
+    {
+      question: "Which formats are supported?",
+      answer:
+        "The initial version supports JPG, JPEG, PNG, WebP, static GIF checks and basic SVG dimension analysis."
+    },
+    {
+      question: "Can I use this for YouTube thumbnails?",
+      answer:
+        "Yes. The YouTube preset checks the common 1280 x 720 pixel size, 16:9 ratio and file size recommendations."
+    },
+    {
+      question: "Is this tool free?",
+      answer:
+        "Yes. The app is designed as a free browser-based utility. AdSense support is prepared, but ads are not shown unless an approved publisher client is configured."
+    },
+    {
+      question: "Should I verify official requirements?",
+      answer:
+        "Yes. Platform requirements can change, so verify official documentation when the image is critical for a campaign, upload or launch."
+    }
+  ],
+  es: [
+    {
+      question: "¿PublishPixel sube mi imagen?",
+      answer:
+        "No. El análisis principal se ejecuta localmente en tu navegador con File API, Canvas API y decodificación nativa cuando está disponible."
+    },
+    {
+      question: "¿La puntuación PublishReady es oficial?",
+      answer:
+        "No. Es una estimación basada en patrones comunes de publicación, peso, dimensiones, proporción y señales prácticas de calidad."
+    },
+    {
+      question: "¿Puedo usarlo para imágenes Open Graph?",
+      answer:
+        "Sí. Elige el ajuste Open Graph para revisar el formato común 1200 x 630 px, el peso y las recomendaciones de formato."
+    },
+    {
+      question: "¿La herramienta puede comprimir imágenes?",
+      answer:
+        "Sí. Tras subir una imagen raster compatible, puedes exportar una vista previa optimizada en JPG, WebP o PNG desde tu navegador."
+    },
+    {
+      question: "¿Redimensionar mejora la calidad?",
+      answer:
+        "Redimensionar puede adaptar una imagen al destino, pero ampliar una imagen pequeña no recupera detalle perdido. La herramienta avisa cuando la fuente parece demasiado pequeña."
+    },
+    {
+      question: "¿La herramienta elimina metadatos EXIF?",
+      answer:
+        "Reexportar mediante Canvas normalmente no conserva EXIF, pero puede variar por navegador y formato. No debe tratarse como una garantía perfecta."
+    },
+    {
+      question: "¿Qué formatos son compatibles?",
+      answer:
+        "La versión inicial soporta JPG, JPEG, PNG, WebP, revisión de GIF estático y análisis básico de dimensiones SVG."
+    },
+    {
+      question: "¿Puedo usarlo para miniaturas de YouTube?",
+      answer:
+        "Sí. El ajuste de YouTube revisa el tamaño común 1280 x 720 px, la proporción 16:9 y recomendaciones de peso."
+    },
+    {
+      question: "¿La herramienta es gratis?",
+      answer:
+        "Sí. La aplicación está diseñada como una utilidad gratuita en el navegador. El soporte para AdSense está preparado, pero no se muestran anuncios sin un editor aprobado."
+    },
+    {
+      question: "¿Debo verificar requisitos oficiales?",
+      answer:
+        "Sí. Los requisitos de plataformas pueden cambiar; verifica documentación oficial cuando la imagen sea crítica para una campaña, subida o lanzamiento."
+    }
+  ]
+};
 
 const checks = [
   "home.check.0",
@@ -124,16 +179,16 @@ const primaryCards = [
   }
 ];
 
-export default function HomePage() {
+export default function HomePage({ locale = "en" }: { locale?: Locale } = {}) {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd()) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd(locale)) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(homeFaq)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(homeFaq[locale])) }}
       />
 
       <section className="shell grid gap-8 py-10 lg:grid-cols-[0.82fr_1.18fr] lg:py-14">
@@ -428,5 +483,4 @@ export default function HomePage() {
     </>
   );
 }
-
 

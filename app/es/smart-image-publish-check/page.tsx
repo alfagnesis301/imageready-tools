@@ -10,5 +10,5 @@ export const metadata = createPageMetadata({
 });
 
 export default function SpanishSmartImagePublishCheckPage() {
-  return <HomePage />;
+  return <HomePage locale="es" />;
 }

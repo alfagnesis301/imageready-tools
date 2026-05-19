@@ -131,10 +131,12 @@ const categories = [
 ];
 
 const startingPoints = [
-  "image-publishing-checklist",
   "image-size-for-web",
   "image-seo-checklist",
-  "website-image-performance-checklist"
+  "social-media-image-sizes",
+  "photo-privacy-before-publishing",
+  "webp-vs-jpeg-vs-png",
+  "image-alt-text"
 ];
 
 const toolLinks = [
@@ -157,6 +159,26 @@ const toolLinks = [
     href: "/open-graph-image-checker",
     en: "Check an Open Graph image",
     es: "Revisar una imagen Open Graph"
+  },
+  {
+    href: "/image-seo-meta-checker",
+    en: "Review image SEO and metadata",
+    es: "Revisar SEO y metadatos de imagen"
+  },
+  {
+    href: "/image-metadata-checker",
+    en: "Check image metadata",
+    es: "Revisar metadatos de imagen"
+  },
+  {
+    href: "/instagram-image-checker",
+    en: "Check an Instagram image",
+    es: "Revisar una imagen para Instagram"
+  },
+  {
+    href: "/youtube-thumbnail-checker",
+    en: "Check a YouTube thumbnail",
+    es: "Revisar una miniatura de YouTube"
   }
 ];
 
@@ -182,17 +204,27 @@ const faq = {
     {
       question: "¿Por dónde empiezo?",
       answer:
-        "Empieza por el checklist de publicación y después pasa a tamaño, compresión, texto alternativo o privacidad según el problema."
+        "Empieza por la guía de tamaño de imagen para web si vas a publicar en un sitio, o por el checklist SEO si quieres revisar nombre, peso, texto alternativo y contexto."
     },
     {
-      question: "¿Son requisitos oficiales de plataformas?",
+      question: "¿Qué formato de imagen conviene usar en una web?",
       answer:
-        "No. Son guías prácticas de publicación. Verifica requisitos oficiales para subidas críticas."
+        "Depende del contenido. WebP suele ser práctico para muchas páginas modernas, JPEG funciona bien para fotos y PNG conviene cuando necesitas transparencia o gráficos nítidos."
     },
     {
-      question: "¿Cada guía debe funcionar como página SEO separada?",
+      question: "¿Debo eliminar metadatos antes de publicar?",
       answer:
-        "Sí, siempre que responda a una intención distinta y enlace con herramientas y guías relacionadas."
+        "En fotos personales, sensibles o tomadas con móvil, conviene revisar metadatos y detalles visibles antes de publicar una copia pública."
+    },
+    {
+      question: "¿Por qué importa el texto alternativo?",
+      answer:
+        "Ayuda a explicar imágenes útiles cuando no se pueden ver o no cargan. Debe escribirse para personas y contexto, no como una lista de palabras clave."
+    },
+    {
+      question: "¿Qué tamaño de imagen es mejor para redes sociales?",
+      answer:
+        "No hay un único tamaño universal. Prepara al menos una versión cuadrada, una vertical y una ancha, y después ajusta recortes para la plataforma importante."
     }
   ]
 };
@@ -209,11 +241,11 @@ export default function GuidesContent() {
       <div className="max-w-3xl">
         <p className="label">{language === "es" ? "Guías PublishPixel" : "PublishPixel guides"}</p>
         <h1 className="mt-3 text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
-          {language === "es" ? "Guías para publicar imágenes" : "Image Publishing Guides"}
+          {language === "es" ? "Guías de imágenes web para SEO, redes sociales y publicación" : "Image Publishing Guides"}
         </h1>
         <p className="mt-5 text-base leading-8 text-slate-600 dark:text-slate-300">
           {language === "es"
-            ? "Guías prácticas y originales para preparar imágenes antes de publicarlas. Amplían la revisión con contexto sobre rendimiento, accesibilidad, privacidad y SEO."
+            ? "Aprende a preparar imágenes más ligeras, accesibles y listas para publicar en sitios web, redes sociales y vistas previas compartibles. Estas guías conectan decisiones de SEO, rendimiento, privacidad y formato con herramientas prácticas de PublishPixel."
             : "Practical, original guidance for preparing images before they go live. These guides support the checker with deeper context around performance, accessibility, privacy and SEO."}
         </p>
       </div>
@@ -225,7 +257,7 @@ export default function GuidesContent() {
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
             {language === "es"
-              ? "Usa estas guías para crear un flujo básico: revisar destino, elegir dimensiones, preparar SEO de imagen y controlar rendimiento antes de subir archivos al CMS."
+              ? "Empieza por estas guías si necesitas elegir dimensiones, revisar SEO de imágenes, preparar recortes sociales, proteger privacidad, escoger formato o mejorar texto alternativo."
               : "Use these guides to build the basic workflow: review the destination, choose dimensions, prepare image SEO and control performance before files enter a CMS."}
           </p>
         </div>
@@ -254,7 +286,7 @@ export default function GuidesContent() {
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
             {language === "es"
-              ? "Cada categoría agrupa una intención de búsqueda distinta y enlaza a las herramientas que ayudan a completar el flujo."
+              ? "Cada categoría resuelve una parte del flujo: definir el destino, preparar una copia ligera, revisar privacidad, mejorar accesibilidad y validar vistas previas antes de publicar."
               : "Each category groups a distinct search intent and points to the tools that support the workflow."}
           </p>
         </div>
@@ -350,10 +382,10 @@ export default function GuidesContent() {
               Cómo usar estas guías
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              Estas guías están pensadas para ayudarte a preparar imágenes antes de publicarlas.
-              Puedes empezar por el objetivo principal: reducir peso, elegir formato, mejorar
-              accesibilidad, proteger privacidad, preparar una vista previa social o revisar SEO de
-              imágenes.
+              Úsalas como un flujo de trabajo: elige primero el destino de la imagen, define
+              dimensiones útiles, comprime una copia de publicación, revisa metadatos, redacta texto
+              alternativo cuando la imagen comunique información y valida la vista previa social
+              antes de publicar.
             </p>
             <h2 className="mt-8 text-2xl font-extrabold tracking-normal text-slate-950 dark:text-white">
               Qué revisar antes de publicar una imagen
@@ -371,11 +403,11 @@ export default function GuidesContent() {
               Guías por objetivo
             </h2>
             <ul className="mt-5 grid gap-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
-              <li><strong>Rendimiento:</strong> tamaño web, compresión y checklist de rendimiento.</li>
-              <li><strong>SEO:</strong> nombres de archivo, texto alternativo y vistas previas.</li>
-              <li><strong>Privacidad:</strong> metadatos, detalles visibles y copia para publicar.</li>
-              <li><strong>Redes sociales:</strong> Open Graph, YouTube, Instagram, Pinterest y LinkedIn.</li>
-              <li><strong>Formatos:</strong> cuándo usar WebP, JPG, PNG o SVG.</li>
+              <li><strong>Quiero mejorar SEO:</strong> nombres de archivo, texto alternativo, contexto de página y vistas previas.</li>
+              <li><strong>Quiero publicar en redes sociales:</strong> recortes Open Graph, YouTube, Instagram, Pinterest y LinkedIn.</li>
+              <li><strong>Quiero reducir peso:</strong> dimensiones, compresión y elección de formato.</li>
+              <li><strong>Quiero proteger privacidad:</strong> metadatos, detalles visibles y copia pública.</li>
+              <li><strong>Quiero mejorar accesibilidad:</strong> propósito de la imagen y texto alternativo útil.</li>
             </ul>
           </section>
         </div>

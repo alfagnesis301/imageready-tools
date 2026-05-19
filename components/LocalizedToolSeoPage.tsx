@@ -114,7 +114,7 @@ export default function LocalizedToolSeoPage({
 
       <section className="shell py-14">
         <div className="max-w-3xl">
-          <p className="label">FAQ</p>
+          <p className="label">{language === "es" ? "Preguntas frecuentes" : "FAQ"}</p>
           <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
             {language === "es"
               ? `Preguntas sobre ${title.es.toLowerCase()}`
