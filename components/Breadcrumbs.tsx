@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 import { SITE_URL } from "@/lib/constants";
 
 export type BreadcrumbItem = {
@@ -20,15 +21,17 @@ export function breadcrumbJsonLd(items: BreadcrumbItem[]) {
 }
 
 export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
+  const isSpanish = items[0]?.name === "Inicio";
+
   return (
-    <nav aria-label="Breadcrumb" className="mb-5 text-sm font-semibold text-slate-500 dark:text-slate-400">
+    <nav aria-label={isSpanish ? "Migas de pan" : "Breadcrumb"} className="mb-5 text-sm font-semibold text-slate-500 dark:text-slate-400">
       <ol className="flex flex-wrap items-center gap-2">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
 
           return (
             <li key={item.href} className="flex items-center gap-2">
-              {index > 0 ? <span aria-hidden="true">/</span> : null}
+              {index > 0 ? <ChevronRight size={14} aria-hidden="true" className="text-slate-400" /> : null}
               {isLast ? (
                 <span className="text-slate-700 dark:text-slate-200" aria-current="page">
                   {item.name}

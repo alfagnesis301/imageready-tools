@@ -29,7 +29,7 @@ export default function SpanishAboutPage() {
           herramientas de acción única y el flujo de publicación real. Antes de que una imagen
           aparezca en un blog, una ficha de e-commerce, una tarjeta Open Graph o una miniatura de
           YouTube, hay que tomar muchas decisiones sobre dimensiones, peso, formato, texto
-          alternativo y metadatos. Nuestro Smart Image Publish Check reúne todas esas decisiones en
+          alternativo y metadatos. Nuestra revisión inteligente de publicación de imágenes reúne todas esas decisiones en
           un solo lugar.
         </p>
 
@@ -74,7 +74,7 @@ export default function SpanishAboutPage() {
           API, la Canvas API y la decodificación nativa de imágenes. PublishPixel no sube tus
           imágenes a un servidor, no almacena imágenes de usuarios y no rastrea quién eres. Los
           únicos datos guardados en tu navegador son tu tema, idioma, último ajuste predefinido y
-          estado de consentimiento, todo almacenado localmente via localStorage y eliminado al
+          estado de consentimiento, todo almacenado localmente mediante localStorage y eliminado al
           limpiar los datos del navegador. Consulta nuestra{" "}
           <a href="/es/privacy-policy">Política de privacidad</a> para más detalles.
         </p>

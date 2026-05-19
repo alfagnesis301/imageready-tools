@@ -63,30 +63,42 @@ export function createPageMetadata({
   };
 }
 
-export function softwareApplicationJsonLd() {
+export function softwareApplicationJsonLd(locale: Locale = "en") {
+  const isSpanish = locale === "es";
+
   return {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: SITE_NAME,
     applicationCategory: "MultimediaApplication",
-    operatingSystem: "Web browser",
+    operatingSystem: isSpanish ? "Navegador web" : "Web browser",
     url: SITE_URL,
-    description:
-      "A privacy-first browser-based image readiness checker for websites, SEO, social media, YouTube thumbnails, e-commerce and email.",
+    description: isSpanish
+      ? "Herramienta privada en el navegador para revisar imágenes antes de publicarlas en sitios web, SEO, redes sociales, miniaturas de YouTube, e-commerce y email."
+      : "A privacy-first browser-based image readiness checker for websites, SEO, social media, YouTube thumbnails, e-commerce and email.",
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD"
     },
-    featureList: [
-      "Local image analysis",
-      "Publish readiness scoring",
-      "Image compression",
-      "Image resizing",
-      "Format conversion",
-      "Social media size guidance"
-    ],
-    slogan: SITE_TAGLINE
+    featureList: isSpanish
+      ? [
+          "Análisis local de imágenes",
+          "Puntuación de preparación para publicar",
+          "Compresión de imágenes",
+          "Redimensionado de imágenes",
+          "Conversión de formato",
+          "Guía de tamaños para redes sociales"
+        ]
+      : [
+          "Local image analysis",
+          "Publish readiness scoring",
+          "Image compression",
+          "Image resizing",
+          "Format conversion",
+          "Social media size guidance"
+        ],
+    slogan: isSpanish ? "Prepara cada imagen antes de publicarla." : SITE_TAGLINE
   };
 }
 

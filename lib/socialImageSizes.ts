@@ -28,7 +28,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
     name: "Instagram",
     intro: {
       en: "Instagram works best with square images, 4:5 portrait posts, and 9:16 content for Stories and Reels. Keep text and key subjects away from the edges so interface overlays do not crowd the design.",
-      es: "Instagram funciona mejor con imagenes cuadradas, publicaciones verticales 4:5 y contenido 9:16 para Stories y Reels. Mantén el texto y los elementos clave lejos de los bordes para evitar superposiciones."
+      es: "Instagram funciona mejor con imágenes cuadradas, publicaciones verticales 4:5 y contenido 9:16 para historias y reels. Mantén el texto y los elementos clave lejos de los bordes para evitar superposiciones."
     },
     items: [
       {
@@ -38,7 +38,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1:1",
         notes: {
           en: "A square source keeps the profile image sharp across the app.",
-          es: "Una fuente cuadrada ayuda a mantener la imagen nitida en toda la aplicacion."
+          es: "Una fuente cuadrada ayuda a mantener la imagen nítida en toda la aplicación."
         }
       },
       {
@@ -59,7 +59,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "4:5",
         notes: {
           en: "A strong mobile-first format that uses more vertical feed space.",
-          es: "Formato mobile-first que aprovecha mejor el espacio vertical del feed."
+          es: "Formato pensado para móvil que aprovecha mejor el espacio vertical del feed."
         }
       },
       {
@@ -69,7 +69,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1.91:1",
         notes: {
           en: "Useful for wide scenes, but text can feel smaller in feed previews.",
-          es: "Util para escenas amplias, aunque el texto puede verse mas pequeno en el feed."
+          es: "Útil para escenas amplias, aunque el texto puede verse más pequeño en el feed."
         }
       },
       {
@@ -100,7 +100,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
     name: "Facebook",
     intro: {
       en: "Facebook uses different formats for feed posts, stories, cover images, and profile photos. Cropping can vary between desktop and mobile, so centered compositions are usually safer.",
-      es: "Facebook usa formatos distintos para feed, stories, portada y perfil. El recorte puede variar entre desktop y movil, asi que una composicion centrada suele ser mas segura."
+      es: "Facebook usa formatos distintos para feed, historias, portada y perfil. El recorte puede variar entre escritorio y móvil, así que una composición centrada suele ser más segura."
     },
     items: [
       {
@@ -110,7 +110,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1:1",
         notes: {
           en: "Facebook may display smaller, but a larger square upload preserves quality.",
-          es: "Facebook puede mostrarla mas pequena, pero una subida cuadrada mayor conserva calidad."
+          es: "Facebook puede mostrarla más pequeña, pero una subida cuadrada mayor conserva calidad."
         }
       },
       {
@@ -120,7 +120,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "2.7:1",
         notes: {
           en: "Keep logos and text centered because the crop changes by screen size.",
-          es: "Mantén logos y texto centrados porque el recorte cambia segun el dispositivo."
+          es: "Mantén logos y texto centrados porque el recorte cambia según el dispositivo."
         },
         featuredInCheatSheet: true
       },
@@ -141,7 +141,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1.91:1",
         notes: {
           en: "A common safe default for links and wider feed creatives.",
-          es: "Valor seguro comun para enlaces y creatividades horizontales del feed."
+          es: "Valor seguro común para enlaces y creatividades horizontales del feed."
         },
         featuredInCheatSheet: true
       },
@@ -162,7 +162,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
     name: "X / Twitter",
     intro: {
       en: "X uses a wide header image, a square profile image, and multiple post image formats. Center important content so it still works when previews crop differently.",
-      es: "X usa un header ancho, una imagen de perfil cuadrada y varios formatos de publicacion. Centra el contenido importante para soportar recortes distintos."
+      es: "X usa un encabezado ancho, una imagen de perfil cuadrada y varios formatos de publicación. Centra el contenido importante para soportar recortes distintos."
     },
     items: [
       {
@@ -172,7 +172,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1:1",
         notes: {
           en: "A square upload remains the safest source.",
-          es: "Una subida cuadrada sigue siendo la fuente mas segura."
+          es: "Una subida cuadrada sigue siendo la fuente más segura."
         }
       },
       {
@@ -182,7 +182,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "3:1",
         notes: {
           en: "Keep key text and logos centered because the sides may crop on smaller displays.",
-          es: "Mantén textos y logos centrados porque los lados pueden recortarse en pantallas pequenas."
+          es: "Mantén textos y logos centrados porque los lados pueden recortarse en pantallas pequeñas."
         },
         featuredInCheatSheet: true
       },
@@ -193,7 +193,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "16:9",
         notes: {
           en: "A useful default for previews and shared editorial images.",
-          es: "Buen valor por defecto para vistas previas e imagenes editoriales compartidas."
+          es: "Buen valor por defecto para vistas previas e imágenes editoriales compartidas."
         },
         featuredInCheatSheet: true
       },
@@ -214,7 +214,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "4:5",
         notes: {
           en: "Useful for mobile-first creative while staying manageable in feed.",
-          es: "Util para creatividad mobile-first sin perder manejabilidad en el feed."
+          es: "Útil para creatividad pensada para móvil sin perder manejabilidad en el feed."
         }
       }
     ]
@@ -224,7 +224,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
     name: "LinkedIn",
     intro: {
       en: "LinkedIn images usually perform better when they feel clean, professional, and readable at a glance. Separate profile assets from company assets and shared posts.",
-      es: "Las imagenes de LinkedIn suelen funcionar mejor cuando se ven limpias, profesionales y legibles a primera vista. Separa perfil personal, empresa y publicaciones compartidas."
+      es: "Las imágenes de LinkedIn suelen funcionar mejor cuando se ven limpias, profesionales y legibles a primera vista. Separa perfil personal, empresa y publicaciones compartidas."
     },
     items: [
       {
@@ -234,7 +234,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1:1",
         notes: {
           en: "A square portrait keeps professional headshots crisp.",
-          es: "Un retrato cuadrado ayuda a mantener nitidas las fotos profesionales."
+          es: "Un retrato cuadrado ayuda a mantener nítidas las fotos profesionales."
         }
       },
       {
@@ -254,7 +254,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1:1",
         notes: {
           en: "A square source keeps the logo sharp across placements.",
-          es: "Una fuente cuadrada ayuda a mantener el logo nitido en distintas ubicaciones."
+          es: "Una fuente cuadrada ayuda a mantener el logo nítido en distintas ubicaciones."
         }
       },
       {
@@ -275,7 +275,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1:1",
         notes: {
           en: "Useful for concise, mobile-friendly post graphics.",
-          es: "Util para graficos de publicacion concisos y orientados a movil."
+          es: "Útil para gráficos de publicación concisos y orientados a móvil."
         }
       },
       {
@@ -285,7 +285,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1.91:1",
         notes: {
           en: "A common safe default for landscape post previews.",
-          es: "Valor seguro comun para vistas previas horizontales."
+          es: "Valor seguro común para vistas previas horizontales."
         },
         featuredInCheatSheet: true
       },
@@ -296,7 +296,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "4:5",
         notes: {
           en: "Useful when you want more vertical space in-feed.",
-          es: "Util cuando quieres mas espacio vertical en el feed."
+          es: "Útil cuando quieres más espacio vertical en el feed."
         }
       }
     ]
@@ -306,7 +306,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
     name: "YouTube",
     intro: {
       en: "YouTube is especially sensitive to safe areas and 16:9 presentation. Thumbnails should remain readable at small sizes, while banners need a protected center area for cross-device use.",
-      es: "YouTube es especialmente sensible al area segura y a la presentacion 16:9. Las miniaturas deben seguir siendo legibles en tamaños pequenos y los banners necesitan un centro protegido."
+      es: "YouTube es especialmente sensible al área segura y a la presentación 16:9. Las miniaturas deben seguir siendo legibles en tamaños pequeños y los banners necesitan un centro protegido."
     },
     items: [
       {
@@ -316,7 +316,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "16:9",
         notes: {
           en: "Design around the center because the visible crop changes by device.",
-          es: "Disena alrededor del centro porque el recorte visible cambia segun el dispositivo."
+          es: "Diseña alrededor del centro porque el recorte visible cambia según el dispositivo."
         },
         featuredInCheatSheet: true
       },
@@ -327,7 +327,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "3.65:1",
         notes: {
           en: "Keep text, logos, and calls to action inside this center-safe zone.",
-          es: "Mantén texto, logos y llamadas a la accion dentro de esta zona central segura."
+          es: "Mantén texto, logos y llamadas a la acción dentro de esta zona central segura."
         }
       },
       {
@@ -337,7 +337,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "16:9",
         notes: {
           en: "A standard 16:9 thumbnail size that scales well across YouTube surfaces.",
-          es: "Tamano estandar 16:9 que escala bien en las distintas superficies de YouTube."
+          es: "Tamaño estándar 16:9 que escala bien en las distintas superficies de YouTube."
         },
         featuredInCheatSheet: true
       },
@@ -358,7 +358,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
     name: "TikTok",
     intro: {
       en: "TikTok is mobile-first and strongly favors 9:16 vertical creative. Keep copy and product details away from interface overlays near the edges.",
-      es: "TikTok es mobile-first y favorece claramente la creatividad vertical 9:16. Mantén texto y detalles de producto lejos de las superposiciones de interfaz."
+      es: "TikTok está pensado para móvil y favorece claramente la creatividad vertical 9:16. Mantén texto y detalles de producto lejos de las superposiciones de interfaz."
     },
     items: [
       {
@@ -368,7 +368,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1:1",
         notes: {
           en: "A larger square upload helps preserve quality even if the minimum display is smaller.",
-          es: "Una subida cuadrada mayor ayuda a conservar calidad aunque la visualizacion minima sea menor."
+          es: "Una subida cuadrada mayor ayuda a conservar calidad aunque la visualización mínima sea menor."
         }
       },
       {
@@ -399,7 +399,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1:1",
         notes: {
           en: "Useful for repurposed assets, but vertical remains the main format.",
-          es: "Util para adaptar activos existentes, aunque el formato principal sigue siendo el vertical."
+          es: "Útil para adaptar activos existentes, aunque el formato principal sigue siendo el vertical."
         }
       }
     ]
@@ -409,7 +409,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
     name: "Pinterest",
     intro: {
       en: "Pinterest still works best with vertical imagery. A 2:3 format is a safe default, while very tall pins may be cropped more aggressively in some views.",
-      es: "Pinterest sigue funcionando mejor con imagenes verticales. El formato 2:3 es un valor seguro y los pines excesivamente altos pueden recortarse mas."
+      es: "Pinterest sigue funcionando mejor con imágenes verticales. El formato 2:3 es un valor seguro y los pines excesivamente altos pueden recortarse más."
     },
     items: [
       {
@@ -419,17 +419,17 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1:1",
         notes: {
           en: "A square profile image remains the safest source.",
-          es: "Una imagen de perfil cuadrada sigue siendo la fuente mas segura."
+          es: "Una imagen de perfil cuadrada sigue siendo la fuente más segura."
         }
       },
       {
         id: "standard-pin",
-        type: { en: "Standard pin", es: "Pin estandar" },
+        type: { en: "Standard pin", es: "Pin estándar" },
         dimensions: "1000 x 1500 px",
         aspectRatio: "2:3",
         notes: {
           en: "A common vertical format that leaves room for clear imagery and text.",
-          es: "Formato vertical comun que deja espacio para imagenes y texto claros."
+          es: "Formato vertical común que deja espacio para imágenes y texto claros."
         },
         featuredInCheatSheet: true
       },
@@ -440,7 +440,7 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         aspectRatio: "1:1",
         notes: {
           en: "Useful when a square crop suits the subject better than a taller frame.",
-          es: "Util cuando un recorte cuadrado se adapta mejor al tema que un marco alto."
+          es: "Útil cuando un recorte cuadrado se adapta mejor al tema que un marco alto."
         }
       },
       {
@@ -474,7 +474,7 @@ export const UNIVERSAL_SOCIAL_IMAGE_SIZES = [
     dimensions: "1080 x 1080 px",
     description: {
       en: "A safe default for many feed posts, profile-adjacent creative, and multi-platform repurposing.",
-      es: "Valor seguro para muchas publicaciones de feed y reutilizacion entre plataformas."
+      es: "Valor seguro para muchas publicaciones de feed y reutilización entre plataformas."
     }
   },
   {
@@ -483,7 +483,7 @@ export const UNIVERSAL_SOCIAL_IMAGE_SIZES = [
     dimensions: "1080 x 1350 px",
     description: {
       en: "A strong mobile-first format that works well for Instagram, LinkedIn, and some X posts.",
-      es: "Formato mobile-first que funciona bien para Instagram, LinkedIn y algunas publicaciones en X."
+      es: "Formato pensado para móvil que funciona bien para Instagram, LinkedIn y algunas publicaciones en X."
     }
   },
   {
@@ -519,71 +519,71 @@ export const SOCIAL_MEDIA_FAQS = [
   {
     question: {
       en: "What is the best image size for social media posts?",
-      es: "Cual es el mejor tamano de imagen para publicaciones en redes sociales?"
+      es: "¿Cuál es el mejor tamaño de imagen para publicaciones en redes sociales?"
     },
     answer: {
       en: "A safe starting point is 1080 x 1080 px for square posts, 1080 x 1350 px for portrait feed posts, and 1080 x 1920 px for stories, reels, shorts, and other vertical formats.",
-      es: "Un buen punto de partida es 1080 x 1080 px para publicaciones cuadradas, 1080 x 1350 px para publicaciones verticales y 1080 x 1920 px para stories, reels, shorts y otros formatos verticales."
+      es: "Un buen punto de partida es 1080 x 1080 px para publicaciones cuadradas, 1080 x 1350 px para publicaciones verticales y 1080 x 1920 px para historias, reels, shorts y otros formatos verticales."
     }
   },
   {
     question: {
       en: "What size should Instagram posts be?",
-      es: "Que tamano deberian tener las publicaciones de Instagram?"
+      es: "¿Qué tamaño deberían tener las publicaciones de Instagram?"
     },
     answer: {
       en: "Instagram feed posts commonly use 1080 x 1080 px for square, 1080 x 1350 px for portrait, and 1080 x 566 px for landscape. Stories and reels commonly use 1080 x 1920 px.",
-      es: "Las publicaciones de Instagram suelen usar 1080 x 1080 px en cuadrado, 1080 x 1350 px en vertical y 1080 x 566 px en horizontal. Stories y reels suelen usar 1080 x 1920 px."
+      es: "Las publicaciones de Instagram suelen usar 1080 x 1080 px en cuadrado, 1080 x 1350 px en vertical y 1080 x 566 px en horizontal. Historias y reels suelen usar 1080 x 1920 px."
     }
   },
   {
     question: {
       en: "What is the best Facebook image size?",
-      es: "Cual es el mejor tamano de imagen para Facebook?"
+      es: "¿Cuál es el mejor tamaño de imagen para Facebook?"
     },
     answer: {
       en: "For general Facebook feed posts, 1080 x 1080 px or 1200 x 630 px are common safe sizes. Facebook cover images commonly use 851 x 315 px.",
-      es: "Para publicaciones generales en Facebook, 1080 x 1080 px o 1200 x 630 px son tamanos seguros comunes. Las portadas suelen usar 851 x 315 px."
+      es: "Para publicaciones generales en Facebook, 1080 x 1080 px o 1200 x 630 px son tamaños seguros comunes. Las portadas suelen usar 851 x 315 px."
     }
   },
   {
     question: {
       en: "What is the best X / Twitter header size?",
-      es: "Cual es el mejor tamano para el header de X / Twitter?"
+      es: "¿Cuál es el mejor tamaño para el encabezado de X / Twitter?"
     },
     answer: {
       en: "The recommended X header image size is 1500 x 500 px. Keep important text and logos centered because cropping can vary by device.",
-      es: "El tamano recomendado para el header de X es 1500 x 500 px. Manten textos y logos importantes centrados porque el recorte puede variar segun el dispositivo."
+      es: "El tamaño recomendado para el encabezado de X es 1500 x 500 px. Mantén textos y logos importantes centrados porque el recorte puede variar según el dispositivo."
     }
   },
   {
     question: {
       en: "What is the best LinkedIn post image size?",
-      es: "Cual es el mejor tamano para una imagen de publicacion en LinkedIn?"
+      es: "¿Cuál es el mejor tamaño para una imagen de publicación en LinkedIn?"
     },
     answer: {
       en: "For LinkedIn posts, 1200 x 627 px works well for landscape images, while 1080 x 1080 px and 1080 x 1350 px are useful for square and portrait formats.",
-      es: "Para publicaciones de LinkedIn, 1200 x 627 px funciona bien en horizontal, mientras 1080 x 1080 px y 1080 x 1350 px son utiles para cuadrado y vertical."
+      es: "Para publicaciones de LinkedIn, 1200 x 627 px funciona bien en horizontal, mientras 1080 x 1080 px y 1080 x 1350 px son útiles para cuadrado y vertical."
     }
   },
   {
     question: {
       en: "What is the best YouTube thumbnail size?",
-      es: "Cual es el mejor tamano para una miniatura de YouTube?"
+      es: "¿Cuál es el mejor tamaño para una miniatura de YouTube?"
     },
     answer: {
       en: "The standard YouTube thumbnail size is 1280 x 720 px with a 16:9 aspect ratio.",
-      es: "El tamano estandar de una miniatura de YouTube es 1280 x 720 px con proporcion 16:9."
+      es: "El tamaño estándar de una miniatura de YouTube es 1280 x 720 px con proporción 16:9."
     }
   },
   {
     question: {
       en: "What is the best Pinterest pin size?",
-      es: "Cual es el mejor tamano para un pin de Pinterest?"
+      es: "¿Cuál es el mejor tamaño para un pin de Pinterest?"
     },
     answer: {
       en: "A common Pinterest standard pin size is 1000 x 1500 px with a 2:3 aspect ratio.",
-      es: "Un tamano comun para un pin estandar de Pinterest es 1000 x 1500 px con proporcion 2:3."
+      es: "Un tamaño común para un pin estándar de Pinterest es 1000 x 1500 px con proporción 2:3."
     }
   },
   {
@@ -593,7 +593,7 @@ export const SOCIAL_MEDIA_FAQS = [
     },
     answer: {
       en: "Use JPG for photos, PNG for graphics with text or transparency, and WebP when the platform supports it. Always check quality after compression.",
-      es: "Usa JPG para fotos, PNG para graficos con texto o transparencia y WebP cuando la plataforma lo soporte. Revisa siempre la calidad despues de comprimir."
+      es: "Usa JPG para fotos, PNG para gráficos con texto o transparencia y WebP cuando la plataforma lo soporte. Revisa siempre la calidad después de comprimir."
     }
   }
 ];
