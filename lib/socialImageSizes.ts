@@ -528,6 +528,26 @@ export const SOCIAL_MEDIA_FAQS = [
   },
   {
     question: {
+      en: "What are the standard social media image dimensions?",
+      es: "¿Cuáles son las dimensiones estándar de imagen para redes sociales?"
+    },
+    answer: {
+      en: "The standard social media image dimensions are 1080 x 1080 px (square), 1080 x 1350 px (portrait), 1080 x 1920 px (stories and reels), 1280 x 720 px (YouTube) and 1200 x 630 px (link previews). These cover most placements across every major platform.",
+      es: "Las dimensiones estándar son 1080 x 1080 px (cuadrado), 1080 x 1350 px (vertical), 1080 x 1920 px (historias y reels), 1280 x 720 px (YouTube) y 1200 x 630 px (vistas de enlace). Cubren la mayoría de ubicaciones en las plataformas principales."
+    }
+  },
+  {
+    question: {
+      en: "What social media banner sizes should I use?",
+      es: "¿Qué tamaños de banner para redes sociales debería usar?"
+    },
+    answer: {
+      en: "Common social media banner sizes are: Facebook cover 851 x 315 px, X header 1500 x 500 px, LinkedIn company cover 1128 x 191 px, LinkedIn personal background 1584 x 396 px and YouTube channel art 2560 x 1440 px. Keep logos and text centered to survive responsive cropping.",
+      es: "Tamaños comunes de banner: portada de Facebook 851 x 315 px, encabezado de X 1500 x 500 px, portada de empresa en LinkedIn 1128 x 191 px, fondo personal de LinkedIn 1584 x 396 px y arte de canal de YouTube 2560 x 1440 px. Mantén logos y texto centrados para sobrevivir al recorte."
+    }
+  },
+  {
+    question: {
       en: "What size should Instagram posts be?",
       es: "¿Qué tamaño deberían tener las publicaciones de Instagram?"
     },
