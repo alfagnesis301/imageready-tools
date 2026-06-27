@@ -203,11 +203,11 @@ export const GUIDES_ES: Guide[] = [
   },
   {
     slug: "social-media-image-sizes",
-    title: "Tamaños de imagen para redes sociales: guía práctica de publicación",
+    title: "Cómo recortar y preparar imágenes para redes sociales (2026)",
     description:
-      "Prepara recortes para Open Graph, YouTube, Instagram, LinkedIn, Pinterest y feeds de producto.",
+      "Flujo paso a paso para recortar y preparar una sola imagen fuente para Open Graph, YouTube, Instagram, LinkedIn, Pinterest y feeds de producto.",
     intro:
-      "Las plataformas sociales muestran imágenes en formas diferentes. Una sola imagen fuente puede servir en varios lugares, pero las campañas importantes suelen beneficiarse de recortes dedicados.",
+      "Las plataformas sociales muestran imágenes en formas diferentes. Esta guía explica cómo preparar una sola imagen fuente para varias ubicaciones. ¿Buscas las dimensiones exactas en píxeles por plataforma? Consulta nuestra hoja de tamaños de imagen para redes sociales enlazada más abajo.",
     sections: [
       {
         heading: "Open Graph y vistas de enlace",

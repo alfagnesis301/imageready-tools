@@ -587,7 +587,14 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
         answer: "No. It prepares and checks image files locally in your browser; it does not publish them for you."
       }
     ],
-    relatedLinks: standardRelatedLinks
+    relatedLinks: [
+      {
+        href: "/social-media-image-sizes",
+        label: "Social Media Image Sizes Cheat Sheet",
+        description: "Exact pixel dimensions and aspect ratios for every platform in 2026."
+      },
+      ...standardRelatedLinks
+    ]
   },
   "compress-images-without-losing-quality": {
     updatedAt: "April 30, 2026",
