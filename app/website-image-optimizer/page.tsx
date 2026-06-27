@@ -6,9 +6,9 @@ import SmartPublishCheck from "@/components/SmartPublishCheck";
 
 const pageUrl = "https://publishpixel.net/website-image-optimizer";
 const ogImage = "https://publishpixel.net/website-image-optimizer-og.svg";
-const title = "Website Image Optimizer – Compress & Optimize Images Online Free";
+const title = "Website Image Optimizer 2026 – Compress & Optimise Images Free";
 const description =
-  "Optimize images for your website with free online tools. Compress, resize, convert, and prepare JPG, PNG, WebP, and AVIF images for faster pages.";
+  "Optimise and compress images for your website with free online tools. Resize, convert and optimize JPG, PNG, WebP and AVIF for faster pages in 2026.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -191,6 +191,11 @@ const faqItems = [
     question: "How do I optimize images for my website?",
     answer:
       "Start by resizing the image to the display size you need, choose the right format, compress carefully, add descriptive filenames and alt text, and test the page after publishing."
+  },
+  {
+    question: "How do I optimise website images for faster pages?",
+    answer:
+      "To optimise website images, resize them to the maximum size they are displayed at, convert to WebP or AVIF, and compress to your file-size budget (often under 150 KB). Optimising images this way usually cuts file size by 60–80% and improves Core Web Vitals."
   },
   {
     question: "What is the best image format for websites?",
