@@ -1,0 +1,28 @@
+# netlify.toml — redirecciones de dominio canónico (SEO)
+# Objetivo: que TODA variante (http, https, www) termine en https://publishpixel.net
+# en un ÚNICO salto 301, evitando el doble salto de http://www.
+#
+# Nota: no se incluye seccion [build] a proposito, para no alterar la
+# configuracion de build existente en el panel de Netlify. Estas reglas se
+# procesan ANTES de los redirects generados por el plugin de Next.js.
+
+# www (https) -> non-www
+[[redirects]]
+  from = "https://www.publishpixel.net/*"
+  to = "https://publishpixel.net/:splat"
+  status = 301
+  force = true
+
+# www (http) -> non-www https  (colapsa el doble salto en uno)
+[[redirects]]
+  from = "http://www.publishpixel.net/*"
+  to = "https://publishpixel.net/:splat"
+  status = 301
+  force = true
+
+# non-www http -> https  (refuerzo del "Force HTTPS" de Netlify)
+[[redirects]]
+  from = "http://publishpixel.net/*"
+  to = "https://publishpixel.net/:splat"
+  status = 301
+  force = true

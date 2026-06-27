@@ -213,11 +213,11 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "social-media-image-sizes",
-    title: "Social Media Image Sizes: A Practical Publishing Guide",
+    title: "How to Crop & Prepare Images for Social Platforms (2026)",
     description:
-      "Prepare image crops for Open Graph, YouTube thumbnails, Instagram, LinkedIn, Pinterest and product feeds.",
+      "Step-by-step workflow to crop and prepare a single source image for Open Graph, YouTube thumbnails, Instagram, LinkedIn, Pinterest and product feeds.",
     intro:
-      "Social platforms display images in different shapes. A single source image can work in several places, but important campaigns usually benefit from dedicated crops.",
+      "Social platforms display images in different shapes. This guide shows how to prepare a single source image for several placements. Looking for the exact pixel dimensions per platform? See our social media image sizes cheat sheet linked below.",
     sections: [
       {
         heading: "Open Graph and link previews",
