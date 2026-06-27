@@ -6,9 +6,9 @@ import SmartPublishCheck from "@/components/SmartPublishCheck";
 
 const pageUrl = "https://publishpixel.net/smart-image-publish-check";
 const ogImage = "https://publishpixel.net/smart-image-publish-check-og.svg";
-const title = "Image SEO Checker – Check Images Before Publishing | PublishPixel";
+const title = "Smart Image Publish Check 2026 — Pre-Publish Image Checker";
 const description =
-  "Check images before publishing. Review size, format, dimensions, filename, alt text, compression, and SEO readiness with a free image publishing checklist.";
+  "Run a smart pre-publish image check before you upload: size, format, dimensions, filename, alt text, metadata and publishing readiness — free, in your browser.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     title,
     description:
-      "Review image size, format, dimensions, alt text, filename, compression, and publishing readiness before uploading.",
+      "Verify size, format, dimensions, alt text, filename, metadata and publishing readiness before you upload — free, in your browser.",
     url: pageUrl,
     siteName: "PublishPixel",
     locale: "en_US",
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "PublishPixel Image SEO Checker"
+        alt: "PublishPixel Smart Image Publish Check"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Image SEO Checker – Check Images Before Publishing",
-    description: "Check whether your image is ready for web publishing, SEO, accessibility, and performance.",
+    title: "Smart Image Publish Check 2026 — Pre-Publish Image Checker",
+    description: "One pre-publish check for size, format, metadata, alt text and platform readiness. Free, in your browser.",
     images: [ogImage]
   }
 };
@@ -210,12 +210,12 @@ export default function SmartImagePublishCheckPage() {
       {
         "@type": "WebApplication",
         "@id": `${pageUrl}#webapplication`,
-        name: "Image SEO Checker",
+        name: "Smart Image Publish Check",
         url: pageUrl,
         applicationCategory: "MultimediaApplication",
         operatingSystem: "Web",
         description:
-          "Check images before publishing. Review file size, format, dimensions, filename, alt text, compression, and SEO readiness.",
+          "Run a smart pre-publish image check: file size, format, dimensions, filename, alt text, metadata and publishing readiness, in your browser.",
         offers: {
           "@type": "Offer",
           price: "0",
@@ -252,7 +252,7 @@ export default function SmartImagePublishCheckPage() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Image SEO Checker",
+            name: "Smart Image Publish Check",
             item: pageUrl
           }
         ]
@@ -271,7 +271,7 @@ export default function SmartImagePublishCheckPage() {
         <div className="flex flex-col justify-center">
           <p className="label">Free pre-publish image checklist for creators, marketers, publishers, and website owners.</p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
-            Image SEO Checker – Check Images Before Publishing
+            Smart Image Publish Check: Verify Every Image Before You Publish
           </h1>
           <p className="mt-5 text-base leading-8 text-slate-600 dark:text-slate-300">
             Review your image before it goes live. Check file size, format, dimensions, filename, alt text, compression, and publishing readiness in one practical workflow.
@@ -284,7 +284,7 @@ export default function SmartImagePublishCheckPage() {
         <div id="checker">
           <SmartPublishCheck
             initialPreset="website-blog"
-            heading="Image SEO Checker"
+            heading="Smart Image Publish Check"
             description="Upload an image to review size, dimensions, format, filename structure, alt text planning, compression opportunity, and publishing readiness."
           />
         </div>
@@ -417,7 +417,7 @@ export default function SmartImagePublishCheckPage() {
         <section id="seo-vs-metadata" className="rounded-lg border border-blue-200 bg-blue-50 p-6 shadow-sm dark:border-blue-900 dark:bg-blue-950/25">
           <h2 className="text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">Image SEO vs image metadata</h2>
           <p className="mt-4 text-sm leading-7 text-slate-700 dark:text-slate-300">
-            This Image SEO Checker focuses on publishing readiness: size, format, dimensions, filename, alt text, compression, accessibility basics, and whether the image is practical for a web or social placement.
+            This pre-publish check focuses on publishing readiness and image SEO: size, format, dimensions, filename, alt text, compression, accessibility basics, and whether the image is practical for a web or social placement.
           </p>
           <p className="mt-4 text-sm leading-7 text-slate-700 dark:text-slate-300">
             The Image Metadata Checker focuses on hidden file data such as EXIF, GPS, camera data, copyright fields, and privacy review. Need to inspect EXIF, camera, GPS, or hidden file data? Use the <Link href="/image-metadata-checker" className="font-bold text-blue-700 hover:underline dark:text-blue-300">Image Metadata Checker</Link> instead.
@@ -443,7 +443,7 @@ export default function SmartImagePublishCheckPage() {
         </section>
 
         <section id="faq">
-          <h2 className="text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">Image SEO Checker FAQ</h2>
+          <h2 className="text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">Smart Image Publish Check FAQ</h2>
           <div className="mt-8">
             <FAQ items={faqItems} />
           </div>
