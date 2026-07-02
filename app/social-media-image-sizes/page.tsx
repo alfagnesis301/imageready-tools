@@ -5,9 +5,9 @@ import {
   SOCIAL_MEDIA_IMAGE_OG_ABSOLUTE
 } from "@/lib/socialImageSizes";
 
-const title = "Social Media Image Sizes 2026: Complete Guide for All Platforms";
+const title = "Social Media Image Sizes 2026: Every Platform (Free Checker)";
 const description =
-  "Find the best social media image sizes for 2026, including Instagram, Facebook, X, LinkedIn, YouTube, TikTok, and Pinterest dimensions.";
+  "Social media image sizes for 2026: exact pixel dimensions for Instagram, Facebook, X, LinkedIn, TikTok, YouTube & Pinterest. Free checker, no signup.";
 const url = "https://publishpixel.net/social-media-image-sizes";
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "article",
     title,
     description:
-      "Find the recommended image dimensions for Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest, and more.",
+      "Exact pixel dimensions for Instagram, Facebook, X, LinkedIn, TikTok, YouTube & Pinterest in 2026 — plus a free in-browser checker.",
     url,
     siteName: "PublishPixel",
     locale: "en_US",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title,
+    title: "Social Media Image Sizes 2026",
     description:
-      "Check recommended image sizes for Instagram, Facebook, X, LinkedIn, YouTube, TikTok, and Pinterest.",
+      "Exact pixel sizes for every platform in 2026 + free in-browser checker.",
     images: [SOCIAL_MEDIA_IMAGE_OG_ABSOLUTE]
   }
 };

@@ -5,7 +5,8 @@ export const metadata = createPageMetadata({
   title: "Editorial Policy",
   description:
     "PublishPixel editorial policy for original image publishing guidance, accuracy, updates and corrections.",
-  path: "/editorial-policy"
+  path: "/editorial-policy",
+  noIndex: true
 });
 
 export default function EditorialPolicyPage() {

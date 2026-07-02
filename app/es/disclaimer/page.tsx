@@ -6,7 +6,8 @@ export const metadata = createPageMetadata({
   description:
     "Aviso legal sobre recomendaciones, requisitos de plataformas, SEO y estimaciones técnicas de PublishPixel.",
   path: "/es/disclaimer",
-  locale: "es"
+  locale: "es",
+  noIndex: true
 });
 
 export default function SpanishDisclaimerPage() {

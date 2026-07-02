@@ -6,7 +6,8 @@ export const metadata = createPageMetadata({
   description:
     "Política de cookies de PublishPixel, incluyendo cookies publicitarias de Google AdSense.",
   path: "/es/cookie-policy",
-  locale: "es"
+  locale: "es",
+  noIndex: true
 });
 
 export default function SpanishCookiePolicyPage() {

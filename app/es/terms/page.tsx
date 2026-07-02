@@ -5,7 +5,8 @@ export const metadata = createPageMetadata({
   title: "Términos",
   description: "Términos de uso de PublishPixel.",
   path: "/es/terms",
-  locale: "es"
+  locale: "es",
+  noIndex: true
 });
 
 export default function SpanishTermsPage() {

@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Terms",
   description: "Terms of use for PublishPixel.",
-  path: "/terms"
+  path: "/terms",
+  noIndex: true
 });
 
 export default function TermsPage() {

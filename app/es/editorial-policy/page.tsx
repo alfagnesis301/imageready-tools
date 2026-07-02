@@ -6,7 +6,8 @@ export const metadata = createPageMetadata({
   description:
     "Política editorial de PublishPixel sobre guías originales, precisión, actualizaciones y correcciones.",
   path: "/es/editorial-policy",
-  locale: "es"
+  locale: "es",
+  noIndex: true
 });
 
 export default function SpanishEditorialPolicyPage() {
