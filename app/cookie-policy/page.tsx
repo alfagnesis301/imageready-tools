@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Cookie Policy",
   description: "Cookie and localStorage policy for PublishPixel, including Google AdSense advertising cookies.",
-  path: "/cookie-policy"
+  path: "/cookie-policy",
+  noIndex: true
 });
 
 export default function CookiePolicyPage() {

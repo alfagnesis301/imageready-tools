@@ -6,7 +6,8 @@ export const metadata = createPageMetadata({
   description:
     "Política de privacidad de PublishPixel — análisis local de imágenes, Google AdSense, derechos GDPR y CCPA.",
   path: "/es/privacy-policy",
-  locale: "es"
+  locale: "es",
+  noIndex: true
 });
 
 export default function SpanishPrivacyPolicyPage() {

@@ -5,7 +5,8 @@ export const metadata = createPageMetadata({
   title: "Privacy Policy",
   description:
     "Privacy Policy for PublishPixel — local image analysis, localStorage, Google AdSense, GDPR and CCPA rights.",
-  path: "/privacy-policy"
+  path: "/privacy-policy",
+  noIndex: true
 });
 
 export default function PrivacyPolicyPage() {
