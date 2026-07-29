@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "./constants";
 import { getAlternatePaths, type Locale } from "./i18n";
+import { isSpanishIndexable, isSpanishPath } from "./spanishScope";
 
 type PageMetadataInput = {
   title: string;
@@ -32,18 +33,36 @@ export function createPageMetadata({
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const alternatePaths = getAlternatePaths(path);
 
+  // Alcance de la versión española (ver lib/spanishScope.ts): las rutas /es sin
+  // demanda medible salen del índice. Su alternativa hreflang se retira en
+  // ambos idiomas, porque hreflang nunca debe apuntar a una URL con noindex:
+  // sería una señal contradictoria.
+  const spanishIndexable = isSpanishIndexable(path);
+  const languages: Record<string, string> = {
+    en: new URL(alternatePaths.en, SITE_URL).toString(),
+    "x-default": new URL(alternatePaths["x-default"], SITE_URL).toString()
+  };
+  if (spanishIndexable) {
+    languages.es = new URL(alternatePaths.es, SITE_URL).toString();
+  }
+
+  const outOfScopeSpanish = isSpanishPath(path) && !spanishIndexable;
+
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: {
       canonical,
-      languages: {
-        en: new URL(alternatePaths.en, SITE_URL).toString(),
-        es: new URL(alternatePaths.es, SITE_URL).toString(),
-        "x-default": new URL(alternatePaths["x-default"], SITE_URL).toString()
-      }
+      languages
     },
-    robots: noIndex ? { index: false, follow: false } : { index: true, follow: true },
+    robots: noIndex
+      ? // noindex explícito (páginas legales, PR #10): también nofollow.
+        { index: false, follow: false }
+      : outOfScopeSpanish
+        ? // Fuera del alcance español: noindex pero follow, para que los
+          // enlaces sigan transmitiendo señal a la versión inglesa.
+          { index: false, follow: true }
+        : { index: true, follow: true },
     openGraph: {
       type: openGraphType,
       siteName: SITE_NAME,
