@@ -2,11 +2,15 @@ import Link from "next/link";
 import ToolSeoPage from "@/components/ToolSeoPage";
 import { createPageMetadata } from "@/lib/seo";
 
+// "Ultimate" no aporta señal de búsqueda. Las consultas reales de esta URL son
+// "image seo checker" (168 imp), "image optimization checker" (48) e
+// "image seo test" (22).
 export const metadata = createPageMetadata({
-  title: "Ultimate Image SEO & Meta Checker",
+  title: "Image SEO Checker: Test Alt Text, File Size and Dimensions",
   description:
-    "Analyze image dimensions, file naming, file size, publishing fit and practical SEO signals before uploading an image to your site.",
-  path: "/image-seo-meta-checker"
+    "Free image SEO checker: test alt text, filename, dimensions and file size before you upload. Get practical fixes for every image, private in your browser.",
+  path: "/image-seo-meta-checker",
+  absoluteTitle: true
 });
 
 const faqs = [
@@ -46,7 +50,7 @@ export default function ImageSeoMetaCheckerPage() {
   return (
     <ToolSeoPage
       eyebrow="Image SEO utility"
-      title="Ultimate Image SEO & Meta Checker"
+      title="Image SEO Checker: Test Alt Text, File Size and Dimensions"
       description="Review image size, dimensions, filename structure, format choice and publishing readiness in one browser-based workflow."
       initialPreset="website-blog"
       path="/image-seo-meta-checker"

@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "sitemap:dates": "node scripts/sitemap-dates.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

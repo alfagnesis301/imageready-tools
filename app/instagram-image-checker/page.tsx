@@ -2,11 +2,15 @@ import Link from "next/link";
 import ToolSeoPage from "@/components/ToolSeoPage";
 import { createPageMetadata } from "@/lib/seo";
 
+// Es la página con mejor CTR del sitio (6,1 % en posición 33), así que el
+// snippet ya funciona: se refuerza con año y cobertura de formatos en lugar
+// de reescribirlo por completo.
 export const metadata = createPageMetadata({
-  title: "Instagram Image Size Checker",
+  title: "Instagram Image Size Checker 2026: Post, Story and Reel",
   description:
-    "Check Instagram post and story image dimensions, aspect ratio and publishing readiness locally in your browser.",
-  path: "/instagram-image-checker"
+    "Check your Instagram image size in seconds: post, story, reel and profile dimensions with the right aspect ratio. Free, no upload, runs in your browser.",
+  path: "/instagram-image-checker",
+  absoluteTitle: true
 });
 
 const faqs = [

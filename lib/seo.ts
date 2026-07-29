@@ -10,6 +10,12 @@ type PageMetadataInput = {
   noIndex?: boolean;
   locale?: Locale;
   openGraphType?: "website" | "article";
+  /**
+   * Emite el title tal cual, sin el sufijo " | PublishPixel" del template del
+   * layout raíz. Útil en páginas donde esos 15 caracteres se aprovechan mejor
+   * con palabras clave: la marca todavía no aporta reconocimiento en SERP.
+   */
+  absoluteTitle?: boolean;
 };
 
 export function createPageMetadata({
@@ -19,14 +25,15 @@ export function createPageMetadata({
   image = "/favicon.svg",
   noIndex,
   locale = path === "/es" || path.startsWith("/es/") ? "es" : "en",
-  openGraphType = "website"
+  openGraphType = "website",
+  absoluteTitle = false
 }: PageMetadataInput): Metadata {
   const canonical = new URL(path, SITE_URL).toString();
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const alternatePaths = getAlternatePaths(path);
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: {
       canonical,
