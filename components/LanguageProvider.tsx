@@ -807,16 +807,14 @@ function interpolate(value: string, vars?: TranslationVars) {
   );
 }
 
-export function LanguageProvider({
-  children,
-  initialLanguage = "en"
-}: {
-  children: React.ReactNode;
-  initialLanguage?: Language;
-}) {
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  // El idioma sale siempre de la ruta. `usePathname` está disponible tanto en
+  // el render de servidor como en cliente, así que el layout raíz ya no
+  // necesita leer cabeceras para saber el locale: eso obligaba a renderizar
+  // TODAS las rutas bajo demanda y era la causa del Cache-Control no-store.
   const pathname = usePathname();
   const routeLanguage = getLocaleFromPathname(pathname || "/");
-  const [language, setLanguageState] = useState<Language>(initialLanguage);
+  const [language, setLanguageState] = useState<Language>(routeLanguage);
 
   useEffect(() => {
     setLanguageState(routeLanguage);

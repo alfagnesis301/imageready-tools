@@ -31,14 +31,10 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(canonicalUrl, 301);
   }
 
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-publishpixel-pathname", request.nextUrl.pathname);
-
-  return NextResponse.next({
-    request: {
-      headers: requestHeaders
-    }
-  });
+  // Ya no se propaga `x-publishpixel-pathname`: el layout raíz lo leía con
+  // headers(), lo que obligaba a renderizar todas las rutas bajo demanda.
+  // Ahora el idioma sale de usePathname() dentro de LanguageProvider.
+  return NextResponse.next();
 }
 
 export const config = {
