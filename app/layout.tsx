@@ -42,10 +42,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang={locale} suppressHydrationWarning>
       <body className="min-h-screen font-sans antialiased">
         {adsenseClient ? (
+          // `afterInteractive` hacía que Next emitiera un <link rel="preload">
+          // de alta prioridad para adsbygoogle.js, compitiendo con el render
+          // inicial. `lazyOnload` lo difiere hasta que la página está ociosa.
           <Script
             id="adsense-script"
             async
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
             crossOrigin="anonymous"
           />

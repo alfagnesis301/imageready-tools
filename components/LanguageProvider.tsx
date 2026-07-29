@@ -239,7 +239,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.send": "Send message",
     "contact.success": "Thanks. Your message was sent.",
     "contact.error": "The message could not be sent. Please email hello@publishpixel.net directly.",
-    "home.heroTitle": "Free Smart Image Publish Check Tool",
+    "home.heroTitle": "Free Image Checker for Web, SEO and Social Media",
     "home.heroDescription":
       "Check if your image is ready for websites, SEO, social media, YouTube thumbnails, e-commerce, email headers, and more - privately in your browser.",
     "home.viewSizeGuide": "View size guide",

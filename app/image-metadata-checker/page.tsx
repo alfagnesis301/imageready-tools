@@ -1,13 +1,20 @@
 import Link from "next/link";
 import FAQ from "@/components/FAQ";
 import SmartPublishCheck from "@/components/SmartPublishCheck";
-import { createPageMetadata, faqJsonLd } from "@/lib/seo";
+import { createPageMetadata } from "@/lib/seo";
 
+const pageUrl = "https://publishpixel.net/image-metadata-checker";
+
+// Title y description orientados a las consultas que ya generan impresiones
+// en esta URL: "meta data checker" (349 imp), "image metadata" (68),
+// "metadata checker" (63). Sin sufijo de marca: 726 impresiones en posición
+// 83 no pueden permitirse gastar 15 caracteres en branding.
 export const metadata = createPageMetadata({
-  title: "Image Metadata Checker",
+  title: "Image Metadata Checker: View EXIF Data Before You Publish",
   description:
-    "Check image publishing privacy signals and learn why metadata matters before sharing photos online.",
-  path: "/image-metadata-checker"
+    "Free image metadata checker: see the EXIF, GPS and camera data hidden in your photo before you publish it, and learn how to remove it. Runs in your browser.",
+  path: "/image-metadata-checker",
+  absoluteTitle: true
 });
 
 const faqs = [
@@ -34,9 +41,71 @@ const faqs = [
 ];
 
 export default function ImageMetadataCheckerPage() {
+  // Mismo grafo que /website-image-optimizer: es el mismo tipo de página
+  // (herramienta con contenido editorial de apoyo). Antes solo emitía FAQPage;
+  // faltaban BreadcrumbList y la entidad de la propia herramienta.
+  const graphJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": `${pageUrl}#webapplication`,
+        name: "Image Metadata Checker",
+        url: pageUrl,
+        applicationCategory: "MultimediaApplication",
+        operatingSystem: "Web",
+        description:
+          "Check the EXIF, GPS and camera metadata embedded in an image before publishing it online. Runs locally in the browser.",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD"
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "PublishPixel",
+          url: "https://publishpixel.net"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: faqs.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://publishpixel.net/"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Image Metadata Checker",
+            item: pageUrl
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(graphJsonLd) }}
+      />
       <section className="shell py-10">
         <div className="mx-auto max-w-4xl text-center">
           <p className="label">Privacy tool</p>

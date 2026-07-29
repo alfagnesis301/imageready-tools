@@ -11,10 +11,15 @@ import type { Locale } from "@/lib/i18n";
 import { faqJsonLd, softwareApplicationJsonLd, createPageMetadata } from "@/lib/seo";
 import { PRESET_ORDER, PUBLISH_RULES } from "@/lib/publishRules";
 
+// El title anterior ("Free Smart Image Publish Check Tool") apuntaba a un
+// término acuñado por la marca, sin volumen de búsqueda medible en GSC. La
+// portada es la URL con más autoridad interna del sitio (46 enlaces), así que
+// ahora apunta a los clusters que sí tienen demanda demostrada: image
+// checker / image sizes / optimize images for web.
 export const metadata = createPageMetadata({
-  title: "Free Smart Image Publish Check Tool",
+  title: "Free Image Checker: Sizes, SEO & Metadata Before You Publish",
   description:
-    "Check if your image is ready for websites, SEO, social media, YouTube thumbnails, e-commerce, email headers and more privately in your browser."
+    "Free image checker for web, SEO and social media. Check dimensions, file size, format, alt text and EXIF metadata before you publish - in your browser, no upload."
 });
 
 const homeFaq: Record<Locale, { question: string; answer: string }[]> = {
