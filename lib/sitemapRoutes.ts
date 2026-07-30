@@ -91,7 +91,7 @@ export const SITEMAP_ROUTES: SitemapRoute[] = [
   },
   {
     path: "/image-metadata-checker",
-    lastModified: "2026-05-01",
+    lastModified: "2026-07-30",
     changeFrequency: "monthly",
     priority: 0.85,
     sources: ["app/image-metadata-checker/page.tsx"]
