@@ -36,33 +36,151 @@ export type GuideEnhancement = {
   disclaimer?: string;
 };
 
-const standardRelatedLinks: GuideRelatedLink[] = [
-  {
+/**
+ * Catálogo de destinos de enlace interno.
+ *
+ * Antes existía una única lista `standardRelatedLinks` repetida en 11 de las 12
+ * guías. Eso concentraba 44 enlaces editoriales en /compress-image (10
+ * impresiones en 3 meses), /resize-image (7) y /convert-image (3), mientras que
+ * páginas con demanda real recibían un solo enlace editorial:
+ *
+ *   /image-seo-meta-checker    466 imp -> 1 enlace
+ *   /image-alt-text-checker    161 imp -> 1
+ *   /open-graph-image-checker   80 imp -> 1
+ *   /youtube-thumbnail-checker  71 imp -> 1
+ *   /instagram-image-checker    49 imp -> 1
+ *
+ * Ahora cada guía enlaza a los destinos que corresponden a SU tema. El reparto
+ * sigue el interés del lector, no una plantilla: por eso las herramientas de
+ * compresión sí aparecen en la guía de compresión, pero no en la de metadatos.
+ */
+const LINKS = {
+  smartCheck: {
     href: "/smart-image-publish-check",
     label: "Smart Image Publish Check",
     description: "Run the full readiness check for size, ratio, format and publishing fit."
   },
-  {
+  compress: {
     href: "/compress-image",
     label: "Free Image Compressor",
     description: "Create a lighter browser-based export for website and content workflows."
   },
-  {
+  resize: {
     href: "/resize-image",
     label: "Free Image Resizer",
     description: "Resize images to practical web, social and preview dimensions."
   },
-  {
+  convert: {
     href: "/convert-image",
     label: "Free Image Converter",
     description: "Convert compatible raster images to JPG, PNG or WebP in your browser."
   },
-  {
+  guidesHub: {
     href: "/guides",
     label: "Image Publishing Guides",
     description: "Read more practical guides about image SEO, privacy and performance."
+  },
+  websiteOptimizer: {
+    href: "/website-image-optimizer",
+    label: "Website Image Optimizer",
+    description: "Check dimensions, weight and format together before an image reaches your site."
+  },
+  seoMetaChecker: {
+    href: "/image-seo-meta-checker",
+    label: "Image SEO Checker",
+    description: "Test alt text, filename, dimensions and file size in one pass."
+  },
+  altTextChecker: {
+    href: "/image-alt-text-checker",
+    label: "Alt Text Checker",
+    description: "Draft and review alt text before the image goes into a CMS."
+  },
+  metadataChecker: {
+    href: "/image-metadata-checker",
+    label: "Image Metadata Checker",
+    description: "See the EXIF, GPS and camera data hidden in a photo before publishing it."
+  },
+  socialSizes: {
+    href: "/social-media-image-sizes",
+    label: "Social Media Image Sizes",
+    description: "Exact pixel dimensions and aspect ratios for every platform in 2026."
+  },
+  openGraphChecker: {
+    href: "/open-graph-image-checker",
+    label: "Open Graph Image Checker",
+    description: "Preview how a link card will crop before you share the URL."
+  },
+  youtubeChecker: {
+    href: "/youtube-thumbnail-checker",
+    label: "YouTube Thumbnail Checker",
+    description: "Verify the 1280 x 720 thumbnail size, ratio and file weight."
+  },
+  instagramChecker: {
+    href: "/instagram-image-checker",
+    label: "Instagram Image Size Checker",
+    description: "Check post, story and reel dimensions against Instagram's ratios."
+  },
+  guideImageSize: {
+    href: "/guides/image-size-for-web",
+    label: "Image Size for Web",
+    description: "Choose dimensions that stay sharp without slowing the page down."
+  },
+  guideCompress: {
+    href: "/guides/compress-images-without-losing-quality",
+    label: "Compress Without Losing Quality",
+    description: "Where to compress hard and where quality actually matters."
+  },
+  guideFormats: {
+    href: "/guides/webp-vs-jpeg-vs-png",
+    label: "WebP vs JPEG vs PNG",
+    description: "Pick the format that fits the image instead of defaulting to JPG."
+  },
+  guideAltText: {
+    href: "/guides/image-alt-text",
+    label: "Writing Image Alt Text",
+    description: "How to describe an image so it helps both readers and search."
+  },
+  guideSeoChecklist: {
+    href: "/guides/image-seo-checklist",
+    label: "Image SEO Checklist",
+    description: "The full pre-publish list for filenames, alt text, size and format."
+  },
+  guideRemoveMetadata: {
+    href: "/guides/remove-image-metadata",
+    label: "How to Remove Image Metadata",
+    description: "Strip EXIF and location data before an image goes public."
+  },
+  guidePrivacy: {
+    href: "/guides/photo-privacy-before-publishing",
+    label: "Photo Privacy Before Publishing",
+    description: "What a photo can reveal beyond its metadata, and how to check."
+  },
+  guideSocialCrop: {
+    href: "/guides/social-media-image-sizes",
+    label: "Cropping Images for Social Platforms",
+    description: "A step-by-step workflow to prepare one source image for every feed."
+  },
+  guideOpenGraph: {
+    href: "/guides/open-graph-image-best-practices",
+    label: "Open Graph Image Best Practices",
+    description: "Build a link preview that survives every platform's crop."
+  },
+  guidePublishChecklist: {
+    href: "/guides/image-publishing-checklist",
+    label: "Image Publishing Checklist",
+    description: "The last review pass before an image is live."
+  },
+  guidePerformance: {
+    href: "/guides/website-image-performance-checklist",
+    label: "Website Image Performance Checklist",
+    description: "Find the images that are slowing a page down."
+  },
+  guideYoutube: {
+    href: "/guides/youtube-thumbnail-image-guide",
+    label: "YouTube Thumbnail Image Guide",
+    description: "Design a thumbnail that stays readable at feed size."
   }
-];
+} satisfies Record<string, GuideRelatedLink>;
 
 export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
   "image-size-for-web": {
@@ -150,7 +268,13 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
         answer: "No. Use these recommendations as practical guidance and verify official requirements when a campaign or upload is critical."
       }
     ],
-    relatedLinks: standardRelatedLinks
+    relatedLinks: [
+      LINKS.websiteOptimizer,
+      LINKS.resize,
+      LINKS.guideCompress,
+      LINKS.guideFormats,
+      LINKS.seoMetaChecker
+    ]
   },
   "remove-image-metadata": {
     updatedAt: "April 30, 2026",
@@ -237,7 +361,12 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
         answer: "Review visible private details, permissions, file size, format and whether the image is appropriate for the destination."
       }
     ],
-    relatedLinks: standardRelatedLinks,
+    relatedLinks: [
+      LINKS.metadataChecker,
+      LINKS.guidePrivacy,
+      LINKS.smartCheck,
+      LINKS.guideSeoChecklist
+    ],
     disclaimer:
       "Metadata behavior can vary by browser, file format and publishing platform. For sensitive situations, verify with a dedicated privacy workflow."
   },
@@ -326,7 +455,12 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
         answer: "No. It provides structure guidance and a place to draft your text, but it does not claim to know the visual content of your image."
       }
     ],
-    relatedLinks: standardRelatedLinks
+    relatedLinks: [
+      LINKS.altTextChecker,
+      LINKS.seoMetaChecker,
+      LINKS.guideSeoChecklist,
+      LINKS.guideImageSize
+    ]
   },
   "webp-vs-jpeg-vs-png": {
     updatedAt: "April 30, 2026",
@@ -413,7 +547,12 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
         answer: "JPEG or PNG are commonly used. WebP can be useful for websites, but always verify the platform or sharing workflow."
       }
     ],
-    relatedLinks: standardRelatedLinks
+    relatedLinks: [
+      LINKS.convert,
+      LINKS.websiteOptimizer,
+      LINKS.guideCompress,
+      LINKS.guideImageSize
+    ]
   },
   "image-seo-checklist": {
     updatedAt: "April 30, 2026",
@@ -500,7 +639,14 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
         answer: "Sometimes, but important pages often benefit from a dedicated social crop with the right ratio and safe focal area."
       }
     ],
-    relatedLinks: standardRelatedLinks
+    relatedLinks: [
+      LINKS.seoMetaChecker,
+      LINKS.altTextChecker,
+      LINKS.guideAltText,
+      LINKS.guideImageSize,
+      LINKS.socialSizes,
+      LINKS.guideRemoveMetadata
+    ]
   },
   "social-media-image-sizes": {
     updatedAt: "April 30, 2026",
@@ -588,12 +734,13 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
       }
     ],
     relatedLinks: [
-      {
-        href: "/social-media-image-sizes",
-        label: "Social Media Image Sizes Cheat Sheet",
-        description: "Exact pixel dimensions and aspect ratios for every platform in 2026."
-      },
-      ...standardRelatedLinks
+      // Sin LINKS.guideSocialCrop: apunta a esta misma guía.
+      LINKS.socialSizes,
+      LINKS.instagramChecker,
+      LINKS.youtubeChecker,
+      LINKS.openGraphChecker,
+      LINKS.guideOpenGraph,
+      LINKS.guideYoutube
     ]
   },
   "compress-images-without-losing-quality": {
@@ -681,7 +828,13 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
         answer: "Browser Canvas exports usually do not preserve EXIF metadata, but this should not be treated as a perfect privacy guarantee."
       }
     ],
-    relatedLinks: standardRelatedLinks
+    relatedLinks: [
+      LINKS.compress,
+      LINKS.websiteOptimizer,
+      LINKS.guideFormats,
+      LINKS.guideImageSize,
+      LINKS.guidePerformance
+    ]
   },
   "photo-privacy-before-publishing": {
     updatedAt: "April 30, 2026",
@@ -768,7 +921,12 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
         answer: "For sensitive photos, keep originals private and publish only edited copies that have been reviewed."
       }
     ],
-    relatedLinks: standardRelatedLinks,
+    relatedLinks: [
+      LINKS.metadataChecker,
+      LINKS.guideRemoveMetadata,
+      LINKS.smartCheck,
+      LINKS.guidePublishChecklist
+    ],
     disclaimer:
       "This guide is informational and does not replace legal, security or privacy advice for high-risk publishing situations."
   },
@@ -853,7 +1011,14 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
         answer: "No. It gives practical estimates and reminders. Verify official requirements for critical uploads."
       }
     ],
-    relatedLinks: standardRelatedLinks
+    relatedLinks: [
+      LINKS.smartCheck,
+      LINKS.socialSizes,
+      LINKS.seoMetaChecker,
+      LINKS.guideSeoChecklist,
+      LINKS.guideRemoveMetadata,
+      LINKS.guideOpenGraph
+    ]
   },
   "open-graph-image-best-practices": {
     updatedAt: "May 1, 2026",
@@ -936,7 +1101,13 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
         answer: "WebP can be useful on websites, but JPG and PNG remain common for broad sharing compatibility."
       }
     ],
-    relatedLinks: standardRelatedLinks
+    relatedLinks: [
+      LINKS.openGraphChecker,
+      LINKS.socialSizes,
+      LINKS.guideSocialCrop,
+      LINKS.seoMetaChecker,
+      LINKS.guideYoutube
+    ]
   },
   "youtube-thumbnail-image-guide": {
     updatedAt: "May 1, 2026",
@@ -1019,7 +1190,12 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
         answer: "Yes, but keep faces, text and focal details clear enough for small previews."
       }
     ],
-    relatedLinks: standardRelatedLinks
+    relatedLinks: [
+      LINKS.youtubeChecker,
+      LINKS.socialSizes,
+      LINKS.guideSocialCrop,
+      LINKS.smartCheck
+    ]
   },
   "website-image-performance-checklist": {
     updatedAt: "May 1, 2026",
@@ -1102,6 +1278,12 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
         answer: "Resize the asset to a practical maximum for its final layout, then compress it."
       }
     ],
-    relatedLinks: standardRelatedLinks
+    relatedLinks: [
+      LINKS.websiteOptimizer,
+      LINKS.compress,
+      LINKS.guideImageSize,
+      LINKS.guideCompress,
+      LINKS.guideFormats
+    ]
   }
 };
