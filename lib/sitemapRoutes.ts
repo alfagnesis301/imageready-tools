@@ -28,10 +28,10 @@ export type SitemapRoute = {
 export const SITEMAP_ROUTES: SitemapRoute[] = [
   {
     path: "/",
-    lastModified: "2026-05-19",
+    lastModified: "2026-08-09",
     changeFrequency: "weekly",
     priority: 1.0,
-    sources: ["app/page.tsx"]
+    sources: ["app/page.tsx", "lib/constants.ts"]
   },
   {
     path: "/smart-image-publish-check",
@@ -42,49 +42,49 @@ export const SITEMAP_ROUTES: SitemapRoute[] = [
   },
   {
     path: "/compress-image",
-    lastModified: "2026-05-02",
+    lastModified: "2026-08-09",
     changeFrequency: "monthly",
     priority: 0.9,
     sources: ["app/compress-image/page.tsx"]
   },
   {
     path: "/resize-image",
-    lastModified: "2026-05-02",
+    lastModified: "2026-08-09",
     changeFrequency: "monthly",
     priority: 0.9,
     sources: ["app/resize-image/page.tsx"]
   },
   {
     path: "/convert-image",
-    lastModified: "2026-05-02",
+    lastModified: "2026-08-09",
     changeFrequency: "monthly",
     priority: 0.9,
     sources: ["app/convert-image/page.tsx"]
   },
   {
     path: "/social-media-image-sizes",
-    lastModified: "2026-07-02",
+    lastModified: "2026-08-09",
     changeFrequency: "monthly",
     priority: 0.85,
     sources: ["app/social-media-image-sizes/page.tsx", "lib/socialImageSizes.ts"]
   },
   {
     path: "/open-graph-image-checker",
-    lastModified: "2026-05-01",
+    lastModified: "2026-08-09",
     changeFrequency: "monthly",
     priority: 0.85,
     sources: ["app/open-graph-image-checker/page.tsx"]
   },
   {
     path: "/youtube-thumbnail-checker",
-    lastModified: "2026-05-18",
+    lastModified: "2026-08-09",
     changeFrequency: "monthly",
     priority: 0.85,
     sources: ["app/youtube-thumbnail-checker/page.tsx"]
   },
   {
     path: "/image-alt-text-checker",
-    lastModified: "2026-05-01",
+    lastModified: "2026-08-09",
     changeFrequency: "monthly",
     priority: 0.85,
     sources: ["app/image-alt-text-checker/page.tsx"]
@@ -105,28 +105,28 @@ export const SITEMAP_ROUTES: SitemapRoute[] = [
   },
   {
     path: "/image-seo-meta-checker",
-    lastModified: "2026-05-18",
+    lastModified: "2026-08-09",
     changeFrequency: "monthly",
     priority: 0.85,
     sources: ["app/image-seo-meta-checker/page.tsx"]
   },
   {
     path: "/instagram-image-checker",
-    lastModified: "2026-05-18",
+    lastModified: "2026-08-09",
     changeFrequency: "monthly",
     priority: 0.85,
-    sources: ["app/instagram-image-checker/page.tsx"]
+    sources: ["app/instagram-image-checker/page.tsx", "lib/publishRules.ts"]
   },
   {
     path: "/guides",
-    lastModified: "2026-05-02",
+    lastModified: "2026-08-09",
     changeFrequency: "monthly",
     priority: 0.75,
     sources: ["app/guides/page.tsx"]
   },
   {
     path: "/about",
-    lastModified: "2026-05-03",
+    lastModified: "2026-08-09",
     changeFrequency: "monthly",
     priority: 0.6,
     sources: ["app/about/page.tsx"]

@@ -49,6 +49,10 @@ export function translatePublishText(message: string, language: Language) {
     return "Mantén texto importante y rostros lejos de los bordes porque las superposiciones de interfaz pueden cubrirlos.";
   }
 
+  if (message === "The Instagram profile grid crops feed posts to 3:4. Export at 1080 x 1440 px, or keep faces, logos and text centred so they survive the crop.") {
+    return "La cuadrícula del perfil de Instagram recorta las publicaciones de feed a 3:4. Exporta a 1080 x 1440 px, o centra rostros, logos y texto para que sobrevivan al recorte.";
+  }
+
   if (message === "A clean, uncluttered background is usually helpful for product images; this tool does not detect background quality.") {
     return "Un fondo limpio y ordenado suele ayudar en imágenes de producto; esta herramienta no detecta la calidad del fondo.";
   }
@@ -148,7 +152,6 @@ function translateDimensionText(value: string) {
   return value
     .replace("1200-1600 px wide", "1200-1600 px de ancho")
     .replace("1200 px wide or larger", "1200 px de ancho o más")
-    .replace("1080 x 1080, 1080 x 1350 or 1080 x 566 px", "1080 x 1080, 1080 x 1350 o 1080 x 566 px")
     .replace("1000 x 1000 px or larger", "1000 x 1000 px o más")
     .replace("Square; export 16, 32, 48, 180 and 512 px variants", "Cuadrado; exporta variantes de 16, 32, 48, 180 y 512 px")
     .replace("600-1200 px wide", "600-1200 px de ancho")
@@ -159,7 +162,7 @@ function translateAspectText(value: string) {
   return value
     .replace("Flexible, commonly 16:9, 4:3 or square", "flexible, comúnmente 16:9, 4:3 o cuadrada")
     .replace("16:9 or 4:3", "16:9 o 4:3")
-    .replace("1:1, 4:5 or 1.91:1", "1:1, 4:5 o 1.91:1")
+    .replace("3:4, 1:1, 4:5 or 1.91:1", "3:4, 1:1, 4:5 o 1.91:1")
     .replace("About 1.91:1", "aproximadamente 1.91:1")
     .replace("1:1 square", "1:1 cuadrada")
     .replace("Wide or banner-like", "ancha o tipo banner")

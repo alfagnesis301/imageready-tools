@@ -3,9 +3,9 @@ import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
 import FAQ from "@/components/FAQ";
 import SmartPublishCheck from "@/components/SmartPublishCheck";
+import { ogImageMeta } from "@/lib/ogVariants";
 
 const pageUrl = "https://publishpixel.net/smart-image-publish-check";
-const ogImage = "https://publishpixel.net/smart-image-publish-check-og.svg";
 const title = "Smart Image Publish Check 2026 — Pre-Publish Image Checker";
 const description =
   "Run a smart pre-publish image check before you upload: size, format, dimensions, filename, alt text, metadata and publishing readiness — free, in your browser.";
@@ -31,20 +31,13 @@ export const metadata: Metadata = {
     siteName: "PublishPixel",
     locale: "en_US",
     alternateLocale: ["es_ES"],
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "PublishPixel Smart Image Publish Check"
-      }
-    ]
+    images: [ogImageMeta("smart-check.png")]
   },
   twitter: {
     card: "summary_large_image",
     title: "Smart Image Publish Check 2026 — Pre-Publish Image Checker",
     description: "One pre-publish check for size, format, metadata, alt text and platform readiness. Free, in your browser.",
-    images: [ogImage]
+    images: [ogImageMeta("smart-check.png")]
   }
 };
 

@@ -1,13 +1,20 @@
 ﻿import type { Metadata } from "next";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "./constants";
 import { getAlternatePaths, type Locale } from "./i18n";
+import { DEFAULT_OG_SLUG, ogImageMeta, type OgVariantSlug } from "./ogVariants";
 import { isSpanishIndexable, isSpanishPath } from "./spanishScope";
 
 type PageMetadataInput = {
   title: string;
   description: string;
   path?: string;
-  image?: string;
+  /**
+   * Clave de `OG_VARIANTS` (ver lib/ogVariants.ts) para las páginas con imagen
+   * social propia. Por defecto, `default.png`. Antes este campo era una ruta
+   * libre con `/favicon.svg` de valor por defecto: las redes sociales no
+   * renderizan SVG, así que cada enlace compartido salía sin miniatura.
+   */
+  ogVariant?: OgVariantSlug;
   noIndex?: boolean;
   locale?: Locale;
   openGraphType?: "website" | "article";
@@ -23,7 +30,7 @@ export function createPageMetadata({
   title,
   description,
   path = "/",
-  image = "/favicon.svg",
+  ogVariant = DEFAULT_OG_SLUG,
   noIndex,
   locale = path === "/es" || path.startsWith("/es/") ? "es" : "en",
   openGraphType = "website",
@@ -47,6 +54,7 @@ export function createPageMetadata({
   }
 
   const outOfScopeSpanish = isSpanishPath(path) && !spanishIndexable;
+  const ogImage = ogImageMeta(ogVariant);
 
   return {
     title: absoluteTitle ? { absolute: title } : title,
@@ -71,20 +79,13 @@ export function createPageMetadata({
       url: canonical,
       locale: locale === "es" ? "es_ES" : "en_US",
       alternateLocale: locale === "es" ? ["en_US"] : ["es_ES"],
-      images: [
-        {
-          url: image,
-          width: 1200,
-          height: 630,
-          alt: `${SITE_NAME} logo`
-        }
-      ]
+      images: [ogImage]
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [image]
+      images: [ogImage]
     }
   };
 }
@@ -147,12 +148,18 @@ export function articleJsonLd({
   title,
   description,
   path,
+  datePublished,
   dateModified,
   author
 }: {
   title: string;
   description: string;
   path: string;
+  /**
+   * Fecha real de publicación (AAAA-MM-DD). Antes estaba codificada a fuego
+   * como "2026-04-30" para las 12 guías, incluidas las publicadas el 1 de mayo.
+   */
+  datePublished: string;
   dateModified: string;
   author: string;
 }) {
@@ -162,7 +169,7 @@ export function articleJsonLd({
     headline: title,
     description,
     url: new URL(path, SITE_URL).toString(),
-    datePublished: "2026-04-30",
+    datePublished,
     dateModified,
     author: {
       "@type": "Organization",

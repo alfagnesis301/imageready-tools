@@ -6,6 +6,7 @@ export const metadata = createPageMetadata({
   description:
     "Revisa dimensiones, peso, formato, proporción, nombre de archivo, texto alternativo y preparación de publicación con una herramienta privada en tu navegador.",
   path: "/es/smart-image-publish-check",
+  ogVariant: "smart-check.png",
   locale: "es"
 });
 

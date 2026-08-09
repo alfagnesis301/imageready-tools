@@ -73,21 +73,21 @@ export const SOCIAL_SIZE_ROWS = [
   },
   {
     platform: "Instagram",
+    use: "Portrait post",
+    size: "1080 x 1440 px",
+    ratio: "3:4",
+    note: "Fills the feed and matches the 3:4 profile grid, so nothing is cropped."
+  },
+  {
+    platform: "Instagram",
     use: "Square post",
     size: "1080 x 1080 px",
     ratio: "1:1",
-    note: "Works well for grid consistency and product-focused images."
+    note: "Fine in the feed, but the profile grid trims the sides to make it 3:4."
   },
   {
     platform: "Instagram",
-    use: "Portrait post",
-    size: "1080 x 1350 px",
-    ratio: "4:5",
-    note: "Often gives more vertical space in the feed."
-  },
-  {
-    platform: "Instagram",
-    use: "Story or vertical creative",
+    use: "Story, Reel or vertical creative",
     size: "1080 x 1920 px",
     ratio: "9:16",
     note: "Keep key content away from top and bottom UI areas."

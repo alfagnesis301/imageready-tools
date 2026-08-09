@@ -5,8 +5,8 @@ import FAQ from "@/components/FAQ";
 import LocalizedLink from "@/components/LocalizedLink";
 import SmartPublishCheck from "@/components/SmartPublishCheck";
 import { useLanguage } from "@/components/LanguageProvider";
+import { ogImageUrl } from "@/lib/ogVariants";
 import {
-  SOCIAL_MEDIA_IMAGE_OG_ABSOLUTE,
   SOCIAL_MEDIA_IMAGE_SIZES,
   UNIVERSAL_SOCIAL_IMAGE_SIZES,
   getCheatSheetRows,
@@ -55,7 +55,8 @@ const CROPPING_TIPS = {
     "Center faces, logos, and product details.",
     "Export separate versions for square, portrait, and vertical.",
     "Use 9:16 for stories, reels, shorts, and TikTok.",
-    "Use 4:5 for mobile feed posts where supported.",
+    "Use 3:4 for Instagram feed posts, whose profile grid crops everything to 3:4.",
+    "Use 4:5 for mobile feed posts on platforms that show them uncropped.",
     "Preview images before publishing.",
     "Compress images without making text blurry.",
     "Use JPG for photos and PNG or WebP for graphics where appropriate."
@@ -65,7 +66,8 @@ const CROPPING_TIPS = {
     "Centra rostros, logos y detalles de producto.",
     "Exporta versiones separadas para formato cuadrado, vertical e historias.",
     "Usa 9:16 para historias, reels, shorts y TikTok.",
-    "Usa 4:5 para publicaciones pensadas para móvil cuando la plataforma lo soporte.",
+    "Usa 3:4 en el feed de Instagram, cuya cuadrícula de perfil recorta todo a 3:4.",
+    "Usa 4:5 para publicaciones móviles en plataformas que las muestran sin recorte.",
     "Previsualiza las imágenes antes de publicar.",
     "Comprime las imágenes sin volver borroso el texto.",
     "Usa JPG para fotos y PNG o WebP para gráficos cuando tenga sentido."
@@ -114,8 +116,8 @@ const PLATFORM_HEADINGS = {
 } as const;
 
 const QUICK_ANSWER = {
-  en: "Most social platforms work well with 1080 px wide images for feed posts, 1080 x 1920 px for vertical stories or short-form video covers, and platform-specific banner sizes for profiles and channels. The safest 2026 workflow is to design one square version, one 4:5 portrait version, and one 9:16 vertical version, then export platform-specific crops.",
-  es: "La mayoría de plataformas funcionan bien con imágenes de 1080 px de ancho para el feed, 1080 x 1920 px para historias verticales o portadas de vídeo corto, y banners específicos para perfiles y canales. El flujo más seguro en 2026 es diseñar una versión cuadrada, una versión vertical 4:5 y una versión 9:16, y después exportar recortes específicos por plataforma."
+  en: "Most social platforms work well with 1080 px wide images for feed posts, 1080 x 1920 px for vertical stories or short-form video covers, and platform-specific banner sizes for profiles and channels. The safest 2026 workflow is to design one square version, one portrait version (3:4 for Instagram, whose profile grid crops to 3:4, and 4:5 elsewhere), and one 9:16 vertical version, then export platform-specific crops.",
+  es: "La mayoría de plataformas funcionan bien con imágenes de 1080 px de ancho para el feed, 1080 x 1920 px para historias verticales o portadas de vídeo corto, y banners específicos para perfiles y canales. El flujo más seguro en 2026 es diseñar una versión cuadrada, una vertical (3:4 en Instagram, cuya cuadrícula de perfil recorta a 3:4, y 4:5 en el resto) y una 9:16, y después exportar recortes específicos por plataforma."
 };
 
 const PAGE_COPY = {
@@ -245,7 +247,7 @@ export default function SocialMediaImageSizesContent() {
           language === "es"
             ? "Consulta dimensiones recomendadas para Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest y más."
             : "Find the recommended image dimensions for Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest, and more.",
-        image: SOCIAL_MEDIA_IMAGE_OG_ABSOLUTE,
+        image: ogImageUrl("social-sizes.png"),
         datePublished: "2026-05-09",
         dateModified: "2026-05-09",
         author: {

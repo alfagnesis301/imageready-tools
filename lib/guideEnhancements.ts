@@ -1,4 +1,4 @@
-export type GuideTable = {
+﻿export type GuideTable = {
   columns: [string, string, string];
   rows: [string, string, string][];
 };
@@ -20,7 +20,13 @@ export type GuideRelatedLink = {
 };
 
 export type GuideEnhancement = {
-  updatedAt: string;
+  /**
+   * Fecha de publicación, en el formato en que se muestra en la página. Antes
+   * se llamaba `updatedAt` y se pintaba como "Updated ...", pero el historial
+   * del repositorio confirma que son las fechas de publicación original: la
+   * última revisión real de estos módulos es `GUIDES_LAST_MODIFIED`.
+   */
+  publishedAt: string;
   author: string;
   overview: string[];
   tableTitle: string;
@@ -35,6 +41,40 @@ export type GuideEnhancement = {
   relatedLinks: GuideRelatedLink[];
   disclaimer?: string;
 };
+
+const MONTH_NAMES = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+
+/** "April 30, 2026" -> "2026-04-30", para `datePublished` de schema.org. */
+export function toIsoDate(displayDate: string): string {
+  const match = displayDate.match(/^([A-Za-z]+) (\d{1,2}), (\d{4})$/);
+  if (!match) return displayDate;
+
+  const month = MONTH_NAMES.indexOf(match[1]) + 1;
+  if (month === 0) return displayDate;
+
+  return `${match[3]}-${String(month).padStart(2, "0")}-${match[2].padStart(2, "0")}`;
+}
+
+/** "2026-06-27" -> "June 27, 2026", para que lo visible y el schema coincidan. */
+export function toDisplayDate(isoDate: string): string {
+  const match = isoDate.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return isoDate;
+
+  return `${MONTH_NAMES[Number(match[2]) - 1]} ${Number(match[3])}, ${match[1]}`;
+}
 
 /**
  * Catálogo de destinos de enlace interno.
@@ -184,7 +224,7 @@ const LINKS = {
 
 export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
   "image-size-for-web": {
-    updatedAt: "April 30, 2026",
+    publishedAt: "April 30, 2026",
     author: "PublishPixel Editorial Team",
     overview: [
       "A good web image starts with the final layout, not with the original camera file. Modern phones and design tools often create images that are far larger than a blog column, product card or social preview needs. Publishing the original can make a page slower without giving the reader a better visual result.",
@@ -277,7 +317,7 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
     ]
   },
   "remove-image-metadata": {
-    updatedAt: "April 30, 2026",
+    publishedAt: "April 30, 2026",
     author: "PublishPixel Editorial Team",
     overview: [
       "Image metadata is easy to forget because it is not visible in the picture. A photo can look harmless while still carrying device details, dates, editing history or location data depending on how it was captured and exported.",
@@ -371,7 +411,7 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
       "Metadata behavior can vary by browser, file format and publishing platform. For sensitive situations, verify with a dedicated privacy workflow."
   },
   "image-alt-text": {
-    updatedAt: "April 30, 2026",
+    publishedAt: "April 30, 2026",
     author: "PublishPixel Editorial Team",
     overview: [
       "Useful alt text is written for people first. It gives meaningful context when an image cannot be seen, fails to load or is consumed through assistive technology. The best alt text depends on why the image appears on the page.",
@@ -463,7 +503,7 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
     ]
   },
   "webp-vs-jpeg-vs-png": {
-    updatedAt: "April 30, 2026",
+    publishedAt: "April 30, 2026",
     author: "PublishPixel Editorial Team",
     overview: [
       "Image format choice affects file size, transparency, compatibility and quality. WebP, JPEG and PNG are all useful, but they solve different problems. A good publishing workflow chooses the format based on the image content and destination.",
@@ -555,7 +595,7 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
     ]
   },
   "image-seo-checklist": {
-    updatedAt: "April 30, 2026",
+    publishedAt: "April 30, 2026",
     author: "PublishPixel Editorial Team",
     overview: [
       "Image SEO is not a single field to fill in at the end. It is a combination of clear filenames, useful alt text, sensible dimensions, fast loading, relevant page context and predictable preview behavior.",
@@ -649,7 +689,7 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
     ]
   },
   "social-media-image-sizes": {
-    updatedAt: "April 30, 2026",
+    publishedAt: "April 30, 2026",
     author: "PublishPixel Editorial Team",
     overview: [
       "Social image sizing is mostly about avoiding surprise crops. A single image can appear as a link preview, feed post, story, pin, thumbnail or product card, and each placement has its own visual pressure.",
@@ -744,7 +784,7 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
     ]
   },
   "compress-images-without-losing-quality": {
-    updatedAt: "April 30, 2026",
+    publishedAt: "April 30, 2026",
     author: "PublishPixel Editorial Team",
     overview: [
       "Good compression is not about making the smallest possible file at any cost. It is about reducing unnecessary weight while keeping the image clear enough for its job. A product photo, hero image, screenshot and thumbnail all have different quality thresholds.",
@@ -837,7 +877,7 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
     ]
   },
   "photo-privacy-before-publishing": {
-    updatedAt: "April 30, 2026",
+    publishedAt: "April 30, 2026",
     author: "PublishPixel Editorial Team",
     overview: [
       "Photo privacy is about both visible content and hidden file information. A picture can reveal a home address, workplace screen, school badge, travel pattern, document, license plate or location metadata.",
@@ -931,7 +971,7 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
       "This guide is informational and does not replace legal, security or privacy advice for high-risk publishing situations."
   },
   "image-publishing-checklist": {
-    updatedAt: "May 1, 2026",
+    publishedAt: "May 1, 2026",
     author: "PublishPixel Editorial Team",
     overview: [
       "A practical image publishing checklist prevents the most common problems before an image reaches a public page. The goal is to catch issues while the file is still easy to change: oversized dimensions, heavy file weight, weak filenames, missing alt text, privacy concerns and social preview crops.",
@@ -1021,7 +1061,7 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
     ]
   },
   "open-graph-image-best-practices": {
-    updatedAt: "May 1, 2026",
+    publishedAt: "May 1, 2026",
     author: "PublishPixel Editorial Team",
     overview: [
       "Open Graph images act like visual invitations for your pages. They can appear in link previews across social platforms, chat apps and publishing tools, so a weak crop can make a strong page look unfinished.",
@@ -1110,7 +1150,7 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
     ]
   },
   "youtube-thumbnail-image-guide": {
-    updatedAt: "May 1, 2026",
+    publishedAt: "May 1, 2026",
     author: "PublishPixel Editorial Team",
     overview: [
       "A YouTube thumbnail has to work at small sizes, in busy feeds and on mobile screens. Technical dimensions matter, but visual clarity matters just as much.",
@@ -1198,7 +1238,7 @@ export const GUIDE_ENHANCEMENTS: Record<string, GuideEnhancement> = {
     ]
   },
   "website-image-performance-checklist": {
-    updatedAt: "May 1, 2026",
+    publishedAt: "May 1, 2026",
     author: "PublishPixel Editorial Team",
     overview: [
       "Website image performance begins before upload. Oversized originals, inefficient formats and uncompressed exports can make pages slower before code-level optimizations even start.",

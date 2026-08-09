@@ -1,9 +1,6 @@
 ﻿import type { Metadata } from "next";
 import SocialMediaImageSizesContent from "./SocialMediaImageSizesContent";
-import {
-  SOCIAL_MEDIA_IMAGE_OG,
-  SOCIAL_MEDIA_IMAGE_OG_ABSOLUTE
-} from "@/lib/socialImageSizes";
+import { ogImageMeta } from "@/lib/ogVariants";
 
 const title = "Social Media Image Sizes 2026: Every Platform (Free Checker)";
 const description =
@@ -31,21 +28,14 @@ export const metadata: Metadata = {
     siteName: "PublishPixel",
     locale: "en_US",
     alternateLocale: ["es_ES"],
-    images: [
-      {
-        url: SOCIAL_MEDIA_IMAGE_OG,
-        width: 1200,
-        height: 630,
-        alt: "PublishPixel social media image sizes guide"
-      }
-    ]
+    images: [ogImageMeta("social-sizes.png")]
   },
   twitter: {
     card: "summary_large_image",
     title: "Social Media Image Sizes 2026",
     description:
       "Exact pixel sizes for every platform in 2026 + free in-browser checker.",
-    images: [SOCIAL_MEDIA_IMAGE_OG_ABSOLUTE]
+    images: [ogImageMeta("social-sizes.png")]
   }
 };
 

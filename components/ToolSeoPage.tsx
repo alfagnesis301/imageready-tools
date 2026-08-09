@@ -38,9 +38,11 @@ export default function ToolSeoPage({
   faqs,
   children
 }: ToolSeoPageProps) {
+  // Sin nivel intermedio "Tools": apuntaba a "/" igual que "Home", así que
+  // declaraba a Google —vía BreadcrumbList— una jerarquía de sitio que no
+  // existe, y además producía dos <li> con la misma key de React.
   const breadcrumbs = [
     { name: "Home", href: "/" },
-    { name: "Tools", href: "/" },
     { name: title, href: path }
   ];
 
@@ -61,7 +63,13 @@ export default function ToolSeoPage({
           <p className="mt-5 text-base leading-8 text-slate-600 dark:text-slate-300">{description}</p>
         </div>
         <div className="mt-8">
-          <SmartPublishCheck initialPreset={initialPreset} heading={title} description={toolDescription} />
+          {/* El H2 de la tarjeta repetía literalmente el H1: dos encabezados
+              idénticos y ninguno de los dos aportando nada nuevo. */}
+          <SmartPublishCheck
+            initialPreset={initialPreset}
+            heading="Upload an image to run the check"
+            description={toolDescription}
+          />
         </div>
       </section>
 
@@ -91,8 +99,11 @@ export default function ToolSeoPage({
       <section className="shell py-14">
         <div className="max-w-3xl">
           <p className="label">FAQ</p>
+          {/* Encabezado fijo. `"Questions about " + title.toLowerCase()` colaba
+              con titles cortos, pero desde que llevan dos puntos y varias
+              palabras clave producía frases sin sentido y en minúscula. */}
           <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-            Questions about {title.toLowerCase()}
+            Frequently asked questions
           </h2>
         </div>
         <div className="mt-8">

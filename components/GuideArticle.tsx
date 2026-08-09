@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Breadcrumbs, { breadcrumbJsonLd } from "./Breadcrumbs";
 import FAQ from "./FAQ";
-import { GUIDE_ENHANCEMENTS } from "@/lib/guideEnhancements";
+import { GUIDE_ENHANCEMENTS, toDisplayDate, toIsoDate } from "@/lib/guideEnhancements";
 import type { Guide } from "@/lib/guides";
 import { articleJsonLd, faqJsonLd } from "@/lib/seo";
+import { GUIDES_LAST_MODIFIED } from "@/lib/sitemapRoutes";
 
 export default function GuideArticle({ guide }: { guide: Guide }) {
   const detail = GUIDE_ENHANCEMENTS[guide.slug];
@@ -30,11 +31,16 @@ export default function GuideArticle({ guide }: { guide: Guide }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
+              // Las fechas salen de los mismos datos que se muestran en la
+              // página: `publishedAt` de la guía y `GUIDES_LAST_MODIFIED`, que
+              // es también lo que declara el sitemap. Antes ambas estaban
+              // codificadas a fuego como 2026-04-30.
               articleJsonLd({
                 title: guide.title,
                 description: guide.description,
                 path: `/guides/${guide.slug}`,
-                dateModified: "2026-04-30",
+                datePublished: toIsoDate(detail.publishedAt),
+                dateModified: GUIDES_LAST_MODIFIED,
                 author: detail.author
               })
             )
@@ -52,7 +58,10 @@ export default function GuideArticle({ guide }: { guide: Guide }) {
         {detail ? (
           <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
             <span className="rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-800 dark:bg-slate-900">
-              Updated {detail.updatedAt}
+              Published {detail.publishedAt}
+            </span>
+            <span className="rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-800 dark:bg-slate-900">
+              Updated {toDisplayDate(GUIDES_LAST_MODIFIED)}
             </span>
             <span className="rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-800 dark:bg-slate-900">
               {detail.author}

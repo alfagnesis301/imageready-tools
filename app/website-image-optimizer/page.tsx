@@ -3,9 +3,9 @@ import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
 import FAQ from "@/components/FAQ";
 import SmartPublishCheck from "@/components/SmartPublishCheck";
+import { ogImageMeta } from "@/lib/ogVariants";
 
 const pageUrl = "https://publishpixel.net/website-image-optimizer";
-const ogImage = "https://publishpixel.net/website-image-optimizer-og.svg";
 const title = "Website Image Optimizer 2026 – Compress & Optimise Images Free";
 const description =
   "Optimise and compress images for your website with free online tools. Resize, convert and optimize JPG, PNG, WebP and AVIF for faster pages in 2026.";
@@ -31,20 +31,13 @@ export const metadata: Metadata = {
     siteName: "PublishPixel",
     locale: "en_US",
     alternateLocale: ["es_ES"],
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "PublishPixel Website Image Optimizer"
-      }
-    ]
+    images: [ogImageMeta("website-optimizer.png")]
   },
   twitter: {
     card: "summary_large_image",
     title,
     description: "Compress, resize, and prepare website images for faster pages and cleaner publishing.",
-    images: [ogImage]
+    images: [ogImageMeta("website-optimizer.png")]
   }
 };
 
