@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbJsonLd } from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import SmartPublishCheck from "@/components/SmartPublishCheck";
 import { createPageMetadata, faqJsonLd } from "@/lib/seo";
@@ -33,11 +34,23 @@ const faqs = [
   }
 ];
 
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Open Graph Image Checker", href: "/open-graph-image-checker" }
+];
+
 export default function OpenGraphImageCheckerPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)) }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }} />
       <section className="shell py-10">
+        <div className="mx-auto max-w-4xl">
+          <Breadcrumbs items={breadcrumbs} />
+        </div>
         <div className="mx-auto max-w-4xl text-center">
           <p className="label">Open Graph image tool</p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">

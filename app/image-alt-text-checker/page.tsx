@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AltTextDraftChecker from "@/components/AltTextDraftChecker";
+import Breadcrumbs, { breadcrumbJsonLd } from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import { createPageMetadata, faqJsonLd } from "@/lib/seo";
 
@@ -33,12 +34,22 @@ const faqs = [
   }
 ];
 
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Image Alt Text Checker", href: "/image-alt-text-checker" }
+];
+
 export default function ImageAltTextCheckerPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)) }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }} />
       <main className="shell py-12">
         <div className="max-w-4xl">
+          <Breadcrumbs items={breadcrumbs} />
           <p className="label">Accessibility tool</p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
             Image Alt Text Checker

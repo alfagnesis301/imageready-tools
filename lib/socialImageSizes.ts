@@ -18,17 +18,13 @@ export type SocialImagePlatform = {
   items: SocialImageSizeItem[];
 };
 
-export const SOCIAL_MEDIA_IMAGE_OG = "/social-media-image-sizes-og.svg";
-export const SOCIAL_MEDIA_IMAGE_OG_ABSOLUTE =
-  "https://publishpixel.net/social-media-image-sizes-og.svg";
-
 export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
   {
     id: "instagram",
     name: "Instagram",
     intro: {
-      en: "Instagram works best with square images, 4:5 portrait posts, and 9:16 content for Stories and Reels. Keep text and key subjects away from the edges so interface overlays do not crowd the design.",
-      es: "Instagram funciona mejor con imágenes cuadradas, publicaciones verticales 4:5 y contenido 9:16 para historias y reels. Mantén el texto y los elementos clave lejos de los bordes para evitar superposiciones."
+      en: "Instagram's profile grid crops every thumbnail to 3:4, so 1080 x 1440 px is the format that fills the feed and the grid without a crop. Square and 4:5 posts still work in the feed, and Stories and Reels stay 9:16. Keep text and key subjects away from the edges so interface overlays do not crowd the design.",
+      es: "La cuadrícula del perfil de Instagram recorta cada miniatura a 3:4, así que 1080 x 1440 px es el formato que llena el feed y la cuadrícula sin recorte. Las publicaciones cuadradas y 4:5 siguen funcionando en el feed, e historias y reels siguen siendo 9:16. Mantén el texto y los elementos clave lejos de los bordes para evitar superposiciones."
     },
     items: [
       {
@@ -42,24 +38,35 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         }
       },
       {
+        id: "feed-portrait-3-4",
+        type: { en: "Feed portrait (recommended)", es: "Publicación vertical (recomendada)" },
+        dimensions: "1080 x 1440 px",
+        aspectRatio: "3:4",
+        notes: {
+          en: "Fills the feed and matches the 3:4 profile grid, so nothing is cropped in either place.",
+          es: "Llena el feed y coincide con la cuadrícula de perfil 3:4, así que no se recorta en ninguno de los dos sitios."
+        },
+        featuredInCheatSheet: true
+      },
+      {
         id: "feed-square",
         type: { en: "Feed square", es: "Publicación cuadrada" },
         dimensions: "1080 x 1080 px",
         aspectRatio: "1:1",
         notes: {
-          en: "Safe square format for general feed posts.",
-          es: "Formato cuadrado seguro para publicaciones generales del feed."
+          en: "Safe square format for general feed posts; the profile grid crops it to 3:4.",
+          es: "Formato cuadrado seguro para publicaciones del feed; la cuadrícula de perfil lo recorta a 3:4."
         },
         featuredInCheatSheet: true
       },
       {
         id: "feed-portrait",
-        type: { en: "Feed portrait", es: "Publicación vertical" },
+        type: { en: "Feed portrait (4:5)", es: "Publicación vertical (4:5)" },
         dimensions: "1080 x 1350 px",
         aspectRatio: "4:5",
         notes: {
-          en: "A strong mobile-first format that uses more vertical feed space.",
-          es: "Formato pensado para móvil que aprovecha mejor el espacio vertical del feed."
+          en: "Still uncropped in the feed, but the profile grid trims the top and bottom. Keep faces, logos and text inside the centre.",
+          es: "Sigue sin recortarse en el feed, pero la cuadrícula de perfil recorta arriba y abajo. Mantén rostros, logos y texto en el centro."
         }
       },
       {
@@ -68,8 +75,8 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
         dimensions: "1080 x 566 px",
         aspectRatio: "1.91:1",
         notes: {
-          en: "Useful for wide scenes, but text can feel smaller in feed previews.",
-          es: "Útil para escenas amplias, aunque el texto puede verse más pequeño en el feed."
+          en: "Useful for wide scenes, but text can feel smaller in feed previews and the grid crop is severe.",
+          es: "Útil para escenas amplias, aunque el texto puede verse más pequeño en el feed y el recorte de la cuadrícula es fuerte."
         }
       },
       {
@@ -85,12 +92,12 @@ export const SOCIAL_MEDIA_IMAGE_SIZES: SocialImagePlatform[] = [
       },
       {
         id: "reels-cover",
-        type: { en: "Reels cover / vertical", es: "Portada de Reel / vertical" },
+        type: { en: "Reel (and Reel cover)", es: "Reel (y portada de Reel)" },
         dimensions: "1080 x 1920 px",
         aspectRatio: "9:16",
         notes: {
-          en: "Use a centered focal point so the cover still works when cropped in grids.",
-          es: "Usa un punto focal centrado para que la portada siga funcionando en recortes de cuadrícula."
+          en: "The Reel itself is 9:16. Its cover is taken from that same frame and then cropped to 3:4 in the profile grid, so keep the subject centred rather than near the top or bottom.",
+          es: "El Reel es 9:16. Su portada sale de ese mismo fotograma y luego se recorta a 3:4 en la cuadrícula de perfil, así que centra el sujeto en vez de dejarlo arriba o abajo."
         }
       }
     ]
@@ -478,12 +485,21 @@ export const UNIVERSAL_SOCIAL_IMAGE_SIZES = [
     }
   },
   {
+    id: "portrait-feed-3-4",
+    label: { en: "Portrait feed (3:4)", es: "Feed vertical (3:4)" },
+    dimensions: "1080 x 1440 px",
+    description: {
+      en: "Instagram's current default for feed posts: it also matches the 3:4 profile grid without a crop.",
+      es: "Formato por defecto actual del feed de Instagram: también coincide con la cuadrícula de perfil 3:4 sin recorte."
+    }
+  },
+  {
     id: "portrait-feed",
-    label: { en: "Portrait feed", es: "Feed vertical" },
+    label: { en: "Portrait feed (4:5)", es: "Feed vertical (4:5)" },
     dimensions: "1080 x 1350 px",
     description: {
-      en: "A strong mobile-first format that works well for Instagram, LinkedIn, and some X posts.",
-      es: "Formato pensado para móvil que funciona bien para Instagram, LinkedIn y algunas publicaciones en X."
+      en: "A strong mobile-first format that works well for LinkedIn, some X posts, and Instagram feed posts that do not need to survive the grid crop.",
+      es: "Formato pensado para móvil que funciona bien en LinkedIn, algunas publicaciones en X y publicaciones de Instagram que no necesitan sobrevivir al recorte de la cuadrícula."
     }
   },
   {
@@ -522,8 +538,8 @@ export const SOCIAL_MEDIA_FAQS = [
       es: "¿Cuál es el mejor tamaño de imagen para publicaciones en redes sociales?"
     },
     answer: {
-      en: "A safe starting point is 1080 x 1080 px for square posts, 1080 x 1350 px for portrait feed posts, and 1080 x 1920 px for stories, reels, shorts, and other vertical formats.",
-      es: "Un buen punto de partida es 1080 x 1080 px para publicaciones cuadradas, 1080 x 1350 px para publicaciones verticales y 1080 x 1920 px para historias, reels, shorts y otros formatos verticales."
+      en: "A safe starting point is 1080 x 1080 px for square posts, 1080 x 1350 px for portrait feed posts (1080 x 1440 px on Instagram, where the profile grid is 3:4), and 1080 x 1920 px for stories, reels, shorts, and other vertical formats.",
+      es: "Un buen punto de partida es 1080 x 1080 px para publicaciones cuadradas, 1080 x 1350 px para publicaciones verticales (1080 x 1440 px en Instagram, donde la cuadrícula de perfil es 3:4) y 1080 x 1920 px para historias, reels, shorts y otros formatos verticales."
     }
   },
   {
@@ -552,8 +568,8 @@ export const SOCIAL_MEDIA_FAQS = [
       es: "¿Qué tamaño deberían tener las publicaciones de Instagram?"
     },
     answer: {
-      en: "Instagram feed posts commonly use 1080 x 1080 px for square, 1080 x 1350 px for portrait, and 1080 x 566 px for landscape. Stories and reels commonly use 1080 x 1920 px.",
-      es: "Las publicaciones de Instagram suelen usar 1080 x 1080 px en cuadrado, 1080 x 1350 px en vertical y 1080 x 566 px en horizontal. Historias y reels suelen usar 1080 x 1920 px."
+      en: "1080 x 1440 px (3:4) is the safest default: it fills the feed and matches the 3:4 profile grid, so nothing is cropped. 1080 x 1080 px (square) and 1080 x 1350 px (4:5) still publish fine in the feed but get trimmed in the grid, and 1080 x 566 px landscape is cropped hardest. Stories and Reels use 1080 x 1920 px.",
+      es: "1080 x 1440 px (3:4) es la opción más segura: llena el feed y coincide con la cuadrícula de perfil 3:4, así que no se recorta nada. 1080 x 1080 px (cuadrado) y 1080 x 1350 px (4:5) se publican bien en el feed pero se recortan en la cuadrícula, y el horizontal de 1080 x 566 px es el que más pierde. Historias y reels usan 1080 x 1920 px."
     }
   },
   {

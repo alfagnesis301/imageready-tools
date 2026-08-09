@@ -14,6 +14,7 @@ export const metadata = createPageMetadata({
   description:
     "Free image metadata checker: see the EXIF, GPS and camera data hidden in your photo before you publish it, and learn how to remove it. Runs in your browser.",
   path: "/image-metadata-checker",
+  ogVariant: "metadata.png",
   absoluteTitle: true
 });
 

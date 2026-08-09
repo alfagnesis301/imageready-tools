@@ -3,6 +3,7 @@ import Breadcrumbs, { breadcrumbJsonLd } from "./Breadcrumbs";
 import FAQ from "./FAQ";
 import type { Guide } from "@/lib/guides";
 import { articleJsonLd, faqJsonLd } from "@/lib/seo";
+import { GUIDES_LAST_MODIFIED } from "@/lib/sitemapRoutes";
 
 const genericFaqs = [
   {
@@ -136,11 +137,15 @@ export default function SpanishGuideArticle({ guide }: { guide: Guide }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
+            // Publicación: 2026-05-02, cuando se añadieron las rutas en
+            // español. La última revisión es la del bloque de guías, que es
+            // también lo que declara el sitemap.
             articleJsonLd({
               title: guide.title,
               description: guide.description,
               path: `/es/guides/${guide.slug}`,
-              dateModified: "2026-05-02",
+              datePublished: "2026-05-02",
+              dateModified: GUIDES_LAST_MODIFIED,
               author: "Equipo editorial de PublishPixel"
             })
           )
@@ -156,7 +161,10 @@ export default function SpanishGuideArticle({ guide }: { guide: Guide }) {
         </p>
         <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
           <span className="rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-800 dark:bg-slate-900">
-            Actualizado el 2 de mayo de 2026
+            Publicado el 2 de mayo de 2026
+          </span>
+          <span className="rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-800 dark:bg-slate-900">
+            Actualizado el 27 de junio de 2026
           </span>
           <span className="rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-800 dark:bg-slate-900">
             Equipo editorial de PublishPixel

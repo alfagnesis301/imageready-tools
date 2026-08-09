@@ -50,9 +50,9 @@ export default function LocalizedToolSeoPage({
     answer: faq.answer[language]
   }));
   const localizedPath = withLocalePath(path, language);
+  // Ver ToolSeoPage: el nivel "Tools"/"Herramientas" apuntaba a la portada.
   const breadcrumbs = [
     { name: language === "es" ? "Inicio" : "Home", href: language === "es" ? "/es" : "/" },
-    { name: language === "es" ? "Herramientas" : "Tools", href: language === "es" ? "/es" : "/" },
     { name: title[language], href: localizedPath }
   ];
 
@@ -78,9 +78,14 @@ export default function LocalizedToolSeoPage({
           </p>
         </div>
         <div className="mt-8">
+          {/* Ver ToolSeoPage: el H2 de la tarjeta repetía el H1. */}
           <SmartPublishCheck
             initialPreset={initialPreset}
-            heading={title[language]}
+            heading={
+              language === "es"
+                ? "Sube una imagen para ejecutar la revisión"
+                : "Upload an image to run the check"
+            }
             description={toolDescription[language]}
           />
         </div>
@@ -115,10 +120,9 @@ export default function LocalizedToolSeoPage({
       <section className="shell py-14">
         <div className="max-w-3xl">
           <p className="label">{language === "es" ? "Preguntas frecuentes" : "FAQ"}</p>
+          {/* Encabezado fijo: ver ToolSeoPage. */}
           <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-slate-950 dark:text-white">
-            {language === "es"
-              ? `Preguntas sobre ${title.es.toLowerCase()}`
-              : `Questions about ${title.en.toLowerCase()}`}
+            {language === "es" ? "Preguntas frecuentes" : "Frequently asked questions"}
           </h2>
         </div>
         <div className="mt-8">

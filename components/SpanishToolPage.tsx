@@ -45,9 +45,9 @@ export default function SpanishToolPage({
   ctaHref = "/es",
   ctaLabel = "Volver a la revisión principal"
 }: SpanishToolPageProps) {
+  // Ver ToolSeoPage: el nivel "Herramientas" apuntaba a /es igual que "Inicio".
   const breadcrumbs = [
     { name: "Inicio", href: "/es" },
-    { name: "Herramientas", href: "/es" },
     { name: title, href: path }
   ];
 
@@ -73,7 +73,12 @@ export default function SpanishToolPage({
           <p className="mt-5 text-base leading-8 text-slate-600 dark:text-slate-300">{description}</p>
         </div>
         <div className="mt-8">
-          <SmartPublishCheck initialPreset={preset} heading={title} description={toolDescription} />
+          {/* Ver ToolSeoPage: el H2 de la tarjeta repetía el H1. */}
+          <SmartPublishCheck
+            initialPreset={preset}
+            heading="Sube una imagen para ejecutar la revisión"
+            description={toolDescription}
+          />
         </div>
       </section>
 

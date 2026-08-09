@@ -30,7 +30,9 @@ export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
           const isLast = index === items.length - 1;
 
           return (
-            <li key={item.href} className="flex items-center gap-2">
+            // El href no sirve de key: dos niveles pueden apuntar a la misma
+            // URL y React colisionaría.
+            <li key={`${index}-${item.href}`} className="flex items-center gap-2">
               {index > 0 ? <ChevronRight size={14} aria-hidden="true" className="text-slate-400" /> : null}
               {isLast ? (
                 <span className="text-slate-700 dark:text-slate-200" aria-current="page">

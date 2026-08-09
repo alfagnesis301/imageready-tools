@@ -6,6 +6,7 @@ export const metadata = createPageMetadata({
   description:
     "Optimiza imágenes para velocidad, SEO, formatos web y publicación en sitios antes de subirlas a tu CMS.",
   path: "/es/website-image-optimizer",
+  ogVariant: "website-optimizer.png",
   locale: "es"
 });
 

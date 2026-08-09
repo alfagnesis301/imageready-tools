@@ -37,7 +37,6 @@ const faqs = [
 
 const breadcrumbs = [
   { name: "Inicio", href: "/es" },
-  { name: "Herramientas", href: "/es" },
   { name: "Revisor de texto alternativo para imágenes", href: "/es/image-alt-text-checker" }
 ];
 

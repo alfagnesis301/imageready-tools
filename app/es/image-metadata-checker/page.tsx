@@ -6,6 +6,7 @@ export const metadata = createPageMetadata({
   description:
     "Revisa señales básicas de metadatos, privacidad y preparación antes de publicar fotos o imágenes online.",
   path: "/es/image-metadata-checker",
+  ogVariant: "metadata.png",
   locale: "es"
 });
 

@@ -4,8 +4,9 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Revisor de imágenes para Instagram",
   description:
-    "Comprueba tamaños y proporciones para publicaciones, historias y formatos comunes de Instagram antes de publicar.",
+    "Comprueba tamaños y proporciones de Instagram antes de publicar: feed vertical 3:4, cuadrado, historias y Reels, con el recorte de la cuadrícula de perfil.",
   path: "/es/instagram-image-checker",
+  ogVariant: "instagram.png",
   locale: "es"
 });
 
@@ -14,18 +15,18 @@ export default function SpanishInstagramImageCheckerPage() {
     <SpanishToolPage
       eyebrow="Herramienta para Instagram"
       title="Revisor de imágenes para Instagram"
-      description="Revisa si una imagen encaja con formatos comunes de Instagram como publicación cuadrada, vertical, horizontal o historia."
+      description="Revisa si una imagen encaja con los formatos de Instagram: vertical 3:4, cuadrada, 4:5, horizontal, historia y Reel."
       path="/es/instagram-image-checker"
       preset="instagram-post"
       toolDescription="Sube una imagen y elige el ajuste predefinido de Instagram para revisar proporción, tamaño, peso y formato."
       sections={[
         {
-          title: "Feed cuadrado o vertical",
-          body: "Las publicaciones cuadradas y 4:5 funcionan bien para composiciones centradas y visuales de producto."
+          title: "Feed vertical 3:4",
+          body: "1080 x 1440 px llena el feed y coincide con la cuadrícula de perfil, que recorta todo a 3:4. Las publicaciones cuadradas y 4:5 se publican bien pero pierden bordes ahí."
         },
         {
-          title: "Historias",
-          body: "Las historias usan un marco vertical 9:16; deja espacio seguro para elementos de interfaz arriba y abajo."
+          title: "Historias y Reels",
+          body: "Ambos usan un marco vertical 9:16 de 1080 x 1920 px. La portada del Reel sale de ese mismo fotograma y luego se recorta a 3:4 en la cuadrícula."
         },
         {
           title: "Versiones separadas",
@@ -33,7 +34,9 @@ export default function SpanishInstagramImageCheckerPage() {
         }
       ]}
       checklist={[
-        "Elige el destino antes de exportar: feed cuadrado, feed vertical, horizontal o historia.",
+        "Exporta las publicaciones de feed a 1080 x 1440 px salvo que tengas un motivo para no hacerlo.",
+        "Elige el destino antes de exportar: feed vertical, cuadrado, horizontal, historia o Reel.",
+        "Comprueba cómo queda en la cuadrícula 3:4 del perfil, no solo en el feed.",
         "Mantén texto, rostros y producto lejos de bordes y controles de interfaz.",
         "Comprime la imagen final y revisa que no pierda nitidez.",
         "Crea versiones separadas si la misma campaña se publica en varios formatos."
@@ -63,8 +66,8 @@ export default function SpanishInstagramImageCheckerPage() {
       ]}
       faqs={[
         {
-          question: "¿Qué formato de Instagram debería revisar primero?",
-          answer: "Depende del destino. Para publicaciones generales, empieza con cuadrado o 4:5; para historias y reels, usa un formato vertical 9:16."
+          question: "¿Qué tamaño debería tener una publicación de Instagram?",
+          answer: "1080 x 1440 px (3:4) es la opción más segura: llena el feed y coincide con la cuadrícula de perfil, así que no se recorta en ninguno de los dos sitios. Cuadrado (1080 x 1080) y 4:5 (1080 x 1350) se publican bien en el feed pero se recortan en la cuadrícula. Historias y Reels usan 1080 x 1920 px."
         },
         {
           question: "¿Una imagen horizontal funciona en Instagram?",

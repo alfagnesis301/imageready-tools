@@ -126,8 +126,8 @@ export default function ImageSeoMetaCheckerPage() {
                   </tr>
                   <tr className="border-t border-slate-200 dark:border-slate-800">
                     <td className="p-4 font-semibold">Instagram portrait</td>
-                    <td className="p-4">1080 x 1350</td>
-                    <td className="p-4">Important content cut near the edges</td>
+                    <td className="p-4">1080 x 1440</td>
+                    <td className="p-4">Important content cut by the 3:4 profile grid</td>
                   </tr>
                 </tbody>
               </table>

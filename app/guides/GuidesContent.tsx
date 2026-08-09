@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbJsonLd } from "@/components/Breadcrumbs";
 import { useLanguage } from "@/components/LanguageProvider";
 import { GUIDES } from "@/lib/guides";
 
@@ -235,10 +236,22 @@ function getGuideBySlug(slug: string) {
 
 export default function GuidesContent() {
   const { language } = useLanguage();
+  const breadcrumbs = [
+    { name: language === "es" ? "Inicio" : "Home", href: language === "es" ? "/es" : "/" },
+    {
+      name: language === "es" ? "Guías" : "Guides",
+      href: language === "es" ? "/es/guides" : "/guides"
+    }
+  ];
 
   return (
     <section className="shell py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)) }}
+      />
       <div className="max-w-3xl">
+        <Breadcrumbs items={breadcrumbs} />
         <p className="label">{language === "es" ? "Guías PublishPixel" : "PublishPixel guides"}</p>
         <h1 className="mt-3 text-4xl font-extrabold tracking-normal text-slate-950 sm:text-5xl dark:text-white">
           {language === "es" ? "Guías de imágenes web para SEO, redes sociales y publicación" : "Image Publishing Guides"}

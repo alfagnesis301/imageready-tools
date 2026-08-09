@@ -1,3 +1,4 @@
+import Breadcrumbs, { breadcrumbJsonLd } from "@/components/Breadcrumbs";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -7,10 +8,20 @@ export const metadata = createPageMetadata({
   path: "/about"
 });
 
+const breadcrumbs = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" }
+];
+
 export default function AboutPage() {
   return (
     <section className="shell py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)) }}
+      />
       <article className="legal-doc">
+        <Breadcrumbs items={breadcrumbs} />
         <p className="label">About</p>
         <h1>About PublishPixel</h1>
 

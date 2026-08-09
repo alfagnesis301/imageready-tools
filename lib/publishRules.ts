@@ -182,18 +182,20 @@ export const PUBLISH_RULES: Record<PresetId, PublishRule> = {
     id: "instagram-post",
     label: "Instagram Post",
     shortLabel: "Instagram Post",
-    description: "A feed image for square, portrait or landscape post formats.",
-    recommendedDimensions: "1080 x 1080, 1080 x 1350 or 1080 x 566 px",
+    description: "A feed image for portrait, square or landscape post formats.",
+    recommendedDimensions: "1080 x 1440 px (3:4)",
     recommendedFormats: ["jpg", "png", "webp"],
     preferredFormat: "jpg",
     recommendedMaxSizeKB: 1200,
     heavySizeKB: 2500,
     minWidth: 1080,
-    idealWidth: [1080, 1350],
-    idealAspectRatios: [1, 4 / 5, 1080 / 566],
-    aspectLabel: "1:1, 4:5 or 1.91:1",
+    idealWidth: [1080, 1440],
+    // 3:4 primero: es el único formato que llena el feed y encaja en la
+    // cuadrícula de perfil (que recorta todo a 3:4) sin perder nada.
+    idealAspectRatios: [3 / 4, 1, 4 / 5, 1080 / 566],
+    aspectLabel: "3:4, 1:1, 4:5 or 1.91:1",
     aspectTolerance: 0.045,
-    qualityNote: "Match one of the common feed ratios to avoid unexpected cropping."
+    qualityNote: "3:4 fills the feed and the profile grid without a crop; other ratios publish fine but lose edges in the grid."
   },
   "instagram-story": {
     id: "instagram-story",
@@ -401,6 +403,14 @@ export function calculatePublishReadyScore(
 
   if (preset.id === "youtube-thumbnail") {
     recommendations.push("Keep important text and faces away from the edges because interface overlays may cover them.");
+  }
+
+  // La cuadrícula del perfil recorta cualquier publicación de feed a 3:4, así
+  // que un 4:5 o un cuadrado se publican bien y aun así pierden bordes ahí.
+  if (preset.id === "instagram-post" && Math.abs(nearestRatio - 3 / 4) > 0.001) {
+    recommendations.push(
+      "The Instagram profile grid crops feed posts to 3:4. Export at 1080 x 1440 px, or keep faces, logos and text centred so they survive the crop."
+    );
   }
 
   if (preset.id === "ecommerce-product") {
