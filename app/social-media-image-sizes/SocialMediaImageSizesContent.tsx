@@ -6,6 +6,7 @@ import LocalizedLink from "@/components/LocalizedLink";
 import SmartPublishCheck from "@/components/SmartPublishCheck";
 import { useLanguage } from "@/components/LanguageProvider";
 import { ogImageUrl } from "@/lib/ogVariants";
+import { toSchemaDateTime } from "@/lib/seo";
 import {
   SOCIAL_MEDIA_IMAGE_SIZES,
   UNIVERSAL_SOCIAL_IMAGE_SIZES,
@@ -248,8 +249,11 @@ export default function SocialMediaImageSizesContent() {
             ? "Consulta dimensiones recomendadas para Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest y más."
             : "Find the recommended image dimensions for Instagram, Facebook, X, LinkedIn, YouTube, TikTok, Pinterest, and more.",
         image: ogImageUrl("social-sizes.png"),
-        datePublished: "2026-05-09",
-        dateModified: "2026-05-09",
+        // Con hora y zona: el Rich Results Test rechaza las fechas sueltas.
+        // dateModified sube al 2026-08-09, cuando se corrigieron los datos de
+        // Instagram; es la misma fecha que declara el sitemap para esta ruta.
+        datePublished: toSchemaDateTime("2026-05-09"),
+        dateModified: toSchemaDateTime("2026-08-09"),
         author: {
           "@type": "Organization",
           name: "PublishPixel",

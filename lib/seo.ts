@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "./constants";
 import { getAlternatePaths, type Locale } from "./i18n";
-import { DEFAULT_OG_SLUG, ogImageMeta, type OgVariantSlug } from "./ogVariants";
+import { DEFAULT_OG_SLUG, ogImageMeta, ogImageUrl, type OgVariantSlug } from "./ogVariants";
 import { isSpanishIndexable, isSpanishPath } from "./spanishScope";
 
 type PageMetadataInput = {
@@ -144,13 +144,26 @@ export function faqJsonLd(items: { question: string; answer: string }[]) {
   };
 }
 
+/**
+ * Completa una fecha AAAA-MM-DD a ISO 8601 con hora y zona horaria.
+ *
+ * El Rich Results Test marca las fechas sin hora como "valor no válido" y avisa
+ * aparte de que falta la zona horaria (comprobado el 10 ago 2026 sobre
+ * /guides/image-alt-text). Los datos del sitio se escriben en AAAA-MM-DD porque
+ * es lo legible al editarlos; la conversión pasa aquí, en un solo sitio.
+ */
+export function toSchemaDateTime(date: string): string {
+  return /^\d{4}-\d{2}-\d{2}$/.test(date) ? `${date}T00:00:00+00:00` : date;
+}
+
 export function articleJsonLd({
   title,
   description,
   path,
   datePublished,
   dateModified,
-  author
+  author,
+  image = ogImageUrl()
 }: {
   title: string;
   description: string;
@@ -162,6 +175,8 @@ export function articleJsonLd({
   datePublished: string;
   dateModified: string;
   author: string;
+  /** URL absoluta de la imagen del artículo. Por defecto, la OG del sitio. */
+  image?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -169,11 +184,13 @@ export function articleJsonLd({
     headline: title,
     description,
     url: new URL(path, SITE_URL).toString(),
-    datePublished,
-    dateModified,
+    image,
+    datePublished: toSchemaDateTime(datePublished),
+    dateModified: toSchemaDateTime(dateModified),
     author: {
       "@type": "Organization",
-      name: author
+      name: author,
+      url: SITE_URL
     },
     publisher: {
       "@type": "Organization",
