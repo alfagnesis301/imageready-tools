@@ -3,10 +3,11 @@ import ToolSeoPage from "@/components/ToolSeoPage";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "YouTube Thumbnail Size Checker",
+  title: "YouTube Thumbnail Checker & Resizer (1280×720)",
   description:
-    "Check YouTube thumbnail dimensions, 16:9 ratio, file size and format recommendations privately in your browser.",
-  path: "/youtube-thumbnail-checker"
+    "Check a YouTube thumbnail against the 1280 x 720 size, 16:9 ratio and file size targets, then export a corrected version without uploading it.",
+  path: "/youtube-thumbnail-checker",
+  absoluteTitle: true
 });
 
 const faqs = [

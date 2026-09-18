@@ -2,7 +2,7 @@ import Link from "next/link";
 import Breadcrumbs, { breadcrumbJsonLd } from "./Breadcrumbs";
 import FAQ from "./FAQ";
 import { GUIDE_ENHANCEMENTS, toDisplayDate, toIsoDate } from "@/lib/guideEnhancements";
-import type { Guide } from "@/lib/guides";
+import { guideMetaDescription, type Guide } from "@/lib/guides";
 import { articleJsonLd, faqJsonLd } from "@/lib/seo";
 import { GUIDES_LAST_MODIFIED } from "@/lib/sitemapRoutes";
 
@@ -37,7 +37,9 @@ export default function GuideArticle({ guide }: { guide: Guide }) {
               // codificadas a fuego como 2026-04-30.
               articleJsonLd({
                 title: guide.title,
-                description: guide.description,
+                // La misma descripción que la meta description, no el texto
+                // corto de la tarjeta: el schema debe describir la página.
+                description: guideMetaDescription(guide),
                 path: `/guides/${guide.slug}`,
                 datePublished: toIsoDate(detail.publishedAt),
                 dateModified: GUIDES_LAST_MODIFIED,

@@ -5,10 +5,11 @@ import SmartPublishCheck from "@/components/SmartPublishCheck";
 import { createPageMetadata, faqJsonLd } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Open Graph Image Checker",
+  title: "Open Graph Image Checker: Test Your 1200×630 Card",
   description:
-    "Check if your Open Graph image is ready for website previews, social cards and article sharing.",
-  path: "/open-graph-image-checker"
+    "Check whether your Open Graph image fits the 1200 x 630 target — dimensions, ratio, file size and format — reviewed in your browser before you share.",
+  path: "/open-graph-image-checker",
+  absoluteTitle: true
 });
 
 const faqs = [

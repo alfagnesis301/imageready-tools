@@ -1,7 +1,22 @@
 export type Guide = {
   slug: string;
   title: string;
+  /**
+   * Texto corto de la tarjeta en /guides y en los bloques de guías
+   * relacionadas. Se lee dentro de una retícula, así que aquí manda la
+   * brevedad.
+   */
   description: string;
+  /**
+   * Meta description para la SERP. Trabajo distinto al de `description`: aquí
+   * el espacio útil llega a ~155 caracteres y conviene agotarlo, porque compite
+   * contra otros nueve resultados. Auditoría del 18 sep 2026: las 12 guías
+   * reutilizaban el texto de la tarjeta (80-117 car.) y desaprovechaban entre
+   * un cuarto y la mitad del snippet.
+   *
+   * Si se omite, cae en `description`.
+   */
+  metaDescription?: string;
   intro: string;
   sections: {
     heading: string;
@@ -16,6 +31,8 @@ export const GUIDES: Guide[] = [
     title: "Image Size for Web: Practical Dimensions Before Publishing",
     description:
       "Learn how to choose web image dimensions that look sharp without slowing down your pages.",
+    metaDescription:
+      "How to choose web image dimensions that stay sharp without slowing your pages down — practical widths for hero images, blog photos and thumbnails.",
     intro:
       "Choosing image size for the web is a balancing act. A file can be technically valid and still be too large for the page, too small for modern screens, or the wrong shape for the layout. The goal is to publish an image that fits the final placement, loads quickly, and still looks clear.",
     sections: [
@@ -56,6 +73,8 @@ export const GUIDES: Guide[] = [
     title: "How to Remove Image Metadata Before Publishing",
     description:
       "Understand EXIF metadata, privacy risks and safer ways to publish images online.",
+    metaDescription:
+      "What EXIF metadata reveals about your photos — location, device and timestamps — and practical ways to strip it before you publish them online.",
     intro:
       "Image files can contain metadata that is not visible in the picture itself. Depending on the device and workflow, metadata may include camera details, timestamps, editing software and sometimes location information. Reviewing metadata is a simple privacy step before publishing.",
     sections: [
@@ -96,6 +115,8 @@ export const GUIDES: Guide[] = [
     title: "How to Write Useful Image Alt Text",
     description:
       "Write clearer alt text for accessibility, context and better image publishing workflows.",
+    metaDescription:
+      "How to write alt text that actually helps — what to describe, what to leave out, and when an image should be marked decorative rather than described.",
     intro:
       "Alt text helps people understand an image when they cannot see it or when the image does not load. It should describe the relevant visual content in the context of the page, not act as a keyword container.",
     sections: [
@@ -136,6 +157,8 @@ export const GUIDES: Guide[] = [
     title: "WebP vs JPEG vs PNG: Which Image Format Should You Use?",
     description:
       "Compare common image formats and choose a practical publishing format for web pages and social previews.",
+    metaDescription:
+      "WebP, JPEG or PNG? Compare file size, transparency support and browser behaviour, then pick the right format for photos, graphics and social previews.",
     intro:
       "The best image format depends on the content of the image and where it will be published. WebP, JPEG and PNG can all be correct choices in different contexts.",
     sections: [
@@ -176,6 +199,8 @@ export const GUIDES: Guide[] = [
     title: "Image SEO Checklist Before Publishing",
     description:
       "A practical checklist for filenames, alt text, dimensions, file size and social previews.",
+    metaDescription:
+      "A pre-publish checklist for image SEO: descriptive filenames, useful alt text, right dimensions, sensible file size and a social preview that renders.",
     intro:
       "Image SEO is not a single trick. It is a set of publishing habits that make images easier to load, understand and reuse across search and sharing surfaces.",
     sections: [
@@ -256,6 +281,8 @@ export const GUIDES: Guide[] = [
     title: "How to Compress Images Without Losing Too Much Quality",
     description:
       "Reduce image weight while keeping photos and graphics clear enough for publishing.",
+    metaDescription:
+      "How to cut image file size without visible damage — where compression artefacts show first, and how far you can push photos, text and product shots.",
     intro:
       "Compression is about finding the smallest file that still looks good in context. The right setting depends on the image content, format and where the image appears.",
     sections: [
@@ -296,6 +323,8 @@ export const GUIDES: Guide[] = [
     title: "Photo Privacy Checklist Before Publishing Online",
     description:
       "Review metadata, visible details, permissions and sensitive context before publishing photos.",
+    metaDescription:
+      "Before you publish a photo: check EXIF location data, visible details like documents and plates, permission from people shown, and sensitive context.",
     intro:
       "A photo can reveal more than intended. Before publishing, review both visible content and hidden file information so you do not share private details by accident.",
     sections: [
@@ -336,6 +365,8 @@ export const GUIDES: Guide[] = [
     title: "Image Publishing Checklist Before Uploading Online",
     description:
       "A practical pre-publish checklist for image size, format, alt text, filename, metadata and preview readiness.",
+    metaDescription:
+      "Run through size, format, alt text, filename, metadata and preview rendering before an image reaches your CMS, store or campaign page. Free checklist.",
     intro:
       "Publishing an image is not just an upload step. A strong workflow checks whether the image is clear, lightweight, private, accessible and prepared for the place where it will appear.",
     sections: [
@@ -376,6 +407,8 @@ export const GUIDES: Guide[] = [
     title: "Open Graph Image Best Practices for Better Link Previews",
     description:
       "Prepare Open Graph images with practical dimensions, safe crop areas, readable text and lightweight exports.",
+    metaDescription:
+      "Build a link preview that survives every platform's crop: 1200 x 630 dimensions, safe areas, text that stays readable and a file light enough to load.",
     intro:
       "Open Graph images shape how a page looks when it is shared. A poor crop, heavy file or unreadable text can make a useful page look unfinished in previews.",
     sections: [
@@ -416,6 +449,8 @@ export const GUIDES: Guide[] = [
     title: "YouTube Thumbnail Image Guide for Clearer Video Previews",
     description:
       "Prepare YouTube thumbnail images with practical dimensions, readable text, safe areas and focused visual composition.",
+    metaDescription:
+      "Design a YouTube thumbnail that still reads at feed size: 1280 x 720 dimensions, safe areas, large text and a focal point that survives the shrink.",
     intro:
       "A thumbnail has to communicate quickly at small sizes. The best technical export will still underperform visually if the focal point, contrast or text is unclear.",
     sections: [
@@ -456,6 +491,8 @@ export const GUIDES: Guide[] = [
     title: "Website Image Performance Checklist",
     description:
       "Improve page speed by reviewing image dimensions, file size, format, responsive delivery and publishing workflow.",
+    metaDescription:
+      "Catch heavy images before they slow a page: oversized dimensions, bloated files, the wrong format, and missing responsive markup or lazy loading.",
     intro:
       "Images often carry the biggest avoidable weight on a page. A practical performance workflow starts before upload and continues through responsive delivery.",
     sections: [
@@ -495,4 +532,12 @@ export const GUIDES: Guide[] = [
 
 export function getGuide(slug: string): Guide | undefined {
   return GUIDES.find((guide) => guide.slug === slug);
+}
+
+/**
+ * Meta description de una guía, con caída al texto de la tarjeta cuando la
+ * guía no define uno propio.
+ */
+export function guideMetaDescription(guide: Guide): string {
+  return guide.metaDescription ?? guide.description;
 }
